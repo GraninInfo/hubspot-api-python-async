@@ -134,7 +134,7 @@ class MappingApi(object):
             200: "PublicMigrationMapping",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/idmapping",
             "GET",
             path_params,
@@ -262,7 +262,7 @@ class MappingApi(object):
             200: "PublicBatchMigrationMapping",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/idmapping",
             "POST",
             path_params,

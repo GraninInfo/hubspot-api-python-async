@@ -161,7 +161,7 @@ class DefinitionConfigurationsApi(object):
             207: "BatchResponsePublicAssociationDefinitionUserConfigurationWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v4/associations/definitions/configurations/{fromObjectType}/{toObjectType}/batch/create",
             "POST",
             path_params,
@@ -305,7 +305,7 @@ class DefinitionConfigurationsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v4/associations/definitions/configurations/{fromObjectType}/{toObjectType}/batch/purge",
             "POST",
             path_params,
@@ -452,7 +452,7 @@ class DefinitionConfigurationsApi(object):
             207: "BatchResponsePublicAssociationDefinitionConfigurationUpdateResultWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v4/associations/definitions/configurations/{fromObjectType}/{toObjectType}/batch/update",
             "POST",
             path_params,
@@ -471,7 +471,7 @@ class DefinitionConfigurationsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_all(self, **kwargs):  # noqa: E501
+    async def get_all(self, **kwargs):  # noqa: E501
         """Read All  # noqa: E501
 
         Returns all user configurations available on a given portal  # noqa: E501
@@ -497,9 +497,9 @@ class DefinitionConfigurationsApi(object):
         :rtype: CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_all_with_http_info(**kwargs)  # noqa: E501
 
-    def get_all_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_all_with_http_info(self, **kwargs):  # noqa: E501
         """Read All  # noqa: E501
 
         Returns all user configurations available on a given portal  # noqa: E501
@@ -566,7 +566,7 @@ class DefinitionConfigurationsApi(object):
             200: "CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v4/associations/definitions/configurations/all",
             "GET",
             path_params,
@@ -698,7 +698,7 @@ class DefinitionConfigurationsApi(object):
             200: "CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v4/associations/definitions/configurations/{fromObjectType}/{toObjectType}",
             "GET",
             path_params,

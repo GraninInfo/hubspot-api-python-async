@@ -33,7 +33,7 @@ class ContentApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, environment, path, **kwargs):  # noqa: E501
+    async def archive(self, environment, path, **kwargs):  # noqa: E501
         """Delete a file  # noqa: E501
 
         Deletes the file at the specified path in the specified environment.  # noqa: E501
@@ -63,9 +63,9 @@ class ContentApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(environment, path, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(environment, path, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, environment, path, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, environment, path, **kwargs):  # noqa: E501
         """Delete a file  # noqa: E501
 
         Deletes the file at the specified path in the specified environment.  # noqa: E501
@@ -146,7 +146,7 @@ class ContentApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/source-code/{environment}/content/{path}",
             "DELETE",
             path_params,
@@ -165,7 +165,7 @@ class ContentApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, environment, path, **kwargs):  # noqa: E501
+    async def create(self, environment, path, **kwargs):  # noqa: E501
         """Create a file  # noqa: E501
 
         Creates a file at the specified path in the specified environment. Accepts multipart/form-data content type. Throws an error if a file already exists at the specified path.  # noqa: E501
@@ -197,9 +197,9 @@ class ContentApi(object):
         :rtype: AssetFileMetadata
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(environment, path, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(environment, path, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, environment, path, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, environment, path, **kwargs):  # noqa: E501
         """Create a file  # noqa: E501
 
         Creates a file at the specified path in the specified environment. Accepts multipart/form-data content type. Throws an error if a file already exists at the specified path.  # noqa: E501
@@ -291,7 +291,7 @@ class ContentApi(object):
             200: "AssetFileMetadata",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/source-code/{environment}/content/{path}",
             "POST",
             path_params,
@@ -436,7 +436,7 @@ class ContentApi(object):
             200: "AssetFileMetadata",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/source-code/{environment}/content/{path}",
             "PUT",
             path_params,
@@ -568,7 +568,7 @@ class ContentApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/source-code/{environment}/content/{path}",
             "GET",
             path_params,

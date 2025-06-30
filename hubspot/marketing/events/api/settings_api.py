@@ -33,7 +33,7 @@ class SettingsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_all(self, app_id, **kwargs):  # noqa: E501
+    async def get_all(self, app_id, **kwargs):  # noqa: E501
         """Retrieve the application settings  # noqa: E501
 
         Retrieve the current settings for the application.  # noqa: E501
@@ -61,9 +61,9 @@ class SettingsApi(object):
         :rtype: EventDetailSettings
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_with_http_info(app_id, **kwargs)  # noqa: E501
+        return await self.get_all_with_http_info(app_id, **kwargs)  # noqa: E501
 
-    def get_all_with_http_info(self, app_id, **kwargs):  # noqa: E501
+    async def get_all_with_http_info(self, app_id, **kwargs):  # noqa: E501
         """Retrieve the application settings  # noqa: E501
 
         Retrieve the current settings for the application.  # noqa: E501
@@ -137,7 +137,7 @@ class SettingsApi(object):
             200: "EventDetailSettings",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/{appId}/settings",
             "GET",
             path_params,
@@ -156,7 +156,7 @@ class SettingsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, app_id, event_detail_settings_url, **kwargs):  # noqa: E501
+    async def update(self, app_id, event_detail_settings_url, **kwargs):  # noqa: E501
         """Update the application settings  # noqa: E501
 
         Create or update the current settings for the application.  # noqa: E501
@@ -186,9 +186,9 @@ class SettingsApi(object):
         :rtype: EventDetailSettings
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(app_id, event_detail_settings_url, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(app_id, event_detail_settings_url, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, app_id, event_detail_settings_url, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, app_id, event_detail_settings_url, **kwargs):  # noqa: E501
         """Update the application settings  # noqa: E501
 
         Create or update the current settings for the application.  # noqa: E501
@@ -274,7 +274,7 @@ class SettingsApi(object):
             200: "EventDetailSettings",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/{appId}/settings",
             "POST",
             path_params,

@@ -33,7 +33,7 @@ class CardsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, card_id, app_id, **kwargs):  # noqa: E501
+    async def archive(self, card_id, app_id, **kwargs):  # noqa: E501
         """Delete a card  # noqa: E501
 
         Permanently deletes a card definition with the given ID. Once deleted, data fetch requests for this card will no longer be sent to your service. This can't be undone.  # noqa: E501
@@ -63,9 +63,9 @@ class CardsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(card_id, app_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(card_id, app_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, card_id, app_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, card_id, app_id, **kwargs):  # noqa: E501
         """Delete a card  # noqa: E501
 
         Permanently deletes a card definition with the given ID. Once deleted, data fetch requests for this card will no longer be sent to your service. This can't be undone.  # noqa: E501
@@ -144,7 +144,7 @@ class CardsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/extensions/cards-dev/{appId}/{cardId}",
             "DELETE",
             path_params,
@@ -163,7 +163,7 @@ class CardsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, app_id, card_create_request, **kwargs):  # noqa: E501
+    async def create(self, app_id, card_create_request, **kwargs):  # noqa: E501
         """Create a new card  # noqa: E501
 
         Defines a new card that will become active on an account when this app is installed.  # noqa: E501
@@ -193,9 +193,9 @@ class CardsApi(object):
         :rtype: PublicCardResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(app_id, card_create_request, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(app_id, card_create_request, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, app_id, card_create_request, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, app_id, card_create_request, **kwargs):  # noqa: E501
         """Create a new card  # noqa: E501
 
         Defines a new card that will become active on an account when this app is installed.  # noqa: E501
@@ -281,7 +281,7 @@ class CardsApi(object):
             201: "PublicCardResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/extensions/cards-dev/{appId}",
             "POST",
             path_params,
@@ -300,7 +300,7 @@ class CardsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_all(self, app_id, **kwargs):  # noqa: E501
+    async def get_all(self, app_id, **kwargs):  # noqa: E501
         """Get all cards  # noqa: E501
 
         Returns a list of cards for a given app.  # noqa: E501
@@ -328,9 +328,9 @@ class CardsApi(object):
         :rtype: PublicCardListResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_with_http_info(app_id, **kwargs)  # noqa: E501
+        return await self.get_all_with_http_info(app_id, **kwargs)  # noqa: E501
 
-    def get_all_with_http_info(self, app_id, **kwargs):  # noqa: E501
+    async def get_all_with_http_info(self, app_id, **kwargs):  # noqa: E501
         """Get all cards  # noqa: E501
 
         Returns a list of cards for a given app.  # noqa: E501
@@ -404,7 +404,7 @@ class CardsApi(object):
             200: "PublicCardListResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/extensions/cards-dev/{appId}",
             "GET",
             path_params,
@@ -423,7 +423,7 @@ class CardsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, card_id, app_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, card_id, app_id, **kwargs):  # noqa: E501
         """Get a card.  # noqa: E501
 
         Returns the definition for a card with the given ID.  # noqa: E501
@@ -453,9 +453,9 @@ class CardsApi(object):
         :rtype: PublicCardResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(card_id, app_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(card_id, app_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, card_id, app_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, card_id, app_id, **kwargs):  # noqa: E501
         """Get a card.  # noqa: E501
 
         Returns the definition for a card with the given ID.  # noqa: E501
@@ -536,7 +536,7 @@ class CardsApi(object):
             200: "PublicCardResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/extensions/cards-dev/{appId}/{cardId}",
             "GET",
             path_params,
@@ -555,7 +555,7 @@ class CardsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, card_id, app_id, card_patch_request, **kwargs):  # noqa: E501
+    async def update(self, card_id, app_id, card_patch_request, **kwargs):  # noqa: E501
         """Update a card  # noqa: E501
 
         Update a card definition with new details.  # noqa: E501
@@ -587,9 +587,9 @@ class CardsApi(object):
         :rtype: PublicCardResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(card_id, app_id, card_patch_request, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(card_id, app_id, card_patch_request, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, card_id, app_id, card_patch_request, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, card_id, app_id, card_patch_request, **kwargs):  # noqa: E501
         """Update a card  # noqa: E501
 
         Update a card definition with new details.  # noqa: E501
@@ -682,7 +682,7 @@ class CardsApi(object):
             200: "PublicCardResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/extensions/cards-dev/{appId}/{cardId}",
             "PATCH",
             path_params,

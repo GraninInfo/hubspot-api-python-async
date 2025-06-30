@@ -33,7 +33,7 @@ class BasicApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, object_type, object_id, to_object_type, to_object_id, **kwargs):  # noqa: E501
+    async def archive(self, object_type, object_id, to_object_type, to_object_id, **kwargs):  # noqa: E501
         """Delete  # noqa: E501
 
         deletes all associations between two records.  # noqa: E501
@@ -67,9 +67,9 @@ class BasicApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(object_type, object_id, to_object_type, to_object_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(object_type, object_id, to_object_type, to_object_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, object_type, object_id, to_object_type, to_object_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, object_type, object_id, to_object_type, to_object_id, **kwargs):  # noqa: E501
         """Delete  # noqa: E501
 
         deletes all associations between two records.  # noqa: E501
@@ -162,7 +162,7 @@ class BasicApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v4/objects/{objectType}/{objectId}/associations/{toObjectType}/{toObjectId}",
             "DELETE",
             path_params,
@@ -181,7 +181,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, object_type, object_id, to_object_type, to_object_id, association_spec, **kwargs):  # noqa: E501
+    async def create(self, object_type, object_id, to_object_type, to_object_id, association_spec, **kwargs):  # noqa: E501
         """Create  # noqa: E501
 
         Set association labels between two records.  # noqa: E501
@@ -217,9 +217,9 @@ class BasicApi(object):
         :rtype: LabelsBetweenObjectPair
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(object_type, object_id, to_object_type, to_object_id, association_spec, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(object_type, object_id, to_object_type, to_object_id, association_spec, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, object_type, object_id, to_object_type, to_object_id, association_spec, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, object_type, object_id, to_object_type, to_object_id, association_spec, **kwargs):  # noqa: E501
         """Create  # noqa: E501
 
         Set association labels between two records.  # noqa: E501
@@ -326,7 +326,7 @@ class BasicApi(object):
             201: "LabelsBetweenObjectPair",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v4/objects/{objectType}/{objectId}/associations/{toObjectType}/{toObjectId}",
             "PUT",
             path_params,
@@ -345,7 +345,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_default(self, from_object_type, from_object_id, to_object_type, to_object_id, **kwargs):  # noqa: E501
+    async def create_default(self, from_object_type, from_object_id, to_object_type, to_object_id, **kwargs):  # noqa: E501
         """Create Default  # noqa: E501
 
         Create the default (most generic) association type between two object types  # noqa: E501
@@ -379,9 +379,9 @@ class BasicApi(object):
         :rtype: BatchResponsePublicDefaultAssociation
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_default_with_http_info(from_object_type, from_object_id, to_object_type, to_object_id, **kwargs)  # noqa: E501
+        return await self.create_default_with_http_info(from_object_type, from_object_id, to_object_type, to_object_id, **kwargs)  # noqa: E501
 
-    def create_default_with_http_info(self, from_object_type, from_object_id, to_object_type, to_object_id, **kwargs):  # noqa: E501
+    async def create_default_with_http_info(self, from_object_type, from_object_id, to_object_type, to_object_id, **kwargs):  # noqa: E501
         """Create Default  # noqa: E501
 
         Create the default (most generic) association type between two object types  # noqa: E501
@@ -476,7 +476,7 @@ class BasicApi(object):
             200: "BatchResponsePublicDefaultAssociation",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v4/objects/{fromObjectType}/{fromObjectId}/associations/default/{toObjectType}/{toObjectId}",
             "PUT",
             path_params,
@@ -495,7 +495,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, object_type, object_id, to_object_type, **kwargs):  # noqa: E501
+    async def get_page(self, object_type, object_id, to_object_type, **kwargs):  # noqa: E501
         """List  # noqa: E501
 
         List all associations of an object by object type. Limit 500 per call.  # noqa: E501
@@ -531,9 +531,9 @@ class BasicApi(object):
         :rtype: CollectionResponseMultiAssociatedObjectWithLabelForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(object_type, object_id, to_object_type, **kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(object_type, object_id, to_object_type, **kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, object_type, object_id, to_object_type, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, object_type, object_id, to_object_type, **kwargs):  # noqa: E501
         """List  # noqa: E501
 
         List all associations of an object by object type. Limit 500 per call.  # noqa: E501
@@ -629,7 +629,7 @@ class BasicApi(object):
             200: "CollectionResponseMultiAssociatedObjectWithLabelForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v4/objects/{objectType}/{objectId}/associations/{toObjectType}",
             "GET",
             path_params,

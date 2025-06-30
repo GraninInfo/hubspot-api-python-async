@@ -137,7 +137,7 @@ class RecordingSettingsApi(object):
             200: "RecordingSettingsResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/extensions/calling/{appId}/settings/recording",
             "GET",
             path_params,
@@ -263,7 +263,7 @@ class RecordingSettingsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/extensions/calling/recordings/ready",
             "POST",
             path_params,
@@ -400,7 +400,7 @@ class RecordingSettingsApi(object):
             200: "RecordingSettingsResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/extensions/calling/{appId}/settings/recording",
             "POST",
             path_params,
@@ -537,7 +537,7 @@ class RecordingSettingsApi(object):
             200: "RecordingSettingsResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/extensions/calling/{appId}/settings/recording",
             "PATCH",
             path_params,

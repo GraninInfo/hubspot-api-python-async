@@ -33,7 +33,7 @@ class SearchApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def do_search(self, public_object_search_request, **kwargs):  # noqa: E501
+    async def do_search(self, public_object_search_request, **kwargs):  # noqa: E501
         """Search for invoices  # noqa: E501
 
         Search for invoices by filtering on properties, searching through associations, and sorting results. Learn more about [CRM search](https://developers.hubspot.com/docs/guides/api/crm/search#make-a-search-request).  # noqa: E501
@@ -61,9 +61,9 @@ class SearchApi(object):
         :rtype: CollectionResponseWithTotalSimplePublicObjectForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.do_search_with_http_info(public_object_search_request, **kwargs)  # noqa: E501
+        return await self.do_search_with_http_info(public_object_search_request, **kwargs)  # noqa: E501
 
-    def do_search_with_http_info(self, public_object_search_request, **kwargs):  # noqa: E501
+    async def do_search_with_http_info(self, public_object_search_request, **kwargs):  # noqa: E501
         """Search for invoices  # noqa: E501
 
         Search for invoices by filtering on properties, searching through associations, and sorting results. Learn more about [CRM search](https://developers.hubspot.com/docs/guides/api/crm/search#make-a-search-request).  # noqa: E501
@@ -142,7 +142,7 @@ class SearchApi(object):
             200: "CollectionResponseWithTotalSimplePublicObjectForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/invoices/search",
             "POST",
             path_params,

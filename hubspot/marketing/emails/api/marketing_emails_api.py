@@ -33,7 +33,7 @@ class MarketingEmailsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, email_id, **kwargs):  # noqa: E501
+    async def archive(self, email_id, **kwargs):  # noqa: E501
         """Delete a marketing email.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -62,9 +62,9 @@ class MarketingEmailsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(email_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(email_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, email_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, email_id, **kwargs):  # noqa: E501
         """Delete a marketing email.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -139,7 +139,7 @@ class MarketingEmailsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/emails/{emailId}",
             "DELETE",
             path_params,
@@ -267,7 +267,7 @@ class MarketingEmailsApi(object):
             200: "PublicEmail",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/emails/clone",
             "POST",
             path_params,
@@ -286,7 +286,7 @@ class MarketingEmailsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, email_create_request, **kwargs):  # noqa: E501
+    async def create(self, email_create_request, **kwargs):  # noqa: E501
         """Create a new marketing email.  # noqa: E501
 
         Use this endpoint to create a new marketing email.  # noqa: E501
@@ -314,9 +314,9 @@ class MarketingEmailsApi(object):
         :rtype: PublicEmail
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(email_create_request, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(email_create_request, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, email_create_request, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, email_create_request, **kwargs):  # noqa: E501
         """Create a new marketing email.  # noqa: E501
 
         Use this endpoint to create a new marketing email.  # noqa: E501
@@ -395,7 +395,7 @@ class MarketingEmailsApi(object):
             201: "PublicEmail",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/emails/",
             "POST",
             path_params,
@@ -523,7 +523,7 @@ class MarketingEmailsApi(object):
             201: "PublicEmail",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/emails/ab-test/create-variation",
             "POST",
             path_params,
@@ -646,7 +646,7 @@ class MarketingEmailsApi(object):
             200: "PublicEmail",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/emails/{emailId}/ab-test/get-variation",
             "GET",
             path_params,
@@ -665,7 +665,7 @@ class MarketingEmailsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, email_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, email_id, **kwargs):  # noqa: E501
         """Get the details of a specified marketing email.  # noqa: E501
 
         Get the details for a marketing email.  # noqa: E501
@@ -703,9 +703,9 @@ class MarketingEmailsApi(object):
         :rtype: PublicEmail
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(email_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(email_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, email_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, email_id, **kwargs):  # noqa: E501
         """Get the details of a specified marketing email.  # noqa: E501
 
         Get the details for a marketing email.  # noqa: E501
@@ -800,7 +800,7 @@ class MarketingEmailsApi(object):
             200: "PublicEmail",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/emails/{emailId}",
             "GET",
             path_params,
@@ -923,7 +923,7 @@ class MarketingEmailsApi(object):
             200: "PublicEmail",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/emails/{emailId}/draft",
             "GET",
             path_params,
@@ -942,7 +942,7 @@ class MarketingEmailsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, **kwargs):  # noqa: E501
+    async def get_page(self, **kwargs):  # noqa: E501
         """Get all marketing emails for a HubSpot account.  # noqa: E501
 
         The results can be filtered, allowing you to find a specific set of emails. See the table below for a full list of filtering options.  # noqa: E501
@@ -1000,9 +1000,9 @@ class MarketingEmailsApi(object):
         :rtype: CollectionResponseWithTotalPublicEmailForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(**kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, **kwargs):  # noqa: E501
         """Get all marketing emails for a HubSpot account.  # noqa: E501
 
         The results can be filtered, allowing you to find a specific set of emails. See the table below for a full list of filtering options.  # noqa: E501
@@ -1152,7 +1152,7 @@ class MarketingEmailsApi(object):
             200: "CollectionResponseWithTotalPublicEmailForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/emails/",
             "GET",
             path_params,
@@ -1284,7 +1284,7 @@ class MarketingEmailsApi(object):
             200: "VersionPublicEmail",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/emails/{emailId}/revisions/{revisionId}",
             "GET",
             path_params,
@@ -1425,7 +1425,7 @@ class MarketingEmailsApi(object):
             200: "CollectionResponseWithTotalVersionPublicEmail",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/emails/{emailId}/revisions",
             "GET",
             path_params,
@@ -1546,7 +1546,7 @@ class MarketingEmailsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/emails/{emailId}/publish",
             "POST",
             path_params,
@@ -1667,7 +1667,7 @@ class MarketingEmailsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/emails/{emailId}/draft/reset",
             "POST",
             path_params,
@@ -1799,7 +1799,7 @@ class MarketingEmailsApi(object):
             200: "PublicEmail",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/emails/{emailId}/revisions/{revisionId}/restore-to-draft",
             "POST",
             path_params,
@@ -1929,7 +1929,7 @@ class MarketingEmailsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/emails/{emailId}/revisions/{revisionId}/restore",
             "POST",
             path_params,
@@ -2050,7 +2050,7 @@ class MarketingEmailsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/emails/{emailId}/unpublish",
             "POST",
             path_params,
@@ -2069,7 +2069,7 @@ class MarketingEmailsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, email_id, email_update_request, **kwargs):  # noqa: E501
+    async def update(self, email_id, email_update_request, **kwargs):  # noqa: E501
         """Update a marketing email.  # noqa: E501
 
         Change properties of a marketing email.  # noqa: E501
@@ -2101,9 +2101,9 @@ class MarketingEmailsApi(object):
         :rtype: PublicEmail
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(email_id, email_update_request, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(email_id, email_update_request, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, email_id, email_update_request, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, email_id, email_update_request, **kwargs):  # noqa: E501
         """Update a marketing email.  # noqa: E501
 
         Change properties of a marketing email.  # noqa: E501
@@ -2193,7 +2193,7 @@ class MarketingEmailsApi(object):
             200: "PublicEmail",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/emails/{emailId}",
             "PATCH",
             path_params,
@@ -2330,7 +2330,7 @@ class MarketingEmailsApi(object):
             200: "PublicEmail",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/emails/{emailId}/draft",
             "PATCH",
             path_params,

@@ -33,7 +33,7 @@ class PipelineStagesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, object_type, pipeline_id, stage_id, **kwargs):  # noqa: E501
+    async def archive(self, object_type, pipeline_id, stage_id, **kwargs):  # noqa: E501
         """Delete a pipeline stage  # noqa: E501
 
         Delete the pipeline stage identified by `{stageId}` associated with the pipeline identified by `{pipelineId}`.  # noqa: E501
@@ -65,9 +65,9 @@ class PipelineStagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(object_type, pipeline_id, stage_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(object_type, pipeline_id, stage_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, object_type, pipeline_id, stage_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, object_type, pipeline_id, stage_id, **kwargs):  # noqa: E501
         """Delete a pipeline stage  # noqa: E501
 
         Delete the pipeline stage identified by `{stageId}` associated with the pipeline identified by `{pipelineId}`.  # noqa: E501
@@ -153,7 +153,7 @@ class PipelineStagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/pipelines/{objectType}/{pipelineId}/stages/{stageId}",
             "DELETE",
             path_params,
@@ -172,7 +172,7 @@ class PipelineStagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, object_type, pipeline_id, pipeline_stage_input, **kwargs):  # noqa: E501
+    async def create(self, object_type, pipeline_id, pipeline_stage_input, **kwargs):  # noqa: E501
         """Create a pipeline stage  # noqa: E501
 
         Create a new stage associated with the pipeline identified by `{pipelineId}`. The entire stage object, including its unique ID, will be returned in the response.  # noqa: E501
@@ -204,9 +204,9 @@ class PipelineStagesApi(object):
         :rtype: PipelineStage
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(object_type, pipeline_id, pipeline_stage_input, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(object_type, pipeline_id, pipeline_stage_input, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, object_type, pipeline_id, pipeline_stage_input, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, object_type, pipeline_id, pipeline_stage_input, **kwargs):  # noqa: E501
         """Create a pipeline stage  # noqa: E501
 
         Create a new stage associated with the pipeline identified by `{pipelineId}`. The entire stage object, including its unique ID, will be returned in the response.  # noqa: E501
@@ -299,7 +299,7 @@ class PipelineStagesApi(object):
             201: "PipelineStage",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/pipelines/{objectType}/{pipelineId}/stages",
             "POST",
             path_params,
@@ -318,7 +318,7 @@ class PipelineStagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_all(self, object_type, pipeline_id, **kwargs):  # noqa: E501
+    async def get_all(self, object_type, pipeline_id, **kwargs):  # noqa: E501
         """Return all stages of a pipeline  # noqa: E501
 
         Return all the stages associated with the pipeline identified by `{pipelineId}`.  # noqa: E501
@@ -348,9 +348,9 @@ class PipelineStagesApi(object):
         :rtype: CollectionResponsePipelineStageNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_with_http_info(object_type, pipeline_id, **kwargs)  # noqa: E501
+        return await self.get_all_with_http_info(object_type, pipeline_id, **kwargs)  # noqa: E501
 
-    def get_all_with_http_info(self, object_type, pipeline_id, **kwargs):  # noqa: E501
+    async def get_all_with_http_info(self, object_type, pipeline_id, **kwargs):  # noqa: E501
         """Return all stages of a pipeline  # noqa: E501
 
         Return all the stages associated with the pipeline identified by `{pipelineId}`.  # noqa: E501
@@ -431,7 +431,7 @@ class PipelineStagesApi(object):
             200: "CollectionResponsePipelineStageNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/pipelines/{objectType}/{pipelineId}/stages",
             "GET",
             path_params,
@@ -450,7 +450,7 @@ class PipelineStagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, object_type, pipeline_id, stage_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, object_type, pipeline_id, stage_id, **kwargs):  # noqa: E501
         """Return a pipeline stage by ID  # noqa: E501
 
         Return the stage identified by `{stageId}` associated with the pipeline identified by `{pipelineId}`.  # noqa: E501
@@ -482,9 +482,9 @@ class PipelineStagesApi(object):
         :rtype: PipelineStage
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(object_type, pipeline_id, stage_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(object_type, pipeline_id, stage_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, object_type, pipeline_id, stage_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, object_type, pipeline_id, stage_id, **kwargs):  # noqa: E501
         """Return a pipeline stage by ID  # noqa: E501
 
         Return the stage identified by `{stageId}` associated with the pipeline identified by `{pipelineId}`.  # noqa: E501
@@ -572,7 +572,7 @@ class PipelineStagesApi(object):
             200: "PipelineStage",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/pipelines/{objectType}/{pipelineId}/stages/{stageId}",
             "GET",
             path_params,
@@ -591,7 +591,7 @@ class PipelineStagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def replace(self, object_type, pipeline_id, stage_id, pipeline_stage_input, **kwargs):  # noqa: E501
+    async def replace(self, object_type, pipeline_id, stage_id, pipeline_stage_input, **kwargs):  # noqa: E501
         """Replace a pipeline stage  # noqa: E501
 
         Replace all the properties of an existing pipeline stage with the values provided. The updated stage will be returned in the response.  # noqa: E501
@@ -625,9 +625,9 @@ class PipelineStagesApi(object):
         :rtype: PipelineStage
         """
         kwargs["_return_http_data_only"] = True
-        return self.replace_with_http_info(object_type, pipeline_id, stage_id, pipeline_stage_input, **kwargs)  # noqa: E501
+        return await self.replace_with_http_info(object_type, pipeline_id, stage_id, pipeline_stage_input, **kwargs)  # noqa: E501
 
-    def replace_with_http_info(self, object_type, pipeline_id, stage_id, pipeline_stage_input, **kwargs):  # noqa: E501
+    async def replace_with_http_info(self, object_type, pipeline_id, stage_id, pipeline_stage_input, **kwargs):  # noqa: E501
         """Replace a pipeline stage  # noqa: E501
 
         Replace all the properties of an existing pipeline stage with the values provided. The updated stage will be returned in the response.  # noqa: E501
@@ -727,7 +727,7 @@ class PipelineStagesApi(object):
             200: "PipelineStage",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/pipelines/{objectType}/{pipelineId}/stages/{stageId}",
             "PUT",
             path_params,
@@ -746,7 +746,7 @@ class PipelineStagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, object_type, pipeline_id, stage_id, pipeline_stage_patch_input, **kwargs):  # noqa: E501
+    async def update(self, object_type, pipeline_id, stage_id, pipeline_stage_patch_input, **kwargs):  # noqa: E501
         """Update a pipeline stage  # noqa: E501
 
         Perform a partial update of the pipeline stage identified by `{stageId}` associated with the pipeline identified by `{pipelineId}`. Any properties not included in this update will keep their existing values. The updated stage will be returned in the response.  # noqa: E501
@@ -780,9 +780,9 @@ class PipelineStagesApi(object):
         :rtype: PipelineStage
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(object_type, pipeline_id, stage_id, pipeline_stage_patch_input, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(object_type, pipeline_id, stage_id, pipeline_stage_patch_input, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, object_type, pipeline_id, stage_id, pipeline_stage_patch_input, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, object_type, pipeline_id, stage_id, pipeline_stage_patch_input, **kwargs):  # noqa: E501
         """Update a pipeline stage  # noqa: E501
 
         Perform a partial update of the pipeline stage identified by `{stageId}` associated with the pipeline identified by `{pipelineId}`. Any properties not included in this update will keep their existing values. The updated stage will be returned in the response.  # noqa: E501
@@ -882,7 +882,7 @@ class PipelineStagesApi(object):
             200: "PipelineStage",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/pipelines/{objectType}/{pipelineId}/stages/{stageId}",
             "PATCH",
             path_params,

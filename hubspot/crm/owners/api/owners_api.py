@@ -33,7 +33,7 @@ class OwnersApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_by_id(self, owner_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, owner_id, **kwargs):  # noqa: E501
         """Read an owner by given `id` or `userId`  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -64,9 +64,9 @@ class OwnersApi(object):
         :rtype: PublicOwner
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(owner_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(owner_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, owner_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, owner_id, **kwargs):  # noqa: E501
         """Read an owner by given `id` or `userId`  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -147,7 +147,7 @@ class OwnersApi(object):
             200: "PublicOwner",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/owners/{ownerId}",
             "GET",
             path_params,
@@ -166,7 +166,7 @@ class OwnersApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, **kwargs):  # noqa: E501
+    async def get_page(self, **kwargs):  # noqa: E501
         """Get a page of owners  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -199,9 +199,9 @@ class OwnersApi(object):
         :rtype: CollectionResponsePublicOwnerForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(**kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, **kwargs):  # noqa: E501
         """Get a page of owners  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -283,7 +283,7 @@ class OwnersApi(object):
             200: "CollectionResponsePublicOwnerForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/owners/",
             "GET",
             path_params,

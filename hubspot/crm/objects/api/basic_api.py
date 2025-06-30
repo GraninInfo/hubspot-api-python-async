@@ -33,7 +33,7 @@ class BasicApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, object_type, object_id, **kwargs):  # noqa: E501
+    async def archive(self, object_type, object_id, **kwargs):  # noqa: E501
         """Archive  # noqa: E501
 
         Move an Object identified by `{objectId}` to the recycling bin.  # noqa: E501
@@ -63,9 +63,9 @@ class BasicApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(object_type, object_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(object_type, object_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, object_type, object_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, object_type, object_id, **kwargs):  # noqa: E501
         """Archive  # noqa: E501
 
         Move an Object identified by `{objectId}` to the recycling bin.  # noqa: E501
@@ -144,7 +144,7 @@ class BasicApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/{objectType}/{objectId}",
             "DELETE",
             path_params,
@@ -163,7 +163,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, object_type, simple_public_object_input_for_create, **kwargs):  # noqa: E501
+    async def create(self, object_type, simple_public_object_input_for_create, **kwargs):  # noqa: E501
         """Create  # noqa: E501
 
         Create a CRM object with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard objects is provided.  # noqa: E501
@@ -193,9 +193,9 @@ class BasicApi(object):
         :rtype: SimplePublicObject
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(object_type, simple_public_object_input_for_create, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(object_type, simple_public_object_input_for_create, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, object_type, simple_public_object_input_for_create, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, object_type, simple_public_object_input_for_create, **kwargs):  # noqa: E501
         """Create  # noqa: E501
 
         Create a CRM object with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard objects is provided.  # noqa: E501
@@ -281,7 +281,7 @@ class BasicApi(object):
             201: "SimplePublicObject",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/{objectType}",
             "POST",
             path_params,
@@ -300,7 +300,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, object_type, object_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, object_type, object_id, **kwargs):  # noqa: E501
         """Read  # noqa: E501
 
         Read an Object identified by `{objectId}`. `{objectId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param.  Control what is returned via the `properties` query param.  # noqa: E501
@@ -340,9 +340,9 @@ class BasicApi(object):
         :rtype: SimplePublicObjectWithAssociations
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(object_type, object_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(object_type, object_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, object_type, object_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, object_type, object_id, **kwargs):  # noqa: E501
         """Read  # noqa: E501
 
         Read an Object identified by `{objectId}`. `{objectId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param.  Control what is returned via the `properties` query param.  # noqa: E501
@@ -446,7 +446,7 @@ class BasicApi(object):
             200: "SimplePublicObjectWithAssociations",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/{objectType}/{objectId}",
             "GET",
             path_params,
@@ -465,7 +465,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, object_type, **kwargs):  # noqa: E501
+    async def get_page(self, object_type, **kwargs):  # noqa: E501
         """List  # noqa: E501
 
         Read a page of objects. Control what is returned via the `properties` query param.  # noqa: E501
@@ -505,9 +505,9 @@ class BasicApi(object):
         :rtype: CollectionResponseSimplePublicObjectWithAssociationsForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(object_type, **kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(object_type, **kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, object_type, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, object_type, **kwargs):  # noqa: E501
         """List  # noqa: E501
 
         Read a page of objects. Control what is returned via the `properties` query param.  # noqa: E501
@@ -608,7 +608,7 @@ class BasicApi(object):
             200: "CollectionResponseSimplePublicObjectWithAssociationsForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/{objectType}",
             "GET",
             path_params,
@@ -627,7 +627,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, object_type, object_id, simple_public_object_input, **kwargs):  # noqa: E501
+    async def update(self, object_type, object_id, simple_public_object_input, **kwargs):  # noqa: E501
         """Update  # noqa: E501
 
         Perform a partial update of an Object identified by `{objectId}`or optionally a unique property value as specified by the `idProperty` query param. `{objectId}` refers to the internal object ID by default, and the `idProperty` query param refers to a property whose values are unique for the object. Provided property values will be overwritten. Read-only and non-existent properties will result in an error. Properties values can be cleared by passing an empty string.  # noqa: E501
@@ -661,9 +661,9 @@ class BasicApi(object):
         :rtype: SimplePublicObject
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(object_type, object_id, simple_public_object_input, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(object_type, object_id, simple_public_object_input, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, object_type, object_id, simple_public_object_input, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, object_type, object_id, simple_public_object_input, **kwargs):  # noqa: E501
         """Update  # noqa: E501
 
         Perform a partial update of an Object identified by `{objectId}`or optionally a unique property value as specified by the `idProperty` query param. `{objectId}` refers to the internal object ID by default, and the `idProperty` query param refers to a property whose values are unique for the object. Provided property values will be overwritten. Read-only and non-existent properties will result in an error. Properties values can be cleared by passing an empty string.  # noqa: E501
@@ -760,7 +760,7 @@ class BasicApi(object):
             200: "SimplePublicObject",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/{objectType}/{objectId}",
             "PATCH",
             path_params,

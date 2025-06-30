@@ -33,7 +33,7 @@ class SettingsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, app_id, **kwargs):  # noqa: E501
+    async def archive(self, app_id, **kwargs):  # noqa: E501
         """Delete settings  # noqa: E501
 
         Deletes the settings for a video conference application with the specified ID.  # noqa: E501
@@ -61,9 +61,9 @@ class SettingsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(app_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(app_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, app_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, app_id, **kwargs):  # noqa: E501
         """Delete settings  # noqa: E501
 
         Deletes the settings for a video conference application with the specified ID.  # noqa: E501
@@ -135,7 +135,7 @@ class SettingsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/extensions/videoconferencing/settings/{appId}",
             "DELETE",
             path_params,
@@ -154,7 +154,7 @@ class SettingsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, app_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, app_id, **kwargs):  # noqa: E501
         """Get settings  # noqa: E501
 
         Return the settings for a video conference application with the specified ID.  # noqa: E501
@@ -182,9 +182,9 @@ class SettingsApi(object):
         :rtype: ExternalSettings
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(app_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(app_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, app_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, app_id, **kwargs):  # noqa: E501
         """Get settings  # noqa: E501
 
         Return the settings for a video conference application with the specified ID.  # noqa: E501
@@ -258,7 +258,7 @@ class SettingsApi(object):
             200: "ExternalSettings",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/extensions/videoconferencing/settings/{appId}",
             "GET",
             path_params,
@@ -277,7 +277,7 @@ class SettingsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def replace(self, app_id, external_settings, **kwargs):  # noqa: E501
+    async def replace(self, app_id, external_settings, **kwargs):  # noqa: E501
         """Update settings  # noqa: E501
 
         Updates the settings for a video conference application with the specified ID.  # noqa: E501
@@ -307,9 +307,9 @@ class SettingsApi(object):
         :rtype: ExternalSettings
         """
         kwargs["_return_http_data_only"] = True
-        return self.replace_with_http_info(app_id, external_settings, **kwargs)  # noqa: E501
+        return await self.replace_with_http_info(app_id, external_settings, **kwargs)  # noqa: E501
 
-    def replace_with_http_info(self, app_id, external_settings, **kwargs):  # noqa: E501
+    async def replace_with_http_info(self, app_id, external_settings, **kwargs):  # noqa: E501
         """Update settings  # noqa: E501
 
         Updates the settings for a video conference application with the specified ID.  # noqa: E501
@@ -395,7 +395,7 @@ class SettingsApi(object):
             200: "ExternalSettings",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/extensions/videoconferencing/settings/{appId}",
             "PUT",
             path_params,

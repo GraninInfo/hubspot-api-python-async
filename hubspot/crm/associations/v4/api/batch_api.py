@@ -33,7 +33,7 @@ class BatchApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, from_object_type, to_object_type, batch_input_public_association_multi_archive, **kwargs):  # noqa: E501
+    async def archive(self, from_object_type, to_object_type, batch_input_public_association_multi_archive, **kwargs):  # noqa: E501
         """Delete  # noqa: E501
 
         Batch delete associations for objects  # noqa: E501
@@ -65,9 +65,9 @@ class BatchApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(from_object_type, to_object_type, batch_input_public_association_multi_archive, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(from_object_type, to_object_type, batch_input_public_association_multi_archive, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, from_object_type, to_object_type, batch_input_public_association_multi_archive, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, from_object_type, to_object_type, batch_input_public_association_multi_archive, **kwargs):  # noqa: E501
         """Delete  # noqa: E501
 
         Batch delete associations for objects  # noqa: E501
@@ -158,7 +158,7 @@ class BatchApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v4/associations/{fromObjectType}/{toObjectType}/batch/archive",
             "POST",
             path_params,
@@ -177,7 +177,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def archive_labels(self, from_object_type, to_object_type, batch_input_public_association_multi_post, **kwargs):  # noqa: E501
+    async def archive_labels(self, from_object_type, to_object_type, batch_input_public_association_multi_post, **kwargs):  # noqa: E501
         """Delete Specific Labels  # noqa: E501
 
         Batch delete specific association labels for objects. Deleting an unlabeled association will also delete all labeled associations between those two objects  # noqa: E501
@@ -209,9 +209,9 @@ class BatchApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_labels_with_http_info(from_object_type, to_object_type, batch_input_public_association_multi_post, **kwargs)  # noqa: E501
+        return await self.archive_labels_with_http_info(from_object_type, to_object_type, batch_input_public_association_multi_post, **kwargs)  # noqa: E501
 
-    def archive_labels_with_http_info(self, from_object_type, to_object_type, batch_input_public_association_multi_post, **kwargs):  # noqa: E501
+    async def archive_labels_with_http_info(self, from_object_type, to_object_type, batch_input_public_association_multi_post, **kwargs):  # noqa: E501
         """Delete Specific Labels  # noqa: E501
 
         Batch delete specific association labels for objects. Deleting an unlabeled association will also delete all labeled associations between those two objects  # noqa: E501
@@ -302,7 +302,7 @@ class BatchApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v4/associations/{fromObjectType}/{toObjectType}/batch/labels/archive",
             "POST",
             path_params,
@@ -321,7 +321,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, from_object_type, to_object_type, batch_input_public_association_multi_post, **kwargs):  # noqa: E501
+    async def create(self, from_object_type, to_object_type, batch_input_public_association_multi_post, **kwargs):  # noqa: E501
         """Create  # noqa: E501
 
         Batch create associations for objects  # noqa: E501
@@ -353,9 +353,9 @@ class BatchApi(object):
         :rtype: BatchResponseLabelsBetweenObjectPair
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(from_object_type, to_object_type, batch_input_public_association_multi_post, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(from_object_type, to_object_type, batch_input_public_association_multi_post, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, from_object_type, to_object_type, batch_input_public_association_multi_post, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, from_object_type, to_object_type, batch_input_public_association_multi_post, **kwargs):  # noqa: E501
         """Create  # noqa: E501
 
         Batch create associations for objects  # noqa: E501
@@ -449,7 +449,7 @@ class BatchApi(object):
             207: "BatchResponseLabelsBetweenObjectPairWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v4/associations/{fromObjectType}/{toObjectType}/batch/create",
             "POST",
             path_params,
@@ -468,7 +468,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_default(self, from_object_type, to_object_type, batch_input_public_default_association_multi_post, **kwargs):  # noqa: E501
+    async def create_default(self, from_object_type, to_object_type, batch_input_public_default_association_multi_post, **kwargs):  # noqa: E501
         """Create Default Associations  # noqa: E501
 
         Create the default (most generic) association type between two object types  # noqa: E501
@@ -500,9 +500,9 @@ class BatchApi(object):
         :rtype: BatchResponsePublicDefaultAssociation
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_default_with_http_info(from_object_type, to_object_type, batch_input_public_default_association_multi_post, **kwargs)  # noqa: E501
+        return await self.create_default_with_http_info(from_object_type, to_object_type, batch_input_public_default_association_multi_post, **kwargs)  # noqa: E501
 
-    def create_default_with_http_info(self, from_object_type, to_object_type, batch_input_public_default_association_multi_post, **kwargs):  # noqa: E501
+    async def create_default_with_http_info(self, from_object_type, to_object_type, batch_input_public_default_association_multi_post, **kwargs):  # noqa: E501
         """Create Default Associations  # noqa: E501
 
         Create the default (most generic) association type between two object types  # noqa: E501
@@ -595,7 +595,7 @@ class BatchApi(object):
             200: "BatchResponsePublicDefaultAssociation",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v4/associations/{fromObjectType}/{toObjectType}/batch/associate/default",
             "POST",
             path_params,
@@ -614,7 +614,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, from_object_type, to_object_type, batch_input_public_fetch_associations_batch_request, **kwargs):  # noqa: E501
+    async def get_page(self, from_object_type, to_object_type, batch_input_public_fetch_associations_batch_request, **kwargs):  # noqa: E501
         """Read  # noqa: E501
 
         Batch read associations for objects to specific object type. The 'after' field in a returned paging object  can be added alongside the 'id' to retrieve the next page of associations from that objectId. The 'link' field is deprecated and should be ignored. Note: The 'paging' field will only be present if there are more pages and absent otherwise.  # noqa: E501
@@ -646,9 +646,9 @@ class BatchApi(object):
         :rtype: BatchResponsePublicAssociationMultiWithLabel
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(from_object_type, to_object_type, batch_input_public_fetch_associations_batch_request, **kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(from_object_type, to_object_type, batch_input_public_fetch_associations_batch_request, **kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, from_object_type, to_object_type, batch_input_public_fetch_associations_batch_request, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, from_object_type, to_object_type, batch_input_public_fetch_associations_batch_request, **kwargs):  # noqa: E501
         """Read  # noqa: E501
 
         Batch read associations for objects to specific object type. The 'after' field in a returned paging object  can be added alongside the 'id' to retrieve the next page of associations from that objectId. The 'link' field is deprecated and should be ignored. Note: The 'paging' field will only be present if there are more pages and absent otherwise.  # noqa: E501
@@ -742,7 +742,7 @@ class BatchApi(object):
             207: "BatchResponsePublicAssociationMultiWithLabelWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v4/associations/{fromObjectType}/{toObjectType}/batch/read",
             "POST",
             path_params,

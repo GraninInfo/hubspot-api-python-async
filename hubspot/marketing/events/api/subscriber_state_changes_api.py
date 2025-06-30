@@ -167,7 +167,7 @@ class SubscriberStateChangesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/events/{externalEventId}/{subscriberState}/email-upsert",
             "POST",
             path_params,
@@ -320,7 +320,7 @@ class SubscriberStateChangesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/events/{externalEventId}/{subscriberState}/upsert",
             "POST",
             path_params,

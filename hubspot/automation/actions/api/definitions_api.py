@@ -33,7 +33,7 @@ class DefinitionsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, definition_id, app_id, **kwargs):  # noqa: E501
+    async def archive(self, definition_id, app_id, **kwargs):  # noqa: E501
         """Archive an extension definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -62,9 +62,9 @@ class DefinitionsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(definition_id, app_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(definition_id, app_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, definition_id, app_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, definition_id, app_id, **kwargs):  # noqa: E501
         """Archive an extension definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -142,7 +142,7 @@ class DefinitionsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/automation/v4/actions/{appId}/{definitionId}",
             "DELETE",
             path_params,
@@ -161,7 +161,7 @@ class DefinitionsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, app_id, public_action_definition_egg, **kwargs):  # noqa: E501
+    async def create(self, app_id, public_action_definition_egg, **kwargs):  # noqa: E501
         """Create a new extension definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -190,9 +190,9 @@ class DefinitionsApi(object):
         :rtype: PublicActionDefinition
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(app_id, public_action_definition_egg, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(app_id, public_action_definition_egg, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, app_id, public_action_definition_egg, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, app_id, public_action_definition_egg, **kwargs):  # noqa: E501
         """Create a new extension definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -277,7 +277,7 @@ class DefinitionsApi(object):
             201: "PublicActionDefinition",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/automation/v4/actions/{appId}",
             "POST",
             path_params,
@@ -296,7 +296,7 @@ class DefinitionsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, definition_id, app_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, definition_id, app_id, **kwargs):  # noqa: E501
         """Get extension definition by Id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -327,9 +327,9 @@ class DefinitionsApi(object):
         :rtype: PublicActionDefinition
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(definition_id, app_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(definition_id, app_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, definition_id, app_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, definition_id, app_id, **kwargs):  # noqa: E501
         """Get extension definition by Id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -413,7 +413,7 @@ class DefinitionsApi(object):
             200: "PublicActionDefinition",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/automation/v4/actions/{appId}/{definitionId}",
             "GET",
             path_params,
@@ -432,7 +432,7 @@ class DefinitionsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, app_id, **kwargs):  # noqa: E501
+    async def get_page(self, app_id, **kwargs):  # noqa: E501
         """Get paged extension definitions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -465,9 +465,9 @@ class DefinitionsApi(object):
         :rtype: CollectionResponsePublicActionDefinitionForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(app_id, **kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(app_id, **kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, app_id, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, app_id, **kwargs):  # noqa: E501
         """Get paged extension definitions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -552,7 +552,7 @@ class DefinitionsApi(object):
             200: "CollectionResponsePublicActionDefinitionForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/automation/v4/actions/{appId}",
             "GET",
             path_params,
@@ -571,7 +571,7 @@ class DefinitionsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, definition_id, app_id, public_action_definition_patch, **kwargs):  # noqa: E501
+    async def update(self, definition_id, app_id, public_action_definition_patch, **kwargs):  # noqa: E501
         """Patch an existing extension definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -602,9 +602,9 @@ class DefinitionsApi(object):
         :rtype: PublicActionDefinition
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(definition_id, app_id, public_action_definition_patch, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(definition_id, app_id, public_action_definition_patch, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, definition_id, app_id, public_action_definition_patch, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, definition_id, app_id, public_action_definition_patch, **kwargs):  # noqa: E501
         """Patch an existing extension definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -696,7 +696,7 @@ class DefinitionsApi(object):
             200: "PublicActionDefinition",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/automation/v4/actions/{appId}/{definitionId}",
             "PATCH",
             path_params,

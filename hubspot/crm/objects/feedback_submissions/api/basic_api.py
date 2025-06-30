@@ -33,7 +33,7 @@ class BasicApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_by_id(self, feedback_submission_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, feedback_submission_id, **kwargs):  # noqa: E501
         """Read  # noqa: E501
 
         Read an Object identified by `{feedbackSubmissionId}`. `{feedbackSubmissionId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param.  Control what is returned via the `properties` query param.  # noqa: E501
@@ -71,9 +71,9 @@ class BasicApi(object):
         :rtype: SimplePublicObjectWithAssociations
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(feedback_submission_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(feedback_submission_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, feedback_submission_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, feedback_submission_id, **kwargs):  # noqa: E501
         """Read  # noqa: E501
 
         Read an Object identified by `{feedbackSubmissionId}`. `{feedbackSubmissionId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param.  Control what is returned via the `properties` query param.  # noqa: E501
@@ -170,7 +170,7 @@ class BasicApi(object):
             200: "SimplePublicObjectWithAssociations",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/feedback_submissions/{feedbackSubmissionId}",
             "GET",
             path_params,
@@ -189,7 +189,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, **kwargs):  # noqa: E501
+    async def get_page(self, **kwargs):  # noqa: E501
         """List  # noqa: E501
 
         Read a page of feedback submissions. Control what is returned via the `properties` query param.  # noqa: E501
@@ -227,9 +227,9 @@ class BasicApi(object):
         :rtype: CollectionResponseSimplePublicObjectWithAssociationsForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(**kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, **kwargs):  # noqa: E501
         """List  # noqa: E501
 
         Read a page of feedback submissions. Control what is returned via the `properties` query param.  # noqa: E501
@@ -323,7 +323,7 @@ class BasicApi(object):
             200: "CollectionResponseSimplePublicObjectWithAssociationsForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/feedback_submissions",
             "GET",
             path_params,

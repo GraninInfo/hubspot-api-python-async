@@ -33,7 +33,7 @@ class TokensApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create(self, **kwargs):  # noqa: E501
+    async def create(self, **kwargs):  # noqa: E501
         """create  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -70,9 +70,9 @@ class TokensApi(object):
         :rtype: TokenResponseIF
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(**kwargs)  # noqa: E501
+        return await self.create_with_http_info(**kwargs)  # noqa: E501
 
-    def create_with_http_info(self, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, **kwargs):  # noqa: E501
         """create  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -167,7 +167,7 @@ class TokensApi(object):
             200: "TokenResponseIF",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/oauth/v1/token",
             "POST",
             path_params,

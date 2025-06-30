@@ -33,7 +33,7 @@ class BasicApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, object_id, **kwargs):  # noqa: E501
+    async def archive(self, object_id, **kwargs):  # noqa: E501
         """Delete a blog post  # noqa: E501
 
         Delete a blog post by ID.  # noqa: E501
@@ -63,9 +63,9 @@ class BasicApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Delete a blog post  # noqa: E501
 
         Delete a blog post by ID.  # noqa: E501
@@ -141,7 +141,7 @@ class BasicApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/{objectId}",
             "DELETE",
             path_params,
@@ -269,7 +269,7 @@ class BasicApi(object):
             200: "BlogPost",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/clone",
             "POST",
             path_params,
@@ -288,7 +288,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, blog_post, **kwargs):  # noqa: E501
+    async def create(self, blog_post, **kwargs):  # noqa: E501
         """Create a new post  # noqa: E501
 
         Create a new blog post, specifying its content in the request body.  # noqa: E501
@@ -316,9 +316,9 @@ class BasicApi(object):
         :rtype: BlogPost
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(blog_post, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(blog_post, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, blog_post, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, blog_post, **kwargs):  # noqa: E501
         """Create a new post  # noqa: E501
 
         Create a new blog post, specifying its content in the request body.  # noqa: E501
@@ -397,7 +397,7 @@ class BasicApi(object):
             201: "BlogPost",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts",
             "POST",
             path_params,
@@ -416,7 +416,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, object_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, object_id, **kwargs):  # noqa: E501
         """Retrieve a blog post  # noqa: E501
 
         Retrieve a blog post by the post ID.  # noqa: E501
@@ -448,9 +448,9 @@ class BasicApi(object):
         :rtype: BlogPost
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Retrieve a blog post  # noqa: E501
 
         Retrieve a blog post by the post ID.  # noqa: E501
@@ -532,7 +532,7 @@ class BasicApi(object):
             200: "BlogPost",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/{objectId}",
             "GET",
             path_params,
@@ -655,7 +655,7 @@ class BasicApi(object):
             200: "BlogPost",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/{objectId}/draft",
             "GET",
             path_params,
@@ -674,7 +674,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, **kwargs):  # noqa: E501
+    async def get_page(self, **kwargs):  # noqa: E501
         """Get all posts  # noqa: E501
 
         Retrieve all blog posts, with paging and filtering options. This method would be useful for an integration that ingests posts and suggests edits.  # noqa: E501
@@ -722,9 +722,9 @@ class BasicApi(object):
         :rtype: CollectionResponseWithTotalBlogPostForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(**kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, **kwargs):  # noqa: E501
         """Get all posts  # noqa: E501
 
         Retrieve all blog posts, with paging and filtering options. This method would be useful for an integration that ingests posts and suggests edits.  # noqa: E501
@@ -836,7 +836,7 @@ class BasicApi(object):
             200: "CollectionResponseWithTotalBlogPostForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts",
             "GET",
             path_params,
@@ -968,7 +968,7 @@ class BasicApi(object):
             200: "VersionBlogPost",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/{objectId}/revisions/{revisionId}",
             "GET",
             path_params,
@@ -1109,7 +1109,7 @@ class BasicApi(object):
             200: "CollectionResponseWithTotalVersionBlogPost",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/{objectId}/revisions",
             "GET",
             path_params,
@@ -1230,7 +1230,7 @@ class BasicApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/{objectId}/draft/push-live",
             "POST",
             path_params,
@@ -1351,7 +1351,7 @@ class BasicApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/{objectId}/draft/reset",
             "POST",
             path_params,
@@ -1483,7 +1483,7 @@ class BasicApi(object):
             200: "BlogPost",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/{objectId}/revisions/{revisionId}/restore",
             "POST",
             path_params,
@@ -1615,7 +1615,7 @@ class BasicApi(object):
             200: "BlogPost",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/{objectId}/revisions/{revisionId}/restore-to-draft",
             "POST",
             path_params,
@@ -1741,7 +1741,7 @@ class BasicApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/schedule",
             "POST",
             path_params,
@@ -1760,7 +1760,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, object_id, blog_post, **kwargs):  # noqa: E501
+    async def update(self, object_id, blog_post, **kwargs):  # noqa: E501
         """Update a post  # noqa: E501
 
         Partially updates a single blog post by ID. You only need to specify the values that you want to update.  # noqa: E501
@@ -1792,9 +1792,9 @@ class BasicApi(object):
         :rtype: BlogPost
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(object_id, blog_post, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(object_id, blog_post, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, object_id, blog_post, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, object_id, blog_post, **kwargs):  # noqa: E501
         """Update a post  # noqa: E501
 
         Partially updates a single blog post by ID. You only need to specify the values that you want to update.  # noqa: E501
@@ -1884,7 +1884,7 @@ class BasicApi(object):
             200: "BlogPost",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/{objectId}",
             "PATCH",
             path_params,
@@ -2021,7 +2021,7 @@ class BasicApi(object):
             200: "BlogPost",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/{objectId}/draft",
             "PATCH",
             path_params,

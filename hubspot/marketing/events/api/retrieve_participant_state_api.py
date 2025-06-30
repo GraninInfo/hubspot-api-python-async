@@ -155,7 +155,7 @@ class RetrieveParticipantStateApi(object):
             200: "CollectionResponseWithTotalParticipationBreakdownForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/participations/contacts/{contactIdentifier}/breakdown",
             "GET",
             path_params,
@@ -311,7 +311,7 @@ class RetrieveParticipantStateApi(object):
             200: "CollectionResponseWithTotalParticipationBreakdownForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/participations/{externalAccountId}/{externalEventId}/breakdown",
             "GET",
             path_params,
@@ -458,7 +458,7 @@ class RetrieveParticipantStateApi(object):
             200: "CollectionResponseWithTotalParticipationBreakdownForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/participations/{marketingEventId}/breakdown",
             "GET",
             path_params,
@@ -590,7 +590,7 @@ class RetrieveParticipantStateApi(object):
             200: "AttendanceCounters",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/participations/{externalAccountId}/{externalEventId}",
             "GET",
             path_params,
@@ -713,7 +713,7 @@ class RetrieveParticipantStateApi(object):
             200: "AttendanceCounters",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/participations/{marketingEventId}",
             "GET",
             path_params,

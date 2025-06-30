@@ -33,7 +33,7 @@ class ListsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create(self, list_create_request, **kwargs):  # noqa: E501
+    async def create(self, list_create_request, **kwargs):  # noqa: E501
         """Create List  # noqa: E501
 
         Create a new list with the provided object list definition.  # noqa: E501
@@ -61,9 +61,9 @@ class ListsApi(object):
         :rtype: ListCreateResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(list_create_request, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(list_create_request, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, list_create_request, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, list_create_request, **kwargs):  # noqa: E501
         """Create List  # noqa: E501
 
         Create a new list with the provided object list definition.  # noqa: E501
@@ -142,7 +142,7 @@ class ListsApi(object):
             200: "ListCreateResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/",
             "POST",
             path_params,
@@ -161,7 +161,7 @@ class ListsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def do_search(self, list_search_request, **kwargs):  # noqa: E501
+    async def do_search(self, list_search_request, **kwargs):  # noqa: E501
         """Search Lists  # noqa: E501
 
         Search lists by list name or page through all lists by providing an empty `query` value.  # noqa: E501
@@ -189,9 +189,9 @@ class ListsApi(object):
         :rtype: ListSearchResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.do_search_with_http_info(list_search_request, **kwargs)  # noqa: E501
+        return await self.do_search_with_http_info(list_search_request, **kwargs)  # noqa: E501
 
-    def do_search_with_http_info(self, list_search_request, **kwargs):  # noqa: E501
+    async def do_search_with_http_info(self, list_search_request, **kwargs):  # noqa: E501
         """Search Lists  # noqa: E501
 
         Search lists by list name or page through all lists by providing an empty `query` value.  # noqa: E501
@@ -270,7 +270,7 @@ class ListsApi(object):
             200: "ListSearchResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/search",
             "POST",
             path_params,
@@ -289,7 +289,7 @@ class ListsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_all(self, **kwargs):  # noqa: E501
+    async def get_all(self, **kwargs):  # noqa: E501
         """Fetch Multiple Lists  # noqa: E501
 
         Fetch multiple lists in a single request by **ILS list ID**. The response will include the definitions of all lists that exist for the `listIds` provided.  # noqa: E501
@@ -319,9 +319,9 @@ class ListsApi(object):
         :rtype: ListsByIdResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_all_with_http_info(**kwargs)  # noqa: E501
 
-    def get_all_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_all_with_http_info(self, **kwargs):  # noqa: E501
         """Fetch Multiple Lists  # noqa: E501
 
         Fetch multiple lists in a single request by **ILS list ID**. The response will include the definitions of all lists that exist for the `listIds` provided.  # noqa: E501
@@ -397,7 +397,7 @@ class ListsApi(object):
             200: "ListsByIdResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/",
             "GET",
             path_params,
@@ -416,7 +416,7 @@ class ListsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, list_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, list_id, **kwargs):  # noqa: E501
         """Fetch List by ID  # noqa: E501
 
         Fetch a single list by **ILS list ID**.  # noqa: E501
@@ -446,9 +446,9 @@ class ListsApi(object):
         :rtype: ListFetchResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(list_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(list_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, list_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, list_id, **kwargs):  # noqa: E501
         """Fetch List by ID  # noqa: E501
 
         Fetch a single list by **ILS list ID**.  # noqa: E501
@@ -526,7 +526,7 @@ class ListsApi(object):
             200: "ListFetchResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/{listId}",
             "GET",
             path_params,
@@ -664,7 +664,7 @@ class ListsApi(object):
             200: "ListFetchResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/object-type-id/{objectTypeId}/name/{listName}",
             "GET",
             path_params,
@@ -785,7 +785,7 @@ class ListsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/{listId}",
             "DELETE",
             path_params,
@@ -906,7 +906,7 @@ class ListsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/{listId}/restore",
             "PUT",
             path_params,
@@ -1049,7 +1049,7 @@ class ListsApi(object):
             200: "ListUpdateResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/{listId}/update-list-filters",
             "PUT",
             path_params,
@@ -1184,7 +1184,7 @@ class ListsApi(object):
             200: "ListUpdateResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/{listId}/update-list-name",
             "PUT",
             path_params,

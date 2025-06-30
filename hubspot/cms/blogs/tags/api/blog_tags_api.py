@@ -33,7 +33,7 @@ class BlogTagsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, object_id, **kwargs):  # noqa: E501
+    async def archive(self, object_id, **kwargs):  # noqa: E501
         """Delete a Blog Tag  # noqa: E501
 
         Delete the Blog Tag object identified by the id in the path.  # noqa: E501
@@ -63,9 +63,9 @@ class BlogTagsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Delete a Blog Tag  # noqa: E501
 
         Delete the Blog Tag object identified by the id in the path.  # noqa: E501
@@ -141,7 +141,7 @@ class BlogTagsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/tags/{objectId}",
             "DELETE",
             path_params,
@@ -160,7 +160,7 @@ class BlogTagsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def archive_batch(self, batch_input_string, **kwargs):  # noqa: E501
+    async def archive_batch(self, batch_input_string, **kwargs):  # noqa: E501
         """Delete a batch of Blog Tags  # noqa: E501
 
         Delete the Blog Tag objects identified in the request body.  # noqa: E501
@@ -188,9 +188,9 @@ class BlogTagsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_batch_with_http_info(batch_input_string, **kwargs)  # noqa: E501
+        return await self.archive_batch_with_http_info(batch_input_string, **kwargs)  # noqa: E501
 
-    def archive_batch_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
+    async def archive_batch_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
         """Delete a batch of Blog Tags  # noqa: E501
 
         Delete the Blog Tag objects identified in the request body.  # noqa: E501
@@ -267,7 +267,7 @@ class BlogTagsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/tags/batch/archive",
             "POST",
             path_params,
@@ -286,7 +286,7 @@ class BlogTagsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def attach_to_lang_group(self, attach_to_lang_primary_request_v_next, **kwargs):  # noqa: E501
+    async def attach_to_lang_group(self, attach_to_lang_primary_request_v_next, **kwargs):  # noqa: E501
         """Attach a Blog Tag to a multi-language group  # noqa: E501
 
         Attach a Blog Tag to a multi-language group.  # noqa: E501
@@ -314,9 +314,9 @@ class BlogTagsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.attach_to_lang_group_with_http_info(attach_to_lang_primary_request_v_next, **kwargs)  # noqa: E501
+        return await self.attach_to_lang_group_with_http_info(attach_to_lang_primary_request_v_next, **kwargs)  # noqa: E501
 
-    def attach_to_lang_group_with_http_info(self, attach_to_lang_primary_request_v_next, **kwargs):  # noqa: E501
+    async def attach_to_lang_group_with_http_info(self, attach_to_lang_primary_request_v_next, **kwargs):  # noqa: E501
         """Attach a Blog Tag to a multi-language group  # noqa: E501
 
         Attach a Blog Tag to a multi-language group.  # noqa: E501
@@ -393,7 +393,7 @@ class BlogTagsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/tags/multi-language/attach-to-lang-group",
             "POST",
             path_params,
@@ -412,7 +412,7 @@ class BlogTagsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, tag, **kwargs):  # noqa: E501
+    async def create(self, tag, **kwargs):  # noqa: E501
         """Create a new Blog Tag  # noqa: E501
 
         Create a new Blog Tag.  # noqa: E501
@@ -440,9 +440,9 @@ class BlogTagsApi(object):
         :rtype: Tag
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(tag, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(tag, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, tag, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, tag, **kwargs):  # noqa: E501
         """Create a new Blog Tag  # noqa: E501
 
         Create a new Blog Tag.  # noqa: E501
@@ -521,7 +521,7 @@ class BlogTagsApi(object):
             201: "Tag",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/tags",
             "POST",
             path_params,
@@ -540,7 +540,7 @@ class BlogTagsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_batch(self, batch_input_tag, **kwargs):  # noqa: E501
+    async def create_batch(self, batch_input_tag, **kwargs):  # noqa: E501
         """Create a batch of Blog Tags  # noqa: E501
 
         Create the Blog Tag objects detailed in the request body.  # noqa: E501
@@ -568,9 +568,9 @@ class BlogTagsApi(object):
         :rtype: BatchResponseTag
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_batch_with_http_info(batch_input_tag, **kwargs)  # noqa: E501
+        return await self.create_batch_with_http_info(batch_input_tag, **kwargs)  # noqa: E501
 
-    def create_batch_with_http_info(self, batch_input_tag, **kwargs):  # noqa: E501
+    async def create_batch_with_http_info(self, batch_input_tag, **kwargs):  # noqa: E501
         """Create a batch of Blog Tags  # noqa: E501
 
         Create the Blog Tag objects detailed in the request body.  # noqa: E501
@@ -650,7 +650,7 @@ class BlogTagsApi(object):
             207: "BatchResponseTagWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/tags/batch/create",
             "POST",
             path_params,
@@ -669,7 +669,7 @@ class BlogTagsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_lang_variation(self, tag_clone_request_v_next, **kwargs):  # noqa: E501
+    async def create_lang_variation(self, tag_clone_request_v_next, **kwargs):  # noqa: E501
         """Create a new language variation  # noqa: E501
 
         Create a new language variation from an existing Blog Tag  # noqa: E501
@@ -697,9 +697,9 @@ class BlogTagsApi(object):
         :rtype: Tag
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_lang_variation_with_http_info(tag_clone_request_v_next, **kwargs)  # noqa: E501
+        return await self.create_lang_variation_with_http_info(tag_clone_request_v_next, **kwargs)  # noqa: E501
 
-    def create_lang_variation_with_http_info(self, tag_clone_request_v_next, **kwargs):  # noqa: E501
+    async def create_lang_variation_with_http_info(self, tag_clone_request_v_next, **kwargs):  # noqa: E501
         """Create a new language variation  # noqa: E501
 
         Create a new language variation from an existing Blog Tag  # noqa: E501
@@ -778,7 +778,7 @@ class BlogTagsApi(object):
             200: "Tag",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/tags/multi-language/create-language-variation",
             "POST",
             path_params,
@@ -797,7 +797,7 @@ class BlogTagsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def detach_from_lang_group(self, detach_from_lang_group_request_v_next, **kwargs):  # noqa: E501
+    async def detach_from_lang_group(self, detach_from_lang_group_request_v_next, **kwargs):  # noqa: E501
         """Detach a Blog Tag from a multi-language group  # noqa: E501
 
         Detach a Blog Tag from a multi-language group.  # noqa: E501
@@ -825,9 +825,9 @@ class BlogTagsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.detach_from_lang_group_with_http_info(detach_from_lang_group_request_v_next, **kwargs)  # noqa: E501
+        return await self.detach_from_lang_group_with_http_info(detach_from_lang_group_request_v_next, **kwargs)  # noqa: E501
 
-    def detach_from_lang_group_with_http_info(self, detach_from_lang_group_request_v_next, **kwargs):  # noqa: E501
+    async def detach_from_lang_group_with_http_info(self, detach_from_lang_group_request_v_next, **kwargs):  # noqa: E501
         """Detach a Blog Tag from a multi-language group  # noqa: E501
 
         Detach a Blog Tag from a multi-language group.  # noqa: E501
@@ -904,7 +904,7 @@ class BlogTagsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/tags/multi-language/detach-from-lang-group",
             "POST",
             path_params,
@@ -923,7 +923,7 @@ class BlogTagsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, object_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, object_id, **kwargs):  # noqa: E501
         """Retrieve a Blog Tag  # noqa: E501
 
         Retrieve the Blog Tag object identified by the id in the path.  # noqa: E501
@@ -955,9 +955,9 @@ class BlogTagsApi(object):
         :rtype: Tag
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Retrieve a Blog Tag  # noqa: E501
 
         Retrieve the Blog Tag object identified by the id in the path.  # noqa: E501
@@ -1039,7 +1039,7 @@ class BlogTagsApi(object):
             200: "Tag",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/tags/{objectId}",
             "GET",
             path_params,
@@ -1058,7 +1058,7 @@ class BlogTagsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, **kwargs):  # noqa: E501
+    async def get_page(self, **kwargs):  # noqa: E501
         """Get all Blog Tags  # noqa: E501
 
         Get the list of blog tags. Supports paging and filtering. This method would be useful for an integration that examined these models and used an external service to suggest edits.   # noqa: E501
@@ -1106,9 +1106,9 @@ class BlogTagsApi(object):
         :rtype: CollectionResponseWithTotalTagForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(**kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, **kwargs):  # noqa: E501
         """Get all Blog Tags  # noqa: E501
 
         Get the list of blog tags. Supports paging and filtering. This method would be useful for an integration that examined these models and used an external service to suggest edits.   # noqa: E501
@@ -1220,7 +1220,7 @@ class BlogTagsApi(object):
             200: "CollectionResponseWithTotalTagForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/tags",
             "GET",
             path_params,
@@ -1239,7 +1239,7 @@ class BlogTagsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def read_batch(self, batch_input_string, **kwargs):  # noqa: E501
+    async def read_batch(self, batch_input_string, **kwargs):  # noqa: E501
         """Retrieve a batch of Blog Tags  # noqa: E501
 
         Retrieve the Blog Tag objects identified in the request body.  # noqa: E501
@@ -1269,9 +1269,9 @@ class BlogTagsApi(object):
         :rtype: BatchResponseTag
         """
         kwargs["_return_http_data_only"] = True
-        return self.read_batch_with_http_info(batch_input_string, **kwargs)  # noqa: E501
+        return await self.read_batch_with_http_info(batch_input_string, **kwargs)  # noqa: E501
 
-    def read_batch_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
+    async def read_batch_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
         """Retrieve a batch of Blog Tags  # noqa: E501
 
         Retrieve the Blog Tag objects identified in the request body.  # noqa: E501
@@ -1355,7 +1355,7 @@ class BlogTagsApi(object):
             207: "BatchResponseTagWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/tags/batch/read",
             "POST",
             path_params,
@@ -1374,7 +1374,7 @@ class BlogTagsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def set_lang_primary(self, set_new_language_primary_request_v_next, **kwargs):  # noqa: E501
+    async def set_lang_primary(self, set_new_language_primary_request_v_next, **kwargs):  # noqa: E501
         """Set a new primary language  # noqa: E501
 
         Set a Blog Tag as the primary language of a multi-language group.  # noqa: E501
@@ -1402,9 +1402,9 @@ class BlogTagsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.set_lang_primary_with_http_info(set_new_language_primary_request_v_next, **kwargs)  # noqa: E501
+        return await self.set_lang_primary_with_http_info(set_new_language_primary_request_v_next, **kwargs)  # noqa: E501
 
-    def set_lang_primary_with_http_info(self, set_new_language_primary_request_v_next, **kwargs):  # noqa: E501
+    async def set_lang_primary_with_http_info(self, set_new_language_primary_request_v_next, **kwargs):  # noqa: E501
         """Set a new primary language  # noqa: E501
 
         Set a Blog Tag as the primary language of a multi-language group.  # noqa: E501
@@ -1481,7 +1481,7 @@ class BlogTagsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/tags/multi-language/set-new-lang-primary",
             "PUT",
             path_params,
@@ -1500,7 +1500,7 @@ class BlogTagsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, object_id, tag, **kwargs):  # noqa: E501
+    async def update(self, object_id, tag, **kwargs):  # noqa: E501
         """Update a Blog Tag  # noqa: E501
 
         Sparse updates a single Blog Tag object identified by the id in the path. All the column values need not be specified. Only the that need to be modified can be specified.   # noqa: E501
@@ -1532,9 +1532,9 @@ class BlogTagsApi(object):
         :rtype: Tag
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(object_id, tag, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(object_id, tag, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, object_id, tag, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, object_id, tag, **kwargs):  # noqa: E501
         """Update a Blog Tag  # noqa: E501
 
         Sparse updates a single Blog Tag object identified by the id in the path. All the column values need not be specified. Only the that need to be modified can be specified.   # noqa: E501
@@ -1624,7 +1624,7 @@ class BlogTagsApi(object):
             200: "Tag",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/tags/{objectId}",
             "PATCH",
             path_params,
@@ -1643,7 +1643,7 @@ class BlogTagsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_batch(self, batch_input_json_node, **kwargs):  # noqa: E501
+    async def update_batch(self, batch_input_json_node, **kwargs):  # noqa: E501
         """Update a batch of Blog Tags  # noqa: E501
 
         Update the Blog Tag objects identified in the request body.  # noqa: E501
@@ -1673,9 +1673,9 @@ class BlogTagsApi(object):
         :rtype: BatchResponseTag
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_batch_with_http_info(batch_input_json_node, **kwargs)  # noqa: E501
+        return await self.update_batch_with_http_info(batch_input_json_node, **kwargs)  # noqa: E501
 
-    def update_batch_with_http_info(self, batch_input_json_node, **kwargs):  # noqa: E501
+    async def update_batch_with_http_info(self, batch_input_json_node, **kwargs):  # noqa: E501
         """Update a batch of Blog Tags  # noqa: E501
 
         Update the Blog Tag objects identified in the request body.  # noqa: E501
@@ -1759,7 +1759,7 @@ class BlogTagsApi(object):
             207: "BatchResponseTagWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/tags/batch/update",
             "POST",
             path_params,
@@ -1778,7 +1778,7 @@ class BlogTagsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_langs(self, update_languages_request_v_next, **kwargs):  # noqa: E501
+    async def update_langs(self, update_languages_request_v_next, **kwargs):  # noqa: E501
         """Update languages of multi-language group  # noqa: E501
 
         Explicitly set new languages for each Blog Tag in a multi-language group.  # noqa: E501
@@ -1806,9 +1806,9 @@ class BlogTagsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_langs_with_http_info(update_languages_request_v_next, **kwargs)  # noqa: E501
+        return await self.update_langs_with_http_info(update_languages_request_v_next, **kwargs)  # noqa: E501
 
-    def update_langs_with_http_info(self, update_languages_request_v_next, **kwargs):  # noqa: E501
+    async def update_langs_with_http_info(self, update_languages_request_v_next, **kwargs):  # noqa: E501
         """Update languages of multi-language group  # noqa: E501
 
         Explicitly set new languages for each Blog Tag in a multi-language group.  # noqa: E501
@@ -1885,7 +1885,7 @@ class BlogTagsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/tags/multi-language/update-languages",
             "POST",
             path_params,

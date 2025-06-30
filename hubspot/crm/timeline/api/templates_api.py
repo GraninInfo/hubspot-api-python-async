@@ -33,7 +33,7 @@ class TemplatesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, event_template_id, app_id, **kwargs):  # noqa: E501
+    async def archive(self, event_template_id, app_id, **kwargs):  # noqa: E501
         """Deletes an event template for the app  # noqa: E501
 
         This will delete the event template. All associated events will be removed from search results and the timeline UI.  This action can't be undone, so it's highly recommended that you stop using any associated events before deleting a template.  # noqa: E501
@@ -63,9 +63,9 @@ class TemplatesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(event_template_id, app_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(event_template_id, app_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, event_template_id, app_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, event_template_id, app_id, **kwargs):  # noqa: E501
         """Deletes an event template for the app  # noqa: E501
 
         This will delete the event template. All associated events will be removed from search results and the timeline UI.  This action can't be undone, so it's highly recommended that you stop using any associated events before deleting a template.  # noqa: E501
@@ -144,7 +144,7 @@ class TemplatesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/integrators/timeline/v3/{appId}/event-templates/{eventTemplateId}",
             "DELETE",
             path_params,
@@ -163,7 +163,7 @@ class TemplatesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, app_id, timeline_event_template_create_request, **kwargs):  # noqa: E501
+    async def create(self, app_id, timeline_event_template_create_request, **kwargs):  # noqa: E501
         """Create an event template for your app  # noqa: E501
 
         Event templates define the general structure for a custom timeline event. This includes formatted copy for its heading and details, as well as any custom property definitions. The event could be something like viewing a video, registering for a webinar, or filling out a survey. A single app can define multiple event templates.  Event templates will be created for contacts by default, but they can be created for companies, tickets, and deals as well.  Each event template contains its own set of tokens and `Markdown` templates. These tokens can be associated with any CRM object properties via the `objectPropertyName` field to fully build out CRM objects.  You must create an event template before you can create events.  # noqa: E501
@@ -193,9 +193,9 @@ class TemplatesApi(object):
         :rtype: TimelineEventTemplate
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(app_id, timeline_event_template_create_request, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(app_id, timeline_event_template_create_request, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, app_id, timeline_event_template_create_request, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, app_id, timeline_event_template_create_request, **kwargs):  # noqa: E501
         """Create an event template for your app  # noqa: E501
 
         Event templates define the general structure for a custom timeline event. This includes formatted copy for its heading and details, as well as any custom property definitions. The event could be something like viewing a video, registering for a webinar, or filling out a survey. A single app can define multiple event templates.  Event templates will be created for contacts by default, but they can be created for companies, tickets, and deals as well.  Each event template contains its own set of tokens and `Markdown` templates. These tokens can be associated with any CRM object properties via the `objectPropertyName` field to fully build out CRM objects.  You must create an event template before you can create events.  # noqa: E501
@@ -281,7 +281,7 @@ class TemplatesApi(object):
             201: "TimelineEventTemplate",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/integrators/timeline/v3/{appId}/event-templates",
             "POST",
             path_params,
@@ -300,7 +300,7 @@ class TemplatesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_all(self, app_id, **kwargs):  # noqa: E501
+    async def get_all(self, app_id, **kwargs):  # noqa: E501
         """List all event templates for your app  # noqa: E501
 
         Use this to list all event templates owned by your app.  # noqa: E501
@@ -328,9 +328,9 @@ class TemplatesApi(object):
         :rtype: CollectionResponseTimelineEventTemplateNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_with_http_info(app_id, **kwargs)  # noqa: E501
+        return await self.get_all_with_http_info(app_id, **kwargs)  # noqa: E501
 
-    def get_all_with_http_info(self, app_id, **kwargs):  # noqa: E501
+    async def get_all_with_http_info(self, app_id, **kwargs):  # noqa: E501
         """List all event templates for your app  # noqa: E501
 
         Use this to list all event templates owned by your app.  # noqa: E501
@@ -404,7 +404,7 @@ class TemplatesApi(object):
             200: "CollectionResponseTimelineEventTemplateNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/integrators/timeline/v3/{appId}/event-templates",
             "GET",
             path_params,
@@ -423,7 +423,7 @@ class TemplatesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, event_template_id, app_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, event_template_id, app_id, **kwargs):  # noqa: E501
         """Gets a specific event template for your app  # noqa: E501
 
         View the current state of a specific template and its tokens.  # noqa: E501
@@ -453,9 +453,9 @@ class TemplatesApi(object):
         :rtype: TimelineEventTemplate
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(event_template_id, app_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(event_template_id, app_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, event_template_id, app_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, event_template_id, app_id, **kwargs):  # noqa: E501
         """Gets a specific event template for your app  # noqa: E501
 
         View the current state of a specific template and its tokens.  # noqa: E501
@@ -536,7 +536,7 @@ class TemplatesApi(object):
             200: "TimelineEventTemplate",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/integrators/timeline/v3/{appId}/event-templates/{eventTemplateId}",
             "GET",
             path_params,
@@ -555,7 +555,7 @@ class TemplatesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, event_template_id, app_id, timeline_event_template_update_request, **kwargs):  # noqa: E501
+    async def update(self, event_template_id, app_id, timeline_event_template_update_request, **kwargs):  # noqa: E501
         """Update an existing event template  # noqa: E501
 
         Updates an existing template and its tokens. This is primarily used to update the headerTemplate/detailTemplate, and those changes will take effect for existing events.  You can also update or replace all the tokens in the template here instead of doing individual API calls on the `/tokens` endpoint.  # noqa: E501
@@ -587,9 +587,9 @@ class TemplatesApi(object):
         :rtype: TimelineEventTemplate
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(event_template_id, app_id, timeline_event_template_update_request, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(event_template_id, app_id, timeline_event_template_update_request, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, event_template_id, app_id, timeline_event_template_update_request, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, event_template_id, app_id, timeline_event_template_update_request, **kwargs):  # noqa: E501
         """Update an existing event template  # noqa: E501
 
         Updates an existing template and its tokens. This is primarily used to update the headerTemplate/detailTemplate, and those changes will take effect for existing events.  You can also update or replace all the tokens in the template here instead of doing individual API calls on the `/tokens` endpoint.  # noqa: E501
@@ -682,7 +682,7 @@ class TemplatesApi(object):
             200: "TimelineEventTemplate",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/integrators/timeline/v3/{appId}/event-templates/{eventTemplateId}",
             "PUT",
             path_params,

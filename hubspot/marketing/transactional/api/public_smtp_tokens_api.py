@@ -135,7 +135,7 @@ class PublicSMTPTokensApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/transactional/smtp-tokens/{tokenId}",
             "DELETE",
             path_params,
@@ -263,7 +263,7 @@ class PublicSMTPTokensApi(object):
             201: "SmtpApiTokenView",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/transactional/smtp-tokens",
             "POST",
             path_params,
@@ -386,7 +386,7 @@ class PublicSMTPTokensApi(object):
             200: "SmtpApiTokenView",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/transactional/smtp-tokens/{tokenId}",
             "GET",
             path_params,
@@ -524,7 +524,7 @@ class PublicSMTPTokensApi(object):
             200: "CollectionResponseSmtpApiTokenViewForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/transactional/smtp-tokens",
             "GET",
             path_params,
@@ -647,7 +647,7 @@ class PublicSMTPTokensApi(object):
             200: "SmtpApiTokenView",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/transactional/smtp-tokens/{tokenId}/password-reset",
             "POST",
             path_params,

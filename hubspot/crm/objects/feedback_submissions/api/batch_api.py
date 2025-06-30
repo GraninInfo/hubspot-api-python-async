@@ -33,7 +33,7 @@ class BatchApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def read(self, batch_read_input_simple_public_object_id, **kwargs):  # noqa: E501
+    async def read(self, batch_read_input_simple_public_object_id, **kwargs):  # noqa: E501
         """Read a batch of feedback submissions by internal ID, or unique property values  # noqa: E501
 
         Retrieve records by record ID or include the `idProperty` parameter to retrieve records by a custom unique value property.   # noqa: E501
@@ -63,9 +63,9 @@ class BatchApi(object):
         :rtype: BatchResponseSimplePublicObject
         """
         kwargs["_return_http_data_only"] = True
-        return self.read_with_http_info(batch_read_input_simple_public_object_id, **kwargs)  # noqa: E501
+        return await self.read_with_http_info(batch_read_input_simple_public_object_id, **kwargs)  # noqa: E501
 
-    def read_with_http_info(self, batch_read_input_simple_public_object_id, **kwargs):  # noqa: E501
+    async def read_with_http_info(self, batch_read_input_simple_public_object_id, **kwargs):  # noqa: E501
         """Read a batch of feedback submissions by internal ID, or unique property values  # noqa: E501
 
         Retrieve records by record ID or include the `idProperty` parameter to retrieve records by a custom unique value property.   # noqa: E501
@@ -149,7 +149,7 @@ class BatchApi(object):
             207: "BatchResponseSimplePublicObjectWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/feedback_submissions/batch/read",
             "POST",
             path_params,

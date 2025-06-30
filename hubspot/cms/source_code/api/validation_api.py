@@ -148,7 +148,7 @@ class ValidationApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/source-code/{environment}/validate/{path}",
             "POST",
             path_params,

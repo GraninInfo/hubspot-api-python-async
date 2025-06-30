@@ -33,7 +33,7 @@ class RevisionsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_by_id(self, definition_id, revision_id, app_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, definition_id, revision_id, app_id, **kwargs):  # noqa: E501
         """Gets a revision for a given definition by revision id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -64,9 +64,9 @@ class RevisionsApi(object):
         :rtype: PublicActionRevision
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(definition_id, revision_id, app_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(definition_id, revision_id, app_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, definition_id, revision_id, app_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, definition_id, revision_id, app_id, **kwargs):  # noqa: E501
         """Gets a revision for a given definition by revision id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -153,7 +153,7 @@ class RevisionsApi(object):
             200: "PublicActionRevision",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/automation/v4/actions/{appId}/{definitionId}/revisions/{revisionId}",
             "GET",
             path_params,
@@ -172,7 +172,7 @@ class RevisionsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, definition_id, app_id, **kwargs):  # noqa: E501
+    async def get_page(self, definition_id, app_id, **kwargs):  # noqa: E501
         """Get all revisions for a given definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -205,9 +205,9 @@ class RevisionsApi(object):
         :rtype: CollectionResponsePublicActionRevisionForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(definition_id, app_id, **kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(definition_id, app_id, **kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, definition_id, app_id, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, definition_id, app_id, **kwargs):  # noqa: E501
         """Get all revisions for a given definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -295,7 +295,7 @@ class RevisionsApi(object):
             200: "CollectionResponsePublicActionRevisionForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/automation/v4/actions/{appId}/{definitionId}/revisions",
             "GET",
             path_params,

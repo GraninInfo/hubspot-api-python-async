@@ -33,7 +33,7 @@ class SearchApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def do_search(self, object_type, public_object_search_request, **kwargs):  # noqa: E501
+    async def do_search(self, object_type, public_object_search_request, **kwargs):  # noqa: E501
         """do_search  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -62,9 +62,9 @@ class SearchApi(object):
         :rtype: CollectionResponseWithTotalSimplePublicObjectForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.do_search_with_http_info(object_type, public_object_search_request, **kwargs)  # noqa: E501
+        return await self.do_search_with_http_info(object_type, public_object_search_request, **kwargs)  # noqa: E501
 
-    def do_search_with_http_info(self, object_type, public_object_search_request, **kwargs):  # noqa: E501
+    async def do_search_with_http_info(self, object_type, public_object_search_request, **kwargs):  # noqa: E501
         """do_search  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -149,7 +149,7 @@ class SearchApi(object):
             200: "CollectionResponseWithTotalSimplePublicObjectForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/{objectType}/search",
             "POST",
             path_params,

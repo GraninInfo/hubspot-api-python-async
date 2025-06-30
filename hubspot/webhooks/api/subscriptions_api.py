@@ -33,7 +33,7 @@ class SubscriptionsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, subscription_id, app_id, **kwargs):  # noqa: E501
+    async def archive(self, subscription_id, app_id, **kwargs):  # noqa: E501
         """Delete event subscription  # noqa: E501
 
         Delete an existing event subscription by ID.  # noqa: E501
@@ -63,9 +63,9 @@ class SubscriptionsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(subscription_id, app_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(subscription_id, app_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, subscription_id, app_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, subscription_id, app_id, **kwargs):  # noqa: E501
         """Delete event subscription  # noqa: E501
 
         Delete an existing event subscription by ID.  # noqa: E501
@@ -144,7 +144,7 @@ class SubscriptionsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/webhooks/v3/{appId}/subscriptions/{subscriptionId}",
             "DELETE",
             path_params,
@@ -163,7 +163,7 @@ class SubscriptionsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, app_id, subscription_create_request, **kwargs):  # noqa: E501
+    async def create(self, app_id, subscription_create_request, **kwargs):  # noqa: E501
         """Create an event subscription  # noqa: E501
 
         Create new event subscription for the specified app.  # noqa: E501
@@ -193,9 +193,9 @@ class SubscriptionsApi(object):
         :rtype: SubscriptionResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(app_id, subscription_create_request, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(app_id, subscription_create_request, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, app_id, subscription_create_request, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, app_id, subscription_create_request, **kwargs):  # noqa: E501
         """Create an event subscription  # noqa: E501
 
         Create new event subscription for the specified app.  # noqa: E501
@@ -281,7 +281,7 @@ class SubscriptionsApi(object):
             201: "SubscriptionResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/webhooks/v3/{appId}/subscriptions",
             "POST",
             path_params,
@@ -300,7 +300,7 @@ class SubscriptionsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_all(self, app_id, **kwargs):  # noqa: E501
+    async def get_all(self, app_id, **kwargs):  # noqa: E501
         """Read event subscriptions  # noqa: E501
 
         Retrieve event subscriptions for the specified app.  # noqa: E501
@@ -328,9 +328,9 @@ class SubscriptionsApi(object):
         :rtype: SubscriptionListResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_with_http_info(app_id, **kwargs)  # noqa: E501
+        return await self.get_all_with_http_info(app_id, **kwargs)  # noqa: E501
 
-    def get_all_with_http_info(self, app_id, **kwargs):  # noqa: E501
+    async def get_all_with_http_info(self, app_id, **kwargs):  # noqa: E501
         """Read event subscriptions  # noqa: E501
 
         Retrieve event subscriptions for the specified app.  # noqa: E501
@@ -404,7 +404,7 @@ class SubscriptionsApi(object):
             200: "SubscriptionListResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/webhooks/v3/{appId}/subscriptions",
             "GET",
             path_params,
@@ -423,7 +423,7 @@ class SubscriptionsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, subscription_id, app_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, subscription_id, app_id, **kwargs):  # noqa: E501
         """Read an event subscription  # noqa: E501
 
         Retrieve a specific event subscription by ID.  # noqa: E501
@@ -453,9 +453,9 @@ class SubscriptionsApi(object):
         :rtype: SubscriptionResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(subscription_id, app_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(subscription_id, app_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, subscription_id, app_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, subscription_id, app_id, **kwargs):  # noqa: E501
         """Read an event subscription  # noqa: E501
 
         Retrieve a specific event subscription by ID.  # noqa: E501
@@ -536,7 +536,7 @@ class SubscriptionsApi(object):
             200: "SubscriptionResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/webhooks/v3/{appId}/subscriptions/{subscriptionId}",
             "GET",
             path_params,
@@ -555,7 +555,7 @@ class SubscriptionsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, subscription_id, app_id, subscription_patch_request, **kwargs):  # noqa: E501
+    async def update(self, subscription_id, app_id, subscription_patch_request, **kwargs):  # noqa: E501
         """Update an event subscription  # noqa: E501
 
         Update an existing event subscription by ID.  # noqa: E501
@@ -587,9 +587,9 @@ class SubscriptionsApi(object):
         :rtype: SubscriptionResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(subscription_id, app_id, subscription_patch_request, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(subscription_id, app_id, subscription_patch_request, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, subscription_id, app_id, subscription_patch_request, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, subscription_id, app_id, subscription_patch_request, **kwargs):  # noqa: E501
         """Update an event subscription  # noqa: E501
 
         Update an existing event subscription by ID.  # noqa: E501
@@ -682,7 +682,7 @@ class SubscriptionsApi(object):
             200: "SubscriptionResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/webhooks/v3/{appId}/subscriptions/{subscriptionId}",
             "PATCH",
             path_params,
@@ -820,7 +820,7 @@ class SubscriptionsApi(object):
             207: "BatchResponseSubscriptionResponseWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/webhooks/v3/{appId}/subscriptions/batch/update",
             "POST",
             path_params,

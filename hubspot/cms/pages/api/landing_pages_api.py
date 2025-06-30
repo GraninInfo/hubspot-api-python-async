@@ -33,7 +33,7 @@ class LandingPagesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, object_id, **kwargs):  # noqa: E501
+    async def archive(self, object_id, **kwargs):  # noqa: E501
         """Delete a Landing Page  # noqa: E501
 
         Delete the Landing Page object identified by the id in the path.  # noqa: E501
@@ -63,9 +63,9 @@ class LandingPagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Delete a Landing Page  # noqa: E501
 
         Delete the Landing Page object identified by the id in the path.  # noqa: E501
@@ -141,7 +141,7 @@ class LandingPagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/{objectId}",
             "DELETE",
             path_params,
@@ -160,7 +160,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def archive_batch(self, batch_input_string, **kwargs):  # noqa: E501
+    async def archive_batch(self, batch_input_string, **kwargs):  # noqa: E501
         """Delete a batch of Landing Pages  # noqa: E501
 
         Delete the Landing Page objects identified in the request body. Note: This is not the same as the dashboard `archive` function. To perform a dashboard `archive` send an normal update with the `archivedInDashboard` field set to true.  # noqa: E501
@@ -188,9 +188,9 @@ class LandingPagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_batch_with_http_info(batch_input_string, **kwargs)  # noqa: E501
+        return await self.archive_batch_with_http_info(batch_input_string, **kwargs)  # noqa: E501
 
-    def archive_batch_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
+    async def archive_batch_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
         """Delete a batch of Landing Pages  # noqa: E501
 
         Delete the Landing Page objects identified in the request body. Note: This is not the same as the dashboard `archive` function. To perform a dashboard `archive` send an normal update with the `archivedInDashboard` field set to true.  # noqa: E501
@@ -267,7 +267,7 @@ class LandingPagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/batch/archive",
             "POST",
             path_params,
@@ -286,7 +286,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def archive_folder(self, object_id, **kwargs):  # noqa: E501
+    async def archive_folder(self, object_id, **kwargs):  # noqa: E501
         """Delete a Folder  # noqa: E501
 
         Delete the Folder object identified by the id in the path.  # noqa: E501
@@ -316,9 +316,9 @@ class LandingPagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_folder_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.archive_folder_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def archive_folder_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def archive_folder_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Delete a Folder  # noqa: E501
 
         Delete the Folder object identified by the id in the path.  # noqa: E501
@@ -394,7 +394,7 @@ class LandingPagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/folders/{objectId}",
             "DELETE",
             path_params,
@@ -413,7 +413,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def archive_folders(self, batch_input_string, **kwargs):  # noqa: E501
+    async def archive_folders(self, batch_input_string, **kwargs):  # noqa: E501
         """Delete a batch of Folders  # noqa: E501
 
         Delete the Folder objects identified in the request body.  # noqa: E501
@@ -441,9 +441,9 @@ class LandingPagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_folders_with_http_info(batch_input_string, **kwargs)  # noqa: E501
+        return await self.archive_folders_with_http_info(batch_input_string, **kwargs)  # noqa: E501
 
-    def archive_folders_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
+    async def archive_folders_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
         """Delete a batch of Folders  # noqa: E501
 
         Delete the Folder objects identified in the request body.  # noqa: E501
@@ -520,7 +520,7 @@ class LandingPagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/folders/batch/archive",
             "POST",
             path_params,
@@ -539,7 +539,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def attach_to_lang_group(self, attach_to_lang_primary_request_v_next, **kwargs):  # noqa: E501
+    async def attach_to_lang_group(self, attach_to_lang_primary_request_v_next, **kwargs):  # noqa: E501
         """Attach a landing page to a multi-language group  # noqa: E501
 
         Attach a landing page to a multi-language group.  # noqa: E501
@@ -567,9 +567,9 @@ class LandingPagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.attach_to_lang_group_with_http_info(attach_to_lang_primary_request_v_next, **kwargs)  # noqa: E501
+        return await self.attach_to_lang_group_with_http_info(attach_to_lang_primary_request_v_next, **kwargs)  # noqa: E501
 
-    def attach_to_lang_group_with_http_info(self, attach_to_lang_primary_request_v_next, **kwargs):  # noqa: E501
+    async def attach_to_lang_group_with_http_info(self, attach_to_lang_primary_request_v_next, **kwargs):  # noqa: E501
         """Attach a landing page to a multi-language group  # noqa: E501
 
         Attach a landing page to a multi-language group.  # noqa: E501
@@ -646,7 +646,7 @@ class LandingPagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/multi-language/attach-to-lang-group",
             "POST",
             path_params,
@@ -665,7 +665,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def clone(self, content_clone_request_v_next, **kwargs):  # noqa: E501
+    async def clone(self, content_clone_request_v_next, **kwargs):  # noqa: E501
         """Clone a Landing Page  # noqa: E501
 
         Clone a Landing Page  # noqa: E501
@@ -693,9 +693,9 @@ class LandingPagesApi(object):
         :rtype: Page
         """
         kwargs["_return_http_data_only"] = True
-        return self.clone_with_http_info(content_clone_request_v_next, **kwargs)  # noqa: E501
+        return await self.clone_with_http_info(content_clone_request_v_next, **kwargs)  # noqa: E501
 
-    def clone_with_http_info(self, content_clone_request_v_next, **kwargs):  # noqa: E501
+    async def clone_with_http_info(self, content_clone_request_v_next, **kwargs):  # noqa: E501
         """Clone a Landing Page  # noqa: E501
 
         Clone a Landing Page  # noqa: E501
@@ -774,7 +774,7 @@ class LandingPagesApi(object):
             200: "Page",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/clone",
             "POST",
             path_params,
@@ -793,7 +793,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, page, **kwargs):  # noqa: E501
+    async def create(self, page, **kwargs):  # noqa: E501
         """Create a new Landing Page  # noqa: E501
 
         Create a new Landing Page  # noqa: E501
@@ -821,9 +821,9 @@ class LandingPagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(page, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(page, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, page, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, page, **kwargs):  # noqa: E501
         """Create a new Landing Page  # noqa: E501
 
         Create a new Landing Page  # noqa: E501
@@ -900,7 +900,7 @@ class LandingPagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages",
             "POST",
             path_params,
@@ -919,7 +919,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_ab_test_variation(self, ab_test_create_request_v_next, **kwargs):  # noqa: E501
+    async def create_ab_test_variation(self, ab_test_create_request_v_next, **kwargs):  # noqa: E501
         """Create a new A/B test variation  # noqa: E501
 
         Create a new A/B test variation based on the information provided in the request body.   # noqa: E501
@@ -947,9 +947,9 @@ class LandingPagesApi(object):
         :rtype: Page
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_ab_test_variation_with_http_info(ab_test_create_request_v_next, **kwargs)  # noqa: E501
+        return await self.create_ab_test_variation_with_http_info(ab_test_create_request_v_next, **kwargs)  # noqa: E501
 
-    def create_ab_test_variation_with_http_info(self, ab_test_create_request_v_next, **kwargs):  # noqa: E501
+    async def create_ab_test_variation_with_http_info(self, ab_test_create_request_v_next, **kwargs):  # noqa: E501
         """Create a new A/B test variation  # noqa: E501
 
         Create a new A/B test variation based on the information provided in the request body.   # noqa: E501
@@ -1028,7 +1028,7 @@ class LandingPagesApi(object):
             201: "Page",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/ab-test/create-variation",
             "POST",
             path_params,
@@ -1047,7 +1047,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_batch(self, batch_input_page, **kwargs):  # noqa: E501
+    async def create_batch(self, batch_input_page, **kwargs):  # noqa: E501
         """Create a batch of Landing Pages  # noqa: E501
 
         Create the Landing Page objects detailed in the request body.  # noqa: E501
@@ -1075,9 +1075,9 @@ class LandingPagesApi(object):
         :rtype: BatchResponsePage
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_batch_with_http_info(batch_input_page, **kwargs)  # noqa: E501
+        return await self.create_batch_with_http_info(batch_input_page, **kwargs)  # noqa: E501
 
-    def create_batch_with_http_info(self, batch_input_page, **kwargs):  # noqa: E501
+    async def create_batch_with_http_info(self, batch_input_page, **kwargs):  # noqa: E501
         """Create a batch of Landing Pages  # noqa: E501
 
         Create the Landing Page objects detailed in the request body.  # noqa: E501
@@ -1157,7 +1157,7 @@ class LandingPagesApi(object):
             207: "BatchResponsePageWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/batch/create",
             "POST",
             path_params,
@@ -1176,7 +1176,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_folder(self, content_folder, **kwargs):  # noqa: E501
+    async def create_folder(self, content_folder, **kwargs):  # noqa: E501
         """Create a new Folder  # noqa: E501
 
         Create a new Folder  # noqa: E501
@@ -1204,9 +1204,9 @@ class LandingPagesApi(object):
         :rtype: ContentFolder
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_folder_with_http_info(content_folder, **kwargs)  # noqa: E501
+        return await self.create_folder_with_http_info(content_folder, **kwargs)  # noqa: E501
 
-    def create_folder_with_http_info(self, content_folder, **kwargs):  # noqa: E501
+    async def create_folder_with_http_info(self, content_folder, **kwargs):  # noqa: E501
         """Create a new Folder  # noqa: E501
 
         Create a new Folder  # noqa: E501
@@ -1285,7 +1285,7 @@ class LandingPagesApi(object):
             201: "ContentFolder",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/folders",
             "POST",
             path_params,
@@ -1304,7 +1304,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_folders(self, batch_input_content_folder, **kwargs):  # noqa: E501
+    async def create_folders(self, batch_input_content_folder, **kwargs):  # noqa: E501
         """Create a batch of Folders  # noqa: E501
 
         Create the Folder objects detailed in the request body.  # noqa: E501
@@ -1332,9 +1332,9 @@ class LandingPagesApi(object):
         :rtype: BatchResponseContentFolder
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_folders_with_http_info(batch_input_content_folder, **kwargs)  # noqa: E501
+        return await self.create_folders_with_http_info(batch_input_content_folder, **kwargs)  # noqa: E501
 
-    def create_folders_with_http_info(self, batch_input_content_folder, **kwargs):  # noqa: E501
+    async def create_folders_with_http_info(self, batch_input_content_folder, **kwargs):  # noqa: E501
         """Create a batch of Folders  # noqa: E501
 
         Create the Folder objects detailed in the request body.  # noqa: E501
@@ -1414,7 +1414,7 @@ class LandingPagesApi(object):
             207: "BatchResponseContentFolderWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/folders/batch/create",
             "POST",
             path_params,
@@ -1433,7 +1433,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_lang_variation(self, content_language_clone_request_v_next, **kwargs):  # noqa: E501
+    async def create_lang_variation(self, content_language_clone_request_v_next, **kwargs):  # noqa: E501
         """Create a new language variation  # noqa: E501
 
         Create a new language variation from an existing landing page  # noqa: E501
@@ -1461,9 +1461,9 @@ class LandingPagesApi(object):
         :rtype: Page
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_lang_variation_with_http_info(content_language_clone_request_v_next, **kwargs)  # noqa: E501
+        return await self.create_lang_variation_with_http_info(content_language_clone_request_v_next, **kwargs)  # noqa: E501
 
-    def create_lang_variation_with_http_info(self, content_language_clone_request_v_next, **kwargs):  # noqa: E501
+    async def create_lang_variation_with_http_info(self, content_language_clone_request_v_next, **kwargs):  # noqa: E501
         """Create a new language variation  # noqa: E501
 
         Create a new language variation from an existing landing page  # noqa: E501
@@ -1542,7 +1542,7 @@ class LandingPagesApi(object):
             200: "Page",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/multi-language/create-language-variation",
             "POST",
             path_params,
@@ -1561,7 +1561,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def detach_from_lang_group(self, detach_from_lang_group_request_v_next, **kwargs):  # noqa: E501
+    async def detach_from_lang_group(self, detach_from_lang_group_request_v_next, **kwargs):  # noqa: E501
         """Detach a landing page from a multi-language group  # noqa: E501
 
         Detach a landing page from a multi-language group.  # noqa: E501
@@ -1589,9 +1589,9 @@ class LandingPagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.detach_from_lang_group_with_http_info(detach_from_lang_group_request_v_next, **kwargs)  # noqa: E501
+        return await self.detach_from_lang_group_with_http_info(detach_from_lang_group_request_v_next, **kwargs)  # noqa: E501
 
-    def detach_from_lang_group_with_http_info(self, detach_from_lang_group_request_v_next, **kwargs):  # noqa: E501
+    async def detach_from_lang_group_with_http_info(self, detach_from_lang_group_request_v_next, **kwargs):  # noqa: E501
         """Detach a landing page from a multi-language group  # noqa: E501
 
         Detach a landing page from a multi-language group.  # noqa: E501
@@ -1668,7 +1668,7 @@ class LandingPagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/multi-language/detach-from-lang-group",
             "POST",
             path_params,
@@ -1687,7 +1687,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def end_active_ab_test(self, ab_test_end_request_v_next, **kwargs):  # noqa: E501
+    async def end_active_ab_test(self, ab_test_end_request_v_next, **kwargs):  # noqa: E501
         """End an active A/B test  # noqa: E501
 
         End an active A/B test and designate a winner.  # noqa: E501
@@ -1715,9 +1715,9 @@ class LandingPagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.end_active_ab_test_with_http_info(ab_test_end_request_v_next, **kwargs)  # noqa: E501
+        return await self.end_active_ab_test_with_http_info(ab_test_end_request_v_next, **kwargs)  # noqa: E501
 
-    def end_active_ab_test_with_http_info(self, ab_test_end_request_v_next, **kwargs):  # noqa: E501
+    async def end_active_ab_test_with_http_info(self, ab_test_end_request_v_next, **kwargs):  # noqa: E501
         """End an active A/B test  # noqa: E501
 
         End an active A/B test and designate a winner.  # noqa: E501
@@ -1794,7 +1794,7 @@ class LandingPagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/ab-test/end",
             "POST",
             path_params,
@@ -1813,7 +1813,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, object_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, object_id, **kwargs):  # noqa: E501
         """Retrieve a Landing Page  # noqa: E501
 
         Retrieve the Landing Page object identified by the id in the path.  # noqa: E501
@@ -1845,9 +1845,9 @@ class LandingPagesApi(object):
         :rtype: Page
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Retrieve a Landing Page  # noqa: E501
 
         Retrieve the Landing Page object identified by the id in the path.  # noqa: E501
@@ -1929,7 +1929,7 @@ class LandingPagesApi(object):
             200: "Page",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/{objectId}",
             "GET",
             path_params,
@@ -1948,7 +1948,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_draft_by_id(self, object_id, **kwargs):  # noqa: E501
+    async def get_draft_by_id(self, object_id, **kwargs):  # noqa: E501
         """Retrieve the full draft version of the Landing Page  # noqa: E501
 
         Retrieve the full draft version of the Landing Page.  # noqa: E501
@@ -1976,9 +1976,9 @@ class LandingPagesApi(object):
         :rtype: Page
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_draft_by_id_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.get_draft_by_id_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def get_draft_by_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def get_draft_by_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Retrieve the full draft version of the Landing Page  # noqa: E501
 
         Retrieve the full draft version of the Landing Page.  # noqa: E501
@@ -2052,7 +2052,7 @@ class LandingPagesApi(object):
             200: "Page",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/{objectId}/draft",
             "GET",
             path_params,
@@ -2071,7 +2071,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_folder_by_id(self, object_id, **kwargs):  # noqa: E501
+    async def get_folder_by_id(self, object_id, **kwargs):  # noqa: E501
         """Retrieve a Folder  # noqa: E501
 
         Retrieve the Folder object identified by the id in the path.  # noqa: E501
@@ -2103,9 +2103,9 @@ class LandingPagesApi(object):
         :rtype: ContentFolder
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_folder_by_id_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.get_folder_by_id_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def get_folder_by_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def get_folder_by_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Retrieve a Folder  # noqa: E501
 
         Retrieve the Folder object identified by the id in the path.  # noqa: E501
@@ -2187,7 +2187,7 @@ class LandingPagesApi(object):
             200: "ContentFolder",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/folders/{objectId}",
             "GET",
             path_params,
@@ -2206,7 +2206,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_folder_previous_version(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def get_folder_previous_version(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Retrieves a previous version of a Folder  # noqa: E501
 
         Retrieves a previous version of a Folder  # noqa: E501
@@ -2236,9 +2236,9 @@ class LandingPagesApi(object):
         :rtype: VersionContentFolder
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_folder_previous_version_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
+        return await self.get_folder_previous_version_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
 
-    def get_folder_previous_version_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def get_folder_previous_version_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Retrieves a previous version of a Folder  # noqa: E501
 
         Retrieves a previous version of a Folder  # noqa: E501
@@ -2319,7 +2319,7 @@ class LandingPagesApi(object):
             200: "VersionContentFolder",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/folders/{objectId}/revisions/{revisionId}",
             "GET",
             path_params,
@@ -2338,7 +2338,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_folder_previous_versions(self, object_id, **kwargs):  # noqa: E501
+    async def get_folder_previous_versions(self, object_id, **kwargs):  # noqa: E501
         """Retrieves all the previous versions of a Folder  # noqa: E501
 
         Retrieves all the previous versions of a Folder.  # noqa: E501
@@ -2372,9 +2372,9 @@ class LandingPagesApi(object):
         :rtype: CollectionResponseWithTotalVersionContentFolder
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_folder_previous_versions_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.get_folder_previous_versions_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def get_folder_previous_versions_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def get_folder_previous_versions_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Retrieves all the previous versions of a Folder  # noqa: E501
 
         Retrieves all the previous versions of a Folder.  # noqa: E501
@@ -2460,7 +2460,7 @@ class LandingPagesApi(object):
             200: "CollectionResponseWithTotalVersionContentFolder",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/folders/{objectId}/revisions",
             "GET",
             path_params,
@@ -2479,7 +2479,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_folders_page(self, **kwargs):  # noqa: E501
+    async def get_folders_page(self, **kwargs):  # noqa: E501
         """Get all Landing Page Folders  # noqa: E501
 
         Get the list of Landing Page Folders. Supports paging and filtering. This method would be useful for an integration that examined these models and used an external service to suggest edits.   # noqa: E501
@@ -2527,9 +2527,9 @@ class LandingPagesApi(object):
         :rtype: CollectionResponseWithTotalContentFolderForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_folders_page_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_folders_page_with_http_info(**kwargs)  # noqa: E501
 
-    def get_folders_page_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_folders_page_with_http_info(self, **kwargs):  # noqa: E501
         """Get all Landing Page Folders  # noqa: E501
 
         Get the list of Landing Page Folders. Supports paging and filtering. This method would be useful for an integration that examined these models and used an external service to suggest edits.   # noqa: E501
@@ -2641,7 +2641,7 @@ class LandingPagesApi(object):
             200: "CollectionResponseWithTotalContentFolderForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/folders",
             "GET",
             path_params,
@@ -2660,7 +2660,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, **kwargs):  # noqa: E501
+    async def get_page(self, **kwargs):  # noqa: E501
         """Get all Landing Pages  # noqa: E501
 
         Get the list of landing pages. Supports paging and filtering. This method would be useful for an integration that examined these models and used an external service to suggest edits.   # noqa: E501
@@ -2708,9 +2708,9 @@ class LandingPagesApi(object):
         :rtype: CollectionResponseWithTotalPageForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(**kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, **kwargs):  # noqa: E501
         """Get all Landing Pages  # noqa: E501
 
         Get the list of landing pages. Supports paging and filtering. This method would be useful for an integration that examined these models and used an external service to suggest edits.   # noqa: E501
@@ -2822,7 +2822,7 @@ class LandingPagesApi(object):
             200: "CollectionResponseWithTotalPageForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages",
             "GET",
             path_params,
@@ -2841,7 +2841,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_previous_version(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def get_previous_version(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Retrieves a previous version of a Landing Page  # noqa: E501
 
         Retrieves a previous version of a Landing Page  # noqa: E501
@@ -2871,9 +2871,9 @@ class LandingPagesApi(object):
         :rtype: VersionPage
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_previous_version_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
+        return await self.get_previous_version_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
 
-    def get_previous_version_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def get_previous_version_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Retrieves a previous version of a Landing Page  # noqa: E501
 
         Retrieves a previous version of a Landing Page  # noqa: E501
@@ -2954,7 +2954,7 @@ class LandingPagesApi(object):
             200: "VersionPage",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/{objectId}/revisions/{revisionId}",
             "GET",
             path_params,
@@ -2973,7 +2973,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_previous_versions(self, object_id, **kwargs):  # noqa: E501
+    async def get_previous_versions(self, object_id, **kwargs):  # noqa: E501
         """Retrieves all the previous versions of a Landing Page  # noqa: E501
 
         Retrieves all the previous versions of a Landing Page.  # noqa: E501
@@ -3007,9 +3007,9 @@ class LandingPagesApi(object):
         :rtype: CollectionResponseWithTotalVersionPage
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_previous_versions_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.get_previous_versions_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def get_previous_versions_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def get_previous_versions_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Retrieves all the previous versions of a Landing Page  # noqa: E501
 
         Retrieves all the previous versions of a Landing Page.  # noqa: E501
@@ -3095,7 +3095,7 @@ class LandingPagesApi(object):
             200: "CollectionResponseWithTotalVersionPage",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/{objectId}/revisions",
             "GET",
             path_params,
@@ -3114,7 +3114,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def push_live(self, object_id, **kwargs):  # noqa: E501
+    async def push_live(self, object_id, **kwargs):  # noqa: E501
         """Push Landing Page draft edits live  # noqa: E501
 
         Take any changes from the draft version of the Landing Page and apply them to the live version.  # noqa: E501
@@ -3142,9 +3142,9 @@ class LandingPagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.push_live_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.push_live_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def push_live_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def push_live_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Push Landing Page draft edits live  # noqa: E501
 
         Take any changes from the draft version of the Landing Page and apply them to the live version.  # noqa: E501
@@ -3216,7 +3216,7 @@ class LandingPagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/{objectId}/draft/push-live",
             "POST",
             path_params,
@@ -3235,7 +3235,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def read_batch(self, batch_input_string, **kwargs):  # noqa: E501
+    async def read_batch(self, batch_input_string, **kwargs):  # noqa: E501
         """Retrieve a batch of Landing Pages  # noqa: E501
 
         Retrieve the Landing Page objects identified in the request body.  # noqa: E501
@@ -3265,9 +3265,9 @@ class LandingPagesApi(object):
         :rtype: BatchResponsePage
         """
         kwargs["_return_http_data_only"] = True
-        return self.read_batch_with_http_info(batch_input_string, **kwargs)  # noqa: E501
+        return await self.read_batch_with_http_info(batch_input_string, **kwargs)  # noqa: E501
 
-    def read_batch_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
+    async def read_batch_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
         """Retrieve a batch of Landing Pages  # noqa: E501
 
         Retrieve the Landing Page objects identified in the request body.  # noqa: E501
@@ -3351,7 +3351,7 @@ class LandingPagesApi(object):
             207: "BatchResponsePageWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/batch/read",
             "POST",
             path_params,
@@ -3370,7 +3370,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def read_folders(self, batch_input_string, **kwargs):  # noqa: E501
+    async def read_folders(self, batch_input_string, **kwargs):  # noqa: E501
         """Retrieve a batch of Folders  # noqa: E501
 
         Update the Folder objects identified in the request body.  # noqa: E501
@@ -3400,9 +3400,9 @@ class LandingPagesApi(object):
         :rtype: BatchResponseContentFolder
         """
         kwargs["_return_http_data_only"] = True
-        return self.read_folders_with_http_info(batch_input_string, **kwargs)  # noqa: E501
+        return await self.read_folders_with_http_info(batch_input_string, **kwargs)  # noqa: E501
 
-    def read_folders_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
+    async def read_folders_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
         """Retrieve a batch of Folders  # noqa: E501
 
         Update the Folder objects identified in the request body.  # noqa: E501
@@ -3486,7 +3486,7 @@ class LandingPagesApi(object):
             207: "BatchResponseContentFolderWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/folders/batch/read",
             "POST",
             path_params,
@@ -3505,7 +3505,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def rerun_previous_ab_test(self, ab_test_rerun_request_v_next, **kwargs):  # noqa: E501
+    async def rerun_previous_ab_test(self, ab_test_rerun_request_v_next, **kwargs):  # noqa: E501
         """Rerun a previous A/B test  # noqa: E501
 
         Rerun a previous A/B test.  # noqa: E501
@@ -3533,9 +3533,9 @@ class LandingPagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.rerun_previous_ab_test_with_http_info(ab_test_rerun_request_v_next, **kwargs)  # noqa: E501
+        return await self.rerun_previous_ab_test_with_http_info(ab_test_rerun_request_v_next, **kwargs)  # noqa: E501
 
-    def rerun_previous_ab_test_with_http_info(self, ab_test_rerun_request_v_next, **kwargs):  # noqa: E501
+    async def rerun_previous_ab_test_with_http_info(self, ab_test_rerun_request_v_next, **kwargs):  # noqa: E501
         """Rerun a previous A/B test  # noqa: E501
 
         Rerun a previous A/B test.  # noqa: E501
@@ -3612,7 +3612,7 @@ class LandingPagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/ab-test/rerun",
             "POST",
             path_params,
@@ -3631,7 +3631,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def reset_draft(self, object_id, **kwargs):  # noqa: E501
+    async def reset_draft(self, object_id, **kwargs):  # noqa: E501
         """Reset the Landing Page draft to the live version  # noqa: E501
 
         Discards any edits and resets the draft to the live version.  # noqa: E501
@@ -3659,9 +3659,9 @@ class LandingPagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.reset_draft_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.reset_draft_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def reset_draft_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def reset_draft_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Reset the Landing Page draft to the live version  # noqa: E501
 
         Discards any edits and resets the draft to the live version.  # noqa: E501
@@ -3733,7 +3733,7 @@ class LandingPagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/{objectId}/draft/reset",
             "POST",
             path_params,
@@ -3752,7 +3752,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def restore_folder_previous_version(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def restore_folder_previous_version(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Restore a previous version of a Folder  # noqa: E501
 
         Takes a specified version of a Folder and restores it.  # noqa: E501
@@ -3782,9 +3782,9 @@ class LandingPagesApi(object):
         :rtype: ContentFolder
         """
         kwargs["_return_http_data_only"] = True
-        return self.restore_folder_previous_version_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
+        return await self.restore_folder_previous_version_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
 
-    def restore_folder_previous_version_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def restore_folder_previous_version_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Restore a previous version of a Folder  # noqa: E501
 
         Takes a specified version of a Folder and restores it.  # noqa: E501
@@ -3865,7 +3865,7 @@ class LandingPagesApi(object):
             200: "ContentFolder",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/folders/{objectId}/revisions/{revisionId}/restore",
             "POST",
             path_params,
@@ -3884,7 +3884,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def restore_previous_version(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def restore_previous_version(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Restore a previous version of a Landing Page  # noqa: E501
 
         Takes a specified version of a Landing Page and restores it.  # noqa: E501
@@ -3914,9 +3914,9 @@ class LandingPagesApi(object):
         :rtype: Page
         """
         kwargs["_return_http_data_only"] = True
-        return self.restore_previous_version_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
+        return await self.restore_previous_version_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
 
-    def restore_previous_version_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def restore_previous_version_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Restore a previous version of a Landing Page  # noqa: E501
 
         Takes a specified version of a Landing Page and restores it.  # noqa: E501
@@ -3997,7 +3997,7 @@ class LandingPagesApi(object):
             200: "Page",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/{objectId}/revisions/{revisionId}/restore",
             "POST",
             path_params,
@@ -4016,7 +4016,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def restore_previous_version_to_draft(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def restore_previous_version_to_draft(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Restore a previous version of a Landing Page, to the draft version of the Landing Page  # noqa: E501
 
         Takes a specified version of a Landing Page, sets it as the new draft version of the Landing Page.  # noqa: E501
@@ -4046,9 +4046,9 @@ class LandingPagesApi(object):
         :rtype: Page
         """
         kwargs["_return_http_data_only"] = True
-        return self.restore_previous_version_to_draft_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
+        return await self.restore_previous_version_to_draft_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
 
-    def restore_previous_version_to_draft_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def restore_previous_version_to_draft_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Restore a previous version of a Landing Page, to the draft version of the Landing Page  # noqa: E501
 
         Takes a specified version of a Landing Page, sets it as the new draft version of the Landing Page.  # noqa: E501
@@ -4129,7 +4129,7 @@ class LandingPagesApi(object):
             200: "Page",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/{objectId}/revisions/{revisionId}/restore-to-draft",
             "POST",
             path_params,
@@ -4148,7 +4148,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def schedule(self, content_schedule_request_v_next, **kwargs):  # noqa: E501
+    async def schedule(self, content_schedule_request_v_next, **kwargs):  # noqa: E501
         """Schedule a Landing Page to be Published  # noqa: E501
 
         Schedule a Landing Page to be Published  # noqa: E501
@@ -4176,9 +4176,9 @@ class LandingPagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.schedule_with_http_info(content_schedule_request_v_next, **kwargs)  # noqa: E501
+        return await self.schedule_with_http_info(content_schedule_request_v_next, **kwargs)  # noqa: E501
 
-    def schedule_with_http_info(self, content_schedule_request_v_next, **kwargs):  # noqa: E501
+    async def schedule_with_http_info(self, content_schedule_request_v_next, **kwargs):  # noqa: E501
         """Schedule a Landing Page to be Published  # noqa: E501
 
         Schedule a Landing Page to be Published  # noqa: E501
@@ -4255,7 +4255,7 @@ class LandingPagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/schedule",
             "POST",
             path_params,
@@ -4274,7 +4274,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def set_lang_primary(self, set_new_language_primary_request_v_next, **kwargs):  # noqa: E501
+    async def set_lang_primary(self, set_new_language_primary_request_v_next, **kwargs):  # noqa: E501
         """Set a new primary language  # noqa: E501
 
         Set a landing page as the primary language of a multi-language group.  # noqa: E501
@@ -4302,9 +4302,9 @@ class LandingPagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.set_lang_primary_with_http_info(set_new_language_primary_request_v_next, **kwargs)  # noqa: E501
+        return await self.set_lang_primary_with_http_info(set_new_language_primary_request_v_next, **kwargs)  # noqa: E501
 
-    def set_lang_primary_with_http_info(self, set_new_language_primary_request_v_next, **kwargs):  # noqa: E501
+    async def set_lang_primary_with_http_info(self, set_new_language_primary_request_v_next, **kwargs):  # noqa: E501
         """Set a new primary language  # noqa: E501
 
         Set a landing page as the primary language of a multi-language group.  # noqa: E501
@@ -4381,7 +4381,7 @@ class LandingPagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/multi-language/set-new-lang-primary",
             "PUT",
             path_params,
@@ -4400,7 +4400,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, object_id, page, **kwargs):  # noqa: E501
+    async def update(self, object_id, page, **kwargs):  # noqa: E501
         """Update a Landing Page  # noqa: E501
 
         Sparse updates a single Landing Page object identified by the id in the path. You only need to specify the column values that you are modifying.   # noqa: E501
@@ -4432,9 +4432,9 @@ class LandingPagesApi(object):
         :rtype: Page
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(object_id, page, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(object_id, page, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, object_id, page, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, object_id, page, **kwargs):  # noqa: E501
         """Update a Landing Page  # noqa: E501
 
         Sparse updates a single Landing Page object identified by the id in the path. You only need to specify the column values that you are modifying.   # noqa: E501
@@ -4524,7 +4524,7 @@ class LandingPagesApi(object):
             200: "Page",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/{objectId}",
             "PATCH",
             path_params,
@@ -4543,7 +4543,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_batch(self, batch_input_json_node, **kwargs):  # noqa: E501
+    async def update_batch(self, batch_input_json_node, **kwargs):  # noqa: E501
         """Update a batch of Landing Pages  # noqa: E501
 
         Update the Landing Page objects identified in the request body.  # noqa: E501
@@ -4573,9 +4573,9 @@ class LandingPagesApi(object):
         :rtype: BatchResponsePage
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_batch_with_http_info(batch_input_json_node, **kwargs)  # noqa: E501
+        return await self.update_batch_with_http_info(batch_input_json_node, **kwargs)  # noqa: E501
 
-    def update_batch_with_http_info(self, batch_input_json_node, **kwargs):  # noqa: E501
+    async def update_batch_with_http_info(self, batch_input_json_node, **kwargs):  # noqa: E501
         """Update a batch of Landing Pages  # noqa: E501
 
         Update the Landing Page objects identified in the request body.  # noqa: E501
@@ -4659,7 +4659,7 @@ class LandingPagesApi(object):
             207: "BatchResponsePageWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/batch/update",
             "POST",
             path_params,
@@ -4678,7 +4678,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_draft(self, object_id, page, **kwargs):  # noqa: E501
+    async def update_draft(self, object_id, page, **kwargs):  # noqa: E501
         """Update a Landing Page draft  # noqa: E501
 
         Sparse updates the draft version of a single Landing Page object identified by the id in the path. You only need to specify the column values that you are modifying.   # noqa: E501
@@ -4708,9 +4708,9 @@ class LandingPagesApi(object):
         :rtype: Page
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_draft_with_http_info(object_id, page, **kwargs)  # noqa: E501
+        return await self.update_draft_with_http_info(object_id, page, **kwargs)  # noqa: E501
 
-    def update_draft_with_http_info(self, object_id, page, **kwargs):  # noqa: E501
+    async def update_draft_with_http_info(self, object_id, page, **kwargs):  # noqa: E501
         """Update a Landing Page draft  # noqa: E501
 
         Sparse updates the draft version of a single Landing Page object identified by the id in the path. You only need to specify the column values that you are modifying.   # noqa: E501
@@ -4796,7 +4796,7 @@ class LandingPagesApi(object):
             200: "Page",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/{objectId}/draft",
             "PATCH",
             path_params,
@@ -4815,7 +4815,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_folder(self, object_id, content_folder, **kwargs):  # noqa: E501
+    async def update_folder(self, object_id, content_folder, **kwargs):  # noqa: E501
         """Update a Folder  # noqa: E501
 
         Sparse updates a single Folder object identified by the id in the path. You only need to specify the column values that you are modifying.   # noqa: E501
@@ -4847,9 +4847,9 @@ class LandingPagesApi(object):
         :rtype: ContentFolder
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_folder_with_http_info(object_id, content_folder, **kwargs)  # noqa: E501
+        return await self.update_folder_with_http_info(object_id, content_folder, **kwargs)  # noqa: E501
 
-    def update_folder_with_http_info(self, object_id, content_folder, **kwargs):  # noqa: E501
+    async def update_folder_with_http_info(self, object_id, content_folder, **kwargs):  # noqa: E501
         """Update a Folder  # noqa: E501
 
         Sparse updates a single Folder object identified by the id in the path. You only need to specify the column values that you are modifying.   # noqa: E501
@@ -4939,7 +4939,7 @@ class LandingPagesApi(object):
             200: "ContentFolder",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/folders/{objectId}",
             "PATCH",
             path_params,
@@ -4958,7 +4958,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_folders(self, batch_input_json_node, **kwargs):  # noqa: E501
+    async def update_folders(self, batch_input_json_node, **kwargs):  # noqa: E501
         """Update a batch of Folders  # noqa: E501
 
         Update the Folder objects identified in the request body.  # noqa: E501
@@ -4988,9 +4988,9 @@ class LandingPagesApi(object):
         :rtype: BatchResponseContentFolder
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_folders_with_http_info(batch_input_json_node, **kwargs)  # noqa: E501
+        return await self.update_folders_with_http_info(batch_input_json_node, **kwargs)  # noqa: E501
 
-    def update_folders_with_http_info(self, batch_input_json_node, **kwargs):  # noqa: E501
+    async def update_folders_with_http_info(self, batch_input_json_node, **kwargs):  # noqa: E501
         """Update a batch of Folders  # noqa: E501
 
         Update the Folder objects identified in the request body.  # noqa: E501
@@ -5074,7 +5074,7 @@ class LandingPagesApi(object):
             207: "BatchResponseContentFolderWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/folders/batch/update",
             "POST",
             path_params,
@@ -5093,7 +5093,7 @@ class LandingPagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_langs(self, update_languages_request_v_next, **kwargs):  # noqa: E501
+    async def update_langs(self, update_languages_request_v_next, **kwargs):  # noqa: E501
         """Update languages of multi-language group  # noqa: E501
 
         Explicitly set new languages for each landing page in a multi-language group.  # noqa: E501
@@ -5121,9 +5121,9 @@ class LandingPagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_langs_with_http_info(update_languages_request_v_next, **kwargs)  # noqa: E501
+        return await self.update_langs_with_http_info(update_languages_request_v_next, **kwargs)  # noqa: E501
 
-    def update_langs_with_http_info(self, update_languages_request_v_next, **kwargs):  # noqa: E501
+    async def update_langs_with_http_info(self, update_languages_request_v_next, **kwargs):  # noqa: E501
         """Update languages of multi-language group  # noqa: E501
 
         Explicitly set new languages for each landing page in a multi-language group.  # noqa: E501
@@ -5200,7 +5200,7 @@ class LandingPagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/landing-pages/multi-language/update-languages",
             "POST",
             path_params,

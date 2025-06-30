@@ -33,7 +33,7 @@ class EventsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create(self, timeline_event, **kwargs):  # noqa: E501
+    async def create(self, timeline_event, **kwargs):  # noqa: E501
         """Create a single event  # noqa: E501
 
         Creates an instance of a timeline event based on an event template. Once created, this event is immutable on the object timeline and cannot be modified. If the event template was configured to update object properties via `objectPropertyName`, this call will also attempt to updates those properties, or add them if they don't exist.  # noqa: E501
@@ -61,9 +61,9 @@ class EventsApi(object):
         :rtype: TimelineEventResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(timeline_event, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(timeline_event, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, timeline_event, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, timeline_event, **kwargs):  # noqa: E501
         """Create a single event  # noqa: E501
 
         Creates an instance of a timeline event based on an event template. Once created, this event is immutable on the object timeline and cannot be modified. If the event template was configured to update object properties via `objectPropertyName`, this call will also attempt to updates those properties, or add them if they don't exist.  # noqa: E501
@@ -142,7 +142,7 @@ class EventsApi(object):
             201: "TimelineEventResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/integrators/timeline/v3/events",
             "POST",
             path_params,
@@ -161,7 +161,7 @@ class EventsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_batch(self, batch_input_timeline_event, **kwargs):  # noqa: E501
+    async def create_batch(self, batch_input_timeline_event, **kwargs):  # noqa: E501
         """Creates multiple events  # noqa: E501
 
         Creates multiple instances of timeline events based on an event template. Once created, these event are immutable on the object timeline and cannot be modified. If the event template was configured to update object properties via `objectPropertyName`, this call will also attempt to updates those properties, or add them if they don't exist.  # noqa: E501
@@ -189,9 +189,9 @@ class EventsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_batch_with_http_info(batch_input_timeline_event, **kwargs)  # noqa: E501
+        return await self.create_batch_with_http_info(batch_input_timeline_event, **kwargs)  # noqa: E501
 
-    def create_batch_with_http_info(self, batch_input_timeline_event, **kwargs):  # noqa: E501
+    async def create_batch_with_http_info(self, batch_input_timeline_event, **kwargs):  # noqa: E501
         """Creates multiple events  # noqa: E501
 
         Creates multiple instances of timeline events based on an event template. Once created, these event are immutable on the object timeline and cannot be modified. If the event template was configured to update object properties via `objectPropertyName`, this call will also attempt to updates those properties, or add them if they don't exist.  # noqa: E501
@@ -268,7 +268,7 @@ class EventsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/integrators/timeline/v3/events/batch/create",
             "POST",
             path_params,
@@ -287,7 +287,7 @@ class EventsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, event_template_id, event_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, event_template_id, event_id, **kwargs):  # noqa: E501
         """Gets the event  # noqa: E501
 
         This returns the previously created event. It contains all existing info for the event, but not necessarily the CRM object.  # noqa: E501
@@ -317,9 +317,9 @@ class EventsApi(object):
         :rtype: TimelineEventResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(event_template_id, event_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(event_template_id, event_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, event_template_id, event_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, event_template_id, event_id, **kwargs):  # noqa: E501
         """Gets the event  # noqa: E501
 
         This returns the previously created event. It contains all existing info for the event, but not necessarily the CRM object.  # noqa: E501
@@ -400,7 +400,7 @@ class EventsApi(object):
             200: "TimelineEventResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/integrators/timeline/v3/events/{eventTemplateId}/{eventId}",
             "GET",
             path_params,
@@ -532,7 +532,7 @@ class EventsApi(object):
             200: "EventDetail",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/integrators/timeline/v3/events/{eventTemplateId}/{eventId}/detail",
             "GET",
             path_params,
@@ -670,7 +670,7 @@ class EventsApi(object):
             200: "str",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/integrators/timeline/v3/events/{eventTemplateId}/{eventId}/render",
             "GET",
             path_params,

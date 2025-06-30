@@ -140,7 +140,7 @@ class BasicApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/events/v3/send",
             "POST",
             path_params,

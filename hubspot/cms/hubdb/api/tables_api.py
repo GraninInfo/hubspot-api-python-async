@@ -135,7 +135,7 @@ class TablesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}",
             "DELETE",
             path_params,
@@ -272,7 +272,7 @@ class TablesApi(object):
             200: "HubDbTableV3",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/draft/clone",
             "POST",
             path_params,
@@ -400,7 +400,7 @@ class TablesApi(object):
             201: "HubDbTableV3",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables",
             "POST",
             path_params,
@@ -529,7 +529,7 @@ class TablesApi(object):
             200: "file",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/draft/export",
             "GET",
             path_params,
@@ -658,7 +658,7 @@ class TablesApi(object):
             200: "file",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/export",
             "GET",
             path_params,
@@ -839,7 +839,7 @@ class TablesApi(object):
             200: "CollectionResponseWithTotalHubDbTableV3ForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/draft",
             "GET",
             path_params,
@@ -1020,7 +1020,7 @@ class TablesApi(object):
             200: "CollectionResponseWithTotalHubDbTableV3ForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables",
             "GET",
             path_params,
@@ -1161,7 +1161,7 @@ class TablesApi(object):
             200: "HubDbTableV3",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/draft",
             "GET",
             path_params,
@@ -1302,7 +1302,7 @@ class TablesApi(object):
             200: "HubDbTableV3",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}",
             "GET",
             path_params,
@@ -1442,7 +1442,7 @@ class TablesApi(object):
             200: "ImportResult",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/draft/import",
             "POST",
             path_params,
@@ -1571,7 +1571,7 @@ class TablesApi(object):
             200: "HubDbTableV3",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/draft/publish",
             "POST",
             path_params,
@@ -1700,7 +1700,7 @@ class TablesApi(object):
             200: "HubDbTableV3",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/draft/reset",
             "POST",
             path_params,
@@ -1829,7 +1829,7 @@ class TablesApi(object):
             200: "HubDbTableV3",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/unpublish",
             "POST",
             path_params,
@@ -1984,7 +1984,7 @@ class TablesApi(object):
             200: "HubDbTableV3",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/draft",
             "PATCH",
             path_params,

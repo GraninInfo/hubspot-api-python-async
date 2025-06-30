@@ -33,7 +33,7 @@ class UsersApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, user_id, **kwargs):  # noqa: E501
+    async def archive(self, user_id, **kwargs):  # noqa: E501
         """Removes a user  # noqa: E501
 
         Removes a user identified by `userId`. `userId` refers to the user's ID by default, or optionally email as specified by the `IdProperty` query param.  # noqa: E501
@@ -63,9 +63,9 @@ class UsersApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(user_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(user_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, user_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, user_id, **kwargs):  # noqa: E501
         """Removes a user  # noqa: E501
 
         Removes a user identified by `userId`. `userId` refers to the user's ID by default, or optionally email as specified by the `IdProperty` query param.  # noqa: E501
@@ -141,7 +141,7 @@ class UsersApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/settings/v3/users/{userId}",
             "DELETE",
             path_params,
@@ -160,7 +160,7 @@ class UsersApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, user_provision_request, **kwargs):  # noqa: E501
+    async def create(self, user_provision_request, **kwargs):  # noqa: E501
         """Adds a user  # noqa: E501
 
         New users will only have minimal permissions, which is contacts-base. A welcome email will prompt them to set a password and log in to HubSpot.  # noqa: E501
@@ -188,9 +188,9 @@ class UsersApi(object):
         :rtype: PublicUser
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(user_provision_request, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(user_provision_request, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, user_provision_request, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, user_provision_request, **kwargs):  # noqa: E501
         """Adds a user  # noqa: E501
 
         New users will only have minimal permissions, which is contacts-base. A welcome email will prompt them to set a password and log in to HubSpot.  # noqa: E501
@@ -269,7 +269,7 @@ class UsersApi(object):
             201: "PublicUser",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/settings/v3/users/",
             "POST",
             path_params,
@@ -288,7 +288,7 @@ class UsersApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, user_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, user_id, **kwargs):  # noqa: E501
         """Retrieves a user  # noqa: E501
 
         Retrieves a user identified by `userId`. `userId` refers to the user's ID by default, or optionally email as specified by the `IdProperty` query param.  # noqa: E501
@@ -318,9 +318,9 @@ class UsersApi(object):
         :rtype: PublicUser
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(user_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(user_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, user_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, user_id, **kwargs):  # noqa: E501
         """Retrieves a user  # noqa: E501
 
         Retrieves a user identified by `userId`. `userId` refers to the user's ID by default, or optionally email as specified by the `IdProperty` query param.  # noqa: E501
@@ -398,7 +398,7 @@ class UsersApi(object):
             200: "PublicUser",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/settings/v3/users/{userId}",
             "GET",
             path_params,
@@ -417,7 +417,7 @@ class UsersApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, **kwargs):  # noqa: E501
+    async def get_page(self, **kwargs):  # noqa: E501
         """Retrieves a list of users from an account  # noqa: E501
 
         Retrieves a list of users from an account  # noqa: E501
@@ -447,9 +447,9 @@ class UsersApi(object):
         :rtype: CollectionResponsePublicUserForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(**kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, **kwargs):  # noqa: E501
         """Retrieves a list of users from an account  # noqa: E501
 
         Retrieves a list of users from an account  # noqa: E501
@@ -524,7 +524,7 @@ class UsersApi(object):
             200: "CollectionResponsePublicUserForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/settings/v3/users/",
             "GET",
             path_params,
@@ -543,7 +543,7 @@ class UsersApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def replace(self, user_id, public_user_update, **kwargs):  # noqa: E501
+    async def replace(self, user_id, public_user_update, **kwargs):  # noqa: E501
         """Modifies a user  # noqa: E501
 
         Modifies a user identified by `userId`. `userId` refers to the user's ID by default, or optionally email as specified by the `IdProperty` query param.  # noqa: E501
@@ -575,9 +575,9 @@ class UsersApi(object):
         :rtype: PublicUser
         """
         kwargs["_return_http_data_only"] = True
-        return self.replace_with_http_info(user_id, public_user_update, **kwargs)  # noqa: E501
+        return await self.replace_with_http_info(user_id, public_user_update, **kwargs)  # noqa: E501
 
-    def replace_with_http_info(self, user_id, public_user_update, **kwargs):  # noqa: E501
+    async def replace_with_http_info(self, user_id, public_user_update, **kwargs):  # noqa: E501
         """Modifies a user  # noqa: E501
 
         Modifies a user identified by `userId`. `userId` refers to the user's ID by default, or optionally email as specified by the `IdProperty` query param.  # noqa: E501
@@ -667,7 +667,7 @@ class UsersApi(object):
             200: "PublicUser",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/settings/v3/users/{userId}",
             "PUT",
             path_params,

@@ -33,7 +33,7 @@ class BasicApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, external_event_id, external_account_id, **kwargs):  # noqa: E501
+    async def archive(self, external_event_id, external_account_id, **kwargs):  # noqa: E501
         """Delete Marketing Event by External Ids  # noqa: E501
 
         Deletes the existing Marketing Event with the specified externalAccountId, externalEventId, if it exists.  Only Marketing Events created by the same app can be deleted.  # noqa: E501
@@ -63,9 +63,9 @@ class BasicApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(external_event_id, external_account_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(external_event_id, external_account_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, external_event_id, external_account_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, external_event_id, external_account_id, **kwargs):  # noqa: E501
         """Delete Marketing Event by External Ids  # noqa: E501
 
         Deletes the existing Marketing Event with the specified externalAccountId, externalEventId, if it exists.  Only Marketing Events created by the same app can be deleted.  # noqa: E501
@@ -144,7 +144,7 @@ class BasicApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/events/{externalEventId}",
             "DELETE",
             path_params,
@@ -265,7 +265,7 @@ class BasicApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/{objectId}",
             "DELETE",
             path_params,
@@ -284,7 +284,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, marketing_event_create_request_params, **kwargs):  # noqa: E501
+    async def create(self, marketing_event_create_request_params, **kwargs):  # noqa: E501
         """Create a marketing event  # noqa: E501
 
         Creates a new marketing event in HubSpot  # noqa: E501
@@ -312,9 +312,9 @@ class BasicApi(object):
         :rtype: MarketingEventDefaultResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(marketing_event_create_request_params, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(marketing_event_create_request_params, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, marketing_event_create_request_params, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, marketing_event_create_request_params, **kwargs):  # noqa: E501
         """Create a marketing event  # noqa: E501
 
         Creates a new marketing event in HubSpot  # noqa: E501
@@ -393,7 +393,7 @@ class BasicApi(object):
             200: "MarketingEventDefaultResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/events",
             "POST",
             path_params,
@@ -412,7 +412,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_all(self, **kwargs):  # noqa: E501
+    async def get_all(self, **kwargs):  # noqa: E501
         """Get all marketing event  # noqa: E501
 
         Returns all Marketing Events available on the portal, along with their properties, regardless of whether they were created manually or through the application.  The marketing events returned by this endpoint are sorted by objectId.  # noqa: E501
@@ -442,9 +442,9 @@ class BasicApi(object):
         :rtype: CollectionResponseMarketingEventPublicReadResponseV2ForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_all_with_http_info(**kwargs)  # noqa: E501
 
-    def get_all_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_all_with_http_info(self, **kwargs):  # noqa: E501
         """Get all marketing event  # noqa: E501
 
         Returns all Marketing Events available on the portal, along with their properties, regardless of whether they were created manually or through the application.  The marketing events returned by this endpoint are sorted by objectId.  # noqa: E501
@@ -519,7 +519,7 @@ class BasicApi(object):
             200: "CollectionResponseMarketingEventPublicReadResponseV2ForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/",
             "GET",
             path_params,
@@ -642,7 +642,7 @@ class BasicApi(object):
             200: "MarketingEventPublicReadResponseV2",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/{objectId}",
             "GET",
             path_params,
@@ -774,7 +774,7 @@ class BasicApi(object):
             200: "MarketingEventPublicReadResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/events/{externalEventId}",
             "GET",
             path_params,
@@ -793,7 +793,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, external_event_id, external_account_id, marketing_event_update_request_params, **kwargs):  # noqa: E501
+    async def update(self, external_event_id, external_account_id, marketing_event_update_request_params, **kwargs):  # noqa: E501
         """Update Marketing Event by External IDs  # noqa: E501
 
         Updates the details of an existing Marketing Event identified by its externalAccountId, externalEventId if it exists.  Only Marketing Events created by the same app can be updated.  # noqa: E501
@@ -825,9 +825,9 @@ class BasicApi(object):
         :rtype: MarketingEventPublicDefaultResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(external_event_id, external_account_id, marketing_event_update_request_params, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(external_event_id, external_account_id, marketing_event_update_request_params, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, external_event_id, external_account_id, marketing_event_update_request_params, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, external_event_id, external_account_id, marketing_event_update_request_params, **kwargs):  # noqa: E501
         """Update Marketing Event by External IDs  # noqa: E501
 
         Updates the details of an existing Marketing Event identified by its externalAccountId, externalEventId if it exists.  Only Marketing Events created by the same app can be updated.  # noqa: E501
@@ -920,7 +920,7 @@ class BasicApi(object):
             200: "MarketingEventPublicDefaultResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/events/{externalEventId}",
             "PATCH",
             path_params,
@@ -1057,7 +1057,7 @@ class BasicApi(object):
             200: "MarketingEventPublicDefaultResponseV2",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/{objectId}",
             "PATCH",
             path_params,
@@ -1076,7 +1076,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def upsert(self, external_event_id, marketing_event_create_request_params, **kwargs):  # noqa: E501
+    async def upsert(self, external_event_id, marketing_event_create_request_params, **kwargs):  # noqa: E501
         """Create or update a marketing event  # noqa: E501
 
         Upserts a marketing event If there is an existing marketing event with the specified ID, it will be updated; otherwise a new event will be created.  # noqa: E501
@@ -1106,9 +1106,9 @@ class BasicApi(object):
         :rtype: MarketingEventPublicDefaultResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.upsert_with_http_info(external_event_id, marketing_event_create_request_params, **kwargs)  # noqa: E501
+        return await self.upsert_with_http_info(external_event_id, marketing_event_create_request_params, **kwargs)  # noqa: E501
 
-    def upsert_with_http_info(self, external_event_id, marketing_event_create_request_params, **kwargs):  # noqa: E501
+    async def upsert_with_http_info(self, external_event_id, marketing_event_create_request_params, **kwargs):  # noqa: E501
         """Create or update a marketing event  # noqa: E501
 
         Upserts a marketing event If there is an existing marketing event with the specified ID, it will be updated; otherwise a new event will be created.  # noqa: E501
@@ -1194,7 +1194,7 @@ class BasicApi(object):
             200: "MarketingEventPublicDefaultResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/events/{externalEventId}",
             "PUT",
             path_params,

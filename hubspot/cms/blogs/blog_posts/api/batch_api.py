@@ -33,7 +33,7 @@ class BatchApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, batch_input_string, **kwargs):  # noqa: E501
+    async def archive(self, batch_input_string, **kwargs):  # noqa: E501
         """Delete a batch of blog posts  # noqa: E501
 
         Delete a blog post by ID.  Note: This is not the same as the in-app `archive` function. To perform a dashboard `archive` send an normal update with the `archivedInDashboard` field set to `true`.  # noqa: E501
@@ -61,9 +61,9 @@ class BatchApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(batch_input_string, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(batch_input_string, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
         """Delete a batch of blog posts  # noqa: E501
 
         Delete a blog post by ID.  Note: This is not the same as the in-app `archive` function. To perform a dashboard `archive` send an normal update with the `archivedInDashboard` field set to `true`.  # noqa: E501
@@ -140,7 +140,7 @@ class BatchApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/batch/archive",
             "POST",
             path_params,
@@ -159,7 +159,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, batch_input_blog_post, **kwargs):  # noqa: E501
+    async def create(self, batch_input_blog_post, **kwargs):  # noqa: E501
         """Create a batch of blog posts  # noqa: E501
 
         Create a batch of blog posts, specifying their content in the request body.  # noqa: E501
@@ -187,9 +187,9 @@ class BatchApi(object):
         :rtype: BatchResponseBlogPost
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(batch_input_blog_post, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(batch_input_blog_post, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, batch_input_blog_post, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, batch_input_blog_post, **kwargs):  # noqa: E501
         """Create a batch of blog posts  # noqa: E501
 
         Create a batch of blog posts, specifying their content in the request body.  # noqa: E501
@@ -269,7 +269,7 @@ class BatchApi(object):
             207: "BatchResponseBlogPostWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/batch/create",
             "POST",
             path_params,
@@ -288,7 +288,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def read(self, batch_input_string, **kwargs):  # noqa: E501
+    async def read(self, batch_input_string, **kwargs):  # noqa: E501
         """Retrieve a batch of Blog Posts  # noqa: E501
 
         Retrieve a batch of blog posts by ID. identified in the request body.  # noqa: E501
@@ -318,9 +318,9 @@ class BatchApi(object):
         :rtype: BatchResponseBlogPost
         """
         kwargs["_return_http_data_only"] = True
-        return self.read_with_http_info(batch_input_string, **kwargs)  # noqa: E501
+        return await self.read_with_http_info(batch_input_string, **kwargs)  # noqa: E501
 
-    def read_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
+    async def read_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
         """Retrieve a batch of Blog Posts  # noqa: E501
 
         Retrieve a batch of blog posts by ID. identified in the request body.  # noqa: E501
@@ -404,7 +404,7 @@ class BatchApi(object):
             207: "BatchResponseBlogPostWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/batch/read",
             "POST",
             path_params,
@@ -423,7 +423,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, batch_input_json_node, **kwargs):  # noqa: E501
+    async def update(self, batch_input_json_node, **kwargs):  # noqa: E501
         """Update a batch of Blog Posts  # noqa: E501
 
         Update a batch of blog posts.  # noqa: E501
@@ -453,9 +453,9 @@ class BatchApi(object):
         :rtype: BatchResponseBlogPost
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(batch_input_json_node, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(batch_input_json_node, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, batch_input_json_node, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, batch_input_json_node, **kwargs):  # noqa: E501
         """Update a batch of Blog Posts  # noqa: E501
 
         Update a batch of blog posts.  # noqa: E501
@@ -539,7 +539,7 @@ class BatchApi(object):
             207: "BatchResponseBlogPostWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/batch/update",
             "POST",
             path_params,

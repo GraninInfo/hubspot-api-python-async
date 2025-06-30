@@ -33,7 +33,7 @@ class FoldersApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, folder_id, **kwargs):  # noqa: E501
+    async def archive(self, folder_id, **kwargs):  # noqa: E501
         """Delete folder by ID  # noqa: E501
 
         Delete folder by ID.  # noqa: E501
@@ -61,9 +61,9 @@ class FoldersApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(folder_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(folder_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, folder_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, folder_id, **kwargs):  # noqa: E501
         """Delete folder by ID  # noqa: E501
 
         Delete folder by ID.  # noqa: E501
@@ -137,7 +137,7 @@ class FoldersApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/folders/{folderId}",
             "DELETE",
             path_params,
@@ -260,7 +260,7 @@ class FoldersApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/folders/{folderPath}",
             "DELETE",
             path_params,
@@ -383,7 +383,7 @@ class FoldersApi(object):
             200: "FolderActionResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/folders/update/async/tasks/{taskId}/status",
             "GET",
             path_params,
@@ -402,7 +402,7 @@ class FoldersApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, folder_input, **kwargs):  # noqa: E501
+    async def create(self, folder_input, **kwargs):  # noqa: E501
         """Create folder  # noqa: E501
 
         Creates a folder.  # noqa: E501
@@ -430,9 +430,9 @@ class FoldersApi(object):
         :rtype: Folder
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(folder_input, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(folder_input, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, folder_input, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, folder_input, **kwargs):  # noqa: E501
         """Create folder  # noqa: E501
 
         Creates a folder.  # noqa: E501
@@ -511,7 +511,7 @@ class FoldersApi(object):
             201: "Folder",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/folders",
             "POST",
             path_params,
@@ -530,7 +530,7 @@ class FoldersApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def do_search(self, **kwargs):  # noqa: E501
+    async def do_search(self, **kwargs):  # noqa: E501
         """Search folders  # noqa: E501
 
         Search for folders. Does not contain hidden or archived folders.  # noqa: E501
@@ -590,9 +590,9 @@ class FoldersApi(object):
         :rtype: CollectionResponseFolder
         """
         kwargs["_return_http_data_only"] = True
-        return self.do_search_with_http_info(**kwargs)  # noqa: E501
+        return await self.do_search_with_http_info(**kwargs)  # noqa: E501
 
-    def do_search_with_http_info(self, **kwargs):  # noqa: E501
+    async def do_search_with_http_info(self, **kwargs):  # noqa: E501
         """Search folders  # noqa: E501
 
         Search for folders. Does not contain hidden or archived folders.  # noqa: E501
@@ -749,7 +749,7 @@ class FoldersApi(object):
             200: "CollectionResponseFolder",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/folders/search",
             "GET",
             path_params,
@@ -768,7 +768,7 @@ class FoldersApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, folder_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, folder_id, **kwargs):  # noqa: E501
         """Retrieve folder by ID  # noqa: E501
 
         Retrieve a folder by its ID.  # noqa: E501
@@ -798,9 +798,9 @@ class FoldersApi(object):
         :rtype: Folder
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(folder_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(folder_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, folder_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, folder_id, **kwargs):  # noqa: E501
         """Retrieve folder by ID  # noqa: E501
 
         Retrieve a folder by its ID.  # noqa: E501
@@ -881,7 +881,7 @@ class FoldersApi(object):
             200: "Folder",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/folders/{folderId}",
             "GET",
             path_params,
@@ -1013,7 +1013,7 @@ class FoldersApi(object):
             200: "Folder",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/folders/{folderPath}",
             "GET",
             path_params,
@@ -1152,7 +1152,7 @@ class FoldersApi(object):
             200: "Folder",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/folders/{folderId}",
             "PATCH",
             path_params,
@@ -1280,7 +1280,7 @@ class FoldersApi(object):
             202: "FolderUpdateTaskLocator",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/folders/update/async",
             "POST",
             path_params,

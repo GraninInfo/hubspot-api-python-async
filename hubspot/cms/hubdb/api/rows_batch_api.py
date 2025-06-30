@@ -151,7 +151,7 @@ class RowsBatchApi(object):
             200: "BatchResponseHubDbTableRowV3",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/rows/draft/batch/clone",
             "POST",
             path_params,
@@ -289,7 +289,7 @@ class RowsBatchApi(object):
             207: "BatchResponseHubDbTableRowV3WithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/rows/draft/batch/create",
             "POST",
             path_params,
@@ -424,7 +424,7 @@ class RowsBatchApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/rows/draft/batch/purge",
             "POST",
             path_params,
@@ -562,7 +562,7 @@ class RowsBatchApi(object):
             207: "BatchResponseHubDbTableRowV3WithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/rows/draft/batch/read",
             "POST",
             path_params,
@@ -700,7 +700,7 @@ class RowsBatchApi(object):
             207: "BatchResponseHubDbTableRowV3WithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/rows/batch/read",
             "POST",
             path_params,
@@ -838,7 +838,7 @@ class RowsBatchApi(object):
             207: "BatchResponseHubDbTableRowV3WithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/rows/draft/batch/replace",
             "POST",
             path_params,
@@ -976,7 +976,7 @@ class RowsBatchApi(object):
             207: "BatchResponseHubDbTableRowV3WithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/rows/draft/batch/update",
             "POST",
             path_params,

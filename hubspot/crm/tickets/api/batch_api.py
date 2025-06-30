@@ -33,7 +33,7 @@ class BatchApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, batch_input_simple_public_object_id, **kwargs):  # noqa: E501
+    async def archive(self, batch_input_simple_public_object_id, **kwargs):  # noqa: E501
         """Archive a batch of tickets by ID  # noqa: E501
 
         Delete a batch of tickets by ID. Deleted tickets can be restored within 90 days of deletion. Learn more about [restoring records](https://knowledge.hubspot.com/records/restore-deleted-records).  # noqa: E501
@@ -61,9 +61,9 @@ class BatchApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(batch_input_simple_public_object_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(batch_input_simple_public_object_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, batch_input_simple_public_object_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, batch_input_simple_public_object_id, **kwargs):  # noqa: E501
         """Archive a batch of tickets by ID  # noqa: E501
 
         Delete a batch of tickets by ID. Deleted tickets can be restored within 90 days of deletion. Learn more about [restoring records](https://knowledge.hubspot.com/records/restore-deleted-records).  # noqa: E501
@@ -140,7 +140,7 @@ class BatchApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/tickets/batch/archive",
             "POST",
             path_params,
@@ -159,7 +159,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, batch_input_simple_public_object_batch_input_for_create, **kwargs):  # noqa: E501
+    async def create(self, batch_input_simple_public_object_batch_input_for_create, **kwargs):  # noqa: E501
         """Create a batch of tickets  # noqa: E501
 
         Create a batch of tickets. The `inputs` array can contain a `properties` object to define property values for the ticket, along with an `associations` array to define [associations](https://developers.hubspot.com/docs/guides/api/crm/associations/associations-v4) with other CRM records.  # noqa: E501
@@ -187,9 +187,9 @@ class BatchApi(object):
         :rtype: BatchResponseSimplePublicObject
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(batch_input_simple_public_object_batch_input_for_create, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(batch_input_simple_public_object_batch_input_for_create, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, batch_input_simple_public_object_batch_input_for_create, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, batch_input_simple_public_object_batch_input_for_create, **kwargs):  # noqa: E501
         """Create a batch of tickets  # noqa: E501
 
         Create a batch of tickets. The `inputs` array can contain a `properties` object to define property values for the ticket, along with an `associations` array to define [associations](https://developers.hubspot.com/docs/guides/api/crm/associations/associations-v4) with other CRM records.  # noqa: E501
@@ -269,7 +269,7 @@ class BatchApi(object):
             207: "BatchResponseSimplePublicObjectWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/tickets/batch/create",
             "POST",
             path_params,
@@ -288,7 +288,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def read(self, batch_read_input_simple_public_object_id, **kwargs):  # noqa: E501
+    async def read(self, batch_read_input_simple_public_object_id, **kwargs):  # noqa: E501
         """Read a batch of tickets by internal ID, or unique property values  # noqa: E501
 
         Retrieve a batch of tickets by ID (`ticketId`) or unique property value (`idProperty`).   # noqa: E501
@@ -318,9 +318,9 @@ class BatchApi(object):
         :rtype: BatchResponseSimplePublicObject
         """
         kwargs["_return_http_data_only"] = True
-        return self.read_with_http_info(batch_read_input_simple_public_object_id, **kwargs)  # noqa: E501
+        return await self.read_with_http_info(batch_read_input_simple_public_object_id, **kwargs)  # noqa: E501
 
-    def read_with_http_info(self, batch_read_input_simple_public_object_id, **kwargs):  # noqa: E501
+    async def read_with_http_info(self, batch_read_input_simple_public_object_id, **kwargs):  # noqa: E501
         """Read a batch of tickets by internal ID, or unique property values  # noqa: E501
 
         Retrieve a batch of tickets by ID (`ticketId`) or unique property value (`idProperty`).   # noqa: E501
@@ -404,7 +404,7 @@ class BatchApi(object):
             207: "BatchResponseSimplePublicObjectWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/tickets/batch/read",
             "POST",
             path_params,
@@ -423,7 +423,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, batch_input_simple_public_object_batch_input, **kwargs):  # noqa: E501
+    async def update(self, batch_input_simple_public_object_batch_input, **kwargs):  # noqa: E501
         """Update a batch of tickets by internal ID, or unique property values  # noqa: E501
 
         Update a batch of tickets by ID (`ticketId`) or unique property value (`idProperty`). Provided property values will be overwritten. Read-only and non-existent properties will result in an error. Properties values can be cleared by passing an empty string.  # noqa: E501
@@ -451,9 +451,9 @@ class BatchApi(object):
         :rtype: BatchResponseSimplePublicObject
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(batch_input_simple_public_object_batch_input, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(batch_input_simple_public_object_batch_input, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, batch_input_simple_public_object_batch_input, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, batch_input_simple_public_object_batch_input, **kwargs):  # noqa: E501
         """Update a batch of tickets by internal ID, or unique property values  # noqa: E501
 
         Update a batch of tickets by ID (`ticketId`) or unique property value (`idProperty`). Provided property values will be overwritten. Read-only and non-existent properties will result in an error. Properties values can be cleared by passing an empty string.  # noqa: E501
@@ -533,7 +533,7 @@ class BatchApi(object):
             207: "BatchResponseSimplePublicObjectWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/tickets/batch/update",
             "POST",
             path_params,
@@ -552,7 +552,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def upsert(self, batch_input_simple_public_object_batch_input_upsert, **kwargs):  # noqa: E501
+    async def upsert(self, batch_input_simple_public_object_batch_input_upsert, **kwargs):  # noqa: E501
         """Create or update a batch of tickets by unique property values  # noqa: E501
 
         Create or update records identified by a unique property value as specified by the `idProperty` query param. `idProperty` query param refers to a property whose values are unique for the object.  # noqa: E501
@@ -580,9 +580,9 @@ class BatchApi(object):
         :rtype: BatchResponseSimplePublicUpsertObject
         """
         kwargs["_return_http_data_only"] = True
-        return self.upsert_with_http_info(batch_input_simple_public_object_batch_input_upsert, **kwargs)  # noqa: E501
+        return await self.upsert_with_http_info(batch_input_simple_public_object_batch_input_upsert, **kwargs)  # noqa: E501
 
-    def upsert_with_http_info(self, batch_input_simple_public_object_batch_input_upsert, **kwargs):  # noqa: E501
+    async def upsert_with_http_info(self, batch_input_simple_public_object_batch_input_upsert, **kwargs):  # noqa: E501
         """Create or update a batch of tickets by unique property values  # noqa: E501
 
         Create or update records identified by a unique property value as specified by the `idProperty` query param. `idProperty` query param refers to a property whose values are unique for the object.  # noqa: E501
@@ -662,7 +662,7 @@ class BatchApi(object):
             207: "BatchResponseSimplePublicUpsertObjectWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/tickets/batch/upsert",
             "POST",
             path_params,

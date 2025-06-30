@@ -146,7 +146,7 @@ class ChangePropertyApi(object):
             200: "MarketingEventDefaultResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/events/{externalEventId}/cancel",
             "POST",
             path_params,
@@ -165,7 +165,7 @@ class ChangePropertyApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def complete(self, external_event_id, external_account_id, marketing_event_complete_request_params, **kwargs):  # noqa: E501
+    async def complete(self, external_event_id, external_account_id, marketing_event_complete_request_params, **kwargs):  # noqa: E501
         """Mark a marketing event as completed  # noqa: E501
 
         Mark a marketing event as completed  # noqa: E501
@@ -197,9 +197,9 @@ class ChangePropertyApi(object):
         :rtype: MarketingEventDefaultResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.complete_with_http_info(external_event_id, external_account_id, marketing_event_complete_request_params, **kwargs)  # noqa: E501
+        return await self.complete_with_http_info(external_event_id, external_account_id, marketing_event_complete_request_params, **kwargs)  # noqa: E501
 
-    def complete_with_http_info(self, external_event_id, external_account_id, marketing_event_complete_request_params, **kwargs):  # noqa: E501
+    async def complete_with_http_info(self, external_event_id, external_account_id, marketing_event_complete_request_params, **kwargs):  # noqa: E501
         """Mark a marketing event as completed  # noqa: E501
 
         Mark a marketing event as completed  # noqa: E501
@@ -292,7 +292,7 @@ class ChangePropertyApi(object):
             200: "MarketingEventDefaultResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/events/{externalEventId}/complete",
             "POST",
             path_params,

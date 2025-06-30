@@ -33,7 +33,7 @@ class PublicApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_by_id(self, content_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, content_id, **kwargs):  # noqa: E501
         """Get indexed properties.  # noqa: E501
 
         For a given account and document ID (page ID, blog post ID, HubDB row ID, etc.), return all indexed data for that document. This is useful when debugging why a particular document is not returned from a custom search.  # noqa: E501
@@ -63,9 +63,9 @@ class PublicApi(object):
         :rtype: IndexedData
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(content_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(content_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, content_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, content_id, **kwargs):  # noqa: E501
         """Get indexed properties.  # noqa: E501
 
         For a given account and document ID (page ID, blog post ID, HubDB row ID, etc.), return all indexed data for that document. This is useful when debugging why a particular document is not returned from a custom search.  # noqa: E501
@@ -145,7 +145,7 @@ class PublicApi(object):
             200: "IndexedData",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/site-search/indexed-data/{contentId}",
             "GET",
             path_params,
@@ -384,7 +384,7 @@ class PublicApi(object):
             200: "PublicSearchResults",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/site-search/search",
             "GET",
             path_params,

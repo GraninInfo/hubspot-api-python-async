@@ -140,7 +140,7 @@ class BatchApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/events/v3/send/batch",
             "POST",
             path_params,

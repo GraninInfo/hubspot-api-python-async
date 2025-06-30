@@ -16,5 +16,5 @@ class Discovery(DiscoveryBase):
     def search_api(self) -> api_client.SearchApi:
         return self._configure_api_client(api_client, "SearchApi")
 
-    def get_all(self, **kwargs):
+    async def get_all(self, **kwargs):
         return fetch_all(self.basic_api, **kwargs)

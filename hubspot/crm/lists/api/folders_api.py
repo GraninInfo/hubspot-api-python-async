@@ -33,7 +33,7 @@ class FoldersApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create(self, list_folder_create_request, **kwargs):  # noqa: E501
+    async def create(self, list_folder_create_request, **kwargs):  # noqa: E501
         """Creates a folder  # noqa: E501
 
         Creates a folder with the given information.  # noqa: E501
@@ -61,9 +61,9 @@ class FoldersApi(object):
         :rtype: ListFolderCreateResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(list_folder_create_request, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(list_folder_create_request, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, list_folder_create_request, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, list_folder_create_request, **kwargs):  # noqa: E501
         """Creates a folder  # noqa: E501
 
         Creates a folder with the given information.  # noqa: E501
@@ -142,7 +142,7 @@ class FoldersApi(object):
             200: "ListFolderCreateResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/folders",
             "POST",
             path_params,
@@ -161,7 +161,7 @@ class FoldersApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_all(self, **kwargs):  # noqa: E501
+    async def get_all(self, **kwargs):  # noqa: E501
         """Retrieves a folder.  # noqa: E501
 
         Retrieves a folder and recursively includes all folders via the childNodes attribute.  The child lists field will be empty in all child nodes. Only the folder retrieved will include the child lists in that folder.  # noqa: E501
@@ -189,9 +189,9 @@ class FoldersApi(object):
         :rtype: ListFolderFetchResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_all_with_http_info(**kwargs)  # noqa: E501
 
-    def get_all_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_all_with_http_info(self, **kwargs):  # noqa: E501
         """Retrieves a folder.  # noqa: E501
 
         Retrieves a folder and recursively includes all folders via the childNodes attribute.  The child lists field will be empty in all child nodes. Only the folder retrieved will include the child lists in that folder.  # noqa: E501
@@ -262,7 +262,7 @@ class FoldersApi(object):
             200: "ListFolderFetchResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/folders",
             "GET",
             path_params,
@@ -394,7 +394,7 @@ class FoldersApi(object):
             200: "ListFolderFetchResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/folders/{folderId}/move/{newParentFolderId}",
             "PUT",
             path_params,
@@ -520,7 +520,7 @@ class FoldersApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/folders/move-list",
             "PUT",
             path_params,
@@ -641,7 +641,7 @@ class FoldersApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/folders/{folderId}",
             "DELETE",
             path_params,
@@ -770,7 +770,7 @@ class FoldersApi(object):
             200: "ListFolderFetchResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/folders/{folderId}/rename",
             "PUT",
             path_params,

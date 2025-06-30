@@ -33,7 +33,7 @@ class CoreApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, object_type, **kwargs):  # noqa: E501
+    async def archive(self, object_type, **kwargs):  # noqa: E501
         """Delete a schema  # noqa: E501
 
         Deletes a schema. Any existing records of this schema must be deleted **first**. Otherwise this call will fail.  # noqa: E501
@@ -63,9 +63,9 @@ class CoreApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(object_type, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(object_type, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, object_type, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, object_type, **kwargs):  # noqa: E501
         """Delete a schema  # noqa: E501
 
         Deletes a schema. Any existing records of this schema must be deleted **first**. Otherwise this call will fail.  # noqa: E501
@@ -141,7 +141,7 @@ class CoreApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm-object-schemas/v3/schemas/{objectType}",
             "DELETE",
             path_params,
@@ -271,7 +271,7 @@ class CoreApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm-object-schemas/v3/schemas/{objectType}/associations/{associationIdentifier}",
             "DELETE",
             path_params,
@@ -290,7 +290,7 @@ class CoreApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, object_schema_egg, **kwargs):  # noqa: E501
+    async def create(self, object_schema_egg, **kwargs):  # noqa: E501
         """Create a new schema  # noqa: E501
 
         Define a new object schema, along with custom properties and associations. The entire object schema, including its object type ID, properties, and associations will be returned in the response.  # noqa: E501
@@ -318,9 +318,9 @@ class CoreApi(object):
         :rtype: ObjectSchema
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(object_schema_egg, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(object_schema_egg, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, object_schema_egg, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, object_schema_egg, **kwargs):  # noqa: E501
         """Create a new schema  # noqa: E501
 
         Define a new object schema, along with custom properties and associations. The entire object schema, including its object type ID, properties, and associations will be returned in the response.  # noqa: E501
@@ -399,7 +399,7 @@ class CoreApi(object):
             201: "ObjectSchema",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm-object-schemas/v3/schemas",
             "POST",
             path_params,
@@ -536,7 +536,7 @@ class CoreApi(object):
             201: "AssociationDefinition",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm-object-schemas/v3/schemas/{objectType}/associations",
             "POST",
             path_params,
@@ -555,7 +555,7 @@ class CoreApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_all(self, **kwargs):  # noqa: E501
+    async def get_all(self, **kwargs):  # noqa: E501
         """Get all schemas  # noqa: E501
 
         Returns all object schemas that have been defined for your account.  # noqa: E501
@@ -583,9 +583,9 @@ class CoreApi(object):
         :rtype: CollectionResponseObjectSchemaNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_all_with_http_info(**kwargs)  # noqa: E501
 
-    def get_all_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_all_with_http_info(self, **kwargs):  # noqa: E501
         """Get all schemas  # noqa: E501
 
         Returns all object schemas that have been defined for your account.  # noqa: E501
@@ -656,7 +656,7 @@ class CoreApi(object):
             200: "CollectionResponseObjectSchemaNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm-object-schemas/v3/schemas",
             "GET",
             path_params,
@@ -675,7 +675,7 @@ class CoreApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, object_type, **kwargs):  # noqa: E501
+    async def get_by_id(self, object_type, **kwargs):  # noqa: E501
         """Get an existing schema  # noqa: E501
 
         Returns an existing object schema.  # noqa: E501
@@ -703,9 +703,9 @@ class CoreApi(object):
         :rtype: ObjectSchema
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(object_type, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(object_type, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, object_type, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, object_type, **kwargs):  # noqa: E501
         """Get an existing schema  # noqa: E501
 
         Returns an existing object schema.  # noqa: E501
@@ -779,7 +779,7 @@ class CoreApi(object):
             200: "ObjectSchema",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm-object-schemas/v3/schemas/{objectType}",
             "GET",
             path_params,
@@ -798,7 +798,7 @@ class CoreApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, object_type, object_type_definition_patch, **kwargs):  # noqa: E501
+    async def update(self, object_type, object_type_definition_patch, **kwargs):  # noqa: E501
         """Update a schema  # noqa: E501
 
         Update the details for an existing object schema.  # noqa: E501
@@ -828,9 +828,9 @@ class CoreApi(object):
         :rtype: ObjectTypeDefinition
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(object_type, object_type_definition_patch, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(object_type, object_type_definition_patch, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, object_type, object_type_definition_patch, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, object_type, object_type_definition_patch, **kwargs):  # noqa: E501
         """Update a schema  # noqa: E501
 
         Update the details for an existing object schema.  # noqa: E501
@@ -916,7 +916,7 @@ class CoreApi(object):
             200: "ObjectTypeDefinition",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm-object-schemas/v3/schemas/{objectType}",
             "PATCH",
             path_params,

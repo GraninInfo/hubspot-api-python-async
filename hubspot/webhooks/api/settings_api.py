@@ -135,7 +135,7 @@ class SettingsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/webhooks/v3/{appId}/settings",
             "DELETE",
             path_params,
@@ -272,7 +272,7 @@ class SettingsApi(object):
             200: "SettingsResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/webhooks/v3/{appId}/settings",
             "PUT",
             path_params,
@@ -291,7 +291,7 @@ class SettingsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_all(self, app_id, **kwargs):  # noqa: E501
+    async def get_all(self, app_id, **kwargs):  # noqa: E501
         """Read webhook settings  # noqa: E501
 
         Retrieve the webhook settings for the specified app, including the webhook’s target URL, throttle configuration, and create/update date.  # noqa: E501
@@ -319,9 +319,9 @@ class SettingsApi(object):
         :rtype: SettingsResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_with_http_info(app_id, **kwargs)  # noqa: E501
+        return await self.get_all_with_http_info(app_id, **kwargs)  # noqa: E501
 
-    def get_all_with_http_info(self, app_id, **kwargs):  # noqa: E501
+    async def get_all_with_http_info(self, app_id, **kwargs):  # noqa: E501
         """Read webhook settings  # noqa: E501
 
         Retrieve the webhook settings for the specified app, including the webhook’s target URL, throttle configuration, and create/update date.  # noqa: E501
@@ -395,7 +395,7 @@ class SettingsApi(object):
             200: "SettingsResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/webhooks/v3/{appId}/settings",
             "GET",
             path_params,

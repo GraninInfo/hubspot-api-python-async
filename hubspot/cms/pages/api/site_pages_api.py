@@ -33,7 +33,7 @@ class SitePagesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, object_id, **kwargs):  # noqa: E501
+    async def archive(self, object_id, **kwargs):  # noqa: E501
         """Delete a Site Page  # noqa: E501
 
         Delete the Site Page object identified by the id in the path.  # noqa: E501
@@ -63,9 +63,9 @@ class SitePagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Delete a Site Page  # noqa: E501
 
         Delete the Site Page object identified by the id in the path.  # noqa: E501
@@ -141,7 +141,7 @@ class SitePagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/{objectId}",
             "DELETE",
             path_params,
@@ -160,7 +160,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def archive_batch(self, batch_input_string, **kwargs):  # noqa: E501
+    async def archive_batch(self, batch_input_string, **kwargs):  # noqa: E501
         """Delete a batch of Site Pages  # noqa: E501
 
         Delete the Site Page objects identified in the request body. Note: This is not the same as the dashboard `archive` function. To perform a dashboard `archive` send an normal update with the `archivedInDashboard` field set to true.  # noqa: E501
@@ -188,9 +188,9 @@ class SitePagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_batch_with_http_info(batch_input_string, **kwargs)  # noqa: E501
+        return await self.archive_batch_with_http_info(batch_input_string, **kwargs)  # noqa: E501
 
-    def archive_batch_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
+    async def archive_batch_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
         """Delete a batch of Site Pages  # noqa: E501
 
         Delete the Site Page objects identified in the request body. Note: This is not the same as the dashboard `archive` function. To perform a dashboard `archive` send an normal update with the `archivedInDashboard` field set to true.  # noqa: E501
@@ -267,7 +267,7 @@ class SitePagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/batch/archive",
             "POST",
             path_params,
@@ -286,7 +286,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def attach_to_lang_group(self, attach_to_lang_primary_request_v_next, **kwargs):  # noqa: E501
+    async def attach_to_lang_group(self, attach_to_lang_primary_request_v_next, **kwargs):  # noqa: E501
         """Attach a site page to a multi-language group  # noqa: E501
 
         Attach a site page to a multi-language group.  # noqa: E501
@@ -314,9 +314,9 @@ class SitePagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.attach_to_lang_group_with_http_info(attach_to_lang_primary_request_v_next, **kwargs)  # noqa: E501
+        return await self.attach_to_lang_group_with_http_info(attach_to_lang_primary_request_v_next, **kwargs)  # noqa: E501
 
-    def attach_to_lang_group_with_http_info(self, attach_to_lang_primary_request_v_next, **kwargs):  # noqa: E501
+    async def attach_to_lang_group_with_http_info(self, attach_to_lang_primary_request_v_next, **kwargs):  # noqa: E501
         """Attach a site page to a multi-language group  # noqa: E501
 
         Attach a site page to a multi-language group.  # noqa: E501
@@ -393,7 +393,7 @@ class SitePagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/multi-language/attach-to-lang-group",
             "POST",
             path_params,
@@ -521,7 +521,7 @@ class SitePagesApi(object):
             200: "Page",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/clone",
             "POST",
             path_params,
@@ -540,7 +540,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, page, **kwargs):  # noqa: E501
+    async def create(self, page, **kwargs):  # noqa: E501
         """Create a new Site Page  # noqa: E501
 
         Create a new Site Page  # noqa: E501
@@ -568,9 +568,9 @@ class SitePagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(page, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(page, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, page, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, page, **kwargs):  # noqa: E501
         """Create a new Site Page  # noqa: E501
 
         Create a new Site Page  # noqa: E501
@@ -647,7 +647,7 @@ class SitePagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages",
             "POST",
             path_params,
@@ -775,7 +775,7 @@ class SitePagesApi(object):
             201: "Page",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/ab-test/create-variation",
             "POST",
             path_params,
@@ -794,7 +794,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_batch(self, batch_input_page, **kwargs):  # noqa: E501
+    async def create_batch(self, batch_input_page, **kwargs):  # noqa: E501
         """Create a batch of Site Pages  # noqa: E501
 
         Create the Site Page objects detailed in the request body.  # noqa: E501
@@ -822,9 +822,9 @@ class SitePagesApi(object):
         :rtype: BatchResponsePage
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_batch_with_http_info(batch_input_page, **kwargs)  # noqa: E501
+        return await self.create_batch_with_http_info(batch_input_page, **kwargs)  # noqa: E501
 
-    def create_batch_with_http_info(self, batch_input_page, **kwargs):  # noqa: E501
+    async def create_batch_with_http_info(self, batch_input_page, **kwargs):  # noqa: E501
         """Create a batch of Site Pages  # noqa: E501
 
         Create the Site Page objects detailed in the request body.  # noqa: E501
@@ -904,7 +904,7 @@ class SitePagesApi(object):
             207: "BatchResponsePageWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/batch/create",
             "POST",
             path_params,
@@ -923,7 +923,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_lang_variation(self, content_language_clone_request_v_next, **kwargs):  # noqa: E501
+    async def create_lang_variation(self, content_language_clone_request_v_next, **kwargs):  # noqa: E501
         """Create a new language variation  # noqa: E501
 
         Create a new language variation from an existing site page  # noqa: E501
@@ -951,9 +951,9 @@ class SitePagesApi(object):
         :rtype: Page
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_lang_variation_with_http_info(content_language_clone_request_v_next, **kwargs)  # noqa: E501
+        return await self.create_lang_variation_with_http_info(content_language_clone_request_v_next, **kwargs)  # noqa: E501
 
-    def create_lang_variation_with_http_info(self, content_language_clone_request_v_next, **kwargs):  # noqa: E501
+    async def create_lang_variation_with_http_info(self, content_language_clone_request_v_next, **kwargs):  # noqa: E501
         """Create a new language variation  # noqa: E501
 
         Create a new language variation from an existing site page  # noqa: E501
@@ -1032,7 +1032,7 @@ class SitePagesApi(object):
             200: "Page",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/multi-language/create-language-variation",
             "POST",
             path_params,
@@ -1158,7 +1158,7 @@ class SitePagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/multi-language/detach-from-lang-group",
             "POST",
             path_params,
@@ -1284,7 +1284,7 @@ class SitePagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/ab-test/end",
             "POST",
             path_params,
@@ -1303,7 +1303,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, object_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, object_id, **kwargs):  # noqa: E501
         """Retrieve a Site Page  # noqa: E501
 
         Retrieve the Site Page object identified by the id in the path.  # noqa: E501
@@ -1335,9 +1335,9 @@ class SitePagesApi(object):
         :rtype: Page
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Retrieve a Site Page  # noqa: E501
 
         Retrieve the Site Page object identified by the id in the path.  # noqa: E501
@@ -1419,7 +1419,7 @@ class SitePagesApi(object):
             200: "Page",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/{objectId}",
             "GET",
             path_params,
@@ -1542,7 +1542,7 @@ class SitePagesApi(object):
             200: "Page",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/{objectId}/draft",
             "GET",
             path_params,
@@ -1561,7 +1561,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, **kwargs):  # noqa: E501
+    async def get_page(self, **kwargs):  # noqa: E501
         """Get all Site Pages  # noqa: E501
 
         Get the list of site pages. Supports paging and filtering. This method would be useful for an integration that examined these models and used an external service to suggest edits.   # noqa: E501
@@ -1609,9 +1609,9 @@ class SitePagesApi(object):
         :rtype: CollectionResponseWithTotalPageForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(**kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, **kwargs):  # noqa: E501
         """Get all Site Pages  # noqa: E501
 
         Get the list of site pages. Supports paging and filtering. This method would be useful for an integration that examined these models and used an external service to suggest edits.   # noqa: E501
@@ -1723,7 +1723,7 @@ class SitePagesApi(object):
             200: "CollectionResponseWithTotalPageForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages",
             "GET",
             path_params,
@@ -1855,7 +1855,7 @@ class SitePagesApi(object):
             200: "VersionPage",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/{objectId}/revisions/{revisionId}",
             "GET",
             path_params,
@@ -1996,7 +1996,7 @@ class SitePagesApi(object):
             200: "CollectionResponseWithTotalVersionPage",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/{objectId}/revisions",
             "GET",
             path_params,
@@ -2117,7 +2117,7 @@ class SitePagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/{objectId}/draft/push-live",
             "POST",
             path_params,
@@ -2252,7 +2252,7 @@ class SitePagesApi(object):
             207: "BatchResponsePageWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/batch/read",
             "POST",
             path_params,
@@ -2378,7 +2378,7 @@ class SitePagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/ab-test/rerun",
             "POST",
             path_params,
@@ -2499,7 +2499,7 @@ class SitePagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/{objectId}/draft/reset",
             "POST",
             path_params,
@@ -2631,7 +2631,7 @@ class SitePagesApi(object):
             200: "Page",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/{objectId}/revisions/{revisionId}/restore",
             "POST",
             path_params,
@@ -2763,7 +2763,7 @@ class SitePagesApi(object):
             200: "Page",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/{objectId}/revisions/{revisionId}/restore-to-draft",
             "POST",
             path_params,
@@ -2889,7 +2889,7 @@ class SitePagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/schedule",
             "POST",
             path_params,
@@ -3015,7 +3015,7 @@ class SitePagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/multi-language/set-new-lang-primary",
             "PUT",
             path_params,
@@ -3034,7 +3034,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, object_id, page, **kwargs):  # noqa: E501
+    async def update(self, object_id, page, **kwargs):  # noqa: E501
         """Update a Site Page  # noqa: E501
 
         Sparse updates a single Site Page object identified by the id in the path. You only need to specify the column values that you are modifying.   # noqa: E501
@@ -3066,9 +3066,9 @@ class SitePagesApi(object):
         :rtype: Page
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(object_id, page, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(object_id, page, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, object_id, page, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, object_id, page, **kwargs):  # noqa: E501
         """Update a Site Page  # noqa: E501
 
         Sparse updates a single Site Page object identified by the id in the path. You only need to specify the column values that you are modifying.   # noqa: E501
@@ -3158,7 +3158,7 @@ class SitePagesApi(object):
             200: "Page",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/{objectId}",
             "PATCH",
             path_params,
@@ -3293,7 +3293,7 @@ class SitePagesApi(object):
             207: "BatchResponsePageWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/batch/update",
             "POST",
             path_params,
@@ -3430,7 +3430,7 @@ class SitePagesApi(object):
             200: "Page",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/{objectId}/draft",
             "PATCH",
             path_params,
@@ -3556,7 +3556,7 @@ class SitePagesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/pages/site-pages/multi-language/update-languages",
             "POST",
             path_params,

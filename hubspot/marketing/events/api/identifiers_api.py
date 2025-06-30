@@ -33,7 +33,7 @@ class IdentifiersApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def do_search(self, q, **kwargs):  # noqa: E501
+    async def do_search(self, q, **kwargs):  # noqa: E501
         """Find App-Specific Marketing Events by External Event Id  # noqa: E501
 
         Retrieves Marketing Events where the externalEventId matches the value provided in the request, limited to events created by the app making the request.  Marketing Events created by other apps will not be included in the results.  # noqa: E501
@@ -61,9 +61,9 @@ class IdentifiersApi(object):
         :rtype: CollectionResponseSearchPublicResponseWrapperNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.do_search_with_http_info(q, **kwargs)  # noqa: E501
+        return await self.do_search_with_http_info(q, **kwargs)  # noqa: E501
 
-    def do_search_with_http_info(self, q, **kwargs):  # noqa: E501
+    async def do_search_with_http_info(self, q, **kwargs):  # noqa: E501
         """Find App-Specific Marketing Events by External Event Id  # noqa: E501
 
         Retrieves Marketing Events where the externalEventId matches the value provided in the request, limited to events created by the app making the request.  Marketing Events created by other apps will not be included in the results.  # noqa: E501
@@ -137,7 +137,7 @@ class IdentifiersApi(object):
             200: "CollectionResponseSearchPublicResponseWrapperNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/events/search",
             "GET",
             path_params,
@@ -260,7 +260,7 @@ class IdentifiersApi(object):
             200: "CollectionResponseWithTotalMarketingEventIdentifiersResponseNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/{externalEventId}/identifiers",
             "GET",
             path_params,

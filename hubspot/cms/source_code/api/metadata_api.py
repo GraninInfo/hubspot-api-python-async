@@ -154,7 +154,7 @@ class MetadataApi(object):
             200: "AssetFileMetadata",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/source-code/{environment}/metadata/{path}",
             "GET",
             path_params,

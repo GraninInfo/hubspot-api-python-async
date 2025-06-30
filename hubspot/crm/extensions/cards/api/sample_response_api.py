@@ -128,7 +128,7 @@ class SampleResponseApi(object):
             200: "IntegratorCardPayloadResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/extensions/cards-dev/sample-response",
             "GET",
             path_params,

@@ -137,7 +137,7 @@ class CoreApi(object):
             200: "ActionResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/imports/{importId}/cancel",
             "POST",
             path_params,
@@ -156,7 +156,7 @@ class CoreApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, **kwargs):  # noqa: E501
+    async def create(self, **kwargs):  # noqa: E501
         """Start a new import  # noqa: E501
 
         Begins importing data from the specified file resources. This uploads the corresponding file and uses the import request object to convert rows in the files to objects.  # noqa: E501
@@ -186,9 +186,9 @@ class CoreApi(object):
         :rtype: PublicImportResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(**kwargs)  # noqa: E501
+        return await self.create_with_http_info(**kwargs)  # noqa: E501
 
-    def create_with_http_info(self, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, **kwargs):  # noqa: E501
         """Start a new import  # noqa: E501
 
         Begins importing data from the specified file resources. This uploads the corresponding file and uses the import request object to convert rows in the files to objects.  # noqa: E501
@@ -268,7 +268,7 @@ class CoreApi(object):
             200: "PublicImportResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/imports/",
             "POST",
             path_params,
@@ -287,7 +287,7 @@ class CoreApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, import_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, import_id, **kwargs):  # noqa: E501
         """Get the information on any import  # noqa: E501
 
         A complete summary of an import record, including any updates.  # noqa: E501
@@ -315,9 +315,9 @@ class CoreApi(object):
         :rtype: PublicImportResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(import_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(import_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, import_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, import_id, **kwargs):  # noqa: E501
         """Get the information on any import  # noqa: E501
 
         A complete summary of an import record, including any updates.  # noqa: E501
@@ -391,7 +391,7 @@ class CoreApi(object):
             200: "PublicImportResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/imports/{importId}",
             "GET",
             path_params,
@@ -410,7 +410,7 @@ class CoreApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, **kwargs):  # noqa: E501
+    async def get_page(self, **kwargs):  # noqa: E501
         """Get active imports  # noqa: E501
 
         Returns a paged list of active imports for this account.  # noqa: E501
@@ -442,9 +442,9 @@ class CoreApi(object):
         :rtype: CollectionResponsePublicImportResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(**kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, **kwargs):  # noqa: E501
         """Get active imports  # noqa: E501
 
         Returns a paged list of active imports for this account.  # noqa: E501
@@ -523,7 +523,7 @@ class CoreApi(object):
             200: "CollectionResponsePublicImportResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/imports/",
             "GET",
             path_params,

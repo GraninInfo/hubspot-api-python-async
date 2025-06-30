@@ -33,7 +33,7 @@ class DomainsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_by_id(self, domain_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, domain_id, **kwargs):  # noqa: E501
         """Get a single domain  # noqa: E501
 
         Returns a single domains with the id specified.  # noqa: E501
@@ -61,9 +61,9 @@ class DomainsApi(object):
         :rtype: Domain
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(domain_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(domain_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, domain_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, domain_id, **kwargs):  # noqa: E501
         """Get a single domain  # noqa: E501
 
         Returns a single domains with the id specified.  # noqa: E501
@@ -137,7 +137,7 @@ class DomainsApi(object):
             200: "Domain",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/domains/{domainId}",
             "GET",
             path_params,
@@ -156,7 +156,7 @@ class DomainsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, **kwargs):  # noqa: E501
+    async def get_page(self, **kwargs):  # noqa: E501
         """Get current domains  # noqa: E501
 
         Returns all existing domains that have been created. Results can be limited and filtered by creation or updated date.  # noqa: E501
@@ -202,9 +202,9 @@ class DomainsApi(object):
         :rtype: CollectionResponseWithTotalDomainForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(**kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, **kwargs):  # noqa: E501
         """Get current domains  # noqa: E501
 
         Returns all existing domains that have been created. Results can be limited and filtered by creation or updated date.  # noqa: E501
@@ -312,7 +312,7 @@ class DomainsApi(object):
             200: "CollectionResponseWithTotalDomainForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/domains/",
             "GET",
             path_params,

@@ -33,7 +33,7 @@ class SettingsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, app_id, **kwargs):  # noqa: E501
+    async def archive(self, app_id, **kwargs):  # noqa: E501
         """Delete calling settings  # noqa: E501
 
         Delete a calling extension. This will remove your service as an option for all connected accounts.  # noqa: E501
@@ -61,9 +61,9 @@ class SettingsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(app_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(app_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, app_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, app_id, **kwargs):  # noqa: E501
         """Delete calling settings  # noqa: E501
 
         Delete a calling extension. This will remove your service as an option for all connected accounts.  # noqa: E501
@@ -135,7 +135,7 @@ class SettingsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/extensions/calling/{appId}/settings",
             "DELETE",
             path_params,
@@ -154,7 +154,7 @@ class SettingsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, app_id, settings_request, **kwargs):  # noqa: E501
+    async def create(self, app_id, settings_request, **kwargs):  # noqa: E501
         """Configure a calling extension  # noqa: E501
 
         Set the menu label, target iframe URL, and dimensions for your calling extension.  # noqa: E501
@@ -184,9 +184,9 @@ class SettingsApi(object):
         :rtype: SettingsResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(app_id, settings_request, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(app_id, settings_request, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, app_id, settings_request, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, app_id, settings_request, **kwargs):  # noqa: E501
         """Configure a calling extension  # noqa: E501
 
         Set the menu label, target iframe URL, and dimensions for your calling extension.  # noqa: E501
@@ -272,7 +272,7 @@ class SettingsApi(object):
             200: "SettingsResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/extensions/calling/{appId}/settings",
             "POST",
             path_params,
@@ -291,7 +291,7 @@ class SettingsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, app_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, app_id, **kwargs):  # noqa: E501
         """Retrieve settings  # noqa: E501
 
         Retrieve the settings configured for the app.  # noqa: E501
@@ -319,9 +319,9 @@ class SettingsApi(object):
         :rtype: SettingsResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(app_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(app_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, app_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, app_id, **kwargs):  # noqa: E501
         """Retrieve settings  # noqa: E501
 
         Retrieve the settings configured for the app.  # noqa: E501
@@ -395,7 +395,7 @@ class SettingsApi(object):
             200: "SettingsResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/extensions/calling/{appId}/settings",
             "GET",
             path_params,
@@ -414,7 +414,7 @@ class SettingsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, app_id, settings_patch_request, **kwargs):  # noqa: E501
+    async def update(self, app_id, settings_patch_request, **kwargs):  # noqa: E501
         """Update settings  # noqa: E501
 
         Update existing calling extension settings.  # noqa: E501
@@ -444,9 +444,9 @@ class SettingsApi(object):
         :rtype: SettingsResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(app_id, settings_patch_request, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(app_id, settings_patch_request, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, app_id, settings_patch_request, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, app_id, settings_patch_request, **kwargs):  # noqa: E501
         """Update settings  # noqa: E501
 
         Update existing calling extension settings.  # noqa: E501
@@ -532,7 +532,7 @@ class SettingsApi(object):
             200: "SettingsResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/extensions/calling/{appId}/settings",
             "PATCH",
             path_params,

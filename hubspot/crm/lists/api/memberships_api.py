@@ -151,7 +151,7 @@ class MembershipsApi(object):
             200: "MembershipsUpdateResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/{listId}/memberships/add",
             "PUT",
             path_params,
@@ -281,7 +281,7 @@ class MembershipsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/{listId}/memberships/add-from/{sourceListId}",
             "PUT",
             path_params,
@@ -418,7 +418,7 @@ class MembershipsApi(object):
             200: "MembershipsUpdateResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/{listId}/memberships/add-and-remove",
             "PUT",
             path_params,
@@ -550,7 +550,7 @@ class MembershipsApi(object):
             200: "ApiCollectionResponseRecordListMembershipNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/records/{objectTypeId}/{recordId}/memberships",
             "GET",
             path_params,
@@ -569,7 +569,7 @@ class MembershipsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, list_id, **kwargs):  # noqa: E501
+    async def get_page(self, list_id, **kwargs):  # noqa: E501
         """Fetch List Memberships Ordered by ID  # noqa: E501
 
         Fetch the memberships of a list in order sorted by the `recordId` of the records in the list.  The `recordId`s are sorted in *ascending* order if an `after` offset or no offset is provided. If only a `before` offset is provided, then the records are sorted in *descending* order.  The `after` offset parameter will take precedence over the `before` offset in a case where both are provided.  # noqa: E501
@@ -603,9 +603,9 @@ class MembershipsApi(object):
         :rtype: ApiCollectionResponseJoinTimeAndRecordId
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(list_id, **kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(list_id, **kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, list_id, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, list_id, **kwargs):  # noqa: E501
         """Fetch List Memberships Ordered by ID  # noqa: E501
 
         Fetch the memberships of a list in order sorted by the `recordId` of the records in the list.  The `recordId`s are sorted in *ascending* order if an `after` offset or no offset is provided. If only a `before` offset is provided, then the records are sorted in *descending* order.  The `after` offset parameter will take precedence over the `before` offset in a case where both are provided.  # noqa: E501
@@ -691,7 +691,7 @@ class MembershipsApi(object):
             200: "ApiCollectionResponseJoinTimeAndRecordId",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/{listId}/memberships",
             "GET",
             path_params,
@@ -832,7 +832,7 @@ class MembershipsApi(object):
             200: "ApiCollectionResponseJoinTimeAndRecordId",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/{listId}/memberships/join-order",
             "GET",
             path_params,
@@ -969,7 +969,7 @@ class MembershipsApi(object):
             200: "MembershipsUpdateResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/{listId}/memberships/remove",
             "PUT",
             path_params,
@@ -1090,7 +1090,7 @@ class MembershipsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/lists/{listId}/memberships",
             "DELETE",
             path_params,

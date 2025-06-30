@@ -135,7 +135,7 @@ class AccessTokensApi(object):
             200: "AccessTokenInfoResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/oauth/v1/access-tokens/{token}",
             "GET",
             path_params,

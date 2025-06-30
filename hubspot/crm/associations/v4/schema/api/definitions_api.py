@@ -33,7 +33,7 @@ class DefinitionsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create(self, from_object_type, to_object_type, public_association_definition_create_request, **kwargs):  # noqa: E501
+    async def create(self, from_object_type, to_object_type, public_association_definition_create_request, **kwargs):  # noqa: E501
         """Create  # noqa: E501
 
         Create a user defined association definition  # noqa: E501
@@ -65,9 +65,9 @@ class DefinitionsApi(object):
         :rtype: CollectionResponseAssociationSpecWithLabelNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(from_object_type, to_object_type, public_association_definition_create_request, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(from_object_type, to_object_type, public_association_definition_create_request, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, from_object_type, to_object_type, public_association_definition_create_request, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, from_object_type, to_object_type, public_association_definition_create_request, **kwargs):  # noqa: E501
         """Create  # noqa: E501
 
         Create a user defined association definition  # noqa: E501
@@ -160,7 +160,7 @@ class DefinitionsApi(object):
             200: "CollectionResponseAssociationSpecWithLabelNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v4/associations/{fromObjectType}/{toObjectType}/labels",
             "POST",
             path_params,
@@ -179,7 +179,7 @@ class DefinitionsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_all(self, from_object_type, to_object_type, **kwargs):  # noqa: E501
+    async def get_all(self, from_object_type, to_object_type, **kwargs):  # noqa: E501
         """Read  # noqa: E501
 
         Returns all association types between two object types  # noqa: E501
@@ -209,9 +209,9 @@ class DefinitionsApi(object):
         :rtype: CollectionResponseAssociationSpecWithLabelNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_with_http_info(from_object_type, to_object_type, **kwargs)  # noqa: E501
+        return await self.get_all_with_http_info(from_object_type, to_object_type, **kwargs)  # noqa: E501
 
-    def get_all_with_http_info(self, from_object_type, to_object_type, **kwargs):  # noqa: E501
+    async def get_all_with_http_info(self, from_object_type, to_object_type, **kwargs):  # noqa: E501
         """Read  # noqa: E501
 
         Returns all association types between two object types  # noqa: E501
@@ -292,7 +292,7 @@ class DefinitionsApi(object):
             200: "CollectionResponseAssociationSpecWithLabelNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v4/associations/{fromObjectType}/{toObjectType}/labels",
             "GET",
             path_params,
@@ -431,7 +431,7 @@ class DefinitionsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v4/associations/{fromObjectType}/{toObjectType}/labels/{associationTypeId}",
             "DELETE",
             path_params,
@@ -450,7 +450,7 @@ class DefinitionsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, from_object_type, to_object_type, public_association_definition_update_request, **kwargs):  # noqa: E501
+    async def update(self, from_object_type, to_object_type, public_association_definition_update_request, **kwargs):  # noqa: E501
         """Update  # noqa: E501
 
         Update a user defined association definition  # noqa: E501
@@ -482,9 +482,9 @@ class DefinitionsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(from_object_type, to_object_type, public_association_definition_update_request, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(from_object_type, to_object_type, public_association_definition_update_request, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, from_object_type, to_object_type, public_association_definition_update_request, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, from_object_type, to_object_type, public_association_definition_update_request, **kwargs):  # noqa: E501
         """Update  # noqa: E501
 
         Update a user defined association definition  # noqa: E501
@@ -575,7 +575,7 @@ class DefinitionsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v4/associations/{fromObjectType}/{toObjectType}/labels",
             "PUT",
             path_params,

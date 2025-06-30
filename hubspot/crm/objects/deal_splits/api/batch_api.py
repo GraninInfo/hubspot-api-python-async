@@ -33,7 +33,7 @@ class BatchApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def read(self, batch_input_public_object_id, **kwargs):  # noqa: E501
+    async def read(self, batch_input_public_object_id, **kwargs):  # noqa: E501
         """Read a batch of deal split objects by their associated deal object internal ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -60,9 +60,9 @@ class BatchApi(object):
         :rtype: BatchResponseDealToDealSplits
         """
         kwargs["_return_http_data_only"] = True
-        return self.read_with_http_info(batch_input_public_object_id, **kwargs)  # noqa: E501
+        return await self.read_with_http_info(batch_input_public_object_id, **kwargs)  # noqa: E501
 
-    def read_with_http_info(self, batch_input_public_object_id, **kwargs):  # noqa: E501
+    async def read_with_http_info(self, batch_input_public_object_id, **kwargs):  # noqa: E501
         """Read a batch of deal split objects by their associated deal object internal ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -141,7 +141,7 @@ class BatchApi(object):
             207: "BatchResponseDealToDealSplitsWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/deals/splits/batch/read",
             "POST",
             path_params,
@@ -160,7 +160,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def upsert(self, public_deal_splits_batch_create_request, **kwargs):  # noqa: E501
+    async def upsert(self, public_deal_splits_batch_create_request, **kwargs):  # noqa: E501
         """Create or replace deal splits for deals with the provided IDs. Deal split percentages for each deal must sum up to 1.0 (100%) and may have up to 8 decimal places  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -187,9 +187,9 @@ class BatchApi(object):
         :rtype: BatchResponseDealToDealSplits
         """
         kwargs["_return_http_data_only"] = True
-        return self.upsert_with_http_info(public_deal_splits_batch_create_request, **kwargs)  # noqa: E501
+        return await self.upsert_with_http_info(public_deal_splits_batch_create_request, **kwargs)  # noqa: E501
 
-    def upsert_with_http_info(self, public_deal_splits_batch_create_request, **kwargs):  # noqa: E501
+    async def upsert_with_http_info(self, public_deal_splits_batch_create_request, **kwargs):  # noqa: E501
         """Create or replace deal splits for deals with the provided IDs. Deal split percentages for each deal must sum up to 1.0 (100%) and may have up to 8 decimal places  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -268,7 +268,7 @@ class BatchApi(object):
             207: "BatchResponseDealToDealSplitsWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/deals/splits/batch/upsert",
             "POST",
             path_params,

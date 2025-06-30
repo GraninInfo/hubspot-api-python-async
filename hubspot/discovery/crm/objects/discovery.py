@@ -75,7 +75,7 @@ class Discovery(DiscoveryBase):
         from .taxes.discovery import Discovery as TaxesDiscovery
         return TaxesDiscovery(self.config)
 
-    def get_all(self, object_type, **kwargs):
+    async def get_all(self, object_type, **kwargs):
         return self.fetch_all(object_type, **kwargs)
 
     def fetch_all(self, object_type, **kwargs):

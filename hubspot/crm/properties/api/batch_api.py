@@ -33,7 +33,7 @@ class BatchApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, object_type, batch_input_property_name, **kwargs):  # noqa: E501
+    async def archive(self, object_type, batch_input_property_name, **kwargs):  # noqa: E501
         """Archive a batch of properties  # noqa: E501
 
         Archive a provided list of properties. This method will return a 204 No Content response on success regardless of the initial state of the property (e.g. active, already archived, non-existent).  # noqa: E501
@@ -63,9 +63,9 @@ class BatchApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(object_type, batch_input_property_name, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(object_type, batch_input_property_name, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, object_type, batch_input_property_name, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, object_type, batch_input_property_name, **kwargs):  # noqa: E501
         """Archive a batch of properties  # noqa: E501
 
         Archive a provided list of properties. This method will return a 204 No Content response on success regardless of the initial state of the property (e.g. active, already archived, non-existent).  # noqa: E501
@@ -149,7 +149,7 @@ class BatchApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/properties/{objectType}/batch/archive",
             "POST",
             path_params,
@@ -168,7 +168,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, object_type, batch_input_property_create, **kwargs):  # noqa: E501
+    async def create(self, object_type, batch_input_property_create, **kwargs):  # noqa: E501
         """Create a batch of properties  # noqa: E501
 
         Create a batch of properties using the same rules as when creating an individual property.  # noqa: E501
@@ -198,9 +198,9 @@ class BatchApi(object):
         :rtype: BatchResponseProperty
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(object_type, batch_input_property_create, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(object_type, batch_input_property_create, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, object_type, batch_input_property_create, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, object_type, batch_input_property_create, **kwargs):  # noqa: E501
         """Create a batch of properties  # noqa: E501
 
         Create a batch of properties using the same rules as when creating an individual property.  # noqa: E501
@@ -287,7 +287,7 @@ class BatchApi(object):
             207: "BatchResponsePropertyWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/properties/{objectType}/batch/create",
             "POST",
             path_params,
@@ -306,7 +306,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def read(self, object_type, batch_read_input_property_name, **kwargs):  # noqa: E501
+    async def read(self, object_type, batch_read_input_property_name, **kwargs):  # noqa: E501
         """Read a batch of properties  # noqa: E501
 
         Read a provided list of properties.  # noqa: E501
@@ -336,9 +336,9 @@ class BatchApi(object):
         :rtype: BatchResponseProperty
         """
         kwargs["_return_http_data_only"] = True
-        return self.read_with_http_info(object_type, batch_read_input_property_name, **kwargs)  # noqa: E501
+        return await self.read_with_http_info(object_type, batch_read_input_property_name, **kwargs)  # noqa: E501
 
-    def read_with_http_info(self, object_type, batch_read_input_property_name, **kwargs):  # noqa: E501
+    async def read_with_http_info(self, object_type, batch_read_input_property_name, **kwargs):  # noqa: E501
         """Read a batch of properties  # noqa: E501
 
         Read a provided list of properties.  # noqa: E501
@@ -425,7 +425,7 @@ class BatchApi(object):
             207: "BatchResponsePropertyWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/properties/{objectType}/batch/read",
             "POST",
             path_params,

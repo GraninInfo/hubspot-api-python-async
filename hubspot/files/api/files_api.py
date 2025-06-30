@@ -33,7 +33,7 @@ class FilesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, file_id, **kwargs):  # noqa: E501
+    async def archive(self, file_id, **kwargs):  # noqa: E501
         """Delete file by ID  # noqa: E501
 
         Delete a file by ID  # noqa: E501
@@ -61,9 +61,9 @@ class FilesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(file_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(file_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, file_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, file_id, **kwargs):  # noqa: E501
         """Delete file by ID  # noqa: E501
 
         Delete a file by ID  # noqa: E501
@@ -137,7 +137,7 @@ class FilesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/files/{fileId}",
             "DELETE",
             path_params,
@@ -156,7 +156,7 @@ class FilesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def check_import(self, task_id, **kwargs):  # noqa: E501
+    async def check_import(self, task_id, **kwargs):  # noqa: E501
         """Check import status  # noqa: E501
 
         Check the status of requested import.  # noqa: E501
@@ -184,9 +184,9 @@ class FilesApi(object):
         :rtype: FileActionResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.check_import_with_http_info(task_id, **kwargs)  # noqa: E501
+        return await self.check_import_with_http_info(task_id, **kwargs)  # noqa: E501
 
-    def check_import_with_http_info(self, task_id, **kwargs):  # noqa: E501
+    async def check_import_with_http_info(self, task_id, **kwargs):  # noqa: E501
         """Check import status  # noqa: E501
 
         Check the status of requested import.  # noqa: E501
@@ -260,7 +260,7 @@ class FilesApi(object):
             200: "FileActionResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/files/import-from-url/async/tasks/{taskId}/status",
             "GET",
             path_params,
@@ -279,7 +279,7 @@ class FilesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def delete(self, file_id, **kwargs):  # noqa: E501
+    async def delete(self, file_id, **kwargs):  # noqa: E501
         """GDPR-delete file  # noqa: E501
 
         Delete a file in accordance with GDPR regulations.  # noqa: E501
@@ -307,9 +307,9 @@ class FilesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.delete_with_http_info(file_id, **kwargs)  # noqa: E501
+        return await self.delete_with_http_info(file_id, **kwargs)  # noqa: E501
 
-    def delete_with_http_info(self, file_id, **kwargs):  # noqa: E501
+    async def delete_with_http_info(self, file_id, **kwargs):  # noqa: E501
         """GDPR-delete file  # noqa: E501
 
         Delete a file in accordance with GDPR regulations.  # noqa: E501
@@ -383,7 +383,7 @@ class FilesApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/files/{fileId}/gdpr-delete",
             "DELETE",
             path_params,
@@ -402,7 +402,7 @@ class FilesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def do_search(self, **kwargs):  # noqa: E501
+    async def do_search(self, **kwargs):  # noqa: E501
         """Search files  # noqa: E501
 
         Search through files in the file manager. Does not display hidden or archived files.  # noqa: E501
@@ -500,9 +500,9 @@ class FilesApi(object):
         :rtype: CollectionResponseFile
         """
         kwargs["_return_http_data_only"] = True
-        return self.do_search_with_http_info(**kwargs)  # noqa: E501
+        return await self.do_search_with_http_info(**kwargs)  # noqa: E501
 
-    def do_search_with_http_info(self, **kwargs):  # noqa: E501
+    async def do_search_with_http_info(self, **kwargs):  # noqa: E501
         """Search files  # noqa: E501
 
         Search through files in the file manager. Does not display hidden or archived files.  # noqa: E501
@@ -754,7 +754,7 @@ class FilesApi(object):
             200: "CollectionResponseFile",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/files/search",
             "GET",
             path_params,
@@ -773,7 +773,7 @@ class FilesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, file_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, file_id, **kwargs):  # noqa: E501
         """Retrieve file by ID  # noqa: E501
 
         Retrieve a file by its ID.  # noqa: E501
@@ -803,9 +803,9 @@ class FilesApi(object):
         :rtype: File
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(file_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(file_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, file_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, file_id, **kwargs):  # noqa: E501
         """Retrieve file by ID  # noqa: E501
 
         Retrieve a file by its ID.  # noqa: E501
@@ -886,7 +886,7 @@ class FilesApi(object):
             200: "File",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/files/{fileId}",
             "GET",
             path_params,
@@ -905,7 +905,7 @@ class FilesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_metadata(self, path, **kwargs):  # noqa: E501
+    async def get_metadata(self, path, **kwargs):  # noqa: E501
         """Retrieve file by path  # noqa: E501
 
         Retrieve a file by its path.  # noqa: E501
@@ -935,9 +935,9 @@ class FilesApi(object):
         :rtype: FileStat
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_metadata_with_http_info(path, **kwargs)  # noqa: E501
+        return await self.get_metadata_with_http_info(path, **kwargs)  # noqa: E501
 
-    def get_metadata_with_http_info(self, path, **kwargs):  # noqa: E501
+    async def get_metadata_with_http_info(self, path, **kwargs):  # noqa: E501
         """Retrieve file by path  # noqa: E501
 
         Retrieve a file by its path.  # noqa: E501
@@ -1018,7 +1018,7 @@ class FilesApi(object):
             200: "FileStat",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/files/stat/{path}",
             "GET",
             path_params,
@@ -1037,7 +1037,7 @@ class FilesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_signed_url(self, file_id, **kwargs):  # noqa: E501
+    async def get_signed_url(self, file_id, **kwargs):  # noqa: E501
         """Get signed URL to access private file  # noqa: E501
 
         Generates signed URL that allows temporary access to a private file.  # noqa: E501
@@ -1071,9 +1071,9 @@ class FilesApi(object):
         :rtype: SignedUrl
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_signed_url_with_http_info(file_id, **kwargs)  # noqa: E501
+        return await self.get_signed_url_with_http_info(file_id, **kwargs)  # noqa: E501
 
-    def get_signed_url_with_http_info(self, file_id, **kwargs):  # noqa: E501
+    async def get_signed_url_with_http_info(self, file_id, **kwargs):  # noqa: E501
         """Get signed URL to access private file  # noqa: E501
 
         Generates signed URL that allows temporary access to a private file.  # noqa: E501
@@ -1161,7 +1161,7 @@ class FilesApi(object):
             200: "SignedUrl",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/files/{fileId}/signed-url",
             "GET",
             path_params,
@@ -1180,7 +1180,7 @@ class FilesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def import_from_url(self, import_from_url_input, **kwargs):  # noqa: E501
+    async def import_from_url(self, import_from_url_input, **kwargs):  # noqa: E501
         """Import file from URL  # noqa: E501
 
         Asynchronously imports the file at the given URL into the file manager.  # noqa: E501
@@ -1208,9 +1208,9 @@ class FilesApi(object):
         :rtype: ImportFromUrlTaskLocator
         """
         kwargs["_return_http_data_only"] = True
-        return self.import_from_url_with_http_info(import_from_url_input, **kwargs)  # noqa: E501
+        return await self.import_from_url_with_http_info(import_from_url_input, **kwargs)  # noqa: E501
 
-    def import_from_url_with_http_info(self, import_from_url_input, **kwargs):  # noqa: E501
+    async def import_from_url_with_http_info(self, import_from_url_input, **kwargs):  # noqa: E501
         """Import file from URL  # noqa: E501
 
         Asynchronously imports the file at the given URL into the file manager.  # noqa: E501
@@ -1289,7 +1289,7 @@ class FilesApi(object):
             202: "ImportFromUrlTaskLocator",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/files/import-from-url/async",
             "POST",
             path_params,
@@ -1308,7 +1308,7 @@ class FilesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def replace(self, file_id, **kwargs):  # noqa: E501
+    async def replace(self, file_id, **kwargs):  # noqa: E501
         """Replace file  # noqa: E501
 
         Replace existing file data with new file data. Can be used to change image content without having to upload a new file and update all references.  # noqa: E501
@@ -1342,9 +1342,9 @@ class FilesApi(object):
         :rtype: File
         """
         kwargs["_return_http_data_only"] = True
-        return self.replace_with_http_info(file_id, **kwargs)  # noqa: E501
+        return await self.replace_with_http_info(file_id, **kwargs)  # noqa: E501
 
-    def replace_with_http_info(self, file_id, **kwargs):  # noqa: E501
+    async def replace_with_http_info(self, file_id, **kwargs):  # noqa: E501
         """Replace file  # noqa: E501
 
         Replace existing file data with new file data. Can be used to change image content without having to upload a new file and update all references.  # noqa: E501
@@ -1437,7 +1437,7 @@ class FilesApi(object):
             200: "File",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/files/{fileId}",
             "PUT",
             path_params,
@@ -1456,7 +1456,7 @@ class FilesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_properties(self, file_id, file_update_input, **kwargs):  # noqa: E501
+    async def update_properties(self, file_id, file_update_input, **kwargs):  # noqa: E501
         """Update file properties  # noqa: E501
 
         Update properties of file by ID.  # noqa: E501
@@ -1486,9 +1486,9 @@ class FilesApi(object):
         :rtype: File
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_properties_with_http_info(file_id, file_update_input, **kwargs)  # noqa: E501
+        return await self.update_properties_with_http_info(file_id, file_update_input, **kwargs)  # noqa: E501
 
-    def update_properties_with_http_info(self, file_id, file_update_input, **kwargs):  # noqa: E501
+    async def update_properties_with_http_info(self, file_id, file_update_input, **kwargs):  # noqa: E501
         """Update file properties  # noqa: E501
 
         Update properties of file by ID.  # noqa: E501
@@ -1576,7 +1576,7 @@ class FilesApi(object):
             200: "File",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/files/{fileId}",
             "PATCH",
             path_params,
@@ -1595,7 +1595,7 @@ class FilesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def upload(self, **kwargs):  # noqa: E501
+    async def upload(self, **kwargs):  # noqa: E501
         """Upload file  # noqa: E501
 
         Upload a single file with content specified in request body.  # noqa: E501
@@ -1633,9 +1633,9 @@ class FilesApi(object):
         :rtype: File
         """
         kwargs["_return_http_data_only"] = True
-        return self.upload_with_http_info(**kwargs)  # noqa: E501
+        return await self.upload_with_http_info(**kwargs)  # noqa: E501
 
-    def upload_with_http_info(self, **kwargs):  # noqa: E501
+    async def upload_with_http_info(self, **kwargs):  # noqa: E501
         """Upload file  # noqa: E501
 
         Upload a single file with content specified in request body.  # noqa: E501
@@ -1731,7 +1731,7 @@ class FilesApi(object):
             201: "File",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/files/v3/files",
             "POST",
             path_params,

@@ -33,7 +33,7 @@ class DefinitionApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_page(self, **kwargs):  # noqa: E501
+    async def get_page(self, **kwargs):  # noqa: E501
         """Get subscription definitions  # noqa: E501
 
         Get a list of all subscription definitions for the portal  # noqa: E501
@@ -59,9 +59,9 @@ class DefinitionApi(object):
         :rtype: SubscriptionDefinitionsResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(**kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, **kwargs):  # noqa: E501
         """Get subscription definitions  # noqa: E501
 
         Get a list of all subscription definitions for the portal  # noqa: E501
@@ -128,7 +128,7 @@ class DefinitionApi(object):
             200: "SubscriptionDefinitionsResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/communication-preferences/v3/definitions",
             "GET",
             path_params,

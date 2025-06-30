@@ -153,7 +153,7 @@ class StatisticsApi(object):
             200: "AggregateEmailStatistics",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/emails/statistics/list",
             "GET",
             path_params,
@@ -292,7 +292,7 @@ class StatisticsApi(object):
             200: "CollectionResponseWithTotalEmailStatisticIntervalNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/emails/statistics/histogram",
             "GET",
             path_params,

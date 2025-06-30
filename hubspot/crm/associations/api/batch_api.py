@@ -33,7 +33,7 @@ class BatchApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, from_object_type, to_object_type, batch_input_public_association, **kwargs):  # noqa: E501
+    async def archive(self, from_object_type, to_object_type, batch_input_public_association, **kwargs):  # noqa: E501
         """Archive a batch of associations  # noqa: E501
 
         Remove the associations between all pairs of objects identified in the request body.  # noqa: E501
@@ -65,9 +65,9 @@ class BatchApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(from_object_type, to_object_type, batch_input_public_association, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(from_object_type, to_object_type, batch_input_public_association, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, from_object_type, to_object_type, batch_input_public_association, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, from_object_type, to_object_type, batch_input_public_association, **kwargs):  # noqa: E501
         """Archive a batch of associations  # noqa: E501
 
         Remove the associations between all pairs of objects identified in the request body.  # noqa: E501
@@ -158,7 +158,7 @@ class BatchApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/associations/{fromObjectType}/{toObjectType}/batch/archive",
             "POST",
             path_params,
@@ -177,7 +177,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, from_object_type, to_object_type, batch_input_public_association, **kwargs):  # noqa: E501
+    async def create(self, from_object_type, to_object_type, batch_input_public_association, **kwargs):  # noqa: E501
         """Create a batch of associations  # noqa: E501
 
         Associate all pairs of objects identified in the request body.  # noqa: E501
@@ -209,9 +209,9 @@ class BatchApi(object):
         :rtype: BatchResponsePublicAssociation
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(from_object_type, to_object_type, batch_input_public_association, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(from_object_type, to_object_type, batch_input_public_association, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, from_object_type, to_object_type, batch_input_public_association, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, from_object_type, to_object_type, batch_input_public_association, **kwargs):  # noqa: E501
         """Create a batch of associations  # noqa: E501
 
         Associate all pairs of objects identified in the request body.  # noqa: E501
@@ -305,7 +305,7 @@ class BatchApi(object):
             207: "BatchResponsePublicAssociationWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/associations/{fromObjectType}/{toObjectType}/batch/create",
             "POST",
             path_params,
@@ -324,7 +324,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def read(self, from_object_type, to_object_type, batch_input_public_object_id, **kwargs):  # noqa: E501
+    async def read(self, from_object_type, to_object_type, batch_input_public_object_id, **kwargs):  # noqa: E501
         """Read a batch of associations  # noqa: E501
 
         Get the IDs of all `{toObjectType}` objects associated with those specified in the request body.  # noqa: E501
@@ -356,9 +356,9 @@ class BatchApi(object):
         :rtype: BatchResponsePublicAssociationMulti
         """
         kwargs["_return_http_data_only"] = True
-        return self.read_with_http_info(from_object_type, to_object_type, batch_input_public_object_id, **kwargs)  # noqa: E501
+        return await self.read_with_http_info(from_object_type, to_object_type, batch_input_public_object_id, **kwargs)  # noqa: E501
 
-    def read_with_http_info(self, from_object_type, to_object_type, batch_input_public_object_id, **kwargs):  # noqa: E501
+    async def read_with_http_info(self, from_object_type, to_object_type, batch_input_public_object_id, **kwargs):  # noqa: E501
         """Read a batch of associations  # noqa: E501
 
         Get the IDs of all `{toObjectType}` objects associated with those specified in the request body.  # noqa: E501
@@ -452,7 +452,7 @@ class BatchApi(object):
             207: "BatchResponsePublicAssociationMultiWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/associations/{fromObjectType}/{toObjectType}/batch/read",
             "POST",
             path_params,

@@ -137,7 +137,7 @@ class ReportApi(object):
             200: "ReportCreationResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v4/associations/usage/high-usage-report/{userId}",
             "POST",
             path_params,

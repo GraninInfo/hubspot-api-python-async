@@ -33,7 +33,7 @@ class PipelineAuditsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_audit(self, object_type, pipeline_id, **kwargs):  # noqa: E501
+    async def get_audit(self, object_type, pipeline_id, **kwargs):  # noqa: E501
         """Return an audit of all changes to the pipeline  # noqa: E501
 
         Return a reverse chronological list of all mutations that have occurred on the pipeline identified by `{pipelineId}`.  # noqa: E501
@@ -63,9 +63,9 @@ class PipelineAuditsApi(object):
         :rtype: CollectionResponsePublicAuditInfoNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_audit_with_http_info(object_type, pipeline_id, **kwargs)  # noqa: E501
+        return await self.get_audit_with_http_info(object_type, pipeline_id, **kwargs)  # noqa: E501
 
-    def get_audit_with_http_info(self, object_type, pipeline_id, **kwargs):  # noqa: E501
+    async def get_audit_with_http_info(self, object_type, pipeline_id, **kwargs):  # noqa: E501
         """Return an audit of all changes to the pipeline  # noqa: E501
 
         Return a reverse chronological list of all mutations that have occurred on the pipeline identified by `{pipelineId}`.  # noqa: E501
@@ -146,7 +146,7 @@ class PipelineAuditsApi(object):
             200: "CollectionResponsePublicAuditInfoNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/pipelines/{objectType}/{pipelineId}/audit",
             "GET",
             path_params,

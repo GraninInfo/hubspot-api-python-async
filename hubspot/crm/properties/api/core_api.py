@@ -33,7 +33,7 @@ class CoreApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, object_type, property_name, **kwargs):  # noqa: E501
+    async def archive(self, object_type, property_name, **kwargs):  # noqa: E501
         """Archive a property  # noqa: E501
 
         Move a property identified by {propertyName} to the recycling bin.  # noqa: E501
@@ -63,9 +63,9 @@ class CoreApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(object_type, property_name, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(object_type, property_name, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, object_type, property_name, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, object_type, property_name, **kwargs):  # noqa: E501
         """Archive a property  # noqa: E501
 
         Move a property identified by {propertyName} to the recycling bin.  # noqa: E501
@@ -144,7 +144,7 @@ class CoreApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/properties/{objectType}/{propertyName}",
             "DELETE",
             path_params,
@@ -163,7 +163,7 @@ class CoreApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, object_type, property_create, **kwargs):  # noqa: E501
+    async def create(self, object_type, property_create, **kwargs):  # noqa: E501
         """Create a property  # noqa: E501
 
         Create and return a copy of a new property for the specified object type.  # noqa: E501
@@ -193,9 +193,9 @@ class CoreApi(object):
         :rtype: ModelProperty
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(object_type, property_create, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(object_type, property_create, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, object_type, property_create, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, object_type, property_create, **kwargs):  # noqa: E501
         """Create a property  # noqa: E501
 
         Create and return a copy of a new property for the specified object type.  # noqa: E501
@@ -281,7 +281,7 @@ class CoreApi(object):
             201: "ModelProperty",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/properties/{objectType}",
             "POST",
             path_params,
@@ -300,7 +300,7 @@ class CoreApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_all(self, object_type, **kwargs):  # noqa: E501
+    async def get_all(self, object_type, **kwargs):  # noqa: E501
         """Read all properties  # noqa: E501
 
         Read all existing properties for the specified object type and HubSpot account.  # noqa: E501
@@ -332,9 +332,9 @@ class CoreApi(object):
         :rtype: CollectionResponsePropertyNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_with_http_info(object_type, **kwargs)  # noqa: E501
+        return await self.get_all_with_http_info(object_type, **kwargs)  # noqa: E501
 
-    def get_all_with_http_info(self, object_type, **kwargs):  # noqa: E501
+    async def get_all_with_http_info(self, object_type, **kwargs):  # noqa: E501
         """Read all properties  # noqa: E501
 
         Read all existing properties for the specified object type and HubSpot account.  # noqa: E501
@@ -416,7 +416,7 @@ class CoreApi(object):
             200: "CollectionResponsePropertyNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/properties/{objectType}",
             "GET",
             path_params,
@@ -560,7 +560,7 @@ class CoreApi(object):
             200: "ModelProperty",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/properties/{objectType}/{propertyName}",
             "GET",
             path_params,
@@ -579,7 +579,7 @@ class CoreApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, object_type, property_name, property_update, **kwargs):  # noqa: E501
+    async def update(self, object_type, property_name, property_update, **kwargs):  # noqa: E501
         """Update a property  # noqa: E501
 
         Perform a partial update of a property identified by {propertyName}. Provided fields will be overwritten.  # noqa: E501
@@ -611,9 +611,9 @@ class CoreApi(object):
         :rtype: ModelProperty
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(object_type, property_name, property_update, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(object_type, property_name, property_update, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, object_type, property_name, property_update, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, object_type, property_name, property_update, **kwargs):  # noqa: E501
         """Update a property  # noqa: E501
 
         Perform a partial update of a property identified by {propertyName}. Provided fields will be overwritten.  # noqa: E501
@@ -706,7 +706,7 @@ class CoreApi(object):
             200: "ModelProperty",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/properties/{objectType}/{propertyName}",
             "PATCH",
             path_params,

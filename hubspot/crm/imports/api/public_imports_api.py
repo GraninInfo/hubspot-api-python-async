@@ -159,7 +159,7 @@ class PublicImportsApi(object):
             200: "CollectionResponsePublicImportErrorForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/imports/{importId}/errors",
             "GET",
             path_params,

@@ -33,7 +33,7 @@ class FormsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, form_id, **kwargs):  # noqa: E501
+    async def archive(self, form_id, **kwargs):  # noqa: E501
         """Archive a form definition  # noqa: E501
 
         Archive a form definition. New submissions will not be accepted and the form definition will be permanently deleted after 3 months.  # noqa: E501
@@ -61,9 +61,9 @@ class FormsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(form_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(form_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, form_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, form_id, **kwargs):  # noqa: E501
         """Archive a form definition  # noqa: E501
 
         Archive a form definition. New submissions will not be accepted and the form definition will be permanently deleted after 3 months.  # noqa: E501
@@ -135,7 +135,7 @@ class FormsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/forms/{formId}",
             "DELETE",
             path_params,
@@ -154,7 +154,7 @@ class FormsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, form_definition_create_request_base, **kwargs):  # noqa: E501
+    async def create(self, form_definition_create_request_base, **kwargs):  # noqa: E501
         """Create a form  # noqa: E501
 
         Add a new `hubspot` form  # noqa: E501
@@ -182,9 +182,9 @@ class FormsApi(object):
         :rtype: FormDefinitionBase
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(form_definition_create_request_base, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(form_definition_create_request_base, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, form_definition_create_request_base, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, form_definition_create_request_base, **kwargs):  # noqa: E501
         """Create a form  # noqa: E501
 
         Add a new `hubspot` form  # noqa: E501
@@ -263,7 +263,7 @@ class FormsApi(object):
             201: "FormDefinitionBase",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/forms/",
             "POST",
             path_params,
@@ -282,7 +282,7 @@ class FormsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, form_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, form_id, **kwargs):  # noqa: E501
         """Get a form definition  # noqa: E501
 
         Returns a form based on the form ID provided.  # noqa: E501
@@ -312,9 +312,9 @@ class FormsApi(object):
         :rtype: FormDefinitionBase
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(form_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(form_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, form_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, form_id, **kwargs):  # noqa: E501
         """Get a form definition  # noqa: E501
 
         Returns a form based on the form ID provided.  # noqa: E501
@@ -392,7 +392,7 @@ class FormsApi(object):
             200: "FormDefinitionBase",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/forms/{formId}",
             "GET",
             path_params,
@@ -411,7 +411,7 @@ class FormsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, **kwargs):  # noqa: E501
+    async def get_page(self, **kwargs):  # noqa: E501
         """Get a list of forms  # noqa: E501
 
         Returns a list of forms based on the search filters. By default, it returns the first 20 `hubspot` forms  # noqa: E501
@@ -445,9 +445,9 @@ class FormsApi(object):
         :rtype: CollectionResponseFormDefinitionBaseForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(**kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, **kwargs):  # noqa: E501
         """Get a list of forms  # noqa: E501
 
         Returns a list of forms based on the search filters. By default, it returns the first 20 `hubspot` forms  # noqa: E501
@@ -531,7 +531,7 @@ class FormsApi(object):
             200: "CollectionResponseFormDefinitionBaseForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/forms/",
             "GET",
             path_params,
@@ -550,7 +550,7 @@ class FormsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def replace(self, form_id, hub_spot_form_definition, **kwargs):  # noqa: E501
+    async def replace(self, form_id, hub_spot_form_definition, **kwargs):  # noqa: E501
         """Update a form definition  # noqa: E501
 
         Update all fields of a hubspot form definition.  # noqa: E501
@@ -580,9 +580,9 @@ class FormsApi(object):
         :rtype: FormDefinitionBase
         """
         kwargs["_return_http_data_only"] = True
-        return self.replace_with_http_info(form_id, hub_spot_form_definition, **kwargs)  # noqa: E501
+        return await self.replace_with_http_info(form_id, hub_spot_form_definition, **kwargs)  # noqa: E501
 
-    def replace_with_http_info(self, form_id, hub_spot_form_definition, **kwargs):  # noqa: E501
+    async def replace_with_http_info(self, form_id, hub_spot_form_definition, **kwargs):  # noqa: E501
         """Update a form definition  # noqa: E501
 
         Update all fields of a hubspot form definition.  # noqa: E501
@@ -668,7 +668,7 @@ class FormsApi(object):
             200: "FormDefinitionBase",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/forms/{formId}",
             "PUT",
             path_params,
@@ -687,7 +687,7 @@ class FormsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, form_id, hub_spot_form_definition_patch_request, **kwargs):  # noqa: E501
+    async def update(self, form_id, hub_spot_form_definition_patch_request, **kwargs):  # noqa: E501
         """Partially update a form definition  # noqa: E501
 
         Update some of the form definition components  # noqa: E501
@@ -717,9 +717,9 @@ class FormsApi(object):
         :rtype: FormDefinitionBase
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(form_id, hub_spot_form_definition_patch_request, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(form_id, hub_spot_form_definition_patch_request, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, form_id, hub_spot_form_definition_patch_request, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, form_id, hub_spot_form_definition_patch_request, **kwargs):  # noqa: E501
         """Partially update a form definition  # noqa: E501
 
         Update some of the form definition components  # noqa: E501
@@ -805,7 +805,7 @@ class FormsApi(object):
             200: "FormDefinitionBase",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/forms/{formId}",
             "PATCH",
             path_params,

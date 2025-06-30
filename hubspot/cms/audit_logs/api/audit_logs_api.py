@@ -33,7 +33,7 @@ class AuditLogsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_page(self, **kwargs):  # noqa: E501
+    async def get_page(self, **kwargs):  # noqa: E501
         """Query audit logs  # noqa: E501
 
         Returns audit logs based on filters.  # noqa: E501
@@ -75,9 +75,9 @@ class AuditLogsApi(object):
         :rtype: CollectionResponsePublicAuditLog
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(**kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, **kwargs):  # noqa: E501
         """Query audit logs  # noqa: E501
 
         Returns audit logs based on filters.  # noqa: E501
@@ -181,7 +181,7 @@ class AuditLogsApi(object):
             200: "CollectionResponsePublicAuditLog",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/audit-logs/",
             "GET",
             path_params,

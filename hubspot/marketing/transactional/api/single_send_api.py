@@ -142,7 +142,7 @@ class SingleSendApi(object):
             200: "EmailSendStatusView",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/transactional/single-email/send",
             "POST",
             path_params,

@@ -137,7 +137,7 @@ class StatusApi(object):
             200: "PublicSubscriptionStatusesResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/communication-preferences/v3/status/email/{emailAddress}",
             "GET",
             path_params,
@@ -265,7 +265,7 @@ class StatusApi(object):
             200: "PublicSubscriptionStatus",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/communication-preferences/v3/subscribe",
             "POST",
             path_params,
@@ -393,7 +393,7 @@ class StatusApi(object):
             200: "PublicSubscriptionStatus",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/communication-preferences/v3/unsubscribe",
             "POST",
             path_params,

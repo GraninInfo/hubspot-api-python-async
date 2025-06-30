@@ -33,7 +33,7 @@ class MultiLanguageApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def attach_to_lang_group(self, attach_to_lang_primary_request_v_next, **kwargs):  # noqa: E501
+    async def attach_to_lang_group(self, attach_to_lang_primary_request_v_next, **kwargs):  # noqa: E501
         """Attach post to a multi-language group  # noqa: E501
 
         Attach a blog post to a [multi-language group](https://developers.hubspot.com/docs/guides/cms/content/multi-language-content).  # noqa: E501
@@ -61,9 +61,9 @@ class MultiLanguageApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.attach_to_lang_group_with_http_info(attach_to_lang_primary_request_v_next, **kwargs)  # noqa: E501
+        return await self.attach_to_lang_group_with_http_info(attach_to_lang_primary_request_v_next, **kwargs)  # noqa: E501
 
-    def attach_to_lang_group_with_http_info(self, attach_to_lang_primary_request_v_next, **kwargs):  # noqa: E501
+    async def attach_to_lang_group_with_http_info(self, attach_to_lang_primary_request_v_next, **kwargs):  # noqa: E501
         """Attach post to a multi-language group  # noqa: E501
 
         Attach a blog post to a [multi-language group](https://developers.hubspot.com/docs/guides/cms/content/multi-language-content).  # noqa: E501
@@ -140,7 +140,7 @@ class MultiLanguageApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/multi-language/attach-to-lang-group",
             "POST",
             path_params,
@@ -159,7 +159,7 @@ class MultiLanguageApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_lang_variation(self, blog_post_language_clone_request_v_next, **kwargs):  # noqa: E501
+    async def create_lang_variation(self, blog_post_language_clone_request_v_next, **kwargs):  # noqa: E501
         """Create a language variation  # noqa: E501
 
         Create a new language variation from an existing blog post  # noqa: E501
@@ -187,9 +187,9 @@ class MultiLanguageApi(object):
         :rtype: BlogPost
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_lang_variation_with_http_info(blog_post_language_clone_request_v_next, **kwargs)  # noqa: E501
+        return await self.create_lang_variation_with_http_info(blog_post_language_clone_request_v_next, **kwargs)  # noqa: E501
 
-    def create_lang_variation_with_http_info(self, blog_post_language_clone_request_v_next, **kwargs):  # noqa: E501
+    async def create_lang_variation_with_http_info(self, blog_post_language_clone_request_v_next, **kwargs):  # noqa: E501
         """Create a language variation  # noqa: E501
 
         Create a new language variation from an existing blog post  # noqa: E501
@@ -268,7 +268,7 @@ class MultiLanguageApi(object):
             200: "BlogPost",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/multi-language/create-language-variation",
             "POST",
             path_params,
@@ -394,7 +394,7 @@ class MultiLanguageApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/multi-language/detach-from-lang-group",
             "POST",
             path_params,
@@ -520,7 +520,7 @@ class MultiLanguageApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/multi-language/set-new-lang-primary",
             "PUT",
             path_params,
@@ -646,7 +646,7 @@ class MultiLanguageApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/blogs/posts/multi-language/update-languages",
             "POST",
             path_params,

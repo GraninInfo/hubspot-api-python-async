@@ -33,7 +33,7 @@ class CallbacksApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def complete(self, callback_id, callback_completion_request, **kwargs):  # noqa: E501
+    async def complete(self, callback_id, callback_completion_request, **kwargs):  # noqa: E501
         """Completes a single callback  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -62,9 +62,9 @@ class CallbacksApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.complete_with_http_info(callback_id, callback_completion_request, **kwargs)  # noqa: E501
+        return await self.complete_with_http_info(callback_id, callback_completion_request, **kwargs)  # noqa: E501
 
-    def complete_with_http_info(self, callback_id, callback_completion_request, **kwargs):  # noqa: E501
+    async def complete_with_http_info(self, callback_id, callback_completion_request, **kwargs):  # noqa: E501
         """Completes a single callback  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -147,7 +147,7 @@ class CallbacksApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/automation/v4/actions/callbacks/{callbackId}/complete",
             "POST",
             path_params,
@@ -166,7 +166,7 @@ class CallbacksApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def complete_batch(self, batch_input_callback_completion_batch_request, **kwargs):  # noqa: E501
+    async def complete_batch(self, batch_input_callback_completion_batch_request, **kwargs):  # noqa: E501
         """Completes a batch of callbacks  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -193,9 +193,9 @@ class CallbacksApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.complete_batch_with_http_info(batch_input_callback_completion_batch_request, **kwargs)  # noqa: E501
+        return await self.complete_batch_with_http_info(batch_input_callback_completion_batch_request, **kwargs)  # noqa: E501
 
-    def complete_batch_with_http_info(self, batch_input_callback_completion_batch_request, **kwargs):  # noqa: E501
+    async def complete_batch_with_http_info(self, batch_input_callback_completion_batch_request, **kwargs):  # noqa: E501
         """Completes a batch of callbacks  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -271,7 +271,7 @@ class CallbacksApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/automation/v4/actions/callbacks/complete",
             "POST",
             path_params,

@@ -33,7 +33,7 @@ class TokensApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, event_template_id, token_name, app_id, **kwargs):  # noqa: E501
+    async def archive(self, event_template_id, token_name, app_id, **kwargs):  # noqa: E501
         """Removes a token from the event template  # noqa: E501
 
         This will remove the token from an existing template. Existing events and CRM objects will still retain the token and its mapped object properties, but new ones will not.  The timeline will still display this property for older CRM objects if it's still referenced in the template `Markdown`. New events will not.  Any lists or reports referencing deleted tokens will no longer return new contacts, but old ones will still exist in the lists.  # noqa: E501
@@ -65,9 +65,9 @@ class TokensApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(event_template_id, token_name, app_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(event_template_id, token_name, app_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, event_template_id, token_name, app_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, event_template_id, token_name, app_id, **kwargs):  # noqa: E501
         """Removes a token from the event template  # noqa: E501
 
         This will remove the token from an existing template. Existing events and CRM objects will still retain the token and its mapped object properties, but new ones will not.  The timeline will still display this property for older CRM objects if it's still referenced in the template `Markdown`. New events will not.  Any lists or reports referencing deleted tokens will no longer return new contacts, but old ones will still exist in the lists.  # noqa: E501
@@ -153,7 +153,7 @@ class TokensApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/integrators/timeline/v3/{appId}/event-templates/{eventTemplateId}/tokens/{tokenName}",
             "DELETE",
             path_params,
@@ -172,7 +172,7 @@ class TokensApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, event_template_id, app_id, timeline_event_template_token, **kwargs):  # noqa: E501
+    async def create(self, event_template_id, app_id, timeline_event_template_token, **kwargs):  # noqa: E501
         """Adds a token to an existing event template  # noqa: E501
 
         Once you've defined an event template, it's likely that you'll want to define tokens for it as well. You can do this on the event template itself or update individual tokens here.  Event type tokens allow you to attach custom data to events displayed in a timeline or used for list segmentation.  You can also use `objectPropertyName` to associate any CRM object properties. This will allow you to fully build out CRM objects.  Token names should be unique across the template.  # noqa: E501
@@ -204,9 +204,9 @@ class TokensApi(object):
         :rtype: TimelineEventTemplateToken
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(event_template_id, app_id, timeline_event_template_token, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(event_template_id, app_id, timeline_event_template_token, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, event_template_id, app_id, timeline_event_template_token, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, event_template_id, app_id, timeline_event_template_token, **kwargs):  # noqa: E501
         """Adds a token to an existing event template  # noqa: E501
 
         Once you've defined an event template, it's likely that you'll want to define tokens for it as well. You can do this on the event template itself or update individual tokens here.  Event type tokens allow you to attach custom data to events displayed in a timeline or used for list segmentation.  You can also use `objectPropertyName` to associate any CRM object properties. This will allow you to fully build out CRM objects.  Token names should be unique across the template.  # noqa: E501
@@ -299,7 +299,7 @@ class TokensApi(object):
             200: "TimelineEventTemplateToken",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/integrators/timeline/v3/{appId}/event-templates/{eventTemplateId}/tokens",
             "POST",
             path_params,
@@ -318,7 +318,7 @@ class TokensApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, event_template_id, token_name, app_id, timeline_event_template_token_update_request, **kwargs):  # noqa: E501
+    async def update(self, event_template_id, token_name, app_id, timeline_event_template_token_update_request, **kwargs):  # noqa: E501
         """Updates an existing token on an event template  # noqa: E501
 
         This will update the existing token on an event template. Name and type can't be changed on existing tokens.  # noqa: E501
@@ -352,9 +352,9 @@ class TokensApi(object):
         :rtype: TimelineEventTemplateToken
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(event_template_id, token_name, app_id, timeline_event_template_token_update_request, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(event_template_id, token_name, app_id, timeline_event_template_token_update_request, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, event_template_id, token_name, app_id, timeline_event_template_token_update_request, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, event_template_id, token_name, app_id, timeline_event_template_token_update_request, **kwargs):  # noqa: E501
         """Updates an existing token on an event template  # noqa: E501
 
         This will update the existing token on an event template. Name and type can't be changed on existing tokens.  # noqa: E501
@@ -454,7 +454,7 @@ class TokensApi(object):
             200: "TimelineEventTemplateToken",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/integrators/timeline/v3/{appId}/event-templates/{eventTemplateId}/tokens/{tokenName}",
             "PUT",
             path_params,

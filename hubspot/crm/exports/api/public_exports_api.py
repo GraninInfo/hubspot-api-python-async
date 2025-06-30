@@ -33,7 +33,7 @@ class PublicExportsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_status(self, task_id, **kwargs):  # noqa: E501
+    async def get_status(self, task_id, **kwargs):  # noqa: E501
         """Get the status of the export including the URL to download the file  # noqa: E501
 
         Returns the status of the export with taskId, including the URL of the resulting file if the export status is COMPLETE  # noqa: E501
@@ -61,9 +61,9 @@ class PublicExportsApi(object):
         :rtype: ActionResponseWithSingleResultURI
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_status_with_http_info(task_id, **kwargs)  # noqa: E501
+        return await self.get_status_with_http_info(task_id, **kwargs)  # noqa: E501
 
-    def get_status_with_http_info(self, task_id, **kwargs):  # noqa: E501
+    async def get_status_with_http_info(self, task_id, **kwargs):  # noqa: E501
         """Get the status of the export including the URL to download the file  # noqa: E501
 
         Returns the status of the export with taskId, including the URL of the resulting file if the export status is COMPLETE  # noqa: E501
@@ -137,7 +137,7 @@ class PublicExportsApi(object):
             200: "ActionResponseWithSingleResultURI",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/exports/export/async/tasks/{taskId}/status",
             "GET",
             path_params,
@@ -156,7 +156,7 @@ class PublicExportsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def start(self, public_export_request, **kwargs):  # noqa: E501
+    async def start(self, public_export_request, **kwargs):  # noqa: E501
         """Start an export  # noqa: E501
 
         Begins exporting CRM data for the portal as specified in the request body  # noqa: E501
@@ -186,7 +186,7 @@ class PublicExportsApi(object):
         kwargs["_return_http_data_only"] = True
         return self.start_with_http_info(public_export_request, **kwargs)  # noqa: E501
 
-    def start_with_http_info(self, public_export_request, **kwargs):  # noqa: E501
+    async def start_with_http_info(self, public_export_request, **kwargs):  # noqa: E501
         """Start an export  # noqa: E501
 
         Begins exporting CRM data for the portal as specified in the request body  # noqa: E501
@@ -265,7 +265,7 @@ class PublicExportsApi(object):
             202: "TaskLocator",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/exports/export/async",
             "POST",
             path_params,

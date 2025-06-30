@@ -33,7 +33,7 @@ class TypesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_all(self, from_object_type, to_object_type, **kwargs):  # noqa: E501
+    async def get_all(self, from_object_type, to_object_type, **kwargs):  # noqa: E501
         """List association types  # noqa: E501
 
         List all the valid association types available between two object types  # noqa: E501
@@ -63,9 +63,9 @@ class TypesApi(object):
         :rtype: CollectionResponsePublicAssociationDefinitionNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_with_http_info(from_object_type, to_object_type, **kwargs)  # noqa: E501
+        return await self.get_all_with_http_info(from_object_type, to_object_type, **kwargs)  # noqa: E501
 
-    def get_all_with_http_info(self, from_object_type, to_object_type, **kwargs):  # noqa: E501
+    async def get_all_with_http_info(self, from_object_type, to_object_type, **kwargs):  # noqa: E501
         """List association types  # noqa: E501
 
         List all the valid association types available between two object types  # noqa: E501
@@ -146,7 +146,7 @@ class TypesApi(object):
             200: "CollectionResponsePublicAssociationDefinitionNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/associations/{fromObjectType}/{toObjectType}/types",
             "GET",
             path_params,

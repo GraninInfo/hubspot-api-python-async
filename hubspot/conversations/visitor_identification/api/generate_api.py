@@ -142,7 +142,7 @@ class GenerateApi(object):
             200: "IdentificationTokenResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/visitor-identification/v3/tokens/create",
             "POST",
             path_params,

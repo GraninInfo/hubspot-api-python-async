@@ -33,7 +33,7 @@ class RefreshTokensApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, token, **kwargs):  # noqa: E501
+    async def archive(self, token, **kwargs):  # noqa: E501
         """archive  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -60,9 +60,9 @@ class RefreshTokensApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(token, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(token, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, token, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, token, **kwargs):  # noqa: E501
         """archive  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -133,7 +133,7 @@ class RefreshTokensApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/oauth/v1/refresh-tokens/{token}",
             "DELETE",
             path_params,
@@ -254,7 +254,7 @@ class RefreshTokensApi(object):
             200: "RefreshTokenInfoResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/oauth/v1/refresh-tokens/{token}",
             "GET",
             path_params,

@@ -142,7 +142,7 @@ class ExtractApi(object):
             202: "TaskLocator",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/source-code/extract/async",
             "POST",
             path_params,
@@ -265,7 +265,7 @@ class ExtractApi(object):
             200: "ActionResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/source-code/extract/async/tasks/{taskId}/status",
             "GET",
             path_params,

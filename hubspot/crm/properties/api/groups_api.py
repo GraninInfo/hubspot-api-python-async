@@ -33,7 +33,7 @@ class GroupsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, object_type, group_name, **kwargs):  # noqa: E501
+    async def archive(self, object_type, group_name, **kwargs):  # noqa: E501
         """Archive a property group  # noqa: E501
 
         Move a property group identified by {groupName} to the recycling bin.  # noqa: E501
@@ -63,9 +63,9 @@ class GroupsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(object_type, group_name, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(object_type, group_name, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, object_type, group_name, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, object_type, group_name, **kwargs):  # noqa: E501
         """Archive a property group  # noqa: E501
 
         Move a property group identified by {groupName} to the recycling bin.  # noqa: E501
@@ -144,7 +144,7 @@ class GroupsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/properties/{objectType}/groups/{groupName}",
             "DELETE",
             path_params,
@@ -163,7 +163,7 @@ class GroupsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, object_type, property_group_create, **kwargs):  # noqa: E501
+    async def create(self, object_type, property_group_create, **kwargs):  # noqa: E501
         """Create a property group  # noqa: E501
 
         Create and return a copy of a new property group.  # noqa: E501
@@ -193,9 +193,9 @@ class GroupsApi(object):
         :rtype: PropertyGroup
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(object_type, property_group_create, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(object_type, property_group_create, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, object_type, property_group_create, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, object_type, property_group_create, **kwargs):  # noqa: E501
         """Create a property group  # noqa: E501
 
         Create and return a copy of a new property group.  # noqa: E501
@@ -281,7 +281,7 @@ class GroupsApi(object):
             201: "PropertyGroup",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/properties/{objectType}/groups",
             "POST",
             path_params,
@@ -300,7 +300,7 @@ class GroupsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_all(self, object_type, **kwargs):  # noqa: E501
+    async def get_all(self, object_type, **kwargs):  # noqa: E501
         """Read all property groups  # noqa: E501
 
         Read all existing property groups for the specified object type and HubSpot account.  # noqa: E501
@@ -328,9 +328,9 @@ class GroupsApi(object):
         :rtype: CollectionResponsePropertyGroupNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_with_http_info(object_type, **kwargs)  # noqa: E501
+        return await self.get_all_with_http_info(object_type, **kwargs)  # noqa: E501
 
-    def get_all_with_http_info(self, object_type, **kwargs):  # noqa: E501
+    async def get_all_with_http_info(self, object_type, **kwargs):  # noqa: E501
         """Read all property groups  # noqa: E501
 
         Read all existing property groups for the specified object type and HubSpot account.  # noqa: E501
@@ -404,7 +404,7 @@ class GroupsApi(object):
             200: "CollectionResponsePropertyGroupNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/properties/{objectType}/groups",
             "GET",
             path_params,
@@ -536,7 +536,7 @@ class GroupsApi(object):
             200: "PropertyGroup",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/properties/{objectType}/groups/{groupName}",
             "GET",
             path_params,
@@ -555,7 +555,7 @@ class GroupsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, object_type, group_name, property_group_update, **kwargs):  # noqa: E501
+    async def update(self, object_type, group_name, property_group_update, **kwargs):  # noqa: E501
         """Update a property group  # noqa: E501
 
         Perform a partial update of a property group identified by {groupName}. Provided fields will be overwritten.  # noqa: E501
@@ -587,9 +587,9 @@ class GroupsApi(object):
         :rtype: PropertyGroup
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(object_type, group_name, property_group_update, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(object_type, group_name, property_group_update, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, object_type, group_name, property_group_update, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, object_type, group_name, property_group_update, **kwargs):  # noqa: E501
         """Update a property group  # noqa: E501
 
         Perform a partial update of a property group identified by {groupName}. Provided fields will be overwritten.  # noqa: E501
@@ -682,7 +682,7 @@ class GroupsApi(object):
             200: "PropertyGroup",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/properties/{objectType}/groups/{groupName}",
             "PATCH",
             path_params,

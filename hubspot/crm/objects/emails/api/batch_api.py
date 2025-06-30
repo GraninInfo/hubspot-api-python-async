@@ -33,7 +33,7 @@ class BatchApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, batch_input_simple_public_object_id, **kwargs):  # noqa: E501
+    async def archive(self, batch_input_simple_public_object_id, **kwargs):  # noqa: E501
         """Archive a batch of emails by ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -60,9 +60,9 @@ class BatchApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(batch_input_simple_public_object_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(batch_input_simple_public_object_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, batch_input_simple_public_object_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, batch_input_simple_public_object_id, **kwargs):  # noqa: E501
         """Archive a batch of emails by ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -138,7 +138,7 @@ class BatchApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/emails/batch/archive",
             "POST",
             path_params,
@@ -157,7 +157,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, batch_input_simple_public_object_batch_input_for_create, **kwargs):  # noqa: E501
+    async def create(self, batch_input_simple_public_object_batch_input_for_create, **kwargs):  # noqa: E501
         """Create a batch of emails  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -184,9 +184,9 @@ class BatchApi(object):
         :rtype: BatchResponseSimplePublicObject
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(batch_input_simple_public_object_batch_input_for_create, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(batch_input_simple_public_object_batch_input_for_create, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, batch_input_simple_public_object_batch_input_for_create, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, batch_input_simple_public_object_batch_input_for_create, **kwargs):  # noqa: E501
         """Create a batch of emails  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -265,7 +265,7 @@ class BatchApi(object):
             207: "BatchResponseSimplePublicObjectWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/emails/batch/create",
             "POST",
             path_params,
@@ -284,7 +284,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def read(self, batch_read_input_simple_public_object_id, **kwargs):  # noqa: E501
+    async def read(self, batch_read_input_simple_public_object_id, **kwargs):  # noqa: E501
         """Read a batch of emails by internal ID, or unique property values  # noqa: E501
 
         Retrieve records by record ID or include the `idProperty` parameter to retrieve records by a custom unique value property.   # noqa: E501
@@ -314,9 +314,9 @@ class BatchApi(object):
         :rtype: BatchResponseSimplePublicObject
         """
         kwargs["_return_http_data_only"] = True
-        return self.read_with_http_info(batch_read_input_simple_public_object_id, **kwargs)  # noqa: E501
+        return await self.read_with_http_info(batch_read_input_simple_public_object_id, **kwargs)  # noqa: E501
 
-    def read_with_http_info(self, batch_read_input_simple_public_object_id, **kwargs):  # noqa: E501
+    async def read_with_http_info(self, batch_read_input_simple_public_object_id, **kwargs):  # noqa: E501
         """Read a batch of emails by internal ID, or unique property values  # noqa: E501
 
         Retrieve records by record ID or include the `idProperty` parameter to retrieve records by a custom unique value property.   # noqa: E501
@@ -400,7 +400,7 @@ class BatchApi(object):
             207: "BatchResponseSimplePublicObjectWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/emails/batch/read",
             "POST",
             path_params,
@@ -419,7 +419,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, batch_input_simple_public_object_batch_input, **kwargs):  # noqa: E501
+    async def update(self, batch_input_simple_public_object_batch_input, **kwargs):  # noqa: E501
         """Update a batch of emails by internal ID, or unique property values  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -446,9 +446,9 @@ class BatchApi(object):
         :rtype: BatchResponseSimplePublicObject
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(batch_input_simple_public_object_batch_input, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(batch_input_simple_public_object_batch_input, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, batch_input_simple_public_object_batch_input, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, batch_input_simple_public_object_batch_input, **kwargs):  # noqa: E501
         """Update a batch of emails by internal ID, or unique property values  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -527,7 +527,7 @@ class BatchApi(object):
             207: "BatchResponseSimplePublicObjectWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/emails/batch/update",
             "POST",
             path_params,
@@ -546,7 +546,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def upsert(self, batch_input_simple_public_object_batch_input_upsert, **kwargs):  # noqa: E501
+    async def upsert(self, batch_input_simple_public_object_batch_input_upsert, **kwargs):  # noqa: E501
         """Create or update a batch of emails by unique property values  # noqa: E501
 
         Create or update records identified by a unique property value as specified by the `idProperty` query param. `idProperty` query param refers to a property whose values are unique for the object.  # noqa: E501
@@ -574,9 +574,9 @@ class BatchApi(object):
         :rtype: BatchResponseSimplePublicUpsertObject
         """
         kwargs["_return_http_data_only"] = True
-        return self.upsert_with_http_info(batch_input_simple_public_object_batch_input_upsert, **kwargs)  # noqa: E501
+        return await self.upsert_with_http_info(batch_input_simple_public_object_batch_input_upsert, **kwargs)  # noqa: E501
 
-    def upsert_with_http_info(self, batch_input_simple_public_object_batch_input_upsert, **kwargs):  # noqa: E501
+    async def upsert_with_http_info(self, batch_input_simple_public_object_batch_input_upsert, **kwargs):  # noqa: E501
         """Create or update a batch of emails by unique property values  # noqa: E501
 
         Create or update records identified by a unique property value as specified by the `idProperty` query param. `idProperty` query param refers to a property whose values are unique for the object.  # noqa: E501
@@ -656,7 +656,7 @@ class BatchApi(object):
             207: "BatchResponseSimplePublicUpsertObjectWithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/emails/batch/upsert",
             "POST",
             path_params,

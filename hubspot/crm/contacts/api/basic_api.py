@@ -33,7 +33,7 @@ class BasicApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, contact_id, **kwargs):  # noqa: E501
+    async def archive(self, contact_id, **kwargs):  # noqa: E501
         """Archive a contact  # noqa: E501
 
         Delete a contact by ID. Deleted contacts can be restored within 90 days of deletion. Learn more about the [data impacted by contact deletions](https://knowledge.hubspot.com/privacy-and-consent/understand-restorable-and-permanent-contact-deletions) and how to [restore archived records](https://knowledge.hubspot.com/records/restore-deleted-records).  # noqa: E501
@@ -61,9 +61,9 @@ class BasicApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(contact_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(contact_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, contact_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, contact_id, **kwargs):  # noqa: E501
         """Archive a contact  # noqa: E501
 
         Delete a contact by ID. Deleted contacts can be restored within 90 days of deletion. Learn more about the [data impacted by contact deletions](https://knowledge.hubspot.com/privacy-and-consent/understand-restorable-and-permanent-contact-deletions) and how to [restore archived records](https://knowledge.hubspot.com/records/restore-deleted-records).  # noqa: E501
@@ -135,7 +135,7 @@ class BasicApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/contacts/{contactId}",
             "DELETE",
             path_params,
@@ -154,7 +154,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, simple_public_object_input_for_create, **kwargs):  # noqa: E501
+    async def create(self, simple_public_object_input_for_create, **kwargs):  # noqa: E501
         """Create a contact  # noqa: E501
 
         Create a single contact. Include a `properties` object to define [property values](https://developers.hubspot.com/docs/guides/api/crm/properties) for the contact, along with an `associations` array to define [associations](https://developers.hubspot.com/docs/guides/api/crm/associations/associations-v4) with other CRM records.  # noqa: E501
@@ -182,9 +182,9 @@ class BasicApi(object):
         :rtype: SimplePublicObject
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(simple_public_object_input_for_create, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(simple_public_object_input_for_create, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, simple_public_object_input_for_create, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, simple_public_object_input_for_create, **kwargs):  # noqa: E501
         """Create a contact  # noqa: E501
 
         Create a single contact. Include a `properties` object to define [property values](https://developers.hubspot.com/docs/guides/api/crm/properties) for the contact, along with an `associations` array to define [associations](https://developers.hubspot.com/docs/guides/api/crm/associations/associations-v4) with other CRM records.  # noqa: E501
@@ -263,7 +263,7 @@ class BasicApi(object):
             201: "SimplePublicObject",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/contacts",
             "POST",
             path_params,
@@ -282,7 +282,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, contact_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, contact_id, **kwargs):  # noqa: E501
         """Retrieve a contact  # noqa: E501
 
         Retrieve a contact by its ID (`contactId`) or by a unique property (`idProperty`). You can specify what is returned using the `properties` query parameter.  # noqa: E501
@@ -320,9 +320,9 @@ class BasicApi(object):
         :rtype: SimplePublicObjectWithAssociations
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(contact_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(contact_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, contact_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, contact_id, **kwargs):  # noqa: E501
         """Retrieve a contact  # noqa: E501
 
         Retrieve a contact by its ID (`contactId`) or by a unique property (`idProperty`). You can specify what is returned using the `properties` query parameter.  # noqa: E501
@@ -419,7 +419,7 @@ class BasicApi(object):
             200: "SimplePublicObjectWithAssociations",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/contacts/{contactId}",
             "GET",
             path_params,
@@ -438,7 +438,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, **kwargs):  # noqa: E501
+    async def get_page(self, **kwargs):  # noqa: E501
         """Retrieve contacts  # noqa: E501
 
         Retrieve all contacts, using query parameters to specify the information that gets returned.  # noqa: E501
@@ -476,9 +476,9 @@ class BasicApi(object):
         :rtype: CollectionResponseSimplePublicObjectWithAssociationsForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(**kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, **kwargs):  # noqa: E501
         """Retrieve contacts  # noqa: E501
 
         Retrieve all contacts, using query parameters to specify the information that gets returned.  # noqa: E501
@@ -572,7 +572,7 @@ class BasicApi(object):
             200: "CollectionResponseSimplePublicObjectWithAssociationsForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/contacts",
             "GET",
             path_params,
@@ -591,7 +591,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def merge(self, public_merge_input, **kwargs):  # noqa: E501
+    async def merge(self, public_merge_input, **kwargs):  # noqa: E501
         """Merge two contacts  # noqa: E501
 
         Merge two contact records. Learn more about [merging records](https://knowledge.hubspot.com/records/merge-records).   # noqa: E501
@@ -619,9 +619,9 @@ class BasicApi(object):
         :rtype: SimplePublicObject
         """
         kwargs["_return_http_data_only"] = True
-        return self.merge_with_http_info(public_merge_input, **kwargs)  # noqa: E501
+        return await self.merge_with_http_info(public_merge_input, **kwargs)  # noqa: E501
 
-    def merge_with_http_info(self, public_merge_input, **kwargs):  # noqa: E501
+    async def merge_with_http_info(self, public_merge_input, **kwargs):  # noqa: E501
         """Merge two contacts  # noqa: E501
 
         Merge two contact records. Learn more about [merging records](https://knowledge.hubspot.com/records/merge-records).   # noqa: E501
@@ -700,7 +700,7 @@ class BasicApi(object):
             200: "SimplePublicObject",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/contacts/merge",
             "POST",
             path_params,
@@ -719,7 +719,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def purge(self, public_gdpr_delete_input, **kwargs):  # noqa: E501
+    async def purge(self, public_gdpr_delete_input, **kwargs):  # noqa: E501
         """Permanently delete a contact (GDPR-compliant)  # noqa: E501
 
         Permanently delete a contact and all associated content to follow GDPR. Use optional property `idProperty` set to `email` to identify contact by email address. If email address is not found, the email address will be added to a blocklist and prevent it from being used in the future. Learn more about [permanently deleting contacts](https://knowledge.hubspot.com/privacy-and-consent/how-do-i-perform-a-gdpr-delete-in-hubspot).  # noqa: E501
@@ -747,9 +747,9 @@ class BasicApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.purge_with_http_info(public_gdpr_delete_input, **kwargs)  # noqa: E501
+        return await self.purge_with_http_info(public_gdpr_delete_input, **kwargs)  # noqa: E501
 
-    def purge_with_http_info(self, public_gdpr_delete_input, **kwargs):  # noqa: E501
+    async def purge_with_http_info(self, public_gdpr_delete_input, **kwargs):  # noqa: E501
         """Permanently delete a contact (GDPR-compliant)  # noqa: E501
 
         Permanently delete a contact and all associated content to follow GDPR. Use optional property `idProperty` set to `email` to identify contact by email address. If email address is not found, the email address will be added to a blocklist and prevent it from being used in the future. Learn more about [permanently deleting contacts](https://knowledge.hubspot.com/privacy-and-consent/how-do-i-perform-a-gdpr-delete-in-hubspot).  # noqa: E501
@@ -826,7 +826,7 @@ class BasicApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/contacts/gdpr-delete",
             "POST",
             path_params,
@@ -845,7 +845,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, contact_id, simple_public_object_input, **kwargs):  # noqa: E501
+    async def update(self, contact_id, simple_public_object_input, **kwargs):  # noqa: E501
         """Update a contact  # noqa: E501
 
         Update a contact by ID (`contactId`) or unique property value (`idProperty`). Provided property values will be overwritten. Read-only and non-existent properties will result in an error. Properties values can be cleared by passing an empty string.  # noqa: E501
@@ -877,9 +877,9 @@ class BasicApi(object):
         :rtype: SimplePublicObject
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(contact_id, simple_public_object_input, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(contact_id, simple_public_object_input, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, contact_id, simple_public_object_input, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, contact_id, simple_public_object_input, **kwargs):  # noqa: E501
         """Update a contact  # noqa: E501
 
         Update a contact by ID (`contactId`) or unique property value (`idProperty`). Provided property values will be overwritten. Read-only and non-existent properties will result in an error. Properties values can be cleared by passing an empty string.  # noqa: E501
@@ -969,7 +969,7 @@ class BasicApi(object):
             200: "SimplePublicObject",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/contacts/{contactId}",
             "PATCH",
             path_params,

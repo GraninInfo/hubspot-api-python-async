@@ -166,7 +166,7 @@ class AddEventAttendeesApi(object):
             200: "BatchResponseSubscriberEmailResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/attendance/{externalEventId}/{subscriberState}/email-create",
             "POST",
             path_params,
@@ -312,7 +312,7 @@ class AddEventAttendeesApi(object):
             200: "BatchResponseSubscriberVidResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/{objectId}/attendance/{subscriberState}/create",
             "POST",
             path_params,
@@ -464,7 +464,7 @@ class AddEventAttendeesApi(object):
             200: "BatchResponseSubscriberVidResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/attendance/{externalEventId}/{subscriberState}/create",
             "POST",
             path_params,
@@ -610,7 +610,7 @@ class AddEventAttendeesApi(object):
             200: "BatchResponseSubscriberEmailResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/{objectId}/attendance/{subscriberState}/email-create",
             "POST",
             path_params,

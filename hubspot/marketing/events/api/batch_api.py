@@ -33,7 +33,7 @@ class BatchApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, batch_input_marketing_event_external_unique_identifier, **kwargs):  # noqa: E501
+    async def archive(self, batch_input_marketing_event_external_unique_identifier, **kwargs):  # noqa: E501
         """Delete Multiple Marketing Events by External Ids  # noqa: E501
 
         Deletes multiple Marketing Events based on externalAccountId, externalEventId, and appId.  Only Marketing Events created by the same apps will be deleted; events from other apps cannot be removed by this endpoint.   # noqa: E501
@@ -61,9 +61,9 @@ class BatchApi(object):
         :rtype: Error
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(batch_input_marketing_event_external_unique_identifier, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(batch_input_marketing_event_external_unique_identifier, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, batch_input_marketing_event_external_unique_identifier, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, batch_input_marketing_event_external_unique_identifier, **kwargs):  # noqa: E501
         """Delete Multiple Marketing Events by External Ids  # noqa: E501
 
         Deletes multiple Marketing Events based on externalAccountId, externalEventId, and appId.  Only Marketing Events created by the same apps will be deleted; events from other apps cannot be removed by this endpoint.   # noqa: E501
@@ -140,7 +140,7 @@ class BatchApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/events/delete",
             "POST",
             path_params,
@@ -266,7 +266,7 @@ class BatchApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/batch/archive",
             "POST",
             path_params,
@@ -395,7 +395,7 @@ class BatchApi(object):
             207: "BatchResponseMarketingEventPublicDefaultResponseV2WithErrors",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/batch/update",
             "POST",
             path_params,
@@ -414,7 +414,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def upsert(self, batch_input_marketing_event_create_request_params, **kwargs):  # noqa: E501
+    async def upsert(self, batch_input_marketing_event_create_request_params, **kwargs):  # noqa: E501
         """Create or Update Multiple Marketing Events  # noqa: E501
 
         Upserts multiple Marketing Events. If a Marketing Event with the specified ID already exists, it will be updated; otherwise, a new event will be created.  Only Marketing Events originally created by the same app can be updated.  # noqa: E501
@@ -442,9 +442,9 @@ class BatchApi(object):
         :rtype: BatchResponseMarketingEventPublicDefaultResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.upsert_with_http_info(batch_input_marketing_event_create_request_params, **kwargs)  # noqa: E501
+        return await self.upsert_with_http_info(batch_input_marketing_event_create_request_params, **kwargs)  # noqa: E501
 
-    def upsert_with_http_info(self, batch_input_marketing_event_create_request_params, **kwargs):  # noqa: E501
+    async def upsert_with_http_info(self, batch_input_marketing_event_create_request_params, **kwargs):  # noqa: E501
         """Create or Update Multiple Marketing Events  # noqa: E501
 
         Upserts multiple Marketing Events. If a Marketing Event with the specified ID already exists, it will be updated; otherwise, a new event will be created.  Only Marketing Events originally created by the same app can be updated.  # noqa: E501
@@ -523,7 +523,7 @@ class BatchApi(object):
             200: "BatchResponseMarketingEventPublicDefaultResponse",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/events/upsert",
             "POST",
             path_params,

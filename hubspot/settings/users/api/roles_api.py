@@ -33,7 +33,7 @@ class RolesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_all(self, **kwargs):  # noqa: E501
+    async def get_all(self, **kwargs):  # noqa: E501
         """Retrieves the roles on an account  # noqa: E501
 
         Retrieves the roles on an account  # noqa: E501
@@ -59,9 +59,9 @@ class RolesApi(object):
         :rtype: CollectionResponsePublicPermissionSetNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_all_with_http_info(**kwargs)  # noqa: E501
 
-    def get_all_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_all_with_http_info(self, **kwargs):  # noqa: E501
         """Retrieves the roles on an account  # noqa: E501
 
         Retrieves the roles on an account  # noqa: E501
@@ -128,7 +128,7 @@ class RolesApi(object):
             200: "CollectionResponsePublicPermissionSetNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/settings/v3/users/roles",
             "GET",
             path_params,

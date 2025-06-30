@@ -151,7 +151,7 @@ class BusinessUnitApi(object):
             200: "CollectionResponsePublicBusinessUnitNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/business-units/v3/business-units/user/{userId}",
             "GET",
             path_params,

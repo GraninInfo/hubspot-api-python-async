@@ -33,7 +33,7 @@ class EventsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_page(self, **kwargs):  # noqa: E501
+    async def get_page(self, **kwargs):  # noqa: E501
         """Retrieve event data  # noqa: E501
 
         Retrieve instances of event completion data. For example, retrieve all event completions associated with a specific contact.  # noqa: E501
@@ -83,9 +83,9 @@ class EventsApi(object):
         :rtype: CollectionResponseExternalUnifiedEvent
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(**kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, **kwargs):  # noqa: E501
         """Retrieve event data  # noqa: E501
 
         Retrieve instances of event completion data. For example, retrieve all event completions associated with a specific contact.  # noqa: E501
@@ -202,7 +202,7 @@ class EventsApi(object):
             200: "CollectionResponseExternalUnifiedEvent",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/events/v3/events/",
             "GET",
             path_params,
@@ -316,7 +316,7 @@ class EventsApi(object):
             200: "VisibleExternalEventTypeNames",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/events/v3/events/event-types",
             "GET",
             path_params,

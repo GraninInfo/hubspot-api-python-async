@@ -153,7 +153,7 @@ class ListAssociationsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/associations/{externalAccountId}/{externalEventId}/lists/{listId}",
             "PUT",
             path_params,
@@ -283,7 +283,7 @@ class ListAssociationsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/associations/{marketingEventId}/lists/{listId}",
             "PUT",
             path_params,
@@ -422,7 +422,7 @@ class ListAssociationsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/associations/{externalAccountId}/{externalEventId}/lists/{listId}",
             "DELETE",
             path_params,
@@ -552,7 +552,7 @@ class ListAssociationsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/associations/{marketingEventId}/lists/{listId}",
             "DELETE",
             path_params,
@@ -684,7 +684,7 @@ class ListAssociationsApi(object):
             200: "CollectionResponseWithTotalPublicListNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/associations/{externalAccountId}/{externalEventId}/lists",
             "GET",
             path_params,
@@ -807,7 +807,7 @@ class ListAssociationsApi(object):
             200: "CollectionResponseWithTotalPublicListNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/marketing/v3/marketing-events/associations/{marketingEventId}/lists",
             "GET",
             path_params,

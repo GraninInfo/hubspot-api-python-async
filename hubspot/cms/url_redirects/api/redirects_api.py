@@ -33,7 +33,7 @@ class RedirectsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, url_redirect_id, **kwargs):  # noqa: E501
+    async def archive(self, url_redirect_id, **kwargs):  # noqa: E501
         """Delete a redirect  # noqa: E501
 
         Delete one existing redirect, so it is no longer mapped.  # noqa: E501
@@ -61,9 +61,9 @@ class RedirectsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(url_redirect_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(url_redirect_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, url_redirect_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, url_redirect_id, **kwargs):  # noqa: E501
         """Delete a redirect  # noqa: E501
 
         Delete one existing redirect, so it is no longer mapped.  # noqa: E501
@@ -135,7 +135,7 @@ class RedirectsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/url-redirects/{urlRedirectId}",
             "DELETE",
             path_params,
@@ -154,7 +154,7 @@ class RedirectsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, url_mapping_create_request_body, **kwargs):  # noqa: E501
+    async def create(self, url_mapping_create_request_body, **kwargs):  # noqa: E501
         """Create a redirect  # noqa: E501
 
         Creates and configures a new URL redirect.  # noqa: E501
@@ -182,9 +182,9 @@ class RedirectsApi(object):
         :rtype: UrlMapping
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(url_mapping_create_request_body, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(url_mapping_create_request_body, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, url_mapping_create_request_body, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, url_mapping_create_request_body, **kwargs):  # noqa: E501
         """Create a redirect  # noqa: E501
 
         Creates and configures a new URL redirect.  # noqa: E501
@@ -263,7 +263,7 @@ class RedirectsApi(object):
             201: "UrlMapping",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/url-redirects/",
             "POST",
             path_params,
@@ -282,7 +282,7 @@ class RedirectsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, url_redirect_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, url_redirect_id, **kwargs):  # noqa: E501
         """Get details for a redirect  # noqa: E501
 
         Returns the details for a single existing URL redirect by ID.  # noqa: E501
@@ -310,9 +310,9 @@ class RedirectsApi(object):
         :rtype: UrlMapping
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(url_redirect_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(url_redirect_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, url_redirect_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, url_redirect_id, **kwargs):  # noqa: E501
         """Get details for a redirect  # noqa: E501
 
         Returns the details for a single existing URL redirect by ID.  # noqa: E501
@@ -386,7 +386,7 @@ class RedirectsApi(object):
             200: "UrlMapping",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/url-redirects/{urlRedirectId}",
             "GET",
             path_params,
@@ -405,7 +405,7 @@ class RedirectsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, **kwargs):  # noqa: E501
+    async def get_page(self, **kwargs):  # noqa: E501
         """Get current redirects  # noqa: E501
 
         Returns all existing URL redirects. Results can be limited and filtered by creation or updated date.  # noqa: E501
@@ -451,9 +451,9 @@ class RedirectsApi(object):
         :rtype: CollectionResponseWithTotalUrlMappingForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(**kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, **kwargs):  # noqa: E501
         """Get current redirects  # noqa: E501
 
         Returns all existing URL redirects. Results can be limited and filtered by creation or updated date.  # noqa: E501
@@ -561,7 +561,7 @@ class RedirectsApi(object):
             200: "CollectionResponseWithTotalUrlMappingForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/url-redirects/",
             "GET",
             path_params,
@@ -580,7 +580,7 @@ class RedirectsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, url_redirect_id, url_mapping, **kwargs):  # noqa: E501
+    async def update(self, url_redirect_id, url_mapping, **kwargs):  # noqa: E501
         """Update a redirect  # noqa: E501
 
         Updates the settings for an existing URL redirect.  # noqa: E501
@@ -610,9 +610,9 @@ class RedirectsApi(object):
         :rtype: UrlMapping
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(url_redirect_id, url_mapping, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(url_redirect_id, url_mapping, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, url_redirect_id, url_mapping, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, url_redirect_id, url_mapping, **kwargs):  # noqa: E501
         """Update a redirect  # noqa: E501
 
         Updates the settings for an existing URL redirect.  # noqa: E501
@@ -698,7 +698,7 @@ class RedirectsApi(object):
             200: "UrlMapping",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/url-redirects/{urlRedirectId}",
             "PATCH",
             path_params,

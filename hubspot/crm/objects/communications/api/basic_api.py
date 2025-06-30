@@ -33,7 +33,7 @@ class BasicApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, communication_id, **kwargs):  # noqa: E501
+    async def archive(self, communication_id, **kwargs):  # noqa: E501
         """Archive  # noqa: E501
 
         Move an Object identified by `{communicationId}` to the recycling bin.  # noqa: E501
@@ -61,9 +61,9 @@ class BasicApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(communication_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(communication_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, communication_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, communication_id, **kwargs):  # noqa: E501
         """Archive  # noqa: E501
 
         Move an Object identified by `{communicationId}` to the recycling bin.  # noqa: E501
@@ -135,7 +135,7 @@ class BasicApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/communications/{communicationId}",
             "DELETE",
             path_params,
@@ -154,7 +154,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create(self, simple_public_object_input_for_create, **kwargs):  # noqa: E501
+    async def create(self, simple_public_object_input_for_create, **kwargs):  # noqa: E501
         """Create  # noqa: E501
 
         Create a communication with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard communications is provided.  # noqa: E501
@@ -182,9 +182,9 @@ class BasicApi(object):
         :rtype: SimplePublicObject
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_with_http_info(simple_public_object_input_for_create, **kwargs)  # noqa: E501
+        return await self.create_with_http_info(simple_public_object_input_for_create, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, simple_public_object_input_for_create, **kwargs):  # noqa: E501
+    async def create_with_http_info(self, simple_public_object_input_for_create, **kwargs):  # noqa: E501
         """Create  # noqa: E501
 
         Create a communication with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard communications is provided.  # noqa: E501
@@ -263,7 +263,7 @@ class BasicApi(object):
             201: "SimplePublicObject",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/communications",
             "POST",
             path_params,
@@ -282,7 +282,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, communication_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, communication_id, **kwargs):  # noqa: E501
         """Read  # noqa: E501
 
         Read an Object identified by `{communicationId}`. `{communicationId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param.  Control what is returned via the `properties` query param.  # noqa: E501
@@ -320,9 +320,9 @@ class BasicApi(object):
         :rtype: SimplePublicObjectWithAssociations
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(communication_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(communication_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, communication_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, communication_id, **kwargs):  # noqa: E501
         """Read  # noqa: E501
 
         Read an Object identified by `{communicationId}`. `{communicationId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param.  Control what is returned via the `properties` query param.  # noqa: E501
@@ -419,7 +419,7 @@ class BasicApi(object):
             200: "SimplePublicObjectWithAssociations",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/communications/{communicationId}",
             "GET",
             path_params,
@@ -438,7 +438,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, **kwargs):  # noqa: E501
+    async def get_page(self, **kwargs):  # noqa: E501
         """List  # noqa: E501
 
         Read a page of communications. Control what is returned via the `properties` query param.  # noqa: E501
@@ -476,9 +476,9 @@ class BasicApi(object):
         :rtype: CollectionResponseSimplePublicObjectWithAssociationsForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(**kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, **kwargs):  # noqa: E501
         """List  # noqa: E501
 
         Read a page of communications. Control what is returned via the `properties` query param.  # noqa: E501
@@ -572,7 +572,7 @@ class BasicApi(object):
             200: "CollectionResponseSimplePublicObjectWithAssociationsForwardPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/communications",
             "GET",
             path_params,
@@ -591,7 +591,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update(self, communication_id, simple_public_object_input, **kwargs):  # noqa: E501
+    async def update(self, communication_id, simple_public_object_input, **kwargs):  # noqa: E501
         """Update  # noqa: E501
 
         Perform a partial update of an Object identified by `{communicationId}`or optionally a unique property value as specified by the `idProperty` query param. `{communicationId}` refers to the internal object ID by default, and the `idProperty` query param refers to a property whose values are unique for the object. Provided property values will be overwritten. Read-only and non-existent properties will result in an error. Properties values can be cleared by passing an empty string.  # noqa: E501
@@ -623,9 +623,9 @@ class BasicApi(object):
         :rtype: SimplePublicObject
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_with_http_info(communication_id, simple_public_object_input, **kwargs)  # noqa: E501
+        return await self.update_with_http_info(communication_id, simple_public_object_input, **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, communication_id, simple_public_object_input, **kwargs):  # noqa: E501
+    async def update_with_http_info(self, communication_id, simple_public_object_input, **kwargs):  # noqa: E501
         """Update  # noqa: E501
 
         Perform a partial update of an Object identified by `{communicationId}`or optionally a unique property value as specified by the `idProperty` query param. `{communicationId}` refers to the internal object ID by default, and the `idProperty` query param refers to a property whose values are unique for the object. Provided property values will be overwritten. Read-only and non-existent properties will result in an error. Properties values can be cleared by passing an empty string.  # noqa: E501
@@ -715,7 +715,7 @@ class BasicApi(object):
             200: "SimplePublicObject",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/crm/v3/objects/communications/{communicationId}",
             "PATCH",
             path_params,

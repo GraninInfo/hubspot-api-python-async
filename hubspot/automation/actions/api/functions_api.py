@@ -33,7 +33,7 @@ class FunctionsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive(self, definition_id, function_type, function_id, app_id, **kwargs):  # noqa: E501
+    async def archive(self, definition_id, function_type, function_id, app_id, **kwargs):  # noqa: E501
         """Archive a function for a definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -66,9 +66,9 @@ class FunctionsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_with_http_info(definition_id, function_type, function_id, app_id, **kwargs)  # noqa: E501
+        return await self.archive_with_http_info(definition_id, function_type, function_id, app_id, **kwargs)  # noqa: E501
 
-    def archive_with_http_info(self, definition_id, function_type, function_id, app_id, **kwargs):  # noqa: E501
+    async def archive_with_http_info(self, definition_id, function_type, function_id, app_id, **kwargs):  # noqa: E501
         """Archive a function for a definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -160,7 +160,7 @@ class FunctionsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/automation/v4/actions/{appId}/{definitionId}/functions/{functionType}/{functionId}",
             "DELETE",
             path_params,
@@ -179,7 +179,7 @@ class FunctionsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def archive_by_function_type(self, definition_id, function_type, app_id, **kwargs):  # noqa: E501
+    async def archive_by_function_type(self, definition_id, function_type, app_id, **kwargs):  # noqa: E501
         """Delete a function for a definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -210,9 +210,9 @@ class FunctionsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_by_function_type_with_http_info(definition_id, function_type, app_id, **kwargs)  # noqa: E501
+        return await self.archive_by_function_type_with_http_info(definition_id, function_type, app_id, **kwargs)  # noqa: E501
 
-    def archive_by_function_type_with_http_info(self, definition_id, function_type, app_id, **kwargs):  # noqa: E501
+    async def archive_by_function_type_with_http_info(self, definition_id, function_type, app_id, **kwargs):  # noqa: E501
         """Delete a function for a definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -297,7 +297,7 @@ class FunctionsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/automation/v4/actions/{appId}/{definitionId}/functions/{functionType}",
             "DELETE",
             path_params,
@@ -316,7 +316,7 @@ class FunctionsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_or_replace(self, definition_id, function_type, function_id, app_id, body, **kwargs):  # noqa: E501
+    async def create_or_replace(self, definition_id, function_type, function_id, app_id, body, **kwargs):  # noqa: E501
         """Insert a function for a definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -351,9 +351,9 @@ class FunctionsApi(object):
         :rtype: PublicActionFunctionIdentifier
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_or_replace_with_http_info(definition_id, function_type, function_id, app_id, body, **kwargs)  # noqa: E501
+        return await self.create_or_replace_with_http_info(definition_id, function_type, function_id, app_id, body, **kwargs)  # noqa: E501
 
-    def create_or_replace_with_http_info(self, definition_id, function_type, function_id, app_id, body, **kwargs):  # noqa: E501
+    async def create_or_replace_with_http_info(self, definition_id, function_type, function_id, app_id, body, **kwargs):  # noqa: E501
         """Insert a function for a definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -459,7 +459,7 @@ class FunctionsApi(object):
             200: "PublicActionFunctionIdentifier",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/automation/v4/actions/{appId}/{definitionId}/functions/{functionType}/{functionId}",
             "PUT",
             path_params,
@@ -478,7 +478,7 @@ class FunctionsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_or_replace_by_function_type(self, definition_id, function_type, app_id, body, **kwargs):  # noqa: E501
+    async def create_or_replace_by_function_type(self, definition_id, function_type, app_id, body, **kwargs):  # noqa: E501
         """Insert a function for a definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -511,9 +511,9 @@ class FunctionsApi(object):
         :rtype: PublicActionFunctionIdentifier
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_or_replace_by_function_type_with_http_info(definition_id, function_type, app_id, body, **kwargs)  # noqa: E501
+        return await self.create_or_replace_by_function_type_with_http_info(definition_id, function_type, app_id, body, **kwargs)  # noqa: E501
 
-    def create_or_replace_by_function_type_with_http_info(self, definition_id, function_type, app_id, body, **kwargs):  # noqa: E501
+    async def create_or_replace_by_function_type_with_http_info(self, definition_id, function_type, app_id, body, **kwargs):  # noqa: E501
         """Insert a function for a definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -612,7 +612,7 @@ class FunctionsApi(object):
             200: "PublicActionFunctionIdentifier",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/automation/v4/actions/{appId}/{definitionId}/functions/{functionType}",
             "PUT",
             path_params,
@@ -631,7 +631,7 @@ class FunctionsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_function_type(self, definition_id, function_type, app_id, **kwargs):  # noqa: E501
+    async def get_by_function_type(self, definition_id, function_type, app_id, **kwargs):  # noqa: E501
         """Get all functions by a type for a given definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -662,9 +662,9 @@ class FunctionsApi(object):
         :rtype: PublicActionFunction
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_function_type_with_http_info(definition_id, function_type, app_id, **kwargs)  # noqa: E501
+        return await self.get_by_function_type_with_http_info(definition_id, function_type, app_id, **kwargs)  # noqa: E501
 
-    def get_by_function_type_with_http_info(self, definition_id, function_type, app_id, **kwargs):  # noqa: E501
+    async def get_by_function_type_with_http_info(self, definition_id, function_type, app_id, **kwargs):  # noqa: E501
         """Get all functions by a type for a given definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -751,7 +751,7 @@ class FunctionsApi(object):
             200: "PublicActionFunction",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/automation/v4/actions/{appId}/{definitionId}/functions/{functionType}",
             "GET",
             path_params,
@@ -770,7 +770,7 @@ class FunctionsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_id(self, definition_id, function_type, function_id, app_id, **kwargs):  # noqa: E501
+    async def get_by_id(self, definition_id, function_type, function_id, app_id, **kwargs):  # noqa: E501
         """Get a function for a given definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -803,9 +803,9 @@ class FunctionsApi(object):
         :rtype: PublicActionFunction
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_id_with_http_info(definition_id, function_type, function_id, app_id, **kwargs)  # noqa: E501
+        return await self.get_by_id_with_http_info(definition_id, function_type, function_id, app_id, **kwargs)  # noqa: E501
 
-    def get_by_id_with_http_info(self, definition_id, function_type, function_id, app_id, **kwargs):  # noqa: E501
+    async def get_by_id_with_http_info(self, definition_id, function_type, function_id, app_id, **kwargs):  # noqa: E501
         """Get a function for a given definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -899,7 +899,7 @@ class FunctionsApi(object):
             200: "PublicActionFunction",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/automation/v4/actions/{appId}/{definitionId}/functions/{functionType}/{functionId}",
             "GET",
             path_params,
@@ -918,7 +918,7 @@ class FunctionsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page(self, definition_id, app_id, **kwargs):  # noqa: E501
+    async def get_page(self, definition_id, app_id, **kwargs):  # noqa: E501
         """Get all functions for a given definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -947,9 +947,9 @@ class FunctionsApi(object):
         :rtype: CollectionResponsePublicActionFunctionIdentifierNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_with_http_info(definition_id, app_id, **kwargs)  # noqa: E501
+        return await self.get_page_with_http_info(definition_id, app_id, **kwargs)  # noqa: E501
 
-    def get_page_with_http_info(self, definition_id, app_id, **kwargs):  # noqa: E501
+    async def get_page_with_http_info(self, definition_id, app_id, **kwargs):  # noqa: E501
         """Get all functions for a given definition  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1029,7 +1029,7 @@ class FunctionsApi(object):
             200: "CollectionResponsePublicActionFunctionIdentifierNoPaging",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/automation/v4/actions/{appId}/{definitionId}/functions",
             "GET",
             path_params,

@@ -154,7 +154,7 @@ class RowsApi(object):
             200: "HubDbTableRowV3",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/rows/{rowId}/draft/clone",
             "POST",
             path_params,
@@ -291,7 +291,7 @@ class RowsApi(object):
             201: "HubDbTableRowV3",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/rows",
             "POST",
             path_params,
@@ -431,7 +431,7 @@ class RowsApi(object):
             200: "HubDbTableRowV3",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/rows/{rowId}/draft",
             "GET",
             path_params,
@@ -571,7 +571,7 @@ class RowsApi(object):
             200: "HubDbTableRowV3",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/rows/{rowId}",
             "GET",
             path_params,
@@ -732,7 +732,7 @@ class RowsApi(object):
             200: "UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/rows",
             "GET",
             path_params,
@@ -864,7 +864,7 @@ class RowsApi(object):
 
         response_types_map = {}
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/rows/{rowId}/draft",
             "DELETE",
             path_params,
@@ -1025,7 +1025,7 @@ class RowsApi(object):
             200: "UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/rows/draft",
             "GET",
             path_params,
@@ -1173,7 +1173,7 @@ class RowsApi(object):
             200: "HubDbTableRowV3",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/rows/{rowId}/draft",
             "PUT",
             path_params,
@@ -1321,7 +1321,7 @@ class RowsApi(object):
             200: "HubDbTableRowV3",
         }
 
-        return self.api_client.call_api(
+        return await self.api_client.call_api(
             "/cms/v3/hubdb/tables/{tableIdOrName}/rows/{rowId}/draft",
             "PATCH",
             path_params,
