@@ -33,7 +33,7 @@ class AddEventAttendeesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def record_by_contact_emails(self, external_event_id, subscriber_state, batch_input_marketing_event_email_subscriber, **kwargs):  # noqa: E501
+    async def record_by_contact_emails(self, external_event_id, subscriber_state, batch_input_marketing_event_email_subscriber, **kwargs):  # noqa: E501
         """Record Participants by Email with Marketing Event External Ids  # noqa: E501
 
         Records the participation of multiple HubSpot contacts in a Marketing Event using their email addresses.  If a contact does not exist, it will be automatically created. The contactProperties field is used exclusively for creating new contacts and will not update properties of existing contacts.  Additional Functionality: - Adds a timeline event to the contacts.  Allowed Properties: For the state \"attend\": - joinedAt - leftAt  # noqa: E501
@@ -67,9 +67,9 @@ class AddEventAttendeesApi(object):
         :rtype: BatchResponseSubscriberEmailResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.record_by_contact_emails_with_http_info(external_event_id, subscriber_state, batch_input_marketing_event_email_subscriber, **kwargs)  # noqa: E501
+        return await self.record_by_contact_emails_with_http_info(external_event_id, subscriber_state, batch_input_marketing_event_email_subscriber, **kwargs)  # noqa: E501
 
-    def record_by_contact_emails_with_http_info(self, external_event_id, subscriber_state, batch_input_marketing_event_email_subscriber, **kwargs):  # noqa: E501
+    async def record_by_contact_emails_with_http_info(self, external_event_id, subscriber_state, batch_input_marketing_event_email_subscriber, **kwargs):  # noqa: E501
         """Record Participants by Email with Marketing Event External Ids  # noqa: E501
 
         Records the participation of multiple HubSpot contacts in a Marketing Event using their email addresses.  If a contact does not exist, it will be automatically created. The contactProperties field is used exclusively for creating new contacts and will not update properties of existing contacts.  Additional Functionality: - Adds a timeline event to the contacts.  Allowed Properties: For the state \"attend\": - joinedAt - leftAt  # noqa: E501
@@ -185,7 +185,7 @@ class AddEventAttendeesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def record_by_contact_id(self, object_id, subscriber_state, batch_input_marketing_event_subscriber, **kwargs):  # noqa: E501
+    async def record_by_contact_id(self, object_id, subscriber_state, batch_input_marketing_event_subscriber, **kwargs):  # noqa: E501
         """Record Participants by ContactId with Marketing Event Object Id  # noqa: E501
 
         Records the participation of multiple HubSpot contacts in a Marketing Event using their HubSpot contact IDs.  Additional Functionality: - Adds a timeline event to the contacts.  Allowed Properties: For the state \"attend\": - joinedAt - leftAt  # noqa: E501
@@ -217,9 +217,9 @@ class AddEventAttendeesApi(object):
         :rtype: BatchResponseSubscriberVidResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.record_by_contact_id_with_http_info(object_id, subscriber_state, batch_input_marketing_event_subscriber, **kwargs)  # noqa: E501
+        return await self.record_by_contact_id_with_http_info(object_id, subscriber_state, batch_input_marketing_event_subscriber, **kwargs)  # noqa: E501
 
-    def record_by_contact_id_with_http_info(self, object_id, subscriber_state, batch_input_marketing_event_subscriber, **kwargs):  # noqa: E501
+    async def record_by_contact_id_with_http_info(self, object_id, subscriber_state, batch_input_marketing_event_subscriber, **kwargs):  # noqa: E501
         """Record Participants by ContactId with Marketing Event Object Id  # noqa: E501
 
         Records the participation of multiple HubSpot contacts in a Marketing Event using their HubSpot contact IDs.  Additional Functionality: - Adds a timeline event to the contacts.  Allowed Properties: For the state \"attend\": - joinedAt - leftAt  # noqa: E501
@@ -331,7 +331,7 @@ class AddEventAttendeesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def record_by_contact_ids(self, external_event_id, subscriber_state, batch_input_marketing_event_subscriber, **kwargs):  # noqa: E501
+    async def record_by_contact_ids(self, external_event_id, subscriber_state, batch_input_marketing_event_subscriber, **kwargs):  # noqa: E501
         """Record Participants by ContactId with Marketing Event External Ids  # noqa: E501
 
         Records the participation of multiple HubSpot contacts in a Marketing Event using their HubSpot contact IDs.  Additional Functionality: - Adds a timeline event to the contacts.  Allowed Properties: For the state \"attend\": - joinedAt - leftAt  # noqa: E501
@@ -365,9 +365,9 @@ class AddEventAttendeesApi(object):
         :rtype: BatchResponseSubscriberVidResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.record_by_contact_ids_with_http_info(external_event_id, subscriber_state, batch_input_marketing_event_subscriber, **kwargs)  # noqa: E501
+        return await self.record_by_contact_ids_with_http_info(external_event_id, subscriber_state, batch_input_marketing_event_subscriber, **kwargs)  # noqa: E501
 
-    def record_by_contact_ids_with_http_info(self, external_event_id, subscriber_state, batch_input_marketing_event_subscriber, **kwargs):  # noqa: E501
+    async def record_by_contact_ids_with_http_info(self, external_event_id, subscriber_state, batch_input_marketing_event_subscriber, **kwargs):  # noqa: E501
         """Record Participants by ContactId with Marketing Event External Ids  # noqa: E501
 
         Records the participation of multiple HubSpot contacts in a Marketing Event using their HubSpot contact IDs.  Additional Functionality: - Adds a timeline event to the contacts.  Allowed Properties: For the state \"attend\": - joinedAt - leftAt  # noqa: E501
@@ -483,7 +483,7 @@ class AddEventAttendeesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def record_by_email(self, object_id, subscriber_state, batch_input_marketing_event_email_subscriber, **kwargs):  # noqa: E501
+    async def record_by_email(self, object_id, subscriber_state, batch_input_marketing_event_email_subscriber, **kwargs):  # noqa: E501
         """Record Participants by Email with Marketing Event Object Id  # noqa: E501
 
         Records the participation of multiple HubSpot contacts in a Marketing Event using their email addresses.  If a contact does not exist, it will be automatically created. The contactProperties field is used exclusively for creating new contacts and will not update properties of existing contacts.  Additional Functionality: - Adds a timeline event to the contacts.  Allowed Properties: For the state \"attend\": - joinedAt - leftAt  # noqa: E501
@@ -515,9 +515,9 @@ class AddEventAttendeesApi(object):
         :rtype: BatchResponseSubscriberEmailResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.record_by_email_with_http_info(object_id, subscriber_state, batch_input_marketing_event_email_subscriber, **kwargs)  # noqa: E501
+        return await self.record_by_email_with_http_info(object_id, subscriber_state, batch_input_marketing_event_email_subscriber, **kwargs)  # noqa: E501
 
-    def record_by_email_with_http_info(self, object_id, subscriber_state, batch_input_marketing_event_email_subscriber, **kwargs):  # noqa: E501
+    async def record_by_email_with_http_info(self, object_id, subscriber_state, batch_input_marketing_event_email_subscriber, **kwargs):  # noqa: E501
         """Record Participants by Email with Marketing Event Object Id  # noqa: E501
 
         Records the participation of multiple HubSpot contacts in a Marketing Event using their email addresses.  If a contact does not exist, it will be automatically created. The contactProperties field is used exclusively for creating new contacts and will not update properties of existing contacts.  Additional Functionality: - Adds a timeline event to the contacts.  Allowed Properties: For the state \"attend\": - joinedAt - leftAt  # noqa: E501

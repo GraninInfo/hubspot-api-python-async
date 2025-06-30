@@ -33,7 +33,7 @@ class AccessTokensApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get(self, token, **kwargs):  # noqa: E501
+    async def get(self, token, **kwargs):  # noqa: E501
         """get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -60,9 +60,9 @@ class AccessTokensApi(object):
         :rtype: AccessTokenInfoResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_with_http_info(token, **kwargs)  # noqa: E501
+        return await self.get_with_http_info(token, **kwargs)  # noqa: E501
 
-    def get_with_http_info(self, token, **kwargs):  # noqa: E501
+    async def get_with_http_info(self, token, **kwargs):  # noqa: E501
         """get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an

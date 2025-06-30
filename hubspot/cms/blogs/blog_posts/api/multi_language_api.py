@@ -287,7 +287,7 @@ class MultiLanguageApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def detach_from_lang_group(self, detach_from_lang_group_request_v_next, **kwargs):  # noqa: E501
+    async def detach_from_lang_group(self, detach_from_lang_group_request_v_next, **kwargs):  # noqa: E501
         """Detach post from a multi-language group  # noqa: E501
 
         Detach a blog post from a [multi-language group](https://developers.hubspot.com/docs/guides/cms/content/multi-language-content).  # noqa: E501
@@ -315,9 +315,9 @@ class MultiLanguageApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.detach_from_lang_group_with_http_info(detach_from_lang_group_request_v_next, **kwargs)  # noqa: E501
+        return await self.detach_from_lang_group_with_http_info(detach_from_lang_group_request_v_next, **kwargs)  # noqa: E501
 
-    def detach_from_lang_group_with_http_info(self, detach_from_lang_group_request_v_next, **kwargs):  # noqa: E501
+    async def detach_from_lang_group_with_http_info(self, detach_from_lang_group_request_v_next, **kwargs):  # noqa: E501
         """Detach post from a multi-language group  # noqa: E501
 
         Detach a blog post from a [multi-language group](https://developers.hubspot.com/docs/guides/cms/content/multi-language-content).  # noqa: E501
@@ -413,7 +413,7 @@ class MultiLanguageApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def set_lang_primary(self, set_new_language_primary_request_v_next, **kwargs):  # noqa: E501
+    async def set_lang_primary(self, set_new_language_primary_request_v_next, **kwargs):  # noqa: E501
         """Set a new primary language  # noqa: E501
 
         Set the primary language of a [multi-language group](https://developers.hubspot.com/docs/guides/cms/content/multi-language-content) to the language of the provided post (specified as an ID in the request body)  # noqa: E501
@@ -441,9 +441,9 @@ class MultiLanguageApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.set_lang_primary_with_http_info(set_new_language_primary_request_v_next, **kwargs)  # noqa: E501
+        return await self.set_lang_primary_with_http_info(set_new_language_primary_request_v_next, **kwargs)  # noqa: E501
 
-    def set_lang_primary_with_http_info(self, set_new_language_primary_request_v_next, **kwargs):  # noqa: E501
+    async def set_lang_primary_with_http_info(self, set_new_language_primary_request_v_next, **kwargs):  # noqa: E501
         """Set a new primary language  # noqa: E501
 
         Set the primary language of a [multi-language group](https://developers.hubspot.com/docs/guides/cms/content/multi-language-content) to the language of the provided post (specified as an ID in the request body)  # noqa: E501
@@ -539,7 +539,7 @@ class MultiLanguageApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_langs(self, update_languages_request_v_next, **kwargs):  # noqa: E501
+    async def update_langs(self, update_languages_request_v_next, **kwargs):  # noqa: E501
         """Update languages of multi-language group  # noqa: E501
 
         Explicitly set new languages for each post in a [multi-language group](https://developers.hubspot.com/docs/guides/cms/content/multi-language-content).  # noqa: E501
@@ -567,9 +567,9 @@ class MultiLanguageApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_langs_with_http_info(update_languages_request_v_next, **kwargs)  # noqa: E501
+        return await self.update_langs_with_http_info(update_languages_request_v_next, **kwargs)  # noqa: E501
 
-    def update_langs_with_http_info(self, update_languages_request_v_next, **kwargs):  # noqa: E501
+    async def update_langs_with_http_info(self, update_languages_request_v_next, **kwargs):  # noqa: E501
         """Update languages of multi-language group  # noqa: E501
 
         Explicitly set new languages for each post in a [multi-language group](https://developers.hubspot.com/docs/guides/cms/content/multi-language-content).  # noqa: E501

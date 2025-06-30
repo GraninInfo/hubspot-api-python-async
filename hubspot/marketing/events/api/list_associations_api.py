@@ -33,7 +33,7 @@ class ListAssociationsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def associate_by_external_account_and_event_ids(self, external_account_id, external_event_id, list_id, **kwargs):  # noqa: E501
+    async def associate_by_external_account_and_event_ids(self, external_account_id, external_event_id, list_id, **kwargs):  # noqa: E501
         """Associate a list with a marketing event  # noqa: E501
 
         Associates a list with a marketing event by external account id, external event id, and ILS list id  # noqa: E501
@@ -65,9 +65,9 @@ class ListAssociationsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.associate_by_external_account_and_event_ids_with_http_info(external_account_id, external_event_id, list_id, **kwargs)  # noqa: E501
+        return await self.associate_by_external_account_and_event_ids_with_http_info(external_account_id, external_event_id, list_id, **kwargs)  # noqa: E501
 
-    def associate_by_external_account_and_event_ids_with_http_info(self, external_account_id, external_event_id, list_id, **kwargs):  # noqa: E501
+    async def associate_by_external_account_and_event_ids_with_http_info(self, external_account_id, external_event_id, list_id, **kwargs):  # noqa: E501
         """Associate a list with a marketing event  # noqa: E501
 
         Associates a list with a marketing event by external account id, external event id, and ILS list id  # noqa: E501
@@ -172,7 +172,7 @@ class ListAssociationsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def associate_by_marketing_event_id(self, marketing_event_id, list_id, **kwargs):  # noqa: E501
+    async def associate_by_marketing_event_id(self, marketing_event_id, list_id, **kwargs):  # noqa: E501
         """Associate a list with a marketing event  # noqa: E501
 
         Associates a list with a marketing event by marketing event id and ILS list id  # noqa: E501
@@ -202,9 +202,9 @@ class ListAssociationsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.associate_by_marketing_event_id_with_http_info(marketing_event_id, list_id, **kwargs)  # noqa: E501
+        return await self.associate_by_marketing_event_id_with_http_info(marketing_event_id, list_id, **kwargs)  # noqa: E501
 
-    def associate_by_marketing_event_id_with_http_info(self, marketing_event_id, list_id, **kwargs):  # noqa: E501
+    async def associate_by_marketing_event_id_with_http_info(self, marketing_event_id, list_id, **kwargs):  # noqa: E501
         """Associate a list with a marketing event  # noqa: E501
 
         Associates a list with a marketing event by marketing event id and ILS list id  # noqa: E501
@@ -302,7 +302,7 @@ class ListAssociationsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def disassociate_by_external_account_and_event_ids(self, external_account_id, external_event_id, list_id, **kwargs):  # noqa: E501
+    async def disassociate_by_external_account_and_event_ids(self, external_account_id, external_event_id, list_id, **kwargs):  # noqa: E501
         """Disassociate a list from a marketing event  # noqa: E501
 
         Disassociates a list from a marketing event by external account id, external event id, and ILS list id  # noqa: E501
@@ -334,9 +334,9 @@ class ListAssociationsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.disassociate_by_external_account_and_event_ids_with_http_info(external_account_id, external_event_id, list_id, **kwargs)  # noqa: E501
+        return await self.disassociate_by_external_account_and_event_ids_with_http_info(external_account_id, external_event_id, list_id, **kwargs)  # noqa: E501
 
-    def disassociate_by_external_account_and_event_ids_with_http_info(self, external_account_id, external_event_id, list_id, **kwargs):  # noqa: E501
+    async def disassociate_by_external_account_and_event_ids_with_http_info(self, external_account_id, external_event_id, list_id, **kwargs):  # noqa: E501
         """Disassociate a list from a marketing event  # noqa: E501
 
         Disassociates a list from a marketing event by external account id, external event id, and ILS list id  # noqa: E501
@@ -441,7 +441,7 @@ class ListAssociationsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def disassociate_by_marketing_event_id(self, marketing_event_id, list_id, **kwargs):  # noqa: E501
+    async def disassociate_by_marketing_event_id(self, marketing_event_id, list_id, **kwargs):  # noqa: E501
         """Disassociate a list from a marketing event  # noqa: E501
 
         Disassociates a list from a marketing event by marketing event id and ILS list id  # noqa: E501
@@ -471,9 +471,9 @@ class ListAssociationsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.disassociate_by_marketing_event_id_with_http_info(marketing_event_id, list_id, **kwargs)  # noqa: E501
+        return await self.disassociate_by_marketing_event_id_with_http_info(marketing_event_id, list_id, **kwargs)  # noqa: E501
 
-    def disassociate_by_marketing_event_id_with_http_info(self, marketing_event_id, list_id, **kwargs):  # noqa: E501
+    async def disassociate_by_marketing_event_id_with_http_info(self, marketing_event_id, list_id, **kwargs):  # noqa: E501
         """Disassociate a list from a marketing event  # noqa: E501
 
         Disassociates a list from a marketing event by marketing event id and ILS list id  # noqa: E501
@@ -571,7 +571,7 @@ class ListAssociationsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_all_by_external_account_and_event_ids(self, external_account_id, external_event_id, **kwargs):  # noqa: E501
+    async def get_all_by_external_account_and_event_ids(self, external_account_id, external_event_id, **kwargs):  # noqa: E501
         """Get lists associated with a marketing event  # noqa: E501
 
         Gets lists associated with a marketing event by external account id and external event id  # noqa: E501
@@ -601,9 +601,9 @@ class ListAssociationsApi(object):
         :rtype: CollectionResponseWithTotalPublicListNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_by_external_account_and_event_ids_with_http_info(external_account_id, external_event_id, **kwargs)  # noqa: E501
+        return await self.get_all_by_external_account_and_event_ids_with_http_info(external_account_id, external_event_id, **kwargs)  # noqa: E501
 
-    def get_all_by_external_account_and_event_ids_with_http_info(self, external_account_id, external_event_id, **kwargs):  # noqa: E501
+    async def get_all_by_external_account_and_event_ids_with_http_info(self, external_account_id, external_event_id, **kwargs):  # noqa: E501
         """Get lists associated with a marketing event  # noqa: E501
 
         Gets lists associated with a marketing event by external account id and external event id  # noqa: E501
@@ -703,7 +703,7 @@ class ListAssociationsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_all_by_marketing_event_id(self, marketing_event_id, **kwargs):  # noqa: E501
+    async def get_all_by_marketing_event_id(self, marketing_event_id, **kwargs):  # noqa: E501
         """Get lists associated with a marketing event  # noqa: E501
 
         Gets lists associated with a marketing event by marketing event id  # noqa: E501
@@ -731,9 +731,9 @@ class ListAssociationsApi(object):
         :rtype: CollectionResponseWithTotalPublicListNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_by_marketing_event_id_with_http_info(marketing_event_id, **kwargs)  # noqa: E501
+        return await self.get_all_by_marketing_event_id_with_http_info(marketing_event_id, **kwargs)  # noqa: E501
 
-    def get_all_by_marketing_event_id_with_http_info(self, marketing_event_id, **kwargs):  # noqa: E501
+    async def get_all_by_marketing_event_id_with_http_info(self, marketing_event_id, **kwargs):  # noqa: E501
         """Get lists associated with a marketing event  # noqa: E501
 
         Gets lists associated with a marketing event by marketing event id  # noqa: E501

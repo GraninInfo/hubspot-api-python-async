@@ -160,7 +160,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def clone(self, content_clone_request_v_next, **kwargs):  # noqa: E501
+    async def clone(self, content_clone_request_v_next, **kwargs):  # noqa: E501
         """Clone a blog post  # noqa: E501
 
         Clone a blog post, making a copy of it in a new blog post.  # noqa: E501
@@ -188,9 +188,9 @@ class BasicApi(object):
         :rtype: BlogPost
         """
         kwargs["_return_http_data_only"] = True
-        return self.clone_with_http_info(content_clone_request_v_next, **kwargs)  # noqa: E501
+        return await self.clone_with_http_info(content_clone_request_v_next, **kwargs)  # noqa: E501
 
-    def clone_with_http_info(self, content_clone_request_v_next, **kwargs):  # noqa: E501
+    async def clone_with_http_info(self, content_clone_request_v_next, **kwargs):  # noqa: E501
         """Clone a blog post  # noqa: E501
 
         Clone a blog post, making a copy of it in a new blog post.  # noqa: E501
@@ -551,7 +551,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_draft_by_id(self, object_id, **kwargs):  # noqa: E501
+    async def get_draft_by_id(self, object_id, **kwargs):  # noqa: E501
         """Retrieve the full draft version of the Blog Post  # noqa: E501
 
         Retrieve the full draft version of a blog post.  # noqa: E501
@@ -579,9 +579,9 @@ class BasicApi(object):
         :rtype: BlogPost
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_draft_by_id_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.get_draft_by_id_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def get_draft_by_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def get_draft_by_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Retrieve the full draft version of the Blog Post  # noqa: E501
 
         Retrieve the full draft version of a blog post.  # noqa: E501
@@ -855,7 +855,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_previous_version(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def get_previous_version(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Retrieve a previous version of a blog post  # noqa: E501
 
         Retrieve a previous version of a blog post.  # noqa: E501
@@ -885,9 +885,9 @@ class BasicApi(object):
         :rtype: VersionBlogPost
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_previous_version_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
+        return await self.get_previous_version_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
 
-    def get_previous_version_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def get_previous_version_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Retrieve a previous version of a blog post  # noqa: E501
 
         Retrieve a previous version of a blog post.  # noqa: E501
@@ -987,7 +987,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_previous_versions(self, object_id, **kwargs):  # noqa: E501
+    async def get_previous_versions(self, object_id, **kwargs):  # noqa: E501
         """Retrieves all previous versions of a post  # noqa: E501
 
         Retrieve all the previous versions of a blog post.  # noqa: E501
@@ -1021,9 +1021,9 @@ class BasicApi(object):
         :rtype: CollectionResponseWithTotalVersionBlogPost
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_previous_versions_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.get_previous_versions_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def get_previous_versions_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def get_previous_versions_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Retrieves all previous versions of a post  # noqa: E501
 
         Retrieve all the previous versions of a blog post.  # noqa: E501
@@ -1128,7 +1128,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def push_live(self, object_id, **kwargs):  # noqa: E501
+    async def push_live(self, object_id, **kwargs):  # noqa: E501
         """Publish blog post draft  # noqa: E501
 
         Publish the draft version of the blog post, sending its content to the live page.  # noqa: E501
@@ -1156,9 +1156,9 @@ class BasicApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.push_live_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.push_live_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def push_live_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def push_live_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Publish blog post draft  # noqa: E501
 
         Publish the draft version of the blog post, sending its content to the live page.  # noqa: E501
@@ -1249,7 +1249,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def reset_draft(self, object_id, **kwargs):  # noqa: E501
+    async def reset_draft(self, object_id, **kwargs):  # noqa: E501
         """Reset post draft to the live version  # noqa: E501
 
         Discard all drafted content, resetting the draft to contain the content in the currently published version.  # noqa: E501
@@ -1277,9 +1277,9 @@ class BasicApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.reset_draft_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.reset_draft_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def reset_draft_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def reset_draft_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Reset post draft to the live version  # noqa: E501
 
         Discard all drafted content, resetting the draft to contain the content in the currently published version.  # noqa: E501
@@ -1370,7 +1370,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def restore_previous_version(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def restore_previous_version(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Restore a previous version  # noqa: E501
 
         Restores a blog post to one of its previous versions.  # noqa: E501
@@ -1400,9 +1400,9 @@ class BasicApi(object):
         :rtype: BlogPost
         """
         kwargs["_return_http_data_only"] = True
-        return self.restore_previous_version_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
+        return await self.restore_previous_version_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
 
-    def restore_previous_version_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def restore_previous_version_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Restore a previous version  # noqa: E501
 
         Restores a blog post to one of its previous versions.  # noqa: E501
@@ -1502,7 +1502,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def restore_previous_version_to_draft(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def restore_previous_version_to_draft(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Restore a draft to a previous version  # noqa: E501
 
         Takes a specified version of a blog post, sets it as the new draft version of the blog post.  # noqa: E501
@@ -1532,9 +1532,9 @@ class BasicApi(object):
         :rtype: BlogPost
         """
         kwargs["_return_http_data_only"] = True
-        return self.restore_previous_version_to_draft_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
+        return await self.restore_previous_version_to_draft_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
 
-    def restore_previous_version_to_draft_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def restore_previous_version_to_draft_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Restore a draft to a previous version  # noqa: E501
 
         Takes a specified version of a blog post, sets it as the new draft version of the blog post.  # noqa: E501
@@ -1634,7 +1634,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def schedule(self, content_schedule_request_v_next, **kwargs):  # noqa: E501
+    async def schedule(self, content_schedule_request_v_next, **kwargs):  # noqa: E501
         """Schedule a post to be published  # noqa: E501
 
         Schedule a blog post to be published at a specified time.  # noqa: E501
@@ -1662,9 +1662,9 @@ class BasicApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.schedule_with_http_info(content_schedule_request_v_next, **kwargs)  # noqa: E501
+        return await self.schedule_with_http_info(content_schedule_request_v_next, **kwargs)  # noqa: E501
 
-    def schedule_with_http_info(self, content_schedule_request_v_next, **kwargs):  # noqa: E501
+    async def schedule_with_http_info(self, content_schedule_request_v_next, **kwargs):  # noqa: E501
         """Schedule a post to be published  # noqa: E501
 
         Schedule a blog post to be published at a specified time.  # noqa: E501
@@ -1903,7 +1903,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_draft(self, object_id, blog_post, **kwargs):  # noqa: E501
+    async def update_draft(self, object_id, blog_post, **kwargs):  # noqa: E501
         """Update the draft of a post  # noqa: E501
 
         Partially updates the draft version of a single blog post by ID. You only need to specify the values that you want to update.  # noqa: E501
@@ -1933,9 +1933,9 @@ class BasicApi(object):
         :rtype: BlogPost
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_draft_with_http_info(object_id, blog_post, **kwargs)  # noqa: E501
+        return await self.update_draft_with_http_info(object_id, blog_post, **kwargs)  # noqa: E501
 
-    def update_draft_with_http_info(self, object_id, blog_post, **kwargs):  # noqa: E501
+    async def update_draft_with_http_info(self, object_id, blog_post, **kwargs):  # noqa: E501
         """Update the draft of a post  # noqa: E501
 
         Partially updates the draft version of a single blog post by ID. You only need to specify the values that you want to update.  # noqa: E501

@@ -159,7 +159,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def archive_by_object_id(self, batch_input_marketing_event_public_object_id_delete_request, **kwargs):  # noqa: E501
+    async def archive_by_object_id(self, batch_input_marketing_event_public_object_id_delete_request, **kwargs):  # noqa: E501
         """Delete Multiple Marketing Events by ObjectId  # noqa: E501
 
         Deletes multiple Marketing Events from the portal based on their objectId, if they exist.  Responses: 204: Returned if all specified Marketing Events were successfully deleted. 207: Returned if some objectIds did not correspond to any existing Marketing Events.  # noqa: E501
@@ -187,9 +187,9 @@ class BatchApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_by_object_id_with_http_info(batch_input_marketing_event_public_object_id_delete_request, **kwargs)  # noqa: E501
+        return await self.archive_by_object_id_with_http_info(batch_input_marketing_event_public_object_id_delete_request, **kwargs)  # noqa: E501
 
-    def archive_by_object_id_with_http_info(self, batch_input_marketing_event_public_object_id_delete_request, **kwargs):  # noqa: E501
+    async def archive_by_object_id_with_http_info(self, batch_input_marketing_event_public_object_id_delete_request, **kwargs):  # noqa: E501
         """Delete Multiple Marketing Events by ObjectId  # noqa: E501
 
         Deletes multiple Marketing Events from the portal based on their objectId, if they exist.  Responses: 204: Returned if all specified Marketing Events were successfully deleted. 207: Returned if some objectIds did not correspond to any existing Marketing Events.  # noqa: E501
@@ -285,7 +285,7 @@ class BatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_by_object_id(self, batch_input_marketing_event_public_update_request_full_v2, **kwargs):  # noqa: E501
+    async def update_by_object_id(self, batch_input_marketing_event_public_update_request_full_v2, **kwargs):  # noqa: E501
         """Update Multiple Marketing Events by ObjectId  # noqa: E501
 
         Updates multiple Marketing Events on the portal based on their objectId, if they exist.  # noqa: E501
@@ -313,9 +313,9 @@ class BatchApi(object):
         :rtype: BatchResponseMarketingEventPublicDefaultResponseV2
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_by_object_id_with_http_info(batch_input_marketing_event_public_update_request_full_v2, **kwargs)  # noqa: E501
+        return await self.update_by_object_id_with_http_info(batch_input_marketing_event_public_update_request_full_v2, **kwargs)  # noqa: E501
 
-    def update_by_object_id_with_http_info(self, batch_input_marketing_event_public_update_request_full_v2, **kwargs):  # noqa: E501
+    async def update_by_object_id_with_http_info(self, batch_input_marketing_event_public_update_request_full_v2, **kwargs):  # noqa: E501
         """Update Multiple Marketing Events by ObjectId  # noqa: E501
 
         Updates multiple Marketing Events on the portal based on their objectId, if they exist.  # noqa: E501

@@ -33,7 +33,7 @@ class SettingsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def clear(self, app_id, **kwargs):  # noqa: E501
+    async def clear(self, app_id, **kwargs):  # noqa: E501
         """Delete webhook settings  # noqa: E501
 
         Delete the webhook settings for the specified app. Event subscriptions will not be deleted, but will be paused until another webhook is created.  # noqa: E501
@@ -61,9 +61,9 @@ class SettingsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.clear_with_http_info(app_id, **kwargs)  # noqa: E501
+        return await self.clear_with_http_info(app_id, **kwargs)  # noqa: E501
 
-    def clear_with_http_info(self, app_id, **kwargs):  # noqa: E501
+    async def clear_with_http_info(self, app_id, **kwargs):  # noqa: E501
         """Delete webhook settings  # noqa: E501
 
         Delete the webhook settings for the specified app. Event subscriptions will not be deleted, but will be paused until another webhook is created.  # noqa: E501
@@ -154,7 +154,7 @@ class SettingsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def configure(self, app_id, settings_change_request, **kwargs):  # noqa: E501
+    async def configure(self, app_id, settings_change_request, **kwargs):  # noqa: E501
         """Update webhook settings  # noqa: E501
 
         Update webhook settings for the specified app.  # noqa: E501
@@ -184,9 +184,9 @@ class SettingsApi(object):
         :rtype: SettingsResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.configure_with_http_info(app_id, settings_change_request, **kwargs)  # noqa: E501
+        return await self.configure_with_http_info(app_id, settings_change_request, **kwargs)  # noqa: E501
 
-    def configure_with_http_info(self, app_id, settings_change_request, **kwargs):  # noqa: E501
+    async def configure_with_http_info(self, app_id, settings_change_request, **kwargs):  # noqa: E501
         """Update webhook settings  # noqa: E501
 
         Update webhook settings for the specified app.  # noqa: E501

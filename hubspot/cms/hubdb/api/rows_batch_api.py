@@ -33,7 +33,7 @@ class RowsBatchApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def clone_draft_table_rows(self, table_id_or_name, batch_input_hub_db_table_row_batch_clone_request, **kwargs):  # noqa: E501
+    async def clone_draft_table_rows(self, table_id_or_name, batch_input_hub_db_table_row_batch_clone_request, **kwargs):  # noqa: E501
         """Clone rows in batch  # noqa: E501
 
         Clones rows in the draft version of the specified table, given a set of row ids. Maximum of 100 row ids per call.  # noqa: E501
@@ -63,9 +63,9 @@ class RowsBatchApi(object):
         :rtype: BatchResponseHubDbTableRowV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.clone_draft_table_rows_with_http_info(table_id_or_name, batch_input_hub_db_table_row_batch_clone_request, **kwargs)  # noqa: E501
+        return await self.clone_draft_table_rows_with_http_info(table_id_or_name, batch_input_hub_db_table_row_batch_clone_request, **kwargs)  # noqa: E501
 
-    def clone_draft_table_rows_with_http_info(self, table_id_or_name, batch_input_hub_db_table_row_batch_clone_request, **kwargs):  # noqa: E501
+    async def clone_draft_table_rows_with_http_info(self, table_id_or_name, batch_input_hub_db_table_row_batch_clone_request, **kwargs):  # noqa: E501
         """Clone rows in batch  # noqa: E501
 
         Clones rows in the draft version of the specified table, given a set of row ids. Maximum of 100 row ids per call.  # noqa: E501
@@ -170,7 +170,7 @@ class RowsBatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_draft_table_rows(self, table_id_or_name, batch_input_hub_db_table_row_v3_request, **kwargs):  # noqa: E501
+    async def create_draft_table_rows(self, table_id_or_name, batch_input_hub_db_table_row_v3_request, **kwargs):  # noqa: E501
         """Create rows in batch  # noqa: E501
 
         Creates rows in the draft version of the specified table, given an array of row objects. Maximum of 100 row object per call. See the overview section for more details with an example.  # noqa: E501
@@ -200,9 +200,9 @@ class RowsBatchApi(object):
         :rtype: BatchResponseHubDbTableRowV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_draft_table_rows_with_http_info(table_id_or_name, batch_input_hub_db_table_row_v3_request, **kwargs)  # noqa: E501
+        return await self.create_draft_table_rows_with_http_info(table_id_or_name, batch_input_hub_db_table_row_v3_request, **kwargs)  # noqa: E501
 
-    def create_draft_table_rows_with_http_info(self, table_id_or_name, batch_input_hub_db_table_row_v3_request, **kwargs):  # noqa: E501
+    async def create_draft_table_rows_with_http_info(self, table_id_or_name, batch_input_hub_db_table_row_v3_request, **kwargs):  # noqa: E501
         """Create rows in batch  # noqa: E501
 
         Creates rows in the draft version of the specified table, given an array of row objects. Maximum of 100 row object per call. See the overview section for more details with an example.  # noqa: E501
@@ -308,7 +308,7 @@ class RowsBatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def purge_draft_table_rows(self, table_id_or_name, batch_input_string, **kwargs):  # noqa: E501
+    async def purge_draft_table_rows(self, table_id_or_name, batch_input_string, **kwargs):  # noqa: E501
         """Permanently deletes rows  # noqa: E501
 
         Permanently deletes rows from the draft version of the table, given a set of row IDs. Maximum of 100 row IDs per call.  # noqa: E501
@@ -338,9 +338,9 @@ class RowsBatchApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.purge_draft_table_rows_with_http_info(table_id_or_name, batch_input_string, **kwargs)  # noqa: E501
+        return await self.purge_draft_table_rows_with_http_info(table_id_or_name, batch_input_string, **kwargs)  # noqa: E501
 
-    def purge_draft_table_rows_with_http_info(self, table_id_or_name, batch_input_string, **kwargs):  # noqa: E501
+    async def purge_draft_table_rows_with_http_info(self, table_id_or_name, batch_input_string, **kwargs):  # noqa: E501
         """Permanently deletes rows  # noqa: E501
 
         Permanently deletes rows from the draft version of the table, given a set of row IDs. Maximum of 100 row IDs per call.  # noqa: E501
@@ -443,7 +443,7 @@ class RowsBatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def read_draft_table_rows(self, table_id_or_name, batch_input_string, **kwargs):  # noqa: E501
+    async def read_draft_table_rows(self, table_id_or_name, batch_input_string, **kwargs):  # noqa: E501
         """Get a set of rows from draft table  # noqa: E501
 
         Returns rows in the draft version of the specified table, given a set of row IDs.  # noqa: E501
@@ -473,9 +473,9 @@ class RowsBatchApi(object):
         :rtype: BatchResponseHubDbTableRowV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.read_draft_table_rows_with_http_info(table_id_or_name, batch_input_string, **kwargs)  # noqa: E501
+        return await self.read_draft_table_rows_with_http_info(table_id_or_name, batch_input_string, **kwargs)  # noqa: E501
 
-    def read_draft_table_rows_with_http_info(self, table_id_or_name, batch_input_string, **kwargs):  # noqa: E501
+    async def read_draft_table_rows_with_http_info(self, table_id_or_name, batch_input_string, **kwargs):  # noqa: E501
         """Get a set of rows from draft table  # noqa: E501
 
         Returns rows in the draft version of the specified table, given a set of row IDs.  # noqa: E501
@@ -581,7 +581,7 @@ class RowsBatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def read_table_rows(self, table_id_or_name, batch_input_string, **kwargs):  # noqa: E501
+    async def read_table_rows(self, table_id_or_name, batch_input_string, **kwargs):  # noqa: E501
         """Get a set of rows  # noqa: E501
 
         Returns rows in the published version of the specified table, given a set of row IDs. **Note:** This endpoint can be accessed without any authentication if the table is set to be allowed for public access.  # noqa: E501
@@ -611,9 +611,9 @@ class RowsBatchApi(object):
         :rtype: BatchResponseHubDbTableRowV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.read_table_rows_with_http_info(table_id_or_name, batch_input_string, **kwargs)  # noqa: E501
+        return await self.read_table_rows_with_http_info(table_id_or_name, batch_input_string, **kwargs)  # noqa: E501
 
-    def read_table_rows_with_http_info(self, table_id_or_name, batch_input_string, **kwargs):  # noqa: E501
+    async def read_table_rows_with_http_info(self, table_id_or_name, batch_input_string, **kwargs):  # noqa: E501
         """Get a set of rows  # noqa: E501
 
         Returns rows in the published version of the specified table, given a set of row IDs. **Note:** This endpoint can be accessed without any authentication if the table is set to be allowed for public access.  # noqa: E501
@@ -719,7 +719,7 @@ class RowsBatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def replace_draft_table_rows(self, table_id_or_name, batch_input_hub_db_table_row_v3_batch_update_request, **kwargs):  # noqa: E501
+    async def replace_draft_table_rows(self, table_id_or_name, batch_input_hub_db_table_row_v3_batch_update_request, **kwargs):  # noqa: E501
         """Replace rows in batch in draft table  # noqa: E501
 
         Replaces multiple rows as a batch in the draft version of the table, with a maximum of 100 rows per call. See the endpoint `PUT /tables/{tableIdOrName}/rows/{rowId}/draft` for details on updating a single row.  # noqa: E501
@@ -749,9 +749,9 @@ class RowsBatchApi(object):
         :rtype: BatchResponseHubDbTableRowV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.replace_draft_table_rows_with_http_info(table_id_or_name, batch_input_hub_db_table_row_v3_batch_update_request, **kwargs)  # noqa: E501
+        return await self.replace_draft_table_rows_with_http_info(table_id_or_name, batch_input_hub_db_table_row_v3_batch_update_request, **kwargs)  # noqa: E501
 
-    def replace_draft_table_rows_with_http_info(self, table_id_or_name, batch_input_hub_db_table_row_v3_batch_update_request, **kwargs):  # noqa: E501
+    async def replace_draft_table_rows_with_http_info(self, table_id_or_name, batch_input_hub_db_table_row_v3_batch_update_request, **kwargs):  # noqa: E501
         """Replace rows in batch in draft table  # noqa: E501
 
         Replaces multiple rows as a batch in the draft version of the table, with a maximum of 100 rows per call. See the endpoint `PUT /tables/{tableIdOrName}/rows/{rowId}/draft` for details on updating a single row.  # noqa: E501
@@ -857,7 +857,7 @@ class RowsBatchApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_draft_table_rows(self, table_id_or_name, batch_input_hub_db_table_row_v3_batch_update_request, **kwargs):  # noqa: E501
+    async def update_draft_table_rows(self, table_id_or_name, batch_input_hub_db_table_row_v3_batch_update_request, **kwargs):  # noqa: E501
         """Update rows in batch in draft table  # noqa: E501
 
         Updates multiple rows as a batch in the draft version of the table, with a maximum of 100 rows per call. See the endpoint `PATCH /tables/{tableIdOrName}/rows/{rowId}/draft` for details on updating a single row.  # noqa: E501
@@ -887,9 +887,9 @@ class RowsBatchApi(object):
         :rtype: BatchResponseHubDbTableRowV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_draft_table_rows_with_http_info(table_id_or_name, batch_input_hub_db_table_row_v3_batch_update_request, **kwargs)  # noqa: E501
+        return await self.update_draft_table_rows_with_http_info(table_id_or_name, batch_input_hub_db_table_row_v3_batch_update_request, **kwargs)  # noqa: E501
 
-    def update_draft_table_rows_with_http_info(self, table_id_or_name, batch_input_hub_db_table_row_v3_batch_update_request, **kwargs):  # noqa: E501
+    async def update_draft_table_rows_with_http_info(self, table_id_or_name, batch_input_hub_db_table_row_v3_batch_update_request, **kwargs):  # noqa: E501
         """Update rows in batch in draft table  # noqa: E501
 
         Updates multiple rows as a batch in the draft version of the table, with a maximum of 100 rows per call. See the endpoint `PATCH /tables/{tableIdOrName}/rows/{rowId}/draft` for details on updating a single row.  # noqa: E501

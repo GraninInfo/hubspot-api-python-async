@@ -160,7 +160,7 @@ class CoreApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def archive_association(self, object_type, association_identifier, **kwargs):  # noqa: E501
+    async def archive_association(self, object_type, association_identifier, **kwargs):  # noqa: E501
         """Remove an association  # noqa: E501
 
         Removes an existing association from a schema.  # noqa: E501
@@ -190,9 +190,9 @@ class CoreApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_association_with_http_info(object_type, association_identifier, **kwargs)  # noqa: E501
+        return await self.archive_association_with_http_info(object_type, association_identifier, **kwargs)  # noqa: E501
 
-    def archive_association_with_http_info(self, object_type, association_identifier, **kwargs):  # noqa: E501
+    async def archive_association_with_http_info(self, object_type, association_identifier, **kwargs):  # noqa: E501
         """Remove an association  # noqa: E501
 
         Removes an existing association from a schema.  # noqa: E501
@@ -418,7 +418,7 @@ class CoreApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_association(self, object_type, association_definition_egg, **kwargs):  # noqa: E501
+    async def create_association(self, object_type, association_definition_egg, **kwargs):  # noqa: E501
         """Create an association  # noqa: E501
 
         Defines a new association between the primary schema's object type and other object types.  # noqa: E501
@@ -448,9 +448,9 @@ class CoreApi(object):
         :rtype: AssociationDefinition
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_association_with_http_info(object_type, association_definition_egg, **kwargs)  # noqa: E501
+        return await self.create_association_with_http_info(object_type, association_definition_egg, **kwargs)  # noqa: E501
 
-    def create_association_with_http_info(self, object_type, association_definition_egg, **kwargs):  # noqa: E501
+    async def create_association_with_http_info(self, object_type, association_definition_egg, **kwargs):  # noqa: E501
         """Create an association  # noqa: E501
 
         Defines a new association between the primary schema's object type and other object types.  # noqa: E501

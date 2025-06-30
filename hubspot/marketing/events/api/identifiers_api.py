@@ -156,7 +156,7 @@ class IdentifiersApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def search_portal_events(self, external_event_id, **kwargs):  # noqa: E501
+    async def search_portal_events(self, external_event_id, **kwargs):  # noqa: E501
         """Find Marketing Events by External Event Id  # noqa: E501
 
         This endpoint searches the portal for all Marketing Events whose externalEventId matches the value provided in the request.  It retrieves the objectId and additional event details for each matching Marketing Event.  Since multiple Marketing Events can have the same externalEventId, the endpoint returns all matching results.  Note: Marketing Events become searchable by externalEventId a few minutes after creation.  # noqa: E501
@@ -184,9 +184,9 @@ class IdentifiersApi(object):
         :rtype: CollectionResponseWithTotalMarketingEventIdentifiersResponseNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.search_portal_events_with_http_info(external_event_id, **kwargs)  # noqa: E501
+        return await self.search_portal_events_with_http_info(external_event_id, **kwargs)  # noqa: E501
 
-    def search_portal_events_with_http_info(self, external_event_id, **kwargs):  # noqa: E501
+    async def search_portal_events_with_http_info(self, external_event_id, **kwargs):  # noqa: E501
         """Find Marketing Events by External Event Id  # noqa: E501
 
         This endpoint searches the portal for all Marketing Events whose externalEventId matches the value provided in the request.  It retrieves the objectId and additional event details for each matching Marketing Event.  Since multiple Marketing Events can have the same externalEventId, the endpoint returns all matching results.  Note: Marketing Events become searchable by externalEventId a few minutes after creation.  # noqa: E501

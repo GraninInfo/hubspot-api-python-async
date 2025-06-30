@@ -33,7 +33,7 @@ class BatchApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def send(self, batched_behavioral_event_http_completion_request, **kwargs):  # noqa: E501
+    async def send(self, batched_behavioral_event_http_completion_request, **kwargs):  # noqa: E501
         """Send a batch of event completions  # noqa: E501
 
         Send multiple event completions at once.  # noqa: E501
@@ -61,9 +61,9 @@ class BatchApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.send_with_http_info(batched_behavioral_event_http_completion_request, **kwargs)  # noqa: E501
+        return await self.send_with_http_info(batched_behavioral_event_http_completion_request, **kwargs)  # noqa: E501
 
-    def send_with_http_info(self, batched_behavioral_event_http_completion_request, **kwargs):  # noqa: E501
+    async def send_with_http_info(self, batched_behavioral_event_http_completion_request, **kwargs):  # noqa: E501
         """Send a batch of event completions  # noqa: E501
 
         Send multiple event completions at once.  # noqa: E501

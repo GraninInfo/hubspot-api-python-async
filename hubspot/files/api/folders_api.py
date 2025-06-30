@@ -156,7 +156,7 @@ class FoldersApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def archive_by_path(self, folder_path, **kwargs):  # noqa: E501
+    async def archive_by_path(self, folder_path, **kwargs):  # noqa: E501
         """Delete folder by path  # noqa: E501
 
         Delete a folder, identified by its path.  # noqa: E501
@@ -184,9 +184,9 @@ class FoldersApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_by_path_with_http_info(folder_path, **kwargs)  # noqa: E501
+        return await self.archive_by_path_with_http_info(folder_path, **kwargs)  # noqa: E501
 
-    def archive_by_path_with_http_info(self, folder_path, **kwargs):  # noqa: E501
+    async def archive_by_path_with_http_info(self, folder_path, **kwargs):  # noqa: E501
         """Delete folder by path  # noqa: E501
 
         Delete a folder, identified by its path.  # noqa: E501
@@ -279,7 +279,7 @@ class FoldersApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def check_update_status(self, task_id, **kwargs):  # noqa: E501
+    async def check_update_status(self, task_id, **kwargs):  # noqa: E501
         """Check folder update status  # noqa: E501
 
         Check status of folder update. Folder updates happen asynchronously.  # noqa: E501
@@ -307,9 +307,9 @@ class FoldersApi(object):
         :rtype: FolderActionResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.check_update_status_with_http_info(task_id, **kwargs)  # noqa: E501
+        return await self.check_update_status_with_http_info(task_id, **kwargs)  # noqa: E501
 
-    def check_update_status_with_http_info(self, task_id, **kwargs):  # noqa: E501
+    async def check_update_status_with_http_info(self, task_id, **kwargs):  # noqa: E501
         """Check folder update status  # noqa: E501
 
         Check status of folder update. Folder updates happen asynchronously.  # noqa: E501
@@ -900,7 +900,7 @@ class FoldersApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_path(self, folder_path, **kwargs):  # noqa: E501
+    async def get_by_path(self, folder_path, **kwargs):  # noqa: E501
         """Retrieve folder by path  # noqa: E501
 
         Retrieve a folder, identified by its path.  # noqa: E501
@@ -930,9 +930,9 @@ class FoldersApi(object):
         :rtype: Folder
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_path_with_http_info(folder_path, **kwargs)  # noqa: E501
+        return await self.get_by_path_with_http_info(folder_path, **kwargs)  # noqa: E501
 
-    def get_by_path_with_http_info(self, folder_path, **kwargs):  # noqa: E501
+    async def get_by_path_with_http_info(self, folder_path, **kwargs):  # noqa: E501
         """Retrieve folder by path  # noqa: E501
 
         Retrieve a folder, identified by its path.  # noqa: E501
@@ -1032,7 +1032,7 @@ class FoldersApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_properties(self, folder_id, folder_update_input, **kwargs):  # noqa: E501
+    async def update_properties(self, folder_id, folder_update_input, **kwargs):  # noqa: E501
         """Update folder properties by folder ID  # noqa: E501
 
         Update a folder's properties, identified by folder ID.  # noqa: E501
@@ -1062,9 +1062,9 @@ class FoldersApi(object):
         :rtype: Folder
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_properties_with_http_info(folder_id, folder_update_input, **kwargs)  # noqa: E501
+        return await self.update_properties_with_http_info(folder_id, folder_update_input, **kwargs)  # noqa: E501
 
-    def update_properties_with_http_info(self, folder_id, folder_update_input, **kwargs):  # noqa: E501
+    async def update_properties_with_http_info(self, folder_id, folder_update_input, **kwargs):  # noqa: E501
         """Update folder properties by folder ID  # noqa: E501
 
         Update a folder's properties, identified by folder ID.  # noqa: E501
@@ -1171,7 +1171,7 @@ class FoldersApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_properties_recursively(self, folder_update_input_with_id, **kwargs):  # noqa: E501
+    async def update_properties_recursively(self, folder_update_input_with_id, **kwargs):  # noqa: E501
         """Update folder properties  # noqa: E501
 
         Update properties of folder by given ID. This action happens asynchronously and will update all of the folder's children as well.  # noqa: E501
@@ -1199,9 +1199,9 @@ class FoldersApi(object):
         :rtype: FolderUpdateTaskLocator
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_properties_recursively_with_http_info(folder_update_input_with_id, **kwargs)  # noqa: E501
+        return await self.update_properties_recursively_with_http_info(folder_update_input_with_id, **kwargs)  # noqa: E501
 
-    def update_properties_recursively_with_http_info(self, folder_update_input_with_id, **kwargs):  # noqa: E501
+    async def update_properties_recursively_with_http_info(self, folder_update_input_with_id, **kwargs):  # noqa: E501
         """Update folder properties  # noqa: E501
 
         Update properties of folder by given ID. This action happens asynchronously and will update all of the folder's children as well.  # noqa: E501

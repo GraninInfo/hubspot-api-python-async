@@ -33,7 +33,7 @@ class PublicImportsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_errors(self, import_id, **kwargs):  # noqa: E501
+    async def get_errors(self, import_id, **kwargs):  # noqa: E501
         """get_errors  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -68,9 +68,9 @@ class PublicImportsApi(object):
         :rtype: CollectionResponsePublicImportErrorForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_errors_with_http_info(import_id, **kwargs)  # noqa: E501
+        return await self.get_errors_with_http_info(import_id, **kwargs)  # noqa: E501
 
-    def get_errors_with_http_info(self, import_id, **kwargs):  # noqa: E501
+    async def get_errors_with_http_info(self, import_id, **kwargs):  # noqa: E501
         """get_errors  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an

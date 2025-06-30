@@ -33,7 +33,7 @@ class ReportApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def request(self, user_id, **kwargs):  # noqa: E501
+    async def request(self, user_id, **kwargs):  # noqa: E501
         """Report  # noqa: E501
 
         Requests a report of all objects in the portal which have a high usage of associations  # noqa: E501
@@ -61,9 +61,9 @@ class ReportApi(object):
         :rtype: ReportCreationResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.request_with_http_info(user_id, **kwargs)  # noqa: E501
+        return await self.request_with_http_info(user_id, **kwargs)  # noqa: E501
 
-    def request_with_http_info(self, user_id, **kwargs):  # noqa: E501
+    async def request_with_http_info(self, user_id, **kwargs):  # noqa: E501
         """Report  # noqa: E501
 
         Requests a report of all objects in the portal which have a high usage of associations  # noqa: E501

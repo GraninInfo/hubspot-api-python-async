@@ -281,7 +281,7 @@ class FoldersApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def move(self, folder_id, new_parent_folder_id, **kwargs):  # noqa: E501
+    async def move(self, folder_id, new_parent_folder_id, **kwargs):  # noqa: E501
         """Moves a folder  # noqa: E501
 
         This moves the folder from its current location to a new location. It updates the parent of this folder to the new Id given.  # noqa: E501
@@ -311,9 +311,9 @@ class FoldersApi(object):
         :rtype: ListFolderFetchResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.move_with_http_info(folder_id, new_parent_folder_id, **kwargs)  # noqa: E501
+        return await self.move_with_http_info(folder_id, new_parent_folder_id, **kwargs)  # noqa: E501
 
-    def move_with_http_info(self, folder_id, new_parent_folder_id, **kwargs):  # noqa: E501
+    async def move_with_http_info(self, folder_id, new_parent_folder_id, **kwargs):  # noqa: E501
         """Moves a folder  # noqa: E501
 
         This moves the folder from its current location to a new location. It updates the parent of this folder to the new Id given.  # noqa: E501
@@ -413,7 +413,7 @@ class FoldersApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def move_list(self, list_move_request, **kwargs):  # noqa: E501
+    async def move_list(self, list_move_request, **kwargs):  # noqa: E501
         """Moves a list to a given folder  # noqa: E501
 
         Given a list and a folder, the list will be moved to that folder.  # noqa: E501
@@ -441,9 +441,9 @@ class FoldersApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.move_list_with_http_info(list_move_request, **kwargs)  # noqa: E501
+        return await self.move_list_with_http_info(list_move_request, **kwargs)  # noqa: E501
 
-    def move_list_with_http_info(self, list_move_request, **kwargs):  # noqa: E501
+    async def move_list_with_http_info(self, list_move_request, **kwargs):  # noqa: E501
         """Moves a list to a given folder  # noqa: E501
 
         Given a list and a folder, the list will be moved to that folder.  # noqa: E501
@@ -539,7 +539,7 @@ class FoldersApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def remove(self, folder_id, **kwargs):  # noqa: E501
+    async def remove(self, folder_id, **kwargs):  # noqa: E501
         """Deletes a folder  # noqa: E501
 
         Deletes the folder with the given Id.  # noqa: E501
@@ -567,9 +567,9 @@ class FoldersApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.remove_with_http_info(folder_id, **kwargs)  # noqa: E501
+        return await self.remove_with_http_info(folder_id, **kwargs)  # noqa: E501
 
-    def remove_with_http_info(self, folder_id, **kwargs):  # noqa: E501
+    async def remove_with_http_info(self, folder_id, **kwargs):  # noqa: E501
         """Deletes a folder  # noqa: E501
 
         Deletes the folder with the given Id.  # noqa: E501
@@ -660,7 +660,7 @@ class FoldersApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def rename(self, folder_id, **kwargs):  # noqa: E501
+    async def rename(self, folder_id, **kwargs):  # noqa: E501
         """Rename a folder  # noqa: E501
 
         Renames the given folderId with a new name.  # noqa: E501
@@ -690,9 +690,9 @@ class FoldersApi(object):
         :rtype: ListFolderFetchResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.rename_with_http_info(folder_id, **kwargs)  # noqa: E501
+        return await self.rename_with_http_info(folder_id, **kwargs)  # noqa: E501
 
-    def rename_with_http_info(self, folder_id, **kwargs):  # noqa: E501
+    async def rename_with_http_info(self, folder_id, **kwargs):  # noqa: E501
         """Rename a folder  # noqa: E501
 
         Renames the given folderId with a new name.  # noqa: E501

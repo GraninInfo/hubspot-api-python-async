@@ -310,7 +310,7 @@ class ContentApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_or_update(self, environment, path, **kwargs):  # noqa: E501
+    async def create_or_update(self, environment, path, **kwargs):  # noqa: E501
         """Create or update a file  # noqa: E501
 
         Upserts a file at the specified path in the specified environment. Accepts multipart/form-data content type.  # noqa: E501
@@ -342,9 +342,9 @@ class ContentApi(object):
         :rtype: AssetFileMetadata
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_or_update_with_http_info(environment, path, **kwargs)  # noqa: E501
+        return await self.create_or_update_with_http_info(environment, path, **kwargs)  # noqa: E501
 
-    def create_or_update_with_http_info(self, environment, path, **kwargs):  # noqa: E501
+    async def create_or_update_with_http_info(self, environment, path, **kwargs):  # noqa: E501
         """Create or update a file  # noqa: E501
 
         Upserts a file at the specified path in the specified environment. Accepts multipart/form-data content type.  # noqa: E501
@@ -455,7 +455,7 @@ class ContentApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def download(self, environment, path, **kwargs):  # noqa: E501
+    async def download(self, environment, path, **kwargs):  # noqa: E501
         """Download a file  # noqa: E501
 
         Downloads the byte contents of the file at the specified path in the specified environment.  # noqa: E501
@@ -485,9 +485,9 @@ class ContentApi(object):
         :rtype: Error
         """
         kwargs["_return_http_data_only"] = True
-        return self.download_with_http_info(environment, path, **kwargs)  # noqa: E501
+        return await self.download_with_http_info(environment, path, **kwargs)  # noqa: E501
 
-    def download_with_http_info(self, environment, path, **kwargs):  # noqa: E501
+    async def download_with_http_info(self, environment, path, **kwargs):  # noqa: E501
         """Download a file  # noqa: E501
 
         Downloads the byte contents of the file at the specified path in the specified environment.  # noqa: E501

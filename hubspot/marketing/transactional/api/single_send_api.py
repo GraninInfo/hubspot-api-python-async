@@ -33,7 +33,7 @@ class SingleSendApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def send_email(self, public_single_send_request_egg, **kwargs):  # noqa: E501
+    async def send_email(self, public_single_send_request_egg, **kwargs):  # noqa: E501
         """Send a single transactional email asynchronously.  # noqa: E501
 
         Asynchronously send a transactional email. Returns the status of the email send with a statusId that can be used to continuously query for the status using the Email Send Status API.  # noqa: E501
@@ -61,9 +61,9 @@ class SingleSendApi(object):
         :rtype: EmailSendStatusView
         """
         kwargs["_return_http_data_only"] = True
-        return self.send_email_with_http_info(public_single_send_request_egg, **kwargs)  # noqa: E501
+        return await self.send_email_with_http_info(public_single_send_request_egg, **kwargs)  # noqa: E501
 
-    def send_email_with_http_info(self, public_single_send_request_egg, **kwargs):  # noqa: E501
+    async def send_email_with_http_info(self, public_single_send_request_egg, **kwargs):  # noqa: E501
         """Send a single transactional email asynchronously.  # noqa: E501
 
         Asynchronously send a transactional email. Returns the status of the email send with a statusId that can be used to continuously query for the status using the Email Send Status API.  # noqa: E501

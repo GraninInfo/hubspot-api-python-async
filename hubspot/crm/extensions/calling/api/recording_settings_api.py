@@ -33,7 +33,7 @@ class RecordingSettingsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_url_format(self, app_id, **kwargs):  # noqa: E501
+    async def get_url_format(self, app_id, **kwargs):  # noqa: E501
         """Retrieve recording settings  # noqa: E501
 
         Retrieve the URL that is registered for [call recording](https://developers.hubspot.com/docs/guides/apps/extensions/calling-extensions/recordings-and-transcriptions#register-your-app-s-endpoint-with-hubspot-using-the-calling-settings-api).  # noqa: E501
@@ -61,9 +61,9 @@ class RecordingSettingsApi(object):
         :rtype: RecordingSettingsResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_url_format_with_http_info(app_id, **kwargs)  # noqa: E501
+        return await self.get_url_format_with_http_info(app_id, **kwargs)  # noqa: E501
 
-    def get_url_format_with_http_info(self, app_id, **kwargs):  # noqa: E501
+    async def get_url_format_with_http_info(self, app_id, **kwargs):  # noqa: E501
         """Retrieve recording settings  # noqa: E501
 
         Retrieve the URL that is registered for [call recording](https://developers.hubspot.com/docs/guides/apps/extensions/calling-extensions/recordings-and-transcriptions#register-your-app-s-endpoint-with-hubspot-using-the-calling-settings-api).  # noqa: E501
@@ -156,7 +156,7 @@ class RecordingSettingsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def mark_as_ready(self, mark_recording_as_ready_request, **kwargs):  # noqa: E501
+    async def mark_as_ready(self, mark_recording_as_ready_request, **kwargs):  # noqa: E501
         """Mark recording as ready for transcription  # noqa: E501
 
         Mark a call recording as ready for transcription, specifying the call by its ID (`engagementid`).  # noqa: E501
@@ -184,9 +184,9 @@ class RecordingSettingsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.mark_as_ready_with_http_info(mark_recording_as_ready_request, **kwargs)  # noqa: E501
+        return await self.mark_as_ready_with_http_info(mark_recording_as_ready_request, **kwargs)  # noqa: E501
 
-    def mark_as_ready_with_http_info(self, mark_recording_as_ready_request, **kwargs):  # noqa: E501
+    async def mark_as_ready_with_http_info(self, mark_recording_as_ready_request, **kwargs):  # noqa: E501
         """Mark recording as ready for transcription  # noqa: E501
 
         Mark a call recording as ready for transcription, specifying the call by its ID (`engagementid`).  # noqa: E501
@@ -282,7 +282,7 @@ class RecordingSettingsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def register_url_format(self, app_id, recording_settings_request, **kwargs):  # noqa: E501
+    async def register_url_format(self, app_id, recording_settings_request, **kwargs):  # noqa: E501
         """Enable the app for call recording  # noqa: E501
 
         Register an external URL that HubSpot will use to retrieve [call recordings](https://developers.hubspot.com/docs/guides/apps/extensions/calling-extensions/recordings-and-transcriptions#register-your-app-s-endpoint-with-hubspot-using-the-calling-settings-api).  # noqa: E501
@@ -312,9 +312,9 @@ class RecordingSettingsApi(object):
         :rtype: RecordingSettingsResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.register_url_format_with_http_info(app_id, recording_settings_request, **kwargs)  # noqa: E501
+        return await self.register_url_format_with_http_info(app_id, recording_settings_request, **kwargs)  # noqa: E501
 
-    def register_url_format_with_http_info(self, app_id, recording_settings_request, **kwargs):  # noqa: E501
+    async def register_url_format_with_http_info(self, app_id, recording_settings_request, **kwargs):  # noqa: E501
         """Enable the app for call recording  # noqa: E501
 
         Register an external URL that HubSpot will use to retrieve [call recordings](https://developers.hubspot.com/docs/guides/apps/extensions/calling-extensions/recordings-and-transcriptions#register-your-app-s-endpoint-with-hubspot-using-the-calling-settings-api).  # noqa: E501
@@ -419,7 +419,7 @@ class RecordingSettingsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_url_format(self, app_id, recording_settings_patch_request, **kwargs):  # noqa: E501
+    async def update_url_format(self, app_id, recording_settings_patch_request, **kwargs):  # noqa: E501
         """Update recording settings  # noqa: E501
 
         Update the URL that HubSpot will use to retrieve [call recordings](https://developers.hubspot.com/docs/guides/apps/extensions/calling-extensions/recordings-and-transcriptions#register-your-app-s-endpoint-with-hubspot-using-the-calling-settings-api).  # noqa: E501
@@ -449,9 +449,9 @@ class RecordingSettingsApi(object):
         :rtype: RecordingSettingsResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_url_format_with_http_info(app_id, recording_settings_patch_request, **kwargs)  # noqa: E501
+        return await self.update_url_format_with_http_info(app_id, recording_settings_patch_request, **kwargs)  # noqa: E501
 
-    def update_url_format_with_http_info(self, app_id, recording_settings_patch_request, **kwargs):  # noqa: E501
+    async def update_url_format_with_http_info(self, app_id, recording_settings_patch_request, **kwargs):  # noqa: E501
         """Update recording settings  # noqa: E501
 
         Update the URL that HubSpot will use to retrieve [call recordings](https://developers.hubspot.com/docs/guides/apps/extensions/calling-extensions/recordings-and-transcriptions#register-your-app-s-endpoint-with-hubspot-using-the-calling-settings-api).  # noqa: E501

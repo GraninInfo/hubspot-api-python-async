@@ -435,7 +435,7 @@ class CoreApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_name(self, object_type, property_name, **kwargs):  # noqa: E501
+    async def get_by_name(self, object_type, property_name, **kwargs):  # noqa: E501
         """Read a property  # noqa: E501
 
         Read a property identified by {propertyName}.  # noqa: E501
@@ -469,9 +469,9 @@ class CoreApi(object):
         :rtype: ModelProperty
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_name_with_http_info(object_type, property_name, **kwargs)  # noqa: E501
+        return await self.get_by_name_with_http_info(object_type, property_name, **kwargs)  # noqa: E501
 
-    def get_by_name_with_http_info(self, object_type, property_name, **kwargs):  # noqa: E501
+    async def get_by_name_with_http_info(self, object_type, property_name, **kwargs):  # noqa: E501
         """Read a property  # noqa: E501
 
         Read a property identified by {propertyName}.  # noqa: E501

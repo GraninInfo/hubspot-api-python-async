@@ -33,7 +33,7 @@ class PublicSMTPTokensApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive_token(self, token_id, **kwargs):  # noqa: E501
+    async def archive_token(self, token_id, **kwargs):  # noqa: E501
         """Delete a single token by ID.  # noqa: E501
 
         Delete a single token by ID.  # noqa: E501
@@ -61,9 +61,9 @@ class PublicSMTPTokensApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_token_with_http_info(token_id, **kwargs)  # noqa: E501
+        return await self.archive_token_with_http_info(token_id, **kwargs)  # noqa: E501
 
-    def archive_token_with_http_info(self, token_id, **kwargs):  # noqa: E501
+    async def archive_token_with_http_info(self, token_id, **kwargs):  # noqa: E501
         """Delete a single token by ID.  # noqa: E501
 
         Delete a single token by ID.  # noqa: E501
@@ -154,7 +154,7 @@ class PublicSMTPTokensApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_token(self, smtp_api_token_request_egg, **kwargs):  # noqa: E501
+    async def create_token(self, smtp_api_token_request_egg, **kwargs):  # noqa: E501
         """Create a SMTP API token.  # noqa: E501
 
         Create a SMTP API token.  # noqa: E501
@@ -182,9 +182,9 @@ class PublicSMTPTokensApi(object):
         :rtype: SmtpApiTokenView
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_token_with_http_info(smtp_api_token_request_egg, **kwargs)  # noqa: E501
+        return await self.create_token_with_http_info(smtp_api_token_request_egg, **kwargs)  # noqa: E501
 
-    def create_token_with_http_info(self, smtp_api_token_request_egg, **kwargs):  # noqa: E501
+    async def create_token_with_http_info(self, smtp_api_token_request_egg, **kwargs):  # noqa: E501
         """Create a SMTP API token.  # noqa: E501
 
         Create a SMTP API token.  # noqa: E501
@@ -282,7 +282,7 @@ class PublicSMTPTokensApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_token_by_id(self, token_id, **kwargs):  # noqa: E501
+    async def get_token_by_id(self, token_id, **kwargs):  # noqa: E501
         """Query a single token by ID.  # noqa: E501
 
         Query a single token by ID.  # noqa: E501
@@ -310,9 +310,9 @@ class PublicSMTPTokensApi(object):
         :rtype: SmtpApiTokenView
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_token_by_id_with_http_info(token_id, **kwargs)  # noqa: E501
+        return await self.get_token_by_id_with_http_info(token_id, **kwargs)  # noqa: E501
 
-    def get_token_by_id_with_http_info(self, token_id, **kwargs):  # noqa: E501
+    async def get_token_by_id_with_http_info(self, token_id, **kwargs):  # noqa: E501
         """Query a single token by ID.  # noqa: E501
 
         Query a single token by ID.  # noqa: E501
@@ -405,7 +405,7 @@ class PublicSMTPTokensApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_tokens_page(self, **kwargs):  # noqa: E501
+    async def get_tokens_page(self, **kwargs):  # noqa: E501
         """Query SMTP API tokens by campaign name or an emailCampaignId.  # noqa: E501
 
         Query multiple SMTP API tokens by campaign name or a single token by emailCampaignId.  # noqa: E501
@@ -439,9 +439,9 @@ class PublicSMTPTokensApi(object):
         :rtype: CollectionResponseSmtpApiTokenViewForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_tokens_page_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_tokens_page_with_http_info(**kwargs)  # noqa: E501
 
-    def get_tokens_page_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_tokens_page_with_http_info(self, **kwargs):  # noqa: E501
         """Query SMTP API tokens by campaign name or an emailCampaignId.  # noqa: E501
 
         Query multiple SMTP API tokens by campaign name or a single token by emailCampaignId.  # noqa: E501
@@ -543,7 +543,7 @@ class PublicSMTPTokensApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def reset_password(self, token_id, **kwargs):  # noqa: E501
+    async def reset_password(self, token_id, **kwargs):  # noqa: E501
         """Reset the password of an existing token.  # noqa: E501
 
         Allows the creation of a replacement password for a given token. Once the password is successfully reset, the old password for the token will be invalid.  # noqa: E501
@@ -571,9 +571,9 @@ class PublicSMTPTokensApi(object):
         :rtype: SmtpApiTokenView
         """
         kwargs["_return_http_data_only"] = True
-        return self.reset_password_with_http_info(token_id, **kwargs)  # noqa: E501
+        return await self.reset_password_with_http_info(token_id, **kwargs)  # noqa: E501
 
-    def reset_password_with_http_info(self, token_id, **kwargs):  # noqa: E501
+    async def reset_password_with_http_info(self, token_id, **kwargs):  # noqa: E501
         """Reset the password of an existing token.  # noqa: E501
 
         Allows the creation of a replacement password for a given token. Once the password is successfully reset, the old password for the token will be invalid.  # noqa: E501

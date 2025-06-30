@@ -33,7 +33,7 @@ class BusinessUnitApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_by_user_id(self, user_id, **kwargs):  # noqa: E501
+    async def get_by_user_id(self, user_id, **kwargs):  # noqa: E501
         """Get Business Units for a user  # noqa: E501
 
         Get Business Units identified by `userId`. The `userId` refers to the user’s ID.  # noqa: E501
@@ -65,9 +65,9 @@ class BusinessUnitApi(object):
         :rtype: CollectionResponsePublicBusinessUnitNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_user_id_with_http_info(user_id, **kwargs)  # noqa: E501
+        return await self.get_by_user_id_with_http_info(user_id, **kwargs)  # noqa: E501
 
-    def get_by_user_id_with_http_info(self, user_id, **kwargs):  # noqa: E501
+    async def get_by_user_id_with_http_info(self, user_id, **kwargs):  # noqa: E501
         """Get Business Units for a user  # noqa: E501
 
         Get Business Units identified by `userId`. The `userId` refers to the user’s ID.  # noqa: E501

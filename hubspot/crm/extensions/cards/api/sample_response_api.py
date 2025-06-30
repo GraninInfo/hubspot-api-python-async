@@ -33,7 +33,7 @@ class SampleResponseApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_cards_sample_response(self, **kwargs):  # noqa: E501
+    async def get_cards_sample_response(self, **kwargs):  # noqa: E501
         """Get sample card detail response  # noqa: E501
 
         Returns an example card detail response. This is the payload with displayed details for a card that will be shown to a user. An app should send this in response to the data fetch request.  # noqa: E501
@@ -59,9 +59,9 @@ class SampleResponseApi(object):
         :rtype: IntegratorCardPayloadResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_cards_sample_response_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_cards_sample_response_with_http_info(**kwargs)  # noqa: E501
 
-    def get_cards_sample_response_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_cards_sample_response_with_http_info(self, **kwargs):  # noqa: E501
         """Get sample card detail response  # noqa: E501
 
         Returns an example card detail response. This is the payload with displayed details for a card that will be shown to a user. An app should send this in response to the data fetch request.  # noqa: E501

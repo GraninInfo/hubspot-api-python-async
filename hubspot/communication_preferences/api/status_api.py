@@ -33,7 +33,7 @@ class StatusApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_email_status(self, email_address, **kwargs):  # noqa: E501
+    async def get_email_status(self, email_address, **kwargs):  # noqa: E501
         """Get subscription statuses for a contact  # noqa: E501
 
         Returns a list of subscriptions and their status for a given contact.  # noqa: E501
@@ -61,9 +61,9 @@ class StatusApi(object):
         :rtype: PublicSubscriptionStatusesResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_email_status_with_http_info(email_address, **kwargs)  # noqa: E501
+        return await self.get_email_status_with_http_info(email_address, **kwargs)  # noqa: E501
 
-    def get_email_status_with_http_info(self, email_address, **kwargs):  # noqa: E501
+    async def get_email_status_with_http_info(self, email_address, **kwargs):  # noqa: E501
         """Get subscription statuses for a contact  # noqa: E501
 
         Returns a list of subscriptions and their status for a given contact.  # noqa: E501
@@ -156,7 +156,7 @@ class StatusApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def subscribe(self, public_update_subscription_status_request, **kwargs):  # noqa: E501
+    async def subscribe(self, public_update_subscription_status_request, **kwargs):  # noqa: E501
         """Subscribe a contact  # noqa: E501
 
         Subscribes a contact to the given subscription type. This API is not valid to use for subscribing a contact at a brand or portal level and will return an error.  # noqa: E501
@@ -184,9 +184,9 @@ class StatusApi(object):
         :rtype: PublicSubscriptionStatus
         """
         kwargs["_return_http_data_only"] = True
-        return self.subscribe_with_http_info(public_update_subscription_status_request, **kwargs)  # noqa: E501
+        return await self.subscribe_with_http_info(public_update_subscription_status_request, **kwargs)  # noqa: E501
 
-    def subscribe_with_http_info(self, public_update_subscription_status_request, **kwargs):  # noqa: E501
+    async def subscribe_with_http_info(self, public_update_subscription_status_request, **kwargs):  # noqa: E501
         """Subscribe a contact  # noqa: E501
 
         Subscribes a contact to the given subscription type. This API is not valid to use for subscribing a contact at a brand or portal level and will return an error.  # noqa: E501
@@ -284,7 +284,7 @@ class StatusApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def unsubscribe(self, public_update_subscription_status_request, **kwargs):  # noqa: E501
+    async def unsubscribe(self, public_update_subscription_status_request, **kwargs):  # noqa: E501
         """Unsubscribe a contact  # noqa: E501
 
         Unsubscribes a contact from the given subscription type. This API is not valid to use for unsubscribing a contact at a brand or portal level and will return an error.  # noqa: E501
@@ -312,9 +312,9 @@ class StatusApi(object):
         :rtype: PublicSubscriptionStatus
         """
         kwargs["_return_http_data_only"] = True
-        return self.unsubscribe_with_http_info(public_update_subscription_status_request, **kwargs)  # noqa: E501
+        return await self.unsubscribe_with_http_info(public_update_subscription_status_request, **kwargs)  # noqa: E501
 
-    def unsubscribe_with_http_info(self, public_update_subscription_status_request, **kwargs):  # noqa: E501
+    async def unsubscribe_with_http_info(self, public_update_subscription_status_request, **kwargs):  # noqa: E501
         """Unsubscribe a contact  # noqa: E501
 
         Unsubscribes a contact from the given subscription type. This API is not valid to use for unsubscribing a contact at a brand or portal level and will return an error.  # noqa: E501

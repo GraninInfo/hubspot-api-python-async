@@ -33,7 +33,7 @@ class MetadataApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get(self, environment, path, **kwargs):  # noqa: E501
+    async def get(self, environment, path, **kwargs):  # noqa: E501
         """Get the metadata for a file  # noqa: E501
 
         Gets the metadata object for the file at the specified path in the specified environment.  # noqa: E501
@@ -65,9 +65,9 @@ class MetadataApi(object):
         :rtype: AssetFileMetadata
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_with_http_info(environment, path, **kwargs)  # noqa: E501
+        return await self.get_with_http_info(environment, path, **kwargs)  # noqa: E501
 
-    def get_with_http_info(self, environment, path, **kwargs):  # noqa: E501
+    async def get_with_http_info(self, environment, path, **kwargs):  # noqa: E501
         """Get the metadata for a file  # noqa: E501
 
         Gets the metadata object for the file at the specified path in the specified environment.  # noqa: E501

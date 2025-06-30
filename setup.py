@@ -14,7 +14,7 @@ from os.path import dirname, abspath, exists
 from setuptools import setup, find_packages  # noqa: H301
 
 
-NAME = "hubspot-api-client"
+NAME = "hubspot-api-client-async"
 
 # To install the library, run the following
 #
@@ -50,9 +50,9 @@ setup(
     description="HubSpot API client",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
-    url="https://github.com/HubSpot/hubspot-api-python",
-    author="HubSpot",
-    author_email="support@hubspot.com",
+    url="https://github.com/GraninInfo/hubspot-api-python-async",
+    author="HubSpot + Pavel Granin",
+    author_email="support@hubspot.com, granininfo@gmail.com",
     install_requires=REQUIRES,
     extras_require={"dev": DEV_REQUIRES},
     python_requires=">=3.7",

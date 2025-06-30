@@ -33,7 +33,7 @@ class StatisticsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_emails_list(self, **kwargs):  # noqa: E501
+    async def get_emails_list(self, **kwargs):  # noqa: E501
         """Get aggregated statistics.  # noqa: E501
 
         Use this endpoint to get aggregated statistics of emails sent in a specified time span. It also returns the list of emails that were sent during the time span.  # noqa: E501
@@ -67,9 +67,9 @@ class StatisticsApi(object):
         :rtype: AggregateEmailStatistics
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_emails_list_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_emails_list_with_http_info(**kwargs)  # noqa: E501
 
-    def get_emails_list_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_emails_list_with_http_info(self, **kwargs):  # noqa: E501
         """Get aggregated statistics.  # noqa: E501
 
         Use this endpoint to get aggregated statistics of emails sent in a specified time span. It also returns the list of emails that were sent during the time span.  # noqa: E501
@@ -172,7 +172,7 @@ class StatisticsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_histogram(self, **kwargs):  # noqa: E501
+    async def get_histogram(self, **kwargs):  # noqa: E501
         """Get aggregated statistic intervals.  # noqa: E501
 
         Get aggregated statistics in intervals for a specified time span. Each interval contains aggregated statistics of the emails that were sent in that time.  # noqa: E501
@@ -206,9 +206,9 @@ class StatisticsApi(object):
         :rtype: CollectionResponseWithTotalEmailStatisticIntervalNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_histogram_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_histogram_with_http_info(**kwargs)  # noqa: E501
 
-    def get_histogram_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_histogram_with_http_info(self, **kwargs):  # noqa: E501
         """Get aggregated statistic intervals.  # noqa: E501
 
         Get aggregated statistics in intervals for a specified time span. Each interval contains aggregated statistics of the emails that were sent in that time.  # noqa: E501

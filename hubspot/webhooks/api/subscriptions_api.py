@@ -701,7 +701,7 @@ class SubscriptionsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_batch(self, app_id, batch_input_subscription_batch_update_request, **kwargs):  # noqa: E501
+    async def update_batch(self, app_id, batch_input_subscription_batch_update_request, **kwargs):  # noqa: E501
         """Batch create event subscriptions  # noqa: E501
 
         Batch create event subscriptions for the specified app.  # noqa: E501
@@ -731,9 +731,9 @@ class SubscriptionsApi(object):
         :rtype: BatchResponseSubscriptionResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_batch_with_http_info(app_id, batch_input_subscription_batch_update_request, **kwargs)  # noqa: E501
+        return await self.update_batch_with_http_info(app_id, batch_input_subscription_batch_update_request, **kwargs)  # noqa: E501
 
-    def update_batch_with_http_info(self, app_id, batch_input_subscription_batch_update_request, **kwargs):  # noqa: E501
+    async def update_batch_with_http_info(self, app_id, batch_input_subscription_batch_update_request, **kwargs):  # noqa: E501
         """Batch create event subscriptions  # noqa: E501
 
         Batch create event subscriptions for the specified app.  # noqa: E501

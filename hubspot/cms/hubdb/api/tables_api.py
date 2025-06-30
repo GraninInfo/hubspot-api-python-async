@@ -33,7 +33,7 @@ class TablesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def archive_table(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def archive_table(self, table_id_or_name, **kwargs):  # noqa: E501
         """Archive a table  # noqa: E501
 
         Archive (soft delete) an existing HubDB table. This archives both the published and draft versions.  # noqa: E501
@@ -61,9 +61,9 @@ class TablesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_table_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
+        return await self.archive_table_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
 
-    def archive_table_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def archive_table_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
         """Archive a table  # noqa: E501
 
         Archive (soft delete) an existing HubDB table. This archives both the published and draft versions.  # noqa: E501
@@ -154,7 +154,7 @@ class TablesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def clone_draft_table(self, table_id_or_name, hub_db_table_clone_request, **kwargs):  # noqa: E501
+    async def clone_draft_table(self, table_id_or_name, hub_db_table_clone_request, **kwargs):  # noqa: E501
         """Clone a table  # noqa: E501
 
         Clone an existing HubDB table. The `newName` and `newLabel` of the new table can be sent as JSON in the request body. This will create the cloned table as a draft.  # noqa: E501
@@ -184,9 +184,9 @@ class TablesApi(object):
         :rtype: HubDbTableV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.clone_draft_table_with_http_info(table_id_or_name, hub_db_table_clone_request, **kwargs)  # noqa: E501
+        return await self.clone_draft_table_with_http_info(table_id_or_name, hub_db_table_clone_request, **kwargs)  # noqa: E501
 
-    def clone_draft_table_with_http_info(self, table_id_or_name, hub_db_table_clone_request, **kwargs):  # noqa: E501
+    async def clone_draft_table_with_http_info(self, table_id_or_name, hub_db_table_clone_request, **kwargs):  # noqa: E501
         """Clone a table  # noqa: E501
 
         Clone an existing HubDB table. The `newName` and `newLabel` of the new table can be sent as JSON in the request body. This will create the cloned table as a draft.  # noqa: E501
@@ -291,7 +291,7 @@ class TablesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_table(self, hub_db_table_v3_request, **kwargs):  # noqa: E501
+    async def create_table(self, hub_db_table_v3_request, **kwargs):  # noqa: E501
         """Create a new table  # noqa: E501
 
         Creates a new draft HubDB table given a JSON schema. The table name and label should be unique for each account.  # noqa: E501
@@ -319,9 +319,9 @@ class TablesApi(object):
         :rtype: HubDbTableV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_table_with_http_info(hub_db_table_v3_request, **kwargs)  # noqa: E501
+        return await self.create_table_with_http_info(hub_db_table_v3_request, **kwargs)  # noqa: E501
 
-    def create_table_with_http_info(self, hub_db_table_v3_request, **kwargs):  # noqa: E501
+    async def create_table_with_http_info(self, hub_db_table_v3_request, **kwargs):  # noqa: E501
         """Create a new table  # noqa: E501
 
         Creates a new draft HubDB table given a JSON schema. The table name and label should be unique for each account.  # noqa: E501
@@ -419,7 +419,7 @@ class TablesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def export_draft_table(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def export_draft_table(self, table_id_or_name, **kwargs):  # noqa: E501
         """Export a draft table  # noqa: E501
 
         Exports the draft version of a table to CSV / EXCEL format.  # noqa: E501
@@ -449,9 +449,9 @@ class TablesApi(object):
         :rtype: file
         """
         kwargs["_return_http_data_only"] = True
-        return self.export_draft_table_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
+        return await self.export_draft_table_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
 
-    def export_draft_table_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def export_draft_table_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
         """Export a draft table  # noqa: E501
 
         Exports the draft version of a table to CSV / EXCEL format.  # noqa: E501
@@ -548,7 +548,7 @@ class TablesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def export_table(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def export_table(self, table_id_or_name, **kwargs):  # noqa: E501
         """Export a published version of a table  # noqa: E501
 
         Exports the published version of a table in a specified format.  # noqa: E501
@@ -578,9 +578,9 @@ class TablesApi(object):
         :rtype: file
         """
         kwargs["_return_http_data_only"] = True
-        return self.export_table_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
+        return await self.export_table_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
 
-    def export_table_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def export_table_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
         """Export a published version of a table  # noqa: E501
 
         Exports the published version of a table in a specified format.  # noqa: E501
@@ -677,7 +677,7 @@ class TablesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_all_draft_tables(self, **kwargs):  # noqa: E501
+    async def get_all_draft_tables(self, **kwargs):  # noqa: E501
         """Return all draft tables  # noqa: E501
 
         Returns the details for each draft table defined in the specified account, including column definitions.  # noqa: E501
@@ -725,9 +725,9 @@ class TablesApi(object):
         :rtype: CollectionResponseWithTotalHubDbTableV3ForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_draft_tables_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_all_draft_tables_with_http_info(**kwargs)  # noqa: E501
 
-    def get_all_draft_tables_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_all_draft_tables_with_http_info(self, **kwargs):  # noqa: E501
         """Return all draft tables  # noqa: E501
 
         Returns the details for each draft table defined in the specified account, including column definitions.  # noqa: E501
@@ -858,7 +858,7 @@ class TablesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_all_tables(self, **kwargs):  # noqa: E501
+    async def get_all_tables(self, **kwargs):  # noqa: E501
         """Get all published tables  # noqa: E501
 
         Returns the details for the published version of each table defined in an account, including column definitions.  # noqa: E501
@@ -906,9 +906,9 @@ class TablesApi(object):
         :rtype: CollectionResponseWithTotalHubDbTableV3ForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_tables_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_all_tables_with_http_info(**kwargs)  # noqa: E501
 
-    def get_all_tables_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_all_tables_with_http_info(self, **kwargs):  # noqa: E501
         """Get all published tables  # noqa: E501
 
         Returns the details for the published version of each table defined in an account, including column definitions.  # noqa: E501
@@ -1039,7 +1039,7 @@ class TablesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_draft_table_details_by_id(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def get_draft_table_details_by_id(self, table_id_or_name, **kwargs):  # noqa: E501
         """Get details for a draft table  # noqa: E501
 
         Get the details for the draft version of a specific HubDB table. This will include the definitions for the columns in the table and the number of rows in the table.  # noqa: E501
@@ -1073,9 +1073,9 @@ class TablesApi(object):
         :rtype: HubDbTableV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_draft_table_details_by_id_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
+        return await self.get_draft_table_details_by_id_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
 
-    def get_draft_table_details_by_id_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def get_draft_table_details_by_id_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
         """Get details for a draft table  # noqa: E501
 
         Get the details for the draft version of a specific HubDB table. This will include the definitions for the columns in the table and the number of rows in the table.  # noqa: E501
@@ -1180,7 +1180,7 @@ class TablesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_table_details(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def get_table_details(self, table_id_or_name, **kwargs):  # noqa: E501
         """Get details of a published table  # noqa: E501
 
         Returns the details for the published version of the specified table. This will include the definitions for the columns in the table and the number of rows in the table.  **Note:** This endpoint can be accessed without any authentication if the table is set to be allowed for public access. To do so, you'll need to include the HubSpot account ID in a `portalId` query parameter.  # noqa: E501
@@ -1214,9 +1214,9 @@ class TablesApi(object):
         :rtype: HubDbTableV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_table_details_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
+        return await self.get_table_details_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
 
-    def get_table_details_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def get_table_details_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
         """Get details of a published table  # noqa: E501
 
         Returns the details for the published version of the specified table. This will include the definitions for the columns in the table and the number of rows in the table.  **Note:** This endpoint can be accessed without any authentication if the table is set to be allowed for public access. To do so, you'll need to include the HubSpot account ID in a `portalId` query parameter.  # noqa: E501
@@ -1321,7 +1321,7 @@ class TablesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def import_draft_table(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def import_draft_table(self, table_id_or_name, **kwargs):  # noqa: E501
         """Import data into draft table  # noqa: E501
 
         Import the contents of a CSV file into an existing HubDB table. The data will always be imported into the draft version of the table. Use the `/publish` endpoint to push these changes to the published version. This endpoint takes a multi-part POST request. The first part will be a set of JSON-formatted options for the import and you can specify this with the name as `config`.  The second part will be the CSV file you want to import and you can specify this with the name as `file`. Refer the [overview section](https://developers.hubspot.com/docs/api/cms/hubdb#importing-tables) to check the details and format of the JSON-formatted options for the import.  # noqa: E501
@@ -1353,9 +1353,9 @@ class TablesApi(object):
         :rtype: ImportResult
         """
         kwargs["_return_http_data_only"] = True
-        return self.import_draft_table_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
+        return await self.import_draft_table_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
 
-    def import_draft_table_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def import_draft_table_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
         """Import data into draft table  # noqa: E501
 
         Import the contents of a CSV file into an existing HubDB table. The data will always be imported into the draft version of the table. Use the `/publish` endpoint to push these changes to the published version. This endpoint takes a multi-part POST request. The first part will be a set of JSON-formatted options for the import and you can specify this with the name as `config`.  The second part will be the CSV file you want to import and you can specify this with the name as `file`. Refer the [overview section](https://developers.hubspot.com/docs/api/cms/hubdb#importing-tables) to check the details and format of the JSON-formatted options for the import.  # noqa: E501
@@ -1461,7 +1461,7 @@ class TablesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def publish_draft_table(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def publish_draft_table(self, table_id_or_name, **kwargs):  # noqa: E501
         """Publish a table from draft  # noqa: E501
 
         Publishes the table by copying the data and table schema changes from draft version to the published version, meaning any website pages using data from the table will be updated.  # noqa: E501
@@ -1491,9 +1491,9 @@ class TablesApi(object):
         :rtype: HubDbTableV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.publish_draft_table_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
+        return await self.publish_draft_table_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
 
-    def publish_draft_table_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def publish_draft_table_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
         """Publish a table from draft  # noqa: E501
 
         Publishes the table by copying the data and table schema changes from draft version to the published version, meaning any website pages using data from the table will be updated.  # noqa: E501
@@ -1590,7 +1590,7 @@ class TablesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def reset_draft_table(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def reset_draft_table(self, table_id_or_name, **kwargs):  # noqa: E501
         """Reset a draft table  # noqa: E501
 
         Replaces the data in the draft version of the table with values from the published version. Any unpublished changes in the draft will be lost after this call is made.  # noqa: E501
@@ -1620,9 +1620,9 @@ class TablesApi(object):
         :rtype: HubDbTableV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.reset_draft_table_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
+        return await self.reset_draft_table_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
 
-    def reset_draft_table_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def reset_draft_table_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
         """Reset a draft table  # noqa: E501
 
         Replaces the data in the draft version of the table with values from the published version. Any unpublished changes in the draft will be lost after this call is made.  # noqa: E501
@@ -1719,7 +1719,7 @@ class TablesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def unpublish_table(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def unpublish_table(self, table_id_or_name, **kwargs):  # noqa: E501
         """Unpublish a table  # noqa: E501
 
         Unpublishes the table, meaning any website pages using data from the table will not render any data.  # noqa: E501
@@ -1749,9 +1749,9 @@ class TablesApi(object):
         :rtype: HubDbTableV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.unpublish_table_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
+        return await self.unpublish_table_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
 
-    def unpublish_table_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def unpublish_table_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
         """Unpublish a table  # noqa: E501
 
         Unpublishes the table, meaning any website pages using data from the table will not render any data.  # noqa: E501
@@ -1848,7 +1848,7 @@ class TablesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_draft_table(self, table_id_or_name, hub_db_table_v3_request, **kwargs):  # noqa: E501
+    async def update_draft_table(self, table_id_or_name, hub_db_table_v3_request, **kwargs):  # noqa: E501
         """Update an existing table  # noqa: E501
 
         Update an existing HubDB table. You can use this endpoint to add or remove columns to the table as well as restore an archived table. Tables updated using the endpoint will only modify the draft verion of the table. Use the `/publish` endpoint to push all the changes to the published version. To restore a table, include the query parameter `archived=true` and `\"archived\": false` in the json body. **Note:** You need to include all the columns in the input when you are adding/removing/updating a column. If you do not include an already existing column in the request, it will be deleted.  # noqa: E501
@@ -1884,9 +1884,9 @@ class TablesApi(object):
         :rtype: HubDbTableV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_draft_table_with_http_info(table_id_or_name, hub_db_table_v3_request, **kwargs)  # noqa: E501
+        return await self.update_draft_table_with_http_info(table_id_or_name, hub_db_table_v3_request, **kwargs)  # noqa: E501
 
-    def update_draft_table_with_http_info(self, table_id_or_name, hub_db_table_v3_request, **kwargs):  # noqa: E501
+    async def update_draft_table_with_http_info(self, table_id_or_name, hub_db_table_v3_request, **kwargs):  # noqa: E501
         """Update an existing table  # noqa: E501
 
         Update an existing HubDB table. You can use this endpoint to add or remove columns to the table as well as restore an archived table. Tables updated using the endpoint will only modify the draft verion of the table. Use the `/publish` endpoint to push all the changes to the published version. To restore a table, include the query parameter `archived=true` and `\"archived\": false` in the json body. **Note:** You need to include all the columns in the input when you are adding/removing/updating a column. If you do not include an already existing column in the request, it will be deleted.  # noqa: E501

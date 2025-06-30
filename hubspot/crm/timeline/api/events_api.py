@@ -419,7 +419,7 @@ class EventsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_detail_by_id(self, event_template_id, event_id, **kwargs):  # noqa: E501
+    async def get_detail_by_id(self, event_template_id, event_id, **kwargs):  # noqa: E501
         """Gets the detailTemplate as rendered  # noqa: E501
 
         This will take the `detailTemplate` from the event template and return an object rendering the specified event. If the template references `extraData` that isn't found in the event, it will be ignored and we'll render without it.  # noqa: E501
@@ -449,9 +449,9 @@ class EventsApi(object):
         :rtype: EventDetail
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_detail_by_id_with_http_info(event_template_id, event_id, **kwargs)  # noqa: E501
+        return await self.get_detail_by_id_with_http_info(event_template_id, event_id, **kwargs)  # noqa: E501
 
-    def get_detail_by_id_with_http_info(self, event_template_id, event_id, **kwargs):  # noqa: E501
+    async def get_detail_by_id_with_http_info(self, event_template_id, event_id, **kwargs):  # noqa: E501
         """Gets the detailTemplate as rendered  # noqa: E501
 
         This will take the `detailTemplate` from the event template and return an object rendering the specified event. If the template references `extraData` that isn't found in the event, it will be ignored and we'll render without it.  # noqa: E501
@@ -551,7 +551,7 @@ class EventsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_render_by_id(self, event_template_id, event_id, **kwargs):  # noqa: E501
+    async def get_render_by_id(self, event_template_id, event_id, **kwargs):  # noqa: E501
         """Renders the header or detail as HTML  # noqa: E501
 
         This will take either the `headerTemplate` or `detailTemplate` from the event template and render for the specified event as HTML. If the template references `extraData` that isn't found in the event, it will be ignored and we'll render without it.  # noqa: E501
@@ -583,9 +583,9 @@ class EventsApi(object):
         :rtype: str
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_render_by_id_with_http_info(event_template_id, event_id, **kwargs)  # noqa: E501
+        return await self.get_render_by_id_with_http_info(event_template_id, event_id, **kwargs)  # noqa: E501
 
-    def get_render_by_id_with_http_info(self, event_template_id, event_id, **kwargs):  # noqa: E501
+    async def get_render_by_id_with_http_info(self, event_template_id, event_id, **kwargs):  # noqa: E501
         """Renders the header or detail as HTML  # noqa: E501
 
         This will take either the `headerTemplate` or `detailTemplate` from the event template and render for the specified event as HTML. If the template references `extraData` that isn't found in the event, it will be ignored and we'll render without it.  # noqa: E501

@@ -33,7 +33,7 @@ class CoreApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def cancel(self, import_id, **kwargs):  # noqa: E501
+    async def cancel(self, import_id, **kwargs):  # noqa: E501
         """Cancel an active import  # noqa: E501
 
         This allows a developer to cancel an active import.  # noqa: E501
@@ -61,9 +61,9 @@ class CoreApi(object):
         :rtype: ActionResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.cancel_with_http_info(import_id, **kwargs)  # noqa: E501
+        return await self.cancel_with_http_info(import_id, **kwargs)  # noqa: E501
 
-    def cancel_with_http_info(self, import_id, **kwargs):  # noqa: E501
+    async def cancel_with_http_info(self, import_id, **kwargs):  # noqa: E501
         """Cancel an active import  # noqa: E501
 
         This allows a developer to cancel an active import.  # noqa: E501

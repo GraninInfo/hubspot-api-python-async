@@ -33,7 +33,7 @@ class DefinitionConfigurationsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def batch_create(self, from_object_type, to_object_type, batch_input_public_association_definition_configuration_create_request, **kwargs):  # noqa: E501
+    async def batch_create(self, from_object_type, to_object_type, batch_input_public_association_definition_configuration_create_request, **kwargs):  # noqa: E501
         """Create  # noqa: E501
 
         Batch create user configurations between two object types  # noqa: E501
@@ -65,9 +65,9 @@ class DefinitionConfigurationsApi(object):
         :rtype: BatchResponsePublicAssociationDefinitionUserConfiguration
         """
         kwargs["_return_http_data_only"] = True
-        return self.batch_create_with_http_info(from_object_type, to_object_type, batch_input_public_association_definition_configuration_create_request, **kwargs)  # noqa: E501
+        return await self.batch_create_with_http_info(from_object_type, to_object_type, batch_input_public_association_definition_configuration_create_request, **kwargs)  # noqa: E501
 
-    def batch_create_with_http_info(self, from_object_type, to_object_type, batch_input_public_association_definition_configuration_create_request, **kwargs):  # noqa: E501
+    async def batch_create_with_http_info(self, from_object_type, to_object_type, batch_input_public_association_definition_configuration_create_request, **kwargs):  # noqa: E501
         """Create  # noqa: E501
 
         Batch create user configurations between two object types  # noqa: E501
@@ -180,7 +180,7 @@ class DefinitionConfigurationsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def batch_remove(self, from_object_type, to_object_type, batch_input_public_association_spec, **kwargs):  # noqa: E501
+    async def batch_remove(self, from_object_type, to_object_type, batch_input_public_association_spec, **kwargs):  # noqa: E501
         """Delete  # noqa: E501
 
         Batch delete user configurations between two object types  # noqa: E501
@@ -212,9 +212,9 @@ class DefinitionConfigurationsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.batch_remove_with_http_info(from_object_type, to_object_type, batch_input_public_association_spec, **kwargs)  # noqa: E501
+        return await self.batch_remove_with_http_info(from_object_type, to_object_type, batch_input_public_association_spec, **kwargs)  # noqa: E501
 
-    def batch_remove_with_http_info(self, from_object_type, to_object_type, batch_input_public_association_spec, **kwargs):  # noqa: E501
+    async def batch_remove_with_http_info(self, from_object_type, to_object_type, batch_input_public_association_spec, **kwargs):  # noqa: E501
         """Delete  # noqa: E501
 
         Batch delete user configurations between two object types  # noqa: E501
@@ -324,7 +324,7 @@ class DefinitionConfigurationsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def batch_update(self, from_object_type, to_object_type, batch_input_public_association_definition_configuration_update_request, **kwargs):  # noqa: E501
+    async def batch_update(self, from_object_type, to_object_type, batch_input_public_association_definition_configuration_update_request, **kwargs):  # noqa: E501
         """Update  # noqa: E501
 
         Batch update user configurations between two object types  # noqa: E501
@@ -356,9 +356,9 @@ class DefinitionConfigurationsApi(object):
         :rtype: BatchResponsePublicAssociationDefinitionConfigurationUpdateResult
         """
         kwargs["_return_http_data_only"] = True
-        return self.batch_update_with_http_info(from_object_type, to_object_type, batch_input_public_association_definition_configuration_update_request, **kwargs)  # noqa: E501
+        return await self.batch_update_with_http_info(from_object_type, to_object_type, batch_input_public_association_definition_configuration_update_request, **kwargs)  # noqa: E501
 
-    def batch_update_with_http_info(self, from_object_type, to_object_type, batch_input_public_association_definition_configuration_update_request, **kwargs):  # noqa: E501
+    async def batch_update_with_http_info(self, from_object_type, to_object_type, batch_input_public_association_definition_configuration_update_request, **kwargs):  # noqa: E501
         """Update  # noqa: E501
 
         Batch update user configurations between two object types  # noqa: E501
@@ -585,7 +585,7 @@ class DefinitionConfigurationsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_all_between_two_object_types(self, from_object_type, to_object_type, **kwargs):  # noqa: E501
+    async def get_all_between_two_object_types(self, from_object_type, to_object_type, **kwargs):  # noqa: E501
         """Read  # noqa: E501
 
         Returns user configurations on all association definitions between two object types  # noqa: E501
@@ -615,9 +615,9 @@ class DefinitionConfigurationsApi(object):
         :rtype: CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_all_between_two_object_types_with_http_info(from_object_type, to_object_type, **kwargs)  # noqa: E501
+        return await self.get_all_between_two_object_types_with_http_info(from_object_type, to_object_type, **kwargs)  # noqa: E501
 
-    def get_all_between_two_object_types_with_http_info(self, from_object_type, to_object_type, **kwargs):  # noqa: E501
+    async def get_all_between_two_object_types_with_http_info(self, from_object_type, to_object_type, **kwargs):  # noqa: E501
         """Read  # noqa: E501
 
         Returns user configurations on all association definitions between two object types  # noqa: E501

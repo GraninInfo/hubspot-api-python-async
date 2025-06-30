@@ -33,7 +33,7 @@ class GenerateApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def generate_token(self, identification_token_generation_request, **kwargs):  # noqa: E501
+    async def generate_token(self, identification_token_generation_request, **kwargs):  # noqa: E501
         """Generate a token  # noqa: E501
 
         Generates a new visitor identification token. This token will be unique every time this endpoint is called, even if called with the same email address. This token is temporary and will expire after 12 hours  # noqa: E501
@@ -61,9 +61,9 @@ class GenerateApi(object):
         :rtype: IdentificationTokenResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.generate_token_with_http_info(identification_token_generation_request, **kwargs)  # noqa: E501
+        return await self.generate_token_with_http_info(identification_token_generation_request, **kwargs)  # noqa: E501
 
-    def generate_token_with_http_info(self, identification_token_generation_request, **kwargs):  # noqa: E501
+    async def generate_token_with_http_info(self, identification_token_generation_request, **kwargs):  # noqa: E501
         """Generate a token  # noqa: E501
 
         Generates a new visitor identification token. This token will be unique every time this endpoint is called, even if called with the same email address. This token is temporary and will expire after 12 hours  # noqa: E501

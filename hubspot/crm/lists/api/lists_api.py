@@ -545,7 +545,7 @@ class ListsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_name(self, list_name, object_type_id, **kwargs):  # noqa: E501
+    async def get_by_name(self, list_name, object_type_id, **kwargs):  # noqa: E501
         """Fetch List by Name  # noqa: E501
 
         Fetch a single list by list name and object type.  # noqa: E501
@@ -577,9 +577,9 @@ class ListsApi(object):
         :rtype: ListFetchResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_name_with_http_info(list_name, object_type_id, **kwargs)  # noqa: E501
+        return await self.get_by_name_with_http_info(list_name, object_type_id, **kwargs)  # noqa: E501
 
-    def get_by_name_with_http_info(self, list_name, object_type_id, **kwargs):  # noqa: E501
+    async def get_by_name_with_http_info(self, list_name, object_type_id, **kwargs):  # noqa: E501
         """Fetch List by Name  # noqa: E501
 
         Fetch a single list by list name and object type.  # noqa: E501
@@ -683,7 +683,7 @@ class ListsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def remove(self, list_id, **kwargs):  # noqa: E501
+    async def remove(self, list_id, **kwargs):  # noqa: E501
         """Delete a List  # noqa: E501
 
         Delete a list by **ILS list ID**. Lists deleted through this endpoint can be restored up to 90-days following the delete. After 90-days, the list is purged and can no longer be restored.  # noqa: E501
@@ -711,9 +711,9 @@ class ListsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.remove_with_http_info(list_id, **kwargs)  # noqa: E501
+        return await self.remove_with_http_info(list_id, **kwargs)  # noqa: E501
 
-    def remove_with_http_info(self, list_id, **kwargs):  # noqa: E501
+    async def remove_with_http_info(self, list_id, **kwargs):  # noqa: E501
         """Delete a List  # noqa: E501
 
         Delete a list by **ILS list ID**. Lists deleted through this endpoint can be restored up to 90-days following the delete. After 90-days, the list is purged and can no longer be restored.  # noqa: E501
@@ -804,7 +804,7 @@ class ListsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def restore(self, list_id, **kwargs):  # noqa: E501
+    async def restore(self, list_id, **kwargs):  # noqa: E501
         """Restore a List  # noqa: E501
 
         Restore a previously deleted list by **ILS list ID**. Deleted lists are eligible to be restored up-to 90-days after the list has been deleted.  # noqa: E501
@@ -832,9 +832,9 @@ class ListsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.restore_with_http_info(list_id, **kwargs)  # noqa: E501
+        return await self.restore_with_http_info(list_id, **kwargs)  # noqa: E501
 
-    def restore_with_http_info(self, list_id, **kwargs):  # noqa: E501
+    async def restore_with_http_info(self, list_id, **kwargs):  # noqa: E501
         """Restore a List  # noqa: E501
 
         Restore a previously deleted list by **ILS list ID**. Deleted lists are eligible to be restored up-to 90-days after the list has been deleted.  # noqa: E501
@@ -925,7 +925,7 @@ class ListsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_list_filters(self, list_id, list_filter_update_request, **kwargs):  # noqa: E501
+    async def update_list_filters(self, list_id, list_filter_update_request, **kwargs):  # noqa: E501
         """Update List Filter Definition  # noqa: E501
 
         Update the filter branch definition of a `DYNAMIC` list. Once updated, the list memberships will be re-evaluated and updated to match the new definition.  # noqa: E501
@@ -957,9 +957,9 @@ class ListsApi(object):
         :rtype: ListUpdateResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_list_filters_with_http_info(list_id, list_filter_update_request, **kwargs)  # noqa: E501
+        return await self.update_list_filters_with_http_info(list_id, list_filter_update_request, **kwargs)  # noqa: E501
 
-    def update_list_filters_with_http_info(self, list_id, list_filter_update_request, **kwargs):  # noqa: E501
+    async def update_list_filters_with_http_info(self, list_id, list_filter_update_request, **kwargs):  # noqa: E501
         """Update List Filter Definition  # noqa: E501
 
         Update the filter branch definition of a `DYNAMIC` list. Once updated, the list memberships will be re-evaluated and updated to match the new definition.  # noqa: E501
@@ -1068,7 +1068,7 @@ class ListsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_name(self, list_id, **kwargs):  # noqa: E501
+    async def update_name(self, list_id, **kwargs):  # noqa: E501
         """Update List Name  # noqa: E501
 
         Update the name of a list. The name must be globally unique relative to all other public lists in the portal.  # noqa: E501
@@ -1100,9 +1100,9 @@ class ListsApi(object):
         :rtype: ListUpdateResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_name_with_http_info(list_id, **kwargs)  # noqa: E501
+        return await self.update_name_with_http_info(list_id, **kwargs)  # noqa: E501
 
-    def update_name_with_http_info(self, list_id, **kwargs):  # noqa: E501
+    async def update_name_with_http_info(self, list_id, **kwargs):  # noqa: E501
         """Update List Name  # noqa: E501
 
         Update the name of a list. The name must be globally unique relative to all other public lists in the portal.  # noqa: E501

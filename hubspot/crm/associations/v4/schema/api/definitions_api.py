@@ -311,7 +311,7 @@ class DefinitionsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def remove(self, from_object_type, to_object_type, association_type_id, **kwargs):  # noqa: E501
+    async def remove(self, from_object_type, to_object_type, association_type_id, **kwargs):  # noqa: E501
         """Delete  # noqa: E501
 
         Deletes an association definition  # noqa: E501
@@ -343,9 +343,9 @@ class DefinitionsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.remove_with_http_info(from_object_type, to_object_type, association_type_id, **kwargs)  # noqa: E501
+        return await self.remove_with_http_info(from_object_type, to_object_type, association_type_id, **kwargs)  # noqa: E501
 
-    def remove_with_http_info(self, from_object_type, to_object_type, association_type_id, **kwargs):  # noqa: E501
+    async def remove_with_http_info(self, from_object_type, to_object_type, association_type_id, **kwargs):  # noqa: E501
         """Delete  # noqa: E501
 
         Deletes an association definition  # noqa: E501

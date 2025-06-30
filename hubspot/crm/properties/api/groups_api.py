@@ -423,7 +423,7 @@ class GroupsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_name(self, object_type, group_name, **kwargs):  # noqa: E501
+    async def get_by_name(self, object_type, group_name, **kwargs):  # noqa: E501
         """Read a property group  # noqa: E501
 
         Read a property group identified by {groupName}.  # noqa: E501
@@ -453,9 +453,9 @@ class GroupsApi(object):
         :rtype: PropertyGroup
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_name_with_http_info(object_type, group_name, **kwargs)  # noqa: E501
+        return await self.get_by_name_with_http_info(object_type, group_name, **kwargs)  # noqa: E501
 
-    def get_by_name_with_http_info(self, object_type, group_name, **kwargs):  # noqa: E501
+    async def get_by_name_with_http_info(self, object_type, group_name, **kwargs):  # noqa: E501
         """Read a property group  # noqa: E501
 
         Read a property group identified by {groupName}.  # noqa: E501

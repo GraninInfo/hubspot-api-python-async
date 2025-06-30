@@ -33,7 +33,7 @@ class ChangePropertyApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def cancel(self, external_event_id, external_account_id, **kwargs):  # noqa: E501
+    async def cancel(self, external_event_id, external_account_id, **kwargs):  # noqa: E501
         """Mark a marketing event as cancelled  # noqa: E501
 
         Mark a marketing event as cancelled.  # noqa: E501
@@ -63,9 +63,9 @@ class ChangePropertyApi(object):
         :rtype: MarketingEventDefaultResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.cancel_with_http_info(external_event_id, external_account_id, **kwargs)  # noqa: E501
+        return await self.cancel_with_http_info(external_event_id, external_account_id, **kwargs)  # noqa: E501
 
-    def cancel_with_http_info(self, external_event_id, external_account_id, **kwargs):  # noqa: E501
+    async def cancel_with_http_info(self, external_event_id, external_account_id, **kwargs):  # noqa: E501
         """Mark a marketing event as cancelled  # noqa: E501
 
         Mark a marketing event as cancelled.  # noqa: E501

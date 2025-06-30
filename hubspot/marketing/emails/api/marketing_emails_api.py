@@ -158,7 +158,7 @@ class MarketingEmailsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def clone(self, content_clone_request_v_next, **kwargs):  # noqa: E501
+    async def clone(self, content_clone_request_v_next, **kwargs):  # noqa: E501
         """Clone a marketing email.  # noqa: E501
 
         This will create a duplicate email with the same properties as the original, with the exception of a unique ID.  # noqa: E501
@@ -186,9 +186,9 @@ class MarketingEmailsApi(object):
         :rtype: PublicEmail
         """
         kwargs["_return_http_data_only"] = True
-        return self.clone_with_http_info(content_clone_request_v_next, **kwargs)  # noqa: E501
+        return await self.clone_with_http_info(content_clone_request_v_next, **kwargs)  # noqa: E501
 
-    def clone_with_http_info(self, content_clone_request_v_next, **kwargs):  # noqa: E501
+    async def clone_with_http_info(self, content_clone_request_v_next, **kwargs):  # noqa: E501
         """Clone a marketing email.  # noqa: E501
 
         This will create a duplicate email with the same properties as the original, with the exception of a unique ID.  # noqa: E501
@@ -414,7 +414,7 @@ class MarketingEmailsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_ab_test_variation(self, ab_test_create_request_v_next, **kwargs):  # noqa: E501
+    async def create_ab_test_variation(self, ab_test_create_request_v_next, **kwargs):  # noqa: E501
         """Create an A/B test variation of a marketing email.  # noqa: E501
 
         Create a variation of a marketing email for an A/B test. The new variation will be created as a draft. If an active variation already exists, a new one won't be created.  # noqa: E501
@@ -442,9 +442,9 @@ class MarketingEmailsApi(object):
         :rtype: PublicEmail
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_ab_test_variation_with_http_info(ab_test_create_request_v_next, **kwargs)  # noqa: E501
+        return await self.create_ab_test_variation_with_http_info(ab_test_create_request_v_next, **kwargs)  # noqa: E501
 
-    def create_ab_test_variation_with_http_info(self, ab_test_create_request_v_next, **kwargs):  # noqa: E501
+    async def create_ab_test_variation_with_http_info(self, ab_test_create_request_v_next, **kwargs):  # noqa: E501
         """Create an A/B test variation of a marketing email.  # noqa: E501
 
         Create a variation of a marketing email for an A/B test. The new variation will be created as a draft. If an active variation already exists, a new one won't be created.  # noqa: E501
@@ -542,7 +542,7 @@ class MarketingEmailsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_ab_test_variation(self, email_id, **kwargs):  # noqa: E501
+    async def get_ab_test_variation(self, email_id, **kwargs):  # noqa: E501
         """Get the variation of a an A/B marketing email  # noqa: E501
 
         This endpoint lets you obtain the variation of an A/B marketing email. If the email is variation A (master) it will return variation B (variant) and vice versa.  # noqa: E501
@@ -570,9 +570,9 @@ class MarketingEmailsApi(object):
         :rtype: PublicEmail
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_ab_test_variation_with_http_info(email_id, **kwargs)  # noqa: E501
+        return await self.get_ab_test_variation_with_http_info(email_id, **kwargs)  # noqa: E501
 
-    def get_ab_test_variation_with_http_info(self, email_id, **kwargs):  # noqa: E501
+    async def get_ab_test_variation_with_http_info(self, email_id, **kwargs):  # noqa: E501
         """Get the variation of a an A/B marketing email  # noqa: E501
 
         This endpoint lets you obtain the variation of an A/B marketing email. If the email is variation A (master) it will return variation B (variant) and vice versa.  # noqa: E501
@@ -819,7 +819,7 @@ class MarketingEmailsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_draft(self, email_id, **kwargs):  # noqa: E501
+    async def get_draft(self, email_id, **kwargs):  # noqa: E501
         """Get draft version of a marketing email  # noqa: E501
 
         Get the draft version of an email (if it exists). If no draft version exists, the published email is returned.  # noqa: E501
@@ -847,9 +847,9 @@ class MarketingEmailsApi(object):
         :rtype: PublicEmail
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_draft_with_http_info(email_id, **kwargs)  # noqa: E501
+        return await self.get_draft_with_http_info(email_id, **kwargs)  # noqa: E501
 
-    def get_draft_with_http_info(self, email_id, **kwargs):  # noqa: E501
+    async def get_draft_with_http_info(self, email_id, **kwargs):  # noqa: E501
         """Get draft version of a marketing email  # noqa: E501
 
         Get the draft version of an email (if it exists). If no draft version exists, the published email is returned.  # noqa: E501
@@ -1171,7 +1171,7 @@ class MarketingEmailsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_revision_by_id(self, email_id, revision_id, **kwargs):  # noqa: E501
+    async def get_revision_by_id(self, email_id, revision_id, **kwargs):  # noqa: E501
         """Get a revision of a marketing email.  # noqa: E501
 
         Get a specific revision of a marketing email.  # noqa: E501
@@ -1201,9 +1201,9 @@ class MarketingEmailsApi(object):
         :rtype: VersionPublicEmail
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_revision_by_id_with_http_info(email_id, revision_id, **kwargs)  # noqa: E501
+        return await self.get_revision_by_id_with_http_info(email_id, revision_id, **kwargs)  # noqa: E501
 
-    def get_revision_by_id_with_http_info(self, email_id, revision_id, **kwargs):  # noqa: E501
+    async def get_revision_by_id_with_http_info(self, email_id, revision_id, **kwargs):  # noqa: E501
         """Get a revision of a marketing email.  # noqa: E501
 
         Get a specific revision of a marketing email.  # noqa: E501
@@ -1303,7 +1303,7 @@ class MarketingEmailsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_revisions(self, email_id, **kwargs):  # noqa: E501
+    async def get_revisions(self, email_id, **kwargs):  # noqa: E501
         """Get revisions of a marketing email  # noqa: E501
 
         Get a list of all versions of a marketing email, with each entry including the full state of that particular version. The current revision has the ID -1.  # noqa: E501
@@ -1337,9 +1337,9 @@ class MarketingEmailsApi(object):
         :rtype: CollectionResponseWithTotalVersionPublicEmail
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_revisions_with_http_info(email_id, **kwargs)  # noqa: E501
+        return await self.get_revisions_with_http_info(email_id, **kwargs)  # noqa: E501
 
-    def get_revisions_with_http_info(self, email_id, **kwargs):  # noqa: E501
+    async def get_revisions_with_http_info(self, email_id, **kwargs):  # noqa: E501
         """Get revisions of a marketing email  # noqa: E501
 
         Get a list of all versions of a marketing email, with each entry including the full state of that particular version. The current revision has the ID -1.  # noqa: E501
@@ -1444,7 +1444,7 @@ class MarketingEmailsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def publish_or_send(self, email_id, **kwargs):  # noqa: E501
+    async def publish_or_send(self, email_id, **kwargs):  # noqa: E501
         """Publish or send a marketing email.  # noqa: E501
 
         If you have a Marketing Hub Enterprise account or the transactional email add-on, you can use this endpoint to publish an automated email or send/schedule a regular email.  # noqa: E501
@@ -1472,9 +1472,9 @@ class MarketingEmailsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.publish_or_send_with_http_info(email_id, **kwargs)  # noqa: E501
+        return await self.publish_or_send_with_http_info(email_id, **kwargs)  # noqa: E501
 
-    def publish_or_send_with_http_info(self, email_id, **kwargs):  # noqa: E501
+    async def publish_or_send_with_http_info(self, email_id, **kwargs):  # noqa: E501
         """Publish or send a marketing email.  # noqa: E501
 
         If you have a Marketing Hub Enterprise account or the transactional email add-on, you can use this endpoint to publish an automated email or send/schedule a regular email.  # noqa: E501
@@ -1565,7 +1565,7 @@ class MarketingEmailsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def reset_draft(self, email_id, **kwargs):  # noqa: E501
+    async def reset_draft(self, email_id, **kwargs):  # noqa: E501
         """Reset Draft  # noqa: E501
 
         Resets the draft back to a copy of the live object.  # noqa: E501
@@ -1593,9 +1593,9 @@ class MarketingEmailsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.reset_draft_with_http_info(email_id, **kwargs)  # noqa: E501
+        return await self.reset_draft_with_http_info(email_id, **kwargs)  # noqa: E501
 
-    def reset_draft_with_http_info(self, email_id, **kwargs):  # noqa: E501
+    async def reset_draft_with_http_info(self, email_id, **kwargs):  # noqa: E501
         """Reset Draft  # noqa: E501
 
         Resets the draft back to a copy of the live object.  # noqa: E501
@@ -1686,7 +1686,7 @@ class MarketingEmailsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def restore_draft_revision(self, email_id, revision_id, **kwargs):  # noqa: E501
+    async def restore_draft_revision(self, email_id, revision_id, **kwargs):  # noqa: E501
         """Restore a revision of a marketing email to DRAFT state  # noqa: E501
 
         Restores a previous revision of a marketing email to DRAFT state. If there is currently something in the draft for that object, it is overwritten.   # noqa: E501
@@ -1716,9 +1716,9 @@ class MarketingEmailsApi(object):
         :rtype: PublicEmail
         """
         kwargs["_return_http_data_only"] = True
-        return self.restore_draft_revision_with_http_info(email_id, revision_id, **kwargs)  # noqa: E501
+        return await self.restore_draft_revision_with_http_info(email_id, revision_id, **kwargs)  # noqa: E501
 
-    def restore_draft_revision_with_http_info(self, email_id, revision_id, **kwargs):  # noqa: E501
+    async def restore_draft_revision_with_http_info(self, email_id, revision_id, **kwargs):  # noqa: E501
         """Restore a revision of a marketing email to DRAFT state  # noqa: E501
 
         Restores a previous revision of a marketing email to DRAFT state. If there is currently something in the draft for that object, it is overwritten.   # noqa: E501
@@ -1818,7 +1818,7 @@ class MarketingEmailsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def restore_revision(self, email_id, revision_id, **kwargs):  # noqa: E501
+    async def restore_revision(self, email_id, revision_id, **kwargs):  # noqa: E501
         """Restore a revision of a marketing email  # noqa: E501
 
         Restores a previous revision of a marketing email. The current revision becomes old, and the restored revision is given a new version number.  # noqa: E501
@@ -1848,9 +1848,9 @@ class MarketingEmailsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.restore_revision_with_http_info(email_id, revision_id, **kwargs)  # noqa: E501
+        return await self.restore_revision_with_http_info(email_id, revision_id, **kwargs)  # noqa: E501
 
-    def restore_revision_with_http_info(self, email_id, revision_id, **kwargs):  # noqa: E501
+    async def restore_revision_with_http_info(self, email_id, revision_id, **kwargs):  # noqa: E501
         """Restore a revision of a marketing email  # noqa: E501
 
         Restores a previous revision of a marketing email. The current revision becomes old, and the restored revision is given a new version number.  # noqa: E501
@@ -1948,7 +1948,7 @@ class MarketingEmailsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def unpublish_or_cancel(self, email_id, **kwargs):  # noqa: E501
+    async def unpublish_or_cancel(self, email_id, **kwargs):  # noqa: E501
         """Unpublish or cancel a marketing email.  # noqa: E501
 
         If you have a Marketing Hub Enterprise account or the transactional email add-on, you can use this endpoint to unpublish an automated email or cancel a regular email. If the email is already in the process of being sent, canceling might not be possible.  # noqa: E501
@@ -1976,9 +1976,9 @@ class MarketingEmailsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.unpublish_or_cancel_with_http_info(email_id, **kwargs)  # noqa: E501
+        return await self.unpublish_or_cancel_with_http_info(email_id, **kwargs)  # noqa: E501
 
-    def unpublish_or_cancel_with_http_info(self, email_id, **kwargs):  # noqa: E501
+    async def unpublish_or_cancel_with_http_info(self, email_id, **kwargs):  # noqa: E501
         """Unpublish or cancel a marketing email.  # noqa: E501
 
         If you have a Marketing Hub Enterprise account or the transactional email add-on, you can use this endpoint to unpublish an automated email or cancel a regular email. If the email is already in the process of being sent, canceling might not be possible.  # noqa: E501
@@ -2212,7 +2212,7 @@ class MarketingEmailsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def upsert_draft(self, email_id, email_update_request, **kwargs):  # noqa: E501
+    async def upsert_draft(self, email_id, email_update_request, **kwargs):  # noqa: E501
         """Create or update draft version  # noqa: E501
 
         Create or update the draft version of a marketing email. If no draft exists, the system creates a draft from the current “live” email then applies the request body to that draft. The draft version only lives on the buffer—the email is not cloned.  # noqa: E501
@@ -2242,9 +2242,9 @@ class MarketingEmailsApi(object):
         :rtype: PublicEmail
         """
         kwargs["_return_http_data_only"] = True
-        return self.upsert_draft_with_http_info(email_id, email_update_request, **kwargs)  # noqa: E501
+        return await self.upsert_draft_with_http_info(email_id, email_update_request, **kwargs)  # noqa: E501
 
-    def upsert_draft_with_http_info(self, email_id, email_update_request, **kwargs):  # noqa: E501
+    async def upsert_draft_with_http_info(self, email_id, email_update_request, **kwargs):  # noqa: E501
         """Create or update draft version  # noqa: E501
 
         Create or update the draft version of a marketing email. If no draft exists, the system creates a draft from the current “live” email then applies the request body to that draft. The draft version only lives on the buffer—the email is not cloned.  # noqa: E501

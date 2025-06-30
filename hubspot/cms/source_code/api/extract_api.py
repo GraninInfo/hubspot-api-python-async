@@ -33,7 +33,7 @@ class ExtractApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def do_async(self, file_extract_request, **kwargs):  # noqa: E501
+    async def do_async(self, file_extract_request, **kwargs):  # noqa: E501
         """Extract a zip file  # noqa: E501
 
         Extract a zip file in the developer file system. Extraction status can be checked with the `/extract/async/tasks/taskId/status` endpoint below.  # noqa: E501
@@ -61,9 +61,9 @@ class ExtractApi(object):
         :rtype: TaskLocator
         """
         kwargs["_return_http_data_only"] = True
-        return self.do_async_with_http_info(file_extract_request, **kwargs)  # noqa: E501
+        return await self.do_async_with_http_info(file_extract_request, **kwargs)  # noqa: E501
 
-    def do_async_with_http_info(self, file_extract_request, **kwargs):  # noqa: E501
+    async def do_async_with_http_info(self, file_extract_request, **kwargs):  # noqa: E501
         """Extract a zip file  # noqa: E501
 
         Extract a zip file in the developer file system. Extraction status can be checked with the `/extract/async/tasks/taskId/status` endpoint below.  # noqa: E501
@@ -161,7 +161,7 @@ class ExtractApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_async_status(self, task_id, **kwargs):  # noqa: E501
+    async def get_async_status(self, task_id, **kwargs):  # noqa: E501
         """Get extraction status  # noqa: E501
 
         Get the status of an extraction by the `taskId` returned from the initial `extract/async` request.  # noqa: E501
@@ -189,9 +189,9 @@ class ExtractApi(object):
         :rtype: ActionResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_async_status_with_http_info(task_id, **kwargs)  # noqa: E501
+        return await self.get_async_status_with_http_info(task_id, **kwargs)  # noqa: E501
 
-    def get_async_status_with_http_info(self, task_id, **kwargs):  # noqa: E501
+    async def get_async_status_with_http_info(self, task_id, **kwargs):  # noqa: E501
         """Get extraction status  # noqa: E501
 
         Get the status of an extraction by the `taskId` returned from the initial `extract/async` request.  # noqa: E501

@@ -163,7 +163,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def archive_by_object_id(self, object_id, **kwargs):  # noqa: E501
+    async def archive_by_object_id(self, object_id, **kwargs):  # noqa: E501
         """Delete Marketing Event by objectId  # noqa: E501
 
         Deletes the existing Marketing Event with the specified objectId, if it exists.  # noqa: E501
@@ -191,9 +191,9 @@ class BasicApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.archive_by_object_id_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.archive_by_object_id_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def archive_by_object_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def archive_by_object_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Delete Marketing Event by objectId  # noqa: E501
 
         Deletes the existing Marketing Event with the specified objectId, if it exists.  # noqa: E501
@@ -538,7 +538,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_by_object_id(self, object_id, **kwargs):  # noqa: E501
+    async def get_by_object_id(self, object_id, **kwargs):  # noqa: E501
         """Get Marketing Event by objectId  # noqa: E501
 
         Returns the details of a Marketing Event with the specified objectId, if it exists.  # noqa: E501
@@ -566,9 +566,9 @@ class BasicApi(object):
         :rtype: MarketingEventPublicReadResponseV2
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_by_object_id_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.get_by_object_id_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def get_by_object_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def get_by_object_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Get Marketing Event by objectId  # noqa: E501
 
         Returns the details of a Marketing Event with the specified objectId, if it exists.  # noqa: E501
@@ -661,7 +661,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_details(self, external_event_id, external_account_id, **kwargs):  # noqa: E501
+    async def get_details(self, external_event_id, external_account_id, **kwargs):  # noqa: E501
         """Get Marketing Event by External IDs  # noqa: E501
 
         Returns the details of a Marketing Event with the specified externalAccountId, externalEventId, if it exists.  Only Marketing Events created by the same app making the request can be retrieved.  # noqa: E501
@@ -691,9 +691,9 @@ class BasicApi(object):
         :rtype: MarketingEventPublicReadResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_details_with_http_info(external_event_id, external_account_id, **kwargs)  # noqa: E501
+        return await self.get_details_with_http_info(external_event_id, external_account_id, **kwargs)  # noqa: E501
 
-    def get_details_with_http_info(self, external_event_id, external_account_id, **kwargs):  # noqa: E501
+    async def get_details_with_http_info(self, external_event_id, external_account_id, **kwargs):  # noqa: E501
         """Get Marketing Event by External IDs  # noqa: E501
 
         Returns the details of a Marketing Event with the specified externalAccountId, externalEventId, if it exists.  Only Marketing Events created by the same app making the request can be retrieved.  # noqa: E501
@@ -939,7 +939,7 @@ class BasicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_by_object_id(self, object_id, marketing_event_public_update_request_v2, **kwargs):  # noqa: E501
+    async def update_by_object_id(self, object_id, marketing_event_public_update_request_v2, **kwargs):  # noqa: E501
         """Update Marketing Event by objectId  # noqa: E501
 
         Updates the details of an existing Marketing Event identified by its objectId, if it exists.  # noqa: E501
@@ -969,9 +969,9 @@ class BasicApi(object):
         :rtype: MarketingEventPublicDefaultResponseV2
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_by_object_id_with_http_info(object_id, marketing_event_public_update_request_v2, **kwargs)  # noqa: E501
+        return await self.update_by_object_id_with_http_info(object_id, marketing_event_public_update_request_v2, **kwargs)  # noqa: E501
 
-    def update_by_object_id_with_http_info(self, object_id, marketing_event_public_update_request_v2, **kwargs):  # noqa: E501
+    async def update_by_object_id_with_http_info(self, object_id, marketing_event_public_update_request_v2, **kwargs):  # noqa: E501
         """Update Marketing Event by objectId  # noqa: E501
 
         Updates the details of an existing Marketing Event identified by its objectId, if it exists.  # noqa: E501

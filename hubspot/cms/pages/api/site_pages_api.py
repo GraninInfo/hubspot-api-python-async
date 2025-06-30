@@ -412,7 +412,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def clone(self, content_clone_request_v_next, **kwargs):  # noqa: E501
+    async def clone(self, content_clone_request_v_next, **kwargs):  # noqa: E501
         """Clone a Site Page  # noqa: E501
 
         Clone a Site Page  # noqa: E501
@@ -440,9 +440,9 @@ class SitePagesApi(object):
         :rtype: Page
         """
         kwargs["_return_http_data_only"] = True
-        return self.clone_with_http_info(content_clone_request_v_next, **kwargs)  # noqa: E501
+        return await self.clone_with_http_info(content_clone_request_v_next, **kwargs)  # noqa: E501
 
-    def clone_with_http_info(self, content_clone_request_v_next, **kwargs):  # noqa: E501
+    async def clone_with_http_info(self, content_clone_request_v_next, **kwargs):  # noqa: E501
         """Clone a Site Page  # noqa: E501
 
         Clone a Site Page  # noqa: E501
@@ -666,7 +666,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_ab_test_variation(self, ab_test_create_request_v_next, **kwargs):  # noqa: E501
+    async def create_ab_test_variation(self, ab_test_create_request_v_next, **kwargs):  # noqa: E501
         """Create a new A/B test variation  # noqa: E501
 
         Create a new A/B test variation based on the information provided in the request body.   # noqa: E501
@@ -694,9 +694,9 @@ class SitePagesApi(object):
         :rtype: Page
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_ab_test_variation_with_http_info(ab_test_create_request_v_next, **kwargs)  # noqa: E501
+        return await self.create_ab_test_variation_with_http_info(ab_test_create_request_v_next, **kwargs)  # noqa: E501
 
-    def create_ab_test_variation_with_http_info(self, ab_test_create_request_v_next, **kwargs):  # noqa: E501
+    async def create_ab_test_variation_with_http_info(self, ab_test_create_request_v_next, **kwargs):  # noqa: E501
         """Create a new A/B test variation  # noqa: E501
 
         Create a new A/B test variation based on the information provided in the request body.   # noqa: E501
@@ -1051,7 +1051,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def detach_from_lang_group(self, detach_from_lang_group_request_v_next, **kwargs):  # noqa: E501
+    async def detach_from_lang_group(self, detach_from_lang_group_request_v_next, **kwargs):  # noqa: E501
         """Detach a site page from a multi-language group  # noqa: E501
 
         Detach a site page from a multi-language group.  # noqa: E501
@@ -1079,9 +1079,9 @@ class SitePagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.detach_from_lang_group_with_http_info(detach_from_lang_group_request_v_next, **kwargs)  # noqa: E501
+        return await self.detach_from_lang_group_with_http_info(detach_from_lang_group_request_v_next, **kwargs)  # noqa: E501
 
-    def detach_from_lang_group_with_http_info(self, detach_from_lang_group_request_v_next, **kwargs):  # noqa: E501
+    async def detach_from_lang_group_with_http_info(self, detach_from_lang_group_request_v_next, **kwargs):  # noqa: E501
         """Detach a site page from a multi-language group  # noqa: E501
 
         Detach a site page from a multi-language group.  # noqa: E501
@@ -1177,7 +1177,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def end_active_ab_test(self, ab_test_end_request_v_next, **kwargs):  # noqa: E501
+    async def end_active_ab_test(self, ab_test_end_request_v_next, **kwargs):  # noqa: E501
         """End an active A/B test  # noqa: E501
 
         End an active A/B test and designate a winner.  # noqa: E501
@@ -1205,9 +1205,9 @@ class SitePagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.end_active_ab_test_with_http_info(ab_test_end_request_v_next, **kwargs)  # noqa: E501
+        return await self.end_active_ab_test_with_http_info(ab_test_end_request_v_next, **kwargs)  # noqa: E501
 
-    def end_active_ab_test_with_http_info(self, ab_test_end_request_v_next, **kwargs):  # noqa: E501
+    async def end_active_ab_test_with_http_info(self, ab_test_end_request_v_next, **kwargs):  # noqa: E501
         """End an active A/B test  # noqa: E501
 
         End an active A/B test and designate a winner.  # noqa: E501
@@ -1438,7 +1438,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_draft_by_id(self, object_id, **kwargs):  # noqa: E501
+    async def get_draft_by_id(self, object_id, **kwargs):  # noqa: E501
         """Retrieve the full draft version of the Site Page  # noqa: E501
 
         Retrieve the full draft version of the Site Page.  # noqa: E501
@@ -1466,9 +1466,9 @@ class SitePagesApi(object):
         :rtype: Page
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_draft_by_id_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.get_draft_by_id_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def get_draft_by_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def get_draft_by_id_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Retrieve the full draft version of the Site Page  # noqa: E501
 
         Retrieve the full draft version of the Site Page.  # noqa: E501
@@ -1742,7 +1742,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_previous_version(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def get_previous_version(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Retrieves a previous version of a Site Page  # noqa: E501
 
         Retrieves a previous version of a Site Page  # noqa: E501
@@ -1772,9 +1772,9 @@ class SitePagesApi(object):
         :rtype: VersionPage
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_previous_version_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
+        return await self.get_previous_version_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
 
-    def get_previous_version_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def get_previous_version_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Retrieves a previous version of a Site Page  # noqa: E501
 
         Retrieves a previous version of a Site Page  # noqa: E501
@@ -1874,7 +1874,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_previous_versions(self, object_id, **kwargs):  # noqa: E501
+    async def get_previous_versions(self, object_id, **kwargs):  # noqa: E501
         """Retrieves all the previous versions of a Site Page  # noqa: E501
 
         Retrieves all the previous versions of a Site Page.  # noqa: E501
@@ -1908,9 +1908,9 @@ class SitePagesApi(object):
         :rtype: CollectionResponseWithTotalVersionPage
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_previous_versions_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.get_previous_versions_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def get_previous_versions_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def get_previous_versions_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Retrieves all the previous versions of a Site Page  # noqa: E501
 
         Retrieves all the previous versions of a Site Page.  # noqa: E501
@@ -2015,7 +2015,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def push_live(self, object_id, **kwargs):  # noqa: E501
+    async def push_live(self, object_id, **kwargs):  # noqa: E501
         """Push Site Page draft edits live  # noqa: E501
 
         Take any changes from the draft version of the Site Page and apply them to the live version.  # noqa: E501
@@ -2043,9 +2043,9 @@ class SitePagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.push_live_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.push_live_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def push_live_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def push_live_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Push Site Page draft edits live  # noqa: E501
 
         Take any changes from the draft version of the Site Page and apply them to the live version.  # noqa: E501
@@ -2136,7 +2136,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def read_batch(self, batch_input_string, **kwargs):  # noqa: E501
+    async def read_batch(self, batch_input_string, **kwargs):  # noqa: E501
         """Retrieve a batch of Site Pages  # noqa: E501
 
         Retrieve the Site Page objects identified in the request body.  # noqa: E501
@@ -2166,9 +2166,9 @@ class SitePagesApi(object):
         :rtype: BatchResponsePage
         """
         kwargs["_return_http_data_only"] = True
-        return self.read_batch_with_http_info(batch_input_string, **kwargs)  # noqa: E501
+        return await self.read_batch_with_http_info(batch_input_string, **kwargs)  # noqa: E501
 
-    def read_batch_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
+    async def read_batch_with_http_info(self, batch_input_string, **kwargs):  # noqa: E501
         """Retrieve a batch of Site Pages  # noqa: E501
 
         Retrieve the Site Page objects identified in the request body.  # noqa: E501
@@ -2271,7 +2271,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def rerun_previous_ab_test(self, ab_test_rerun_request_v_next, **kwargs):  # noqa: E501
+    async def rerun_previous_ab_test(self, ab_test_rerun_request_v_next, **kwargs):  # noqa: E501
         """Rerun a previous A/B test  # noqa: E501
 
         Rerun a previous A/B test.  # noqa: E501
@@ -2299,9 +2299,9 @@ class SitePagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.rerun_previous_ab_test_with_http_info(ab_test_rerun_request_v_next, **kwargs)  # noqa: E501
+        return await self.rerun_previous_ab_test_with_http_info(ab_test_rerun_request_v_next, **kwargs)  # noqa: E501
 
-    def rerun_previous_ab_test_with_http_info(self, ab_test_rerun_request_v_next, **kwargs):  # noqa: E501
+    async def rerun_previous_ab_test_with_http_info(self, ab_test_rerun_request_v_next, **kwargs):  # noqa: E501
         """Rerun a previous A/B test  # noqa: E501
 
         Rerun a previous A/B test.  # noqa: E501
@@ -2397,7 +2397,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def reset_draft(self, object_id, **kwargs):  # noqa: E501
+    async def reset_draft(self, object_id, **kwargs):  # noqa: E501
         """Reset the Site Page draft to the live version  # noqa: E501
 
         Discards any edits and resets the draft to the live version.  # noqa: E501
@@ -2425,9 +2425,9 @@ class SitePagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.reset_draft_with_http_info(object_id, **kwargs)  # noqa: E501
+        return await self.reset_draft_with_http_info(object_id, **kwargs)  # noqa: E501
 
-    def reset_draft_with_http_info(self, object_id, **kwargs):  # noqa: E501
+    async def reset_draft_with_http_info(self, object_id, **kwargs):  # noqa: E501
         """Reset the Site Page draft to the live version  # noqa: E501
 
         Discards any edits and resets the draft to the live version.  # noqa: E501
@@ -2518,7 +2518,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def restore_previous_version(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def restore_previous_version(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Restore a previous version of a Site Page  # noqa: E501
 
         Takes a specified version of a Site Page and restores it.  # noqa: E501
@@ -2548,9 +2548,9 @@ class SitePagesApi(object):
         :rtype: Page
         """
         kwargs["_return_http_data_only"] = True
-        return self.restore_previous_version_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
+        return await self.restore_previous_version_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
 
-    def restore_previous_version_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def restore_previous_version_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Restore a previous version of a Site Page  # noqa: E501
 
         Takes a specified version of a Site Page and restores it.  # noqa: E501
@@ -2650,7 +2650,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def restore_previous_version_to_draft(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def restore_previous_version_to_draft(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Restore a previous version of a Site Page, to the draft version of the Site Page  # noqa: E501
 
         Takes a specified version of a Site Page, sets it as the new draft version of the Site Page.  # noqa: E501
@@ -2680,9 +2680,9 @@ class SitePagesApi(object):
         :rtype: Page
         """
         kwargs["_return_http_data_only"] = True
-        return self.restore_previous_version_to_draft_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
+        return await self.restore_previous_version_to_draft_with_http_info(object_id, revision_id, **kwargs)  # noqa: E501
 
-    def restore_previous_version_to_draft_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
+    async def restore_previous_version_to_draft_with_http_info(self, object_id, revision_id, **kwargs):  # noqa: E501
         """Restore a previous version of a Site Page, to the draft version of the Site Page  # noqa: E501
 
         Takes a specified version of a Site Page, sets it as the new draft version of the Site Page.  # noqa: E501
@@ -2782,7 +2782,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def schedule(self, content_schedule_request_v_next, **kwargs):  # noqa: E501
+    async def schedule(self, content_schedule_request_v_next, **kwargs):  # noqa: E501
         """Schedule a Site Page to be Published  # noqa: E501
 
         Schedule a Site Page to be Published  # noqa: E501
@@ -2810,9 +2810,9 @@ class SitePagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.schedule_with_http_info(content_schedule_request_v_next, **kwargs)  # noqa: E501
+        return await self.schedule_with_http_info(content_schedule_request_v_next, **kwargs)  # noqa: E501
 
-    def schedule_with_http_info(self, content_schedule_request_v_next, **kwargs):  # noqa: E501
+    async def schedule_with_http_info(self, content_schedule_request_v_next, **kwargs):  # noqa: E501
         """Schedule a Site Page to be Published  # noqa: E501
 
         Schedule a Site Page to be Published  # noqa: E501
@@ -2908,7 +2908,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def set_lang_primary(self, set_new_language_primary_request_v_next, **kwargs):  # noqa: E501
+    async def set_lang_primary(self, set_new_language_primary_request_v_next, **kwargs):  # noqa: E501
         """Set a new primary language  # noqa: E501
 
         Set a site page as the primary language of a multi-language group.  # noqa: E501
@@ -2936,9 +2936,9 @@ class SitePagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.set_lang_primary_with_http_info(set_new_language_primary_request_v_next, **kwargs)  # noqa: E501
+        return await self.set_lang_primary_with_http_info(set_new_language_primary_request_v_next, **kwargs)  # noqa: E501
 
-    def set_lang_primary_with_http_info(self, set_new_language_primary_request_v_next, **kwargs):  # noqa: E501
+    async def set_lang_primary_with_http_info(self, set_new_language_primary_request_v_next, **kwargs):  # noqa: E501
         """Set a new primary language  # noqa: E501
 
         Set a site page as the primary language of a multi-language group.  # noqa: E501
@@ -3177,7 +3177,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_batch(self, batch_input_json_node, **kwargs):  # noqa: E501
+    async def update_batch(self, batch_input_json_node, **kwargs):  # noqa: E501
         """Update a batch of Site Pages  # noqa: E501
 
         Update the Site Page objects identified in the request body.  # noqa: E501
@@ -3207,9 +3207,9 @@ class SitePagesApi(object):
         :rtype: BatchResponsePage
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_batch_with_http_info(batch_input_json_node, **kwargs)  # noqa: E501
+        return await self.update_batch_with_http_info(batch_input_json_node, **kwargs)  # noqa: E501
 
-    def update_batch_with_http_info(self, batch_input_json_node, **kwargs):  # noqa: E501
+    async def update_batch_with_http_info(self, batch_input_json_node, **kwargs):  # noqa: E501
         """Update a batch of Site Pages  # noqa: E501
 
         Update the Site Page objects identified in the request body.  # noqa: E501
@@ -3312,7 +3312,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_draft(self, object_id, page, **kwargs):  # noqa: E501
+    async def update_draft(self, object_id, page, **kwargs):  # noqa: E501
         """Update a Site Page draft  # noqa: E501
 
         Sparse updates the draft version of a single Site Page object identified by the id in the path. You only need to specify the column values that you are modifying.   # noqa: E501
@@ -3342,9 +3342,9 @@ class SitePagesApi(object):
         :rtype: Page
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_draft_with_http_info(object_id, page, **kwargs)  # noqa: E501
+        return await self.update_draft_with_http_info(object_id, page, **kwargs)  # noqa: E501
 
-    def update_draft_with_http_info(self, object_id, page, **kwargs):  # noqa: E501
+    async def update_draft_with_http_info(self, object_id, page, **kwargs):  # noqa: E501
         """Update a Site Page draft  # noqa: E501
 
         Sparse updates the draft version of a single Site Page object identified by the id in the path. You only need to specify the column values that you are modifying.   # noqa: E501
@@ -3449,7 +3449,7 @@ class SitePagesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_langs(self, update_languages_request_v_next, **kwargs):  # noqa: E501
+    async def update_langs(self, update_languages_request_v_next, **kwargs):  # noqa: E501
         """Update languages of multi-language group  # noqa: E501
 
         Explicitly set new languages for each site page in a multi-language group.  # noqa: E501
@@ -3477,9 +3477,9 @@ class SitePagesApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_langs_with_http_info(update_languages_request_v_next, **kwargs)  # noqa: E501
+        return await self.update_langs_with_http_info(update_languages_request_v_next, **kwargs)  # noqa: E501
 
-    def update_langs_with_http_info(self, update_languages_request_v_next, **kwargs):  # noqa: E501
+    async def update_langs_with_http_info(self, update_languages_request_v_next, **kwargs):  # noqa: E501
         """Update languages of multi-language group  # noqa: E501
 
         Explicitly set new languages for each site page in a multi-language group.  # noqa: E501

@@ -33,7 +33,7 @@ class SubscriberStateChangesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def upsert_by_contact_email(self, external_event_id, subscriber_state, external_account_id, batch_input_marketing_event_email_subscriber, **kwargs):  # noqa: E501
+    async def upsert_by_contact_email(self, external_event_id, subscriber_state, external_account_id, batch_input_marketing_event_email_subscriber, **kwargs):  # noqa: E501
         """Record a subscriber state by contact email  # noqa: E501
 
         Record a subscriber state between multiple HubSpot contacts and a marketing event, using contact email addresses. Note that the contact must already exist in HubSpot; a contact will not be created. The contactProperties field is used only when creating a new contact. These properties will not update existing contacts.   # noqa: E501
@@ -67,9 +67,9 @@ class SubscriberStateChangesApi(object):
         :rtype: Error
         """
         kwargs["_return_http_data_only"] = True
-        return self.upsert_by_contact_email_with_http_info(external_event_id, subscriber_state, external_account_id, batch_input_marketing_event_email_subscriber, **kwargs)  # noqa: E501
+        return await self.upsert_by_contact_email_with_http_info(external_event_id, subscriber_state, external_account_id, batch_input_marketing_event_email_subscriber, **kwargs)  # noqa: E501
 
-    def upsert_by_contact_email_with_http_info(self, external_event_id, subscriber_state, external_account_id, batch_input_marketing_event_email_subscriber, **kwargs):  # noqa: E501
+    async def upsert_by_contact_email_with_http_info(self, external_event_id, subscriber_state, external_account_id, batch_input_marketing_event_email_subscriber, **kwargs):  # noqa: E501
         """Record a subscriber state by contact email  # noqa: E501
 
         Record a subscriber state between multiple HubSpot contacts and a marketing event, using contact email addresses. Note that the contact must already exist in HubSpot; a contact will not be created. The contactProperties field is used only when creating a new contact. These properties will not update existing contacts.   # noqa: E501
@@ -186,7 +186,7 @@ class SubscriberStateChangesApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def upsert_by_contact_id(self, external_event_id, subscriber_state, external_account_id, batch_input_marketing_event_subscriber, **kwargs):  # noqa: E501
+    async def upsert_by_contact_id(self, external_event_id, subscriber_state, external_account_id, batch_input_marketing_event_subscriber, **kwargs):  # noqa: E501
         """Record a subscriber state by contact ID  # noqa: E501
 
         Record a subscriber state between multiple HubSpot contacts and a marketing event, using HubSpot contact IDs. Note that the contact must already exist in HubSpot; a contact will not be created.  # noqa: E501
@@ -220,9 +220,9 @@ class SubscriberStateChangesApi(object):
         :rtype: Error
         """
         kwargs["_return_http_data_only"] = True
-        return self.upsert_by_contact_id_with_http_info(external_event_id, subscriber_state, external_account_id, batch_input_marketing_event_subscriber, **kwargs)  # noqa: E501
+        return await self.upsert_by_contact_id_with_http_info(external_event_id, subscriber_state, external_account_id, batch_input_marketing_event_subscriber, **kwargs)  # noqa: E501
 
-    def upsert_by_contact_id_with_http_info(self, external_event_id, subscriber_state, external_account_id, batch_input_marketing_event_subscriber, **kwargs):  # noqa: E501
+    async def upsert_by_contact_id_with_http_info(self, external_event_id, subscriber_state, external_account_id, batch_input_marketing_event_subscriber, **kwargs):  # noqa: E501
         """Record a subscriber state by contact ID  # noqa: E501
 
         Record a subscriber state between multiple HubSpot contacts and a marketing event, using HubSpot contact IDs. Note that the contact must already exist in HubSpot; a contact will not be created.  # noqa: E501

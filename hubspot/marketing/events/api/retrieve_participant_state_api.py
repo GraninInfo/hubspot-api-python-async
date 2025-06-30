@@ -33,7 +33,7 @@ class RetrieveParticipantStateApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_participations_breakdown_by_contact_id(self, contact_identifier, **kwargs):  # noqa: E501
+    async def get_participations_breakdown_by_contact_id(self, contact_identifier, **kwargs):  # noqa: E501
         """Read participations breakdown by Contact identifier  # noqa: E501
 
         Read Contact's participations by identifier - email or internal id.  # noqa: E501
@@ -67,9 +67,9 @@ class RetrieveParticipantStateApi(object):
         :rtype: CollectionResponseWithTotalParticipationBreakdownForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_participations_breakdown_by_contact_id_with_http_info(contact_identifier, **kwargs)  # noqa: E501
+        return await self.get_participations_breakdown_by_contact_id_with_http_info(contact_identifier, **kwargs)  # noqa: E501
 
-    def get_participations_breakdown_by_contact_id_with_http_info(self, contact_identifier, **kwargs):  # noqa: E501
+    async def get_participations_breakdown_by_contact_id_with_http_info(self, contact_identifier, **kwargs):  # noqa: E501
         """Read participations breakdown by Contact identifier  # noqa: E501
 
         Read Contact's participations by identifier - email or internal id.  # noqa: E501
@@ -174,7 +174,7 @@ class RetrieveParticipantStateApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_participations_breakdown_by_external_event_id(self, external_account_id, external_event_id, **kwargs):  # noqa: E501
+    async def get_participations_breakdown_by_external_event_id(self, external_account_id, external_event_id, **kwargs):  # noqa: E501
         """Read participations breakdown by Marketing Event external identifier  # noqa: E501
 
         Read Marketing event's participations breakdown with optional filters by externalAccountId and externalEventId pair.  # noqa: E501
@@ -212,9 +212,9 @@ class RetrieveParticipantStateApi(object):
         :rtype: CollectionResponseWithTotalParticipationBreakdownForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_participations_breakdown_by_external_event_id_with_http_info(external_account_id, external_event_id, **kwargs)  # noqa: E501
+        return await self.get_participations_breakdown_by_external_event_id_with_http_info(external_account_id, external_event_id, **kwargs)  # noqa: E501
 
-    def get_participations_breakdown_by_external_event_id_with_http_info(self, external_account_id, external_event_id, **kwargs):  # noqa: E501
+    async def get_participations_breakdown_by_external_event_id_with_http_info(self, external_account_id, external_event_id, **kwargs):  # noqa: E501
         """Read participations breakdown by Marketing Event external identifier  # noqa: E501
 
         Read Marketing event's participations breakdown with optional filters by externalAccountId and externalEventId pair.  # noqa: E501
@@ -330,7 +330,7 @@ class RetrieveParticipantStateApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_participations_breakdown_by_marketing_event_id(self, marketing_event_id, **kwargs):  # noqa: E501
+    async def get_participations_breakdown_by_marketing_event_id(self, marketing_event_id, **kwargs):  # noqa: E501
         """Read participations breakdown by Marketing Event internal identifier  # noqa: E501
 
         Read Marketing event's participations breakdown with optional filters by internal identifier marketingEventId.  # noqa: E501
@@ -366,9 +366,9 @@ class RetrieveParticipantStateApi(object):
         :rtype: CollectionResponseWithTotalParticipationBreakdownForwardPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_participations_breakdown_by_marketing_event_id_with_http_info(marketing_event_id, **kwargs)  # noqa: E501
+        return await self.get_participations_breakdown_by_marketing_event_id_with_http_info(marketing_event_id, **kwargs)  # noqa: E501
 
-    def get_participations_breakdown_by_marketing_event_id_with_http_info(self, marketing_event_id, **kwargs):  # noqa: E501
+    async def get_participations_breakdown_by_marketing_event_id_with_http_info(self, marketing_event_id, **kwargs):  # noqa: E501
         """Read participations breakdown by Marketing Event internal identifier  # noqa: E501
 
         Read Marketing event's participations breakdown with optional filters by internal identifier marketingEventId.  # noqa: E501
@@ -477,7 +477,7 @@ class RetrieveParticipantStateApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_participations_counters_by_event_external_id(self, external_account_id, external_event_id, **kwargs):  # noqa: E501
+    async def get_participations_counters_by_event_external_id(self, external_account_id, external_event_id, **kwargs):  # noqa: E501
         """Read participations counters by Marketing Event external identifier  # noqa: E501
 
         Read Marketing event's participations counters by externalAccountId and externalEventId pair.  # noqa: E501
@@ -507,9 +507,9 @@ class RetrieveParticipantStateApi(object):
         :rtype: AttendanceCounters
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_participations_counters_by_event_external_id_with_http_info(external_account_id, external_event_id, **kwargs)  # noqa: E501
+        return await self.get_participations_counters_by_event_external_id_with_http_info(external_account_id, external_event_id, **kwargs)  # noqa: E501
 
-    def get_participations_counters_by_event_external_id_with_http_info(self, external_account_id, external_event_id, **kwargs):  # noqa: E501
+    async def get_participations_counters_by_event_external_id_with_http_info(self, external_account_id, external_event_id, **kwargs):  # noqa: E501
         """Read participations counters by Marketing Event external identifier  # noqa: E501
 
         Read Marketing event's participations counters by externalAccountId and externalEventId pair.  # noqa: E501
@@ -609,7 +609,7 @@ class RetrieveParticipantStateApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_participations_counters_by_marketing_event_id(self, marketing_event_id, **kwargs):  # noqa: E501
+    async def get_participations_counters_by_marketing_event_id(self, marketing_event_id, **kwargs):  # noqa: E501
         """Read participations counters by Marketing Event internal identifier  # noqa: E501
 
         Read Marketing event's participations counters by internal identifier marketingEventId.  # noqa: E501
@@ -637,9 +637,9 @@ class RetrieveParticipantStateApi(object):
         :rtype: AttendanceCounters
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_participations_counters_by_marketing_event_id_with_http_info(marketing_event_id, **kwargs)  # noqa: E501
+        return await self.get_participations_counters_by_marketing_event_id_with_http_info(marketing_event_id, **kwargs)  # noqa: E501
 
-    def get_participations_counters_by_marketing_event_id_with_http_info(self, marketing_event_id, **kwargs):  # noqa: E501
+    async def get_participations_counters_by_marketing_event_id_with_http_info(self, marketing_event_id, **kwargs):  # noqa: E501
         """Read participations counters by Marketing Event internal identifier  # noqa: E501
 
         Read Marketing event's participations counters by internal identifier marketingEventId.  # noqa: E501

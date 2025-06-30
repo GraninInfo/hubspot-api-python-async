@@ -221,7 +221,7 @@ class EventsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_types(self, **kwargs):  # noqa: E501
+    async def get_types(self, **kwargs):  # noqa: E501
         """Event Types  # noqa: E501
 
         This endpoint returns a list of event type names which are visible to you. You may use these event type names to query the API for specific event instances of a desired type.  # noqa: E501
@@ -247,9 +247,9 @@ class EventsApi(object):
         :rtype: VisibleExternalEventTypeNames
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_types_with_http_info(**kwargs)  # noqa: E501
+        return await self.get_types_with_http_info(**kwargs)  # noqa: E501
 
-    def get_types_with_http_info(self, **kwargs):  # noqa: E501
+    async def get_types_with_http_info(self, **kwargs):  # noqa: E501
         """Event Types  # noqa: E501
 
         This endpoint returns a list of event type names which are visible to you. You may use these event type names to query the API for specific event instances of a desired type.  # noqa: E501

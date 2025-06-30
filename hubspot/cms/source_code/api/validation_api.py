@@ -33,7 +33,7 @@ class ValidationApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def do_validate(self, path, **kwargs):  # noqa: E501
+    async def do_validate(self, path, **kwargs):  # noqa: E501
         """Validate the contents of a file  # noqa: E501
 
         Validates the file contents passed to the endpoint given a specified path and environment. Accepts multipart/form-data content type.  # noqa: E501
@@ -63,9 +63,9 @@ class ValidationApi(object):
         :rtype: Error
         """
         kwargs["_return_http_data_only"] = True
-        return self.do_validate_with_http_info(path, **kwargs)  # noqa: E501
+        return await self.do_validate_with_http_info(path, **kwargs)  # noqa: E501
 
-    def do_validate_with_http_info(self, path, **kwargs):  # noqa: E501
+    async def do_validate_with_http_info(self, path, **kwargs):  # noqa: E501
         """Validate the contents of a file  # noqa: E501
 
         Validates the file contents passed to the endpoint given a specified path and environment. Accepts multipart/form-data content type.  # noqa: E501

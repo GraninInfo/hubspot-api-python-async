@@ -33,7 +33,7 @@ class MappingApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def translate_legacy_list_id_to_list_id(self, **kwargs):  # noqa: E501
+    async def translate_legacy_list_id_to_list_id(self, **kwargs):  # noqa: E501
         """Translate Legacy List Id to Modern List Id  # noqa: E501
 
         This API allows translation of legacy list id to list id. This is a temporary API allowed for mapping old id's to new id's and will expire on May 30th, 2025.  # noqa: E501
@@ -61,9 +61,9 @@ class MappingApi(object):
         :rtype: PublicMigrationMapping
         """
         kwargs["_return_http_data_only"] = True
-        return self.translate_legacy_list_id_to_list_id_with_http_info(**kwargs)  # noqa: E501
+        return await self.translate_legacy_list_id_to_list_id_with_http_info(**kwargs)  # noqa: E501
 
-    def translate_legacy_list_id_to_list_id_with_http_info(self, **kwargs):  # noqa: E501
+    async def translate_legacy_list_id_to_list_id_with_http_info(self, **kwargs):  # noqa: E501
         """Translate Legacy List Id to Modern List Id  # noqa: E501
 
         This API allows translation of legacy list id to list id. This is a temporary API allowed for mapping old id's to new id's and will expire on May 30th, 2025.  # noqa: E501
@@ -153,7 +153,7 @@ class MappingApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def translate_legacy_list_id_to_list_id_batch(self, request_body, **kwargs):  # noqa: E501
+    async def translate_legacy_list_id_to_list_id_batch(self, request_body, **kwargs):  # noqa: E501
         """Translate Legacy List Id to Modern List Id in Batch  # noqa: E501
 
         This API allows translation of a batch of legacy list id's to list id's. This allows for a maximum of 10,000 id's. This is a temporary API allowed for mapping old id's to new id's and will expire on May 30th, 2025.  # noqa: E501
@@ -181,9 +181,9 @@ class MappingApi(object):
         :rtype: PublicBatchMigrationMapping
         """
         kwargs["_return_http_data_only"] = True
-        return self.translate_legacy_list_id_to_list_id_batch_with_http_info(request_body, **kwargs)  # noqa: E501
+        return await self.translate_legacy_list_id_to_list_id_batch_with_http_info(request_body, **kwargs)  # noqa: E501
 
-    def translate_legacy_list_id_to_list_id_batch_with_http_info(self, request_body, **kwargs):  # noqa: E501
+    async def translate_legacy_list_id_to_list_id_batch_with_http_info(self, request_body, **kwargs):  # noqa: E501
         """Translate Legacy List Id to Modern List Id in Batch  # noqa: E501
 
         This API allows translation of a batch of legacy list id's to list id's. This allows for a maximum of 10,000 id's. This is a temporary API allowed for mapping old id's to new id's and will expire on May 30th, 2025.  # noqa: E501

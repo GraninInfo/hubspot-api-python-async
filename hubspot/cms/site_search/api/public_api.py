@@ -164,7 +164,7 @@ class PublicApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def search(self, **kwargs):  # noqa: E501
+    async def search(self, **kwargs):  # noqa: E501
         """Search your site.  # noqa: E501
 
         Returns any website content matching the given search criteria for a given HubSpot account. Searches can be filtered by content type, domain, or URL path.  # noqa: E501
@@ -224,9 +224,9 @@ class PublicApi(object):
         :rtype: PublicSearchResults
         """
         kwargs["_return_http_data_only"] = True
-        return self.search_with_http_info(**kwargs)  # noqa: E501
+        return await self.search_with_http_info(**kwargs)  # noqa: E501
 
-    def search_with_http_info(self, **kwargs):  # noqa: E501
+    async def search_with_http_info(self, **kwargs):  # noqa: E501
         """Search your site.  # noqa: E501
 
         Returns any website content matching the given search criteria for a given HubSpot account. Searches can be filtered by content type, domain, or URL path.  # noqa: E501

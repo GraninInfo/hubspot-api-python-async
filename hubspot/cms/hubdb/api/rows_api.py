@@ -33,7 +33,7 @@ class RowsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def clone_draft_table_row(self, table_id_or_name, row_id, **kwargs):  # noqa: E501
+    async def clone_draft_table_row(self, table_id_or_name, row_id, **kwargs):  # noqa: E501
         """Clone a row  # noqa: E501
 
         Clones a single row in the draft version of a table.  # noqa: E501
@@ -65,9 +65,9 @@ class RowsApi(object):
         :rtype: HubDbTableRowV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.clone_draft_table_row_with_http_info(table_id_or_name, row_id, **kwargs)  # noqa: E501
+        return await self.clone_draft_table_row_with_http_info(table_id_or_name, row_id, **kwargs)  # noqa: E501
 
-    def clone_draft_table_row_with_http_info(self, table_id_or_name, row_id, **kwargs):  # noqa: E501
+    async def clone_draft_table_row_with_http_info(self, table_id_or_name, row_id, **kwargs):  # noqa: E501
         """Clone a row  # noqa: E501
 
         Clones a single row in the draft version of a table.  # noqa: E501
@@ -173,7 +173,7 @@ class RowsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def create_table_row(self, table_id_or_name, hub_db_table_row_v3_request, **kwargs):  # noqa: E501
+    async def create_table_row(self, table_id_or_name, hub_db_table_row_v3_request, **kwargs):  # noqa: E501
         """Add a new row to a table  # noqa: E501
 
         Add a new row to a HubDB table. New rows will be added to the draft version of the table. Use the `/publish` endpoint to push these changes to published version.  # noqa: E501
@@ -203,9 +203,9 @@ class RowsApi(object):
         :rtype: HubDbTableRowV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.create_table_row_with_http_info(table_id_or_name, hub_db_table_row_v3_request, **kwargs)  # noqa: E501
+        return await self.create_table_row_with_http_info(table_id_or_name, hub_db_table_row_v3_request, **kwargs)  # noqa: E501
 
-    def create_table_row_with_http_info(self, table_id_or_name, hub_db_table_row_v3_request, **kwargs):  # noqa: E501
+    async def create_table_row_with_http_info(self, table_id_or_name, hub_db_table_row_v3_request, **kwargs):  # noqa: E501
         """Add a new row to a table  # noqa: E501
 
         Add a new row to a HubDB table. New rows will be added to the draft version of the table. Use the `/publish` endpoint to push these changes to published version.  # noqa: E501
@@ -310,7 +310,7 @@ class RowsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_draft_table_row_by_id(self, table_id_or_name, row_id, **kwargs):  # noqa: E501
+    async def get_draft_table_row_by_id(self, table_id_or_name, row_id, **kwargs):  # noqa: E501
         """Get a row from the draft table  # noqa: E501
 
         Get a single row by ID from a table's draft version.  # noqa: E501
@@ -342,9 +342,9 @@ class RowsApi(object):
         :rtype: HubDbTableRowV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_draft_table_row_by_id_with_http_info(table_id_or_name, row_id, **kwargs)  # noqa: E501
+        return await self.get_draft_table_row_by_id_with_http_info(table_id_or_name, row_id, **kwargs)  # noqa: E501
 
-    def get_draft_table_row_by_id_with_http_info(self, table_id_or_name, row_id, **kwargs):  # noqa: E501
+    async def get_draft_table_row_by_id_with_http_info(self, table_id_or_name, row_id, **kwargs):  # noqa: E501
         """Get a row from the draft table  # noqa: E501
 
         Get a single row by ID from a table's draft version.  # noqa: E501
@@ -450,7 +450,7 @@ class RowsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_table_row(self, table_id_or_name, row_id, **kwargs):  # noqa: E501
+    async def get_table_row(self, table_id_or_name, row_id, **kwargs):  # noqa: E501
         """Get a table row  # noqa: E501
 
         Get a single row by ID from the published version of a table. **Note:** This endpoint can be accessed without any authentication, if the table is set to be allowed for public access.  # noqa: E501
@@ -482,9 +482,9 @@ class RowsApi(object):
         :rtype: HubDbTableRowV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_table_row_with_http_info(table_id_or_name, row_id, **kwargs)  # noqa: E501
+        return await self.get_table_row_with_http_info(table_id_or_name, row_id, **kwargs)  # noqa: E501
 
-    def get_table_row_with_http_info(self, table_id_or_name, row_id, **kwargs):  # noqa: E501
+    async def get_table_row_with_http_info(self, table_id_or_name, row_id, **kwargs):  # noqa: E501
         """Get a table row  # noqa: E501
 
         Get a single row by ID from the published version of a table. **Note:** This endpoint can be accessed without any authentication, if the table is set to be allowed for public access.  # noqa: E501
@@ -590,7 +590,7 @@ class RowsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_table_rows(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def get_table_rows(self, table_id_or_name, **kwargs):  # noqa: E501
         """Get rows for a table  # noqa: E501
 
         Returns a set of rows in the published version of the specified table. Row results can be filtered and sorted. Filtering and sorting options will be sent as query parameters to the API request. For example, by adding the query parameters `column1__gt=5&sort=-column1`, API returns the rows with values for column `column1` greater than 5 and in the descending order of `column1` values. Refer to the [overview section](https://developers.hubspot.com/docs/api/cms/hubdb#filtering-and-sorting-table-rows) for detailed filtering and sorting options. **Note:** This endpoint can be accessed without any authentication, if the table is set to be allowed for public access.  # noqa: E501
@@ -630,9 +630,9 @@ class RowsApi(object):
         :rtype: UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_table_rows_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
+        return await self.get_table_rows_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
 
-    def get_table_rows_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def get_table_rows_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
         """Get rows for a table  # noqa: E501
 
         Returns a set of rows in the published version of the specified table. Row results can be filtered and sorted. Filtering and sorting options will be sent as query parameters to the API request. For example, by adding the query parameters `column1__gt=5&sort=-column1`, API returns the rows with values for column `column1` greater than 5 and in the descending order of `column1` values. Refer to the [overview section](https://developers.hubspot.com/docs/api/cms/hubdb#filtering-and-sorting-table-rows) for detailed filtering and sorting options. **Note:** This endpoint can be accessed without any authentication, if the table is set to be allowed for public access.  # noqa: E501
@@ -751,7 +751,7 @@ class RowsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def purge_draft_table_row(self, table_id_or_name, row_id, **kwargs):  # noqa: E501
+    async def purge_draft_table_row(self, table_id_or_name, row_id, **kwargs):  # noqa: E501
         """Permanently deletes a row  # noqa: E501
 
         Permanently deletes a row from a table's draft version.  # noqa: E501
@@ -781,9 +781,9 @@ class RowsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.purge_draft_table_row_with_http_info(table_id_or_name, row_id, **kwargs)  # noqa: E501
+        return await self.purge_draft_table_row_with_http_info(table_id_or_name, row_id, **kwargs)  # noqa: E501
 
-    def purge_draft_table_row_with_http_info(self, table_id_or_name, row_id, **kwargs):  # noqa: E501
+    async def purge_draft_table_row_with_http_info(self, table_id_or_name, row_id, **kwargs):  # noqa: E501
         """Permanently deletes a row  # noqa: E501
 
         Permanently deletes a row from a table's draft version.  # noqa: E501
@@ -883,7 +883,7 @@ class RowsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def read_draft_table_rows(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def read_draft_table_rows(self, table_id_or_name, **kwargs):  # noqa: E501
         """Get rows from draft table  # noqa: E501
 
         Returns rows in the draft version of the specified table. Row results can be filtered and sorted. Filtering and sorting options will be sent as query parameters to the API request. For example, by adding the query parameters `column1__gt=5&sort=-column1`, API returns the rows with values for column `column1` greater than 5 and in the descending order of `column1` values. Refer to the [overview section](https://developers.hubspot.com/docs/api/cms/hubdb#filtering-and-sorting-table-rows) for detailed filtering and sorting options.  # noqa: E501
@@ -923,9 +923,9 @@ class RowsApi(object):
         :rtype: UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.read_draft_table_rows_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
+        return await self.read_draft_table_rows_with_http_info(table_id_or_name, **kwargs)  # noqa: E501
 
-    def read_draft_table_rows_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
+    async def read_draft_table_rows_with_http_info(self, table_id_or_name, **kwargs):  # noqa: E501
         """Get rows from draft table  # noqa: E501
 
         Returns rows in the draft version of the specified table. Row results can be filtered and sorted. Filtering and sorting options will be sent as query parameters to the API request. For example, by adding the query parameters `column1__gt=5&sort=-column1`, API returns the rows with values for column `column1` greater than 5 and in the descending order of `column1` values. Refer to the [overview section](https://developers.hubspot.com/docs/api/cms/hubdb#filtering-and-sorting-table-rows) for detailed filtering and sorting options.  # noqa: E501
@@ -1044,7 +1044,7 @@ class RowsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def replace_draft_table_row(self, table_id_or_name, row_id, hub_db_table_row_v3_request, **kwargs):  # noqa: E501
+    async def replace_draft_table_row(self, table_id_or_name, row_id, hub_db_table_row_v3_request, **kwargs):  # noqa: E501
         """Replaces an existing row  # noqa: E501
 
         Replace a single row in the draft version of a table. All column values must be specified. If a column has a value in the target table and this request doesn't define that value, it will be deleted. See the \"Create a row\" endpoint for instructions on how to format the JSON row definitions.  # noqa: E501
@@ -1076,9 +1076,9 @@ class RowsApi(object):
         :rtype: HubDbTableRowV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.replace_draft_table_row_with_http_info(table_id_or_name, row_id, hub_db_table_row_v3_request, **kwargs)  # noqa: E501
+        return await self.replace_draft_table_row_with_http_info(table_id_or_name, row_id, hub_db_table_row_v3_request, **kwargs)  # noqa: E501
 
-    def replace_draft_table_row_with_http_info(self, table_id_or_name, row_id, hub_db_table_row_v3_request, **kwargs):  # noqa: E501
+    async def replace_draft_table_row_with_http_info(self, table_id_or_name, row_id, hub_db_table_row_v3_request, **kwargs):  # noqa: E501
         """Replaces an existing row  # noqa: E501
 
         Replace a single row in the draft version of a table. All column values must be specified. If a column has a value in the target table and this request doesn't define that value, it will be deleted. See the \"Create a row\" endpoint for instructions on how to format the JSON row definitions.  # noqa: E501
@@ -1192,7 +1192,7 @@ class RowsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def update_draft_table_row(self, table_id_or_name, row_id, hub_db_table_row_v3_request, **kwargs):  # noqa: E501
+    async def update_draft_table_row(self, table_id_or_name, row_id, hub_db_table_row_v3_request, **kwargs):  # noqa: E501
         """Updates an existing row  # noqa: E501
 
         Sparse updates a single row in the table's draft version. All the column values need not be specified. Only the columns or fields that needs to be modified can be specified. See the \"Create a row\" endpoint for instructions on how to format the JSON row definitions.  # noqa: E501
@@ -1224,9 +1224,9 @@ class RowsApi(object):
         :rtype: HubDbTableRowV3
         """
         kwargs["_return_http_data_only"] = True
-        return self.update_draft_table_row_with_http_info(table_id_or_name, row_id, hub_db_table_row_v3_request, **kwargs)  # noqa: E501
+        return await self.update_draft_table_row_with_http_info(table_id_or_name, row_id, hub_db_table_row_v3_request, **kwargs)  # noqa: E501
 
-    def update_draft_table_row_with_http_info(self, table_id_or_name, row_id, hub_db_table_row_v3_request, **kwargs):  # noqa: E501
+    async def update_draft_table_row_with_http_info(self, table_id_or_name, row_id, hub_db_table_row_v3_request, **kwargs):  # noqa: E501
         """Updates an existing row  # noqa: E501
 
         Sparse updates a single row in the table's draft version. All the column values need not be specified. Only the columns or fields that needs to be modified can be specified. See the \"Create a row\" endpoint for instructions on how to format the JSON row definitions.  # noqa: E501

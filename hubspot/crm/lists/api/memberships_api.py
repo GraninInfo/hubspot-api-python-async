@@ -33,7 +33,7 @@ class MembershipsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add(self, list_id, request_body, **kwargs):  # noqa: E501
+    async def add(self, list_id, request_body, **kwargs):  # noqa: E501
         """Add Records to a List  # noqa: E501
 
         Add the records provided to the list. Records that do not exist or that are already members of the list are ignored.  This endpoint only works for lists that have a `processingType` of `MANUAL` or `SNAPSHOT`.  # noqa: E501
@@ -63,9 +63,9 @@ class MembershipsApi(object):
         :rtype: MembershipsUpdateResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.add_with_http_info(list_id, request_body, **kwargs)  # noqa: E501
+        return await self.add_with_http_info(list_id, request_body, **kwargs)  # noqa: E501
 
-    def add_with_http_info(self, list_id, request_body, **kwargs):  # noqa: E501
+    async def add_with_http_info(self, list_id, request_body, **kwargs):  # noqa: E501
         """Add Records to a List  # noqa: E501
 
         Add the records provided to the list. Records that do not exist or that are already members of the list are ignored.  This endpoint only works for lists that have a `processingType` of `MANUAL` or `SNAPSHOT`.  # noqa: E501
@@ -170,7 +170,7 @@ class MembershipsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def add_all_from_list(self, list_id, source_list_id, **kwargs):  # noqa: E501
+    async def add_all_from_list(self, list_id, source_list_id, **kwargs):  # noqa: E501
         """Add All Records from a Source List to a Destination List  # noqa: E501
 
         Add all of the records from a *source list* (specified by the `sourceListId`) to a *destination list* (specified by the `listId`). Records that are already members of the *destination list* will be ignored. The *destination* and *source list* IDs must be different. The *destination* and *source lists* must contain records of the same type (e.g. contacts, companies, etc.).  This endpoint only works for *destination lists* that have a `processingType` of `MANUAL` or `SNAPSHOT`. The *source list* can have any `processingType`.  This endpoint only supports a `sourceListId` for lists with less than 100,000 memberships.  # noqa: E501
@@ -200,9 +200,9 @@ class MembershipsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.add_all_from_list_with_http_info(list_id, source_list_id, **kwargs)  # noqa: E501
+        return await self.add_all_from_list_with_http_info(list_id, source_list_id, **kwargs)  # noqa: E501
 
-    def add_all_from_list_with_http_info(self, list_id, source_list_id, **kwargs):  # noqa: E501
+    async def add_all_from_list_with_http_info(self, list_id, source_list_id, **kwargs):  # noqa: E501
         """Add All Records from a Source List to a Destination List  # noqa: E501
 
         Add all of the records from a *source list* (specified by the `sourceListId`) to a *destination list* (specified by the `listId`). Records that are already members of the *destination list* will be ignored. The *destination* and *source list* IDs must be different. The *destination* and *source lists* must contain records of the same type (e.g. contacts, companies, etc.).  This endpoint only works for *destination lists* that have a `processingType` of `MANUAL` or `SNAPSHOT`. The *source list* can have any `processingType`.  This endpoint only supports a `sourceListId` for lists with less than 100,000 memberships.  # noqa: E501
@@ -300,7 +300,7 @@ class MembershipsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def add_and_remove(self, list_id, membership_change_request, **kwargs):  # noqa: E501
+    async def add_and_remove(self, list_id, membership_change_request, **kwargs):  # noqa: E501
         """Add and/or Remove Records from a List  # noqa: E501
 
         Add and/or remove records that have already been created in the system to and/or from a list.  This endpoint only works for lists that have a `processingType` of `MANUAL` or `SNAPSHOT`.  # noqa: E501
@@ -330,9 +330,9 @@ class MembershipsApi(object):
         :rtype: MembershipsUpdateResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.add_and_remove_with_http_info(list_id, membership_change_request, **kwargs)  # noqa: E501
+        return await self.add_and_remove_with_http_info(list_id, membership_change_request, **kwargs)  # noqa: E501
 
-    def add_and_remove_with_http_info(self, list_id, membership_change_request, **kwargs):  # noqa: E501
+    async def add_and_remove_with_http_info(self, list_id, membership_change_request, **kwargs):  # noqa: E501
         """Add and/or Remove Records from a List  # noqa: E501
 
         Add and/or remove records that have already been created in the system to and/or from a list.  This endpoint only works for lists that have a `processingType` of `MANUAL` or `SNAPSHOT`.  # noqa: E501
@@ -437,7 +437,7 @@ class MembershipsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_lists(self, object_type_id, record_id, **kwargs):  # noqa: E501
+    async def get_lists(self, object_type_id, record_id, **kwargs):  # noqa: E501
         """Get lists record is member of  # noqa: E501
 
         For given record provide lists this record is member of.  # noqa: E501
@@ -467,9 +467,9 @@ class MembershipsApi(object):
         :rtype: ApiCollectionResponseRecordListMembershipNoPaging
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_lists_with_http_info(object_type_id, record_id, **kwargs)  # noqa: E501
+        return await self.get_lists_with_http_info(object_type_id, record_id, **kwargs)  # noqa: E501
 
-    def get_lists_with_http_info(self, object_type_id, record_id, **kwargs):  # noqa: E501
+    async def get_lists_with_http_info(self, object_type_id, record_id, **kwargs):  # noqa: E501
         """Get lists record is member of  # noqa: E501
 
         For given record provide lists this record is member of.  # noqa: E501
@@ -710,7 +710,7 @@ class MembershipsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def get_page_ordered_by_added_to_list_date(self, list_id, **kwargs):  # noqa: E501
+    async def get_page_ordered_by_added_to_list_date(self, list_id, **kwargs):  # noqa: E501
         """Fetch List Memberships Ordered by Added to List Date  # noqa: E501
 
         Fetch the memberships of a list in order sorted by the time the records were added to the list.  The `recordId`s are sorted in *ascending* order if an `after` offset or no offset is provided. If only a `before` offset is provided, then the records are sorted in *descending* order.  The `after` offset parameter will take precedence over the `before` offset in a case where both are provided.  # noqa: E501
@@ -744,9 +744,9 @@ class MembershipsApi(object):
         :rtype: ApiCollectionResponseJoinTimeAndRecordId
         """
         kwargs["_return_http_data_only"] = True
-        return self.get_page_ordered_by_added_to_list_date_with_http_info(list_id, **kwargs)  # noqa: E501
+        return await self.get_page_ordered_by_added_to_list_date_with_http_info(list_id, **kwargs)  # noqa: E501
 
-    def get_page_ordered_by_added_to_list_date_with_http_info(self, list_id, **kwargs):  # noqa: E501
+    async def get_page_ordered_by_added_to_list_date_with_http_info(self, list_id, **kwargs):  # noqa: E501
         """Fetch List Memberships Ordered by Added to List Date  # noqa: E501
 
         Fetch the memberships of a list in order sorted by the time the records were added to the list.  The `recordId`s are sorted in *ascending* order if an `after` offset or no offset is provided. If only a `before` offset is provided, then the records are sorted in *descending* order.  The `after` offset parameter will take precedence over the `before` offset in a case where both are provided.  # noqa: E501
@@ -851,7 +851,7 @@ class MembershipsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def remove(self, list_id, request_body, **kwargs):  # noqa: E501
+    async def remove(self, list_id, request_body, **kwargs):  # noqa: E501
         """Remove Records from a List  # noqa: E501
 
         Remove the records provided from the list. Records that do not exist or that are not members of the list are ignored.  This endpoint only works for lists that have a `processingType` of `MANUAL` or `SNAPSHOT`.  # noqa: E501
@@ -881,9 +881,9 @@ class MembershipsApi(object):
         :rtype: MembershipsUpdateResponse
         """
         kwargs["_return_http_data_only"] = True
-        return self.remove_with_http_info(list_id, request_body, **kwargs)  # noqa: E501
+        return await self.remove_with_http_info(list_id, request_body, **kwargs)  # noqa: E501
 
-    def remove_with_http_info(self, list_id, request_body, **kwargs):  # noqa: E501
+    async def remove_with_http_info(self, list_id, request_body, **kwargs):  # noqa: E501
         """Remove Records from a List  # noqa: E501
 
         Remove the records provided from the list. Records that do not exist or that are not members of the list are ignored.  This endpoint only works for lists that have a `processingType` of `MANUAL` or `SNAPSHOT`.  # noqa: E501
@@ -988,7 +988,7 @@ class MembershipsApi(object):
             _request_auth=local_var_params.get("_request_auth"),
         )
 
-    def remove_all(self, list_id, **kwargs):  # noqa: E501
+    async def remove_all(self, list_id, **kwargs):  # noqa: E501
         """Delete All Records from a List  # noqa: E501
 
         Remove **all** of the records from a list. ***Note:*** *The list is not deleted.*  This endpoint only works for lists that have a `processingType` of `MANUAL` or `SNAPSHOT`.  This endpoint only supports lists that have less than 100,000 memberships.  # noqa: E501
@@ -1016,9 +1016,9 @@ class MembershipsApi(object):
         :rtype: None
         """
         kwargs["_return_http_data_only"] = True
-        return self.remove_all_with_http_info(list_id, **kwargs)  # noqa: E501
+        return await self.remove_all_with_http_info(list_id, **kwargs)  # noqa: E501
 
-    def remove_all_with_http_info(self, list_id, **kwargs):  # noqa: E501
+    async def remove_all_with_http_info(self, list_id, **kwargs):  # noqa: E501
         """Delete All Records from a List  # noqa: E501
 
         Remove **all** of the records from a list. ***Note:*** *The list is not deleted.*  This endpoint only works for lists that have a `processingType` of `MANUAL` or `SNAPSHOT`.  This endpoint only supports lists that have less than 100,000 memberships.  # noqa: E501
