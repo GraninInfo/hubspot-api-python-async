@@ -25,7 +25,7 @@ class DiscoveryBase:
                 setattr(configuration, key, config[key])
 
         api_client = api_client_package.ApiClient(configuration=configuration)
-        package_version = metadata.version("hubspot-api-client")
+        package_version = metadata.version("hubspot-api-client-async")
         api_client.user_agent = "hubspot-api-client-python; {0}".format(package_version)
 
         return getattr(api_client_package, api_name)(api_client=api_client)
